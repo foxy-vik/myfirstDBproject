@@ -26,7 +26,9 @@
         "drupal/paragraphs": "^1.12",
         "drupal/pathauto": "^1.8",
         "drupal/redirect": "^1.7",
+        "drupal/smart_date": "^3.4",
         "drupal/social_media_links": "^2.8",
+        "drupal/time_field": "^2.0",
         "drupal/token": "^1.10",
         "drupal/webform": "^6.1",
         "drush/drush": "^11.0"
