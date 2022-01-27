@@ -1,0 +1,7 @@
+uuid: 5dee9a2a-a2b3-49cc-b0e7-1023908df0b3
+langcode: en
+status: true
+dependencies: {  }
+name: middle_size_image
+label: 'middle size image'
+effects: {  }

@@ -1,0 +1,10 @@
+uuid: 063ae893-446a-40d6-bbf9-39119b6bab24
+langcode: en
+status: true
+dependencies: {  }
+id: social_column_for_stay_connect
+label: 'social column for stay connect'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

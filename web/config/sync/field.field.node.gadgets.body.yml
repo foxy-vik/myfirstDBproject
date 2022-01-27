@@ -1,0 +1,23 @@
+uuid: a15a911e-f2e6-4f88-befc-9e14c848ab04
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.gadgets
+  module:
+    - text
+id: node.gadgets.body
+field_name: body
+entity_type: node
+bundle: gadgets
+label: Headline
+description: '<I>'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,43 @@
+uuid: 008c769a-8594-4013-9abe-f9ffac24a8ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.stay_connected
+    - field.storage.block_content.field_para_youtube
+    - paragraphs.paragraphs_type.stay_connected
+  module:
+    - entity_reference_revisions
+id: block_content.stay_connected.field_para_youtube
+field_name: field_para_youtube
+entity_type: block_content
+bundle: stay_connected
+label: 'para youtube'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      stay_connected: stay_connected
+    negate: 0
+    target_bundles_drag_drop:
+      author_block:
+        weight: 6
+        enabled: false
+      node_content_template:
+        weight: 7
+        enabled: false
+      social_column_for_stay_connect:
+        weight: 8
+        enabled: false
+      social_media_links_block_buttons:
+        weight: 9
+        enabled: false
+      stay_connected:
+        weight: 10
+        enabled: true
+field_type: entity_reference_revisions

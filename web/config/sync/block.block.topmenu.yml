@@ -1,0 +1,25 @@
+uuid: 7c3a5fb0-496c-4f22-b5af-8288d6308734
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.top-menu
+  module:
+    - system
+  theme:
+    - b5subtheme
+id: topmenu
+theme: b5subtheme
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:top-menu'
+settings:
+  id: 'system_menu_block:top-menu'
+  label: 'Top menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

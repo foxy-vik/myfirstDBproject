@@ -1,0 +1,10 @@
+uuid: a9a647dd-1d61-4c27-96b3-59b01e7efe3b
+langcode: en
+status: true
+dependencies: {  }
+id: stay_connected
+label: 'STAY CONNECTED'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

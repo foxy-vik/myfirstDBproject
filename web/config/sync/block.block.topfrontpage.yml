@@ -1,0 +1,25 @@
+uuid: 9070e0cb-31e4-438d-8ac6-9efd9c17dc0c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:top_black_block_:8dec7007-af2d-47b7-b930-4ee8312365f8'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: topfrontpage
+theme: bartik
+region: secondary_menu
+weight: -7
+provider: null
+plugin: 'block_content:8dec7007-af2d-47b7-b930-4ee8312365f8'
+settings:
+  id: 'block_content:8dec7007-af2d-47b7-b930-4ee8312365f8'
+  label: 'top front page'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,10 @@
+uuid: 05e12657-df23-4855-a204-73b6cbca0253
+langcode: en
+status: true
+dependencies: {  }
+id: node_content_template
+label: 'node content template'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

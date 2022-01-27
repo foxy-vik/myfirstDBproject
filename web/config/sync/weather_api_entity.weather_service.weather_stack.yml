@@ -1,0 +1,15 @@
+uuid: a7891f7f-3ce1-4191-ac9a-ccd5468ef3bd
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: nIq71JZq47ELeAMZGdlWc1-p61FnovWo8YrYm5YpYwU
+id: weather_stack
+label: 'Weather Stack'
+api_key: ''
+base_url: 'http://api.weatherstack.com/current'
+query: 'query=@location&access_key=@api_key&lang=@language&units=m'
+language: en
+location_service: weather_api_location_service_geonames
+address: ''
+template: weather_stack_entity_theme

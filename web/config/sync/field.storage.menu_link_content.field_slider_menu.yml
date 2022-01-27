@@ -1,0 +1,21 @@
+uuid: d9f42679-c930-4216-b2e4-c093951b730a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_link_content
+    - viewfield
+    - views
+id: menu_link_content.field_slider_menu
+field_name: field_slider_menu
+entity_type: menu_link_content
+type: viewfield
+settings:
+  target_type: view
+module: viewfield
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

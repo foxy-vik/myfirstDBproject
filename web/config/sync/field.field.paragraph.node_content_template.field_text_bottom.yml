@@ -1,0 +1,24 @@
+uuid: 69aeaf02-7418-42f1-b99f-fc02bb54bb1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_bottom
+    - paragraphs.paragraphs_type.node_content_template
+  module:
+    - text
+id: paragraph.node_content_template.field_text_bottom
+field_name: field_text_bottom
+entity_type: paragraph
+bundle: node_content_template
+label: 'text bottom'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<p>I had low expectations about Sofia as a city, but after the walking tour I absolutely loved the place. This was an easy city to navigate, and it was a beautiful city – despite its ugly, staunch and stolid communist-built surrounds. Sofia has a very average facade as you enter the city, but once you lose yourself in the old town area, everything changes.</p>\r\n\r\n<blockquote>\r\n<h2><strong><em>IF YOU HAVE IT, YOU CAN MAKE ANYTHING LOOK GOOD</em></strong></h2>\r\n</blockquote>\r\n\r\n<p>Clothes can transform your mood and confidence. Fashion moves so quickly that, unless you have a strong point of view, you can lose integrity. I like to be real. I don’t like things to be staged or fussy. I think I’d go mad if I didn’t have a place to escape to. You have to stay true to your heritage, that’s what your brand is about.</p>\r\n"
+    format: full_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

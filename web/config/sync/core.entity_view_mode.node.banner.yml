@@ -1,0 +1,10 @@
+uuid: 0a9326bd-8155-42b6-9895-0c8e2e0ad8fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.banner
+label: Banner
+targetEntityType: node
+cache: true

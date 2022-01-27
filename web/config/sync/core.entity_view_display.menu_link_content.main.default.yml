@@ -1,0 +1,30 @@
+uuid: 91656e31-c75d-4d94-b126-ffc91026c0e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.main.field_slider_menu
+    - system.menu.main
+  module:
+    - viewfield
+id: menu_link_content.main.default
+targetEntityType: menu_link_content
+bundle: main
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_slider_menu:
+    type: viewfield_default
+    label: hidden
+    settings:
+      view_title: hidden
+      always_build_output: false
+      empty_view_title: hidden
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

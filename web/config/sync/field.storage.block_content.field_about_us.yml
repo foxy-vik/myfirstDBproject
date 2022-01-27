@@ -1,0 +1,19 @@
+uuid: 14cfa5fa-1c57-45f4-8c41-e981408ce241
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - text
+id: block_content.field_about_us
+field_name: field_about_us
+entity_type: block_content
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

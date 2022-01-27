@@ -1,0 +1,24 @@
+uuid: 79508df2-3866-4ee9-a17a-b2dec7ef31e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_top
+    - paragraphs.paragraphs_type.node_content_template
+  module:
+    - text
+id: paragraph.node_content_template.field_text_top
+field_name: field_text_top
+entity_type: paragraph
+bundle: node_content_template
+label: 'text top'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<p><strong>Refreshingly, what was expected of her was the same thing that was expected of Lara Stone: to take a beautiful picture.</strong></p>\r\n\r\n<p>We were making our way to the Rila Mountains, where we were visiting the Rila Monastery where we enjoyed scrambled eggs, toast, mekitsi, local jam and peppermint tea.</p>\r\n"
+    format: full_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

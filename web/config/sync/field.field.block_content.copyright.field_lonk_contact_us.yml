@@ -1,0 +1,23 @@
+uuid: 6d156197-8b12-4f4e-9c24-e499eacd9704
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.copyright
+    - field.storage.block_content.field_lonk_contact_us
+  module:
+    - link
+id: block_content.copyright.field_lonk_contact_us
+field_name: field_lonk_contact_us
+entity_type: block_content
+bundle: copyright
+label: link_Contact_us
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

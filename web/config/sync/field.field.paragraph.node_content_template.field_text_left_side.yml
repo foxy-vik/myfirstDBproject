@@ -1,0 +1,24 @@
+uuid: 262ccd02-e3c9-4efb-9353-a4e737bf7a2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_left_side
+    - paragraphs.paragraphs_type.node_content_template
+  module:
+    - text
+id: paragraph.node_content_template.field_text_left_side
+field_name: field_text_left_side
+entity_type: paragraph
+bundle: node_content_template
+label: 'text left side'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<p>Headed over Lions Bridge and made our way to the Sofia Synagogue, then sheltered in the Central Market Hall until the recurrent (but short-lived) mid-afternoon rain passed.</p>\r\n\r\n<p>Feeling refreshed after an espresso, we walked a short distance to the small but welcoming Banya Bashi Mosque, then descended into the ancient Serdica complex.</p>\r\n\r\n<p>We were exhausted after a long day of travel, so we headed back to the hotel and crashed.</p>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

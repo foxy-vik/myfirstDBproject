@@ -1,0 +1,23 @@
+uuid: b1f67c59-73ff-45f4-9ef5-89d60792fc45
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.copyright
+    - field.storage.block_content.field_link_advertisement
+  module:
+    - link
+id: block_content.copyright.field_link_advertisement
+field_name: field_link_advertisement
+entity_type: block_content
+bundle: copyright
+label: link_Advertisement
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

@@ -1,0 +1,51 @@
+uuid: 11d14796-08d7-4d71-9ab6-3fe246340906
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.social_column_for_stay_connect.field_link_count_followers
+    - field.field.paragraph.social_column_for_stay_connect.field_name_follow
+    - field.field.paragraph.social_column_for_stay_connect.field_social_media
+    - paragraphs.paragraphs_type.social_column_for_stay_connect
+  module:
+    - link
+    - social_media_links_field
+id: paragraph.social_column_for_stay_connect.default
+targetEntityType: paragraph
+bundle: social_column_for_stay_connect
+mode: default
+content:
+  field_link_count_followers:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_name_follow:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_social_media:
+    type: social_media_links_field_default
+    label: hidden
+    settings:
+      appearance: {  }
+      link_attributes: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

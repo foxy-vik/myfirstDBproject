@@ -1,0 +1,18 @@
+uuid: 20c5e36a-073a-45da-90e0-96c82e42378c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.gadgets
+id: node.gadgets.title
+field_name: title
+entity_type: node
+bundle: gadgets
+label: 'general content'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

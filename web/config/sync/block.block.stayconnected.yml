@@ -1,0 +1,30 @@
+uuid: ede84006-352a-43ee-bc2f-222d29c23d81
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:stay_connected:41ff3035-4dfb-4a21-bc34-2815728dc581'
+  module:
+    - block_content
+    - system
+  theme:
+    - b5subtheme
+id: stayconnected
+theme: b5subtheme
+region: breadcrumb
+weight: -9
+provider: null
+plugin: 'block_content:41ff3035-4dfb-4a21-bc34-2815728dc581'
+settings:
+  id: 'block_content:41ff3035-4dfb-4a21-bc34-2815728dc581'
+  label: 'STAY CONNECTED'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

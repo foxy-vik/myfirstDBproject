@@ -1,0 +1,142 @@
+uuid: e318ab51-ab21-44c2-a8ab-6f5d7b97b049
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_logo_about_us_follow_us
+    - field.field.block_content.footer_logo_about_us_follow_us.field_about_us
+    - field.field.block_content.footer_logo_about_us_follow_us.field_follow_ua
+    - field.field.block_content.footer_logo_about_us_follow_us.field_label_follow_us
+    - field.field.block_content.footer_logo_about_us_follow_us.field_logo_footer
+  module:
+    - layout_builder
+    - layout_discovery
+    - media
+    - social_media_links_field
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_threecol_section
+        layout_settings:
+          label: 'footer bottom'
+          context_mapping: {  }
+          column_widths: 33-34-33
+        components:
+          808db379-a7be-41df-93fb-0d4d9ea86c60:
+            uuid: 808db379-a7be-41df-93fb-0d4d9ea86c60
+            region: first
+            configuration:
+              id: 'field_block:block_content:footer_logo_about_us_follow_us:field_logo_footer'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: media_thumbnail
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          bb3403d2-6001-47ff-a1ad-1532051042fd:
+            uuid: bb3403d2-6001-47ff-a1ad-1532051042fd
+            region: second
+            configuration:
+              id: 'field_block:block_content:footer_logo_about_us_follow_us:field_about_us'
+              label: 'about us'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          1b585728-9eb7-4f79-90c0-c04b2afef4b9:
+            uuid: 1b585728-9eb7-4f79-90c0-c04b2afef4b9
+            region: third
+            configuration:
+              id: 'field_block:block_content:footer_logo_about_us_follow_us:field_label_follow_us'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          f1e3e504-2a32-4e99-a168-1280f300e1ef:
+            uuid: f1e3e504-2a32-4e99-a168-1280f300e1ef
+            region: third
+            configuration:
+              id: 'field_block:block_content:footer_logo_about_us_follow_us:field_follow_ua'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: social_media_links_field_default
+                label: above
+                settings:
+                  appearance: {  }
+                  link_attributes: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
+id: block_content.footer_logo_about_us_follow_us.default
+targetEntityType: block_content
+bundle: footer_logo_about_us_follow_us
+mode: default
+content:
+  field_about_us:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_follow_ua:
+    type: social_media_links_field_default
+    label: above
+    settings:
+      appearance: {  }
+      link_attributes: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_label_follow_us:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_logo_footer:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

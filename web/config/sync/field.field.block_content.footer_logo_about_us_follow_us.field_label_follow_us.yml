@@ -1,0 +1,21 @@
+uuid: 99a55304-b436-4852-9004-e5e6f9c72caa
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_logo_about_us_follow_us
+    - field.storage.block_content.field_label_follow_us
+id: block_content.footer_logo_about_us_follow_us.field_label_follow_us
+field_name: field_label_follow_us
+entity_type: block_content
+bundle: footer_logo_about_us_follow_us
+label: 'label follow us'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'follow us'
+default_value_callback: ''
+settings: {  }
+field_type: string

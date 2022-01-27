@@ -1,0 +1,62 @@
+uuid: 16565ae6-3c2d-4b67-a4d2-b75436d4502d
+langcode: en
+status: false
+dependencies:
+  config:
+    - block_content.type.footer_logo_about_us_follow_us
+    - core.entity_view_mode.block_content.token
+    - field.field.block_content.footer_logo_about_us_follow_us.field_about_us
+    - field.field.block_content.footer_logo_about_us_follow_us.field_follow_ua
+    - field.field.block_content.footer_logo_about_us_follow_us.field_label_follow_us
+    - field.field.block_content.footer_logo_about_us_follow_us.field_logo_footer
+  module:
+    - layout_builder
+    - social_media_links_field
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: block_content.footer_logo_about_us_follow_us.token
+targetEntityType: block_content
+bundle: footer_logo_about_us_follow_us
+mode: token
+content:
+  field_about_us:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: second
+  field_follow_ua:
+    type: social_media_links_field_default
+    label: hidden
+    settings:
+      appearance:
+        orientation: h
+        show_name: 0
+      link_attributes:
+        target: '<none>'
+        rel: '<none>'
+    third_party_settings: {  }
+    weight: 3
+    region: third
+  field_label_follow_us:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: third
+  field_logo_footer:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: second
+hidden: {  }

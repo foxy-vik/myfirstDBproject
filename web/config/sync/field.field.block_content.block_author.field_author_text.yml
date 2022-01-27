@@ -1,0 +1,19 @@
+uuid: 1b2a3fee-f95d-49f6-8f31-7db9b20c85a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_author
+    - field.storage.block_content.field_author_text
+id: block_content.block_author.field_author_text
+field_name: field_author_text
+entity_type: block_content
+bundle: block_author
+label: 'author text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

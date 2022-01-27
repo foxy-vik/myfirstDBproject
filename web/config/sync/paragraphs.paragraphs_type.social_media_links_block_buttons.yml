@@ -1,0 +1,10 @@
+uuid: e3813d9d-6276-4a8b-8f3c-c2246614b3f0
+langcode: en
+status: true
+dependencies: {  }
+id: social_media_links_block_buttons
+label: 'social media links Block buttons'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

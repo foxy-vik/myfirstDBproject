@@ -1,0 +1,30 @@
+uuid: ab0a364e-ad2e-412f-a2ac-d902a6208c56
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.test_field2
+  module:
+    - system
+    - views
+  theme:
+    - b5subtheme
+id: views_block__test_field2_block_trending_now
+theme: b5subtheme
+region: breadcrumb
+weight: 0
+provider: null
+plugin: 'views_block:test_field2-block_trending_now'
+settings:
+  id: 'views_block:test_field2-block_trending_now'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

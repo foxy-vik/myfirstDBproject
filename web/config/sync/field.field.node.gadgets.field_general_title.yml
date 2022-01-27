@@ -1,0 +1,19 @@
+uuid: 01427db0-a5b8-4b0e-afdd-2c50286dc169
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_general_title
+    - node.type.gadgets
+id: node.gadgets.field_general_title
+field_name: field_general_title
+entity_type: node
+bundle: gadgets
+label: 'Node title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

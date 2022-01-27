@@ -1,0 +1,94 @@
+uuid: 96ae07ef-a4cc-45e9-98ee-a987cd51e7f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.node_content_template.field_pict1
+    - field.field.paragraph.node_content_template.field_pict2
+    - field.field.paragraph.node_content_template.field_text_bottom
+    - field.field.paragraph.node_content_template.field_text_left_side
+    - field.field.paragraph.node_content_template.field_text_top
+    - field.field.paragraph.node_content_template.field_text_under_pict_midle
+    - field.field.paragraph.node_content_template.field_title_pict2
+    - field.field.paragraph.node_content_template.field_title_top_image
+    - paragraphs.paragraphs_type.node_content_template
+  module:
+    - field_layout
+    - layout_discovery
+    - media_library
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.node_content_template.default
+targetEntityType: paragraph
+bundle: node_content_template
+mode: default
+content:
+  field_pict1:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_pict2:
+    type: media_library_widget
+    weight: 5
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_text_bottom:
+    type: text_textarea
+    weight: 7
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_text_left_side:
+    type: text_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_text_top:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_text_under_pict_midle:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_title_pict2:
+    type: text_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title_top_image:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

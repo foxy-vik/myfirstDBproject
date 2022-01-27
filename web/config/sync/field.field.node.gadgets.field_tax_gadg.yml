@@ -1,0 +1,29 @@
+uuid: fb25de54-6913-4577-abbb-f8cdbefbbecc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tax_gadg
+    - node.type.gadgets
+    - taxonomy.vocabulary.lifestyle
+id: node.gadgets.field_tax_gadg
+field_name: field_tax_gadg
+entity_type: node
+bundle: gadgets
+label: Tags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lifestyle: lifestyle
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

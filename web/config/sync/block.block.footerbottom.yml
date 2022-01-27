@@ -1,0 +1,25 @@
+uuid: 310fcacd-18fe-40de-8bf4-a07e7a9fcdc5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:footer_logo_about_us_follow_us:36202c69-fdcf-47c9-aa9f-833f301b3f9d'
+  module:
+    - block_content
+  theme:
+    - b5subtheme
+id: footerbottom
+theme: b5subtheme
+region: footer
+weight: -7
+provider: null
+plugin: 'block_content:36202c69-fdcf-47c9-aa9f-833f301b3f9d'
+settings:
+  id: 'block_content:36202c69-fdcf-47c9-aa9f-833f301b3f9d'
+  label: 'footer bottom'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,34 @@
+uuid: 6729fd44-49e0-40ea-af8b-6b14ec3e457e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_general_image_background
+    - media.type.image
+    - node.type.gadgets
+  content:
+    - 'media:image:cd45ae93-df66-4f36-bd54-f44429f3a153'
+id: node.gadgets.field_general_image_background
+field_name: field_general_image_background
+entity_type: node
+bundle: gadgets
+label: Background
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: cd45ae93-df66-4f36-bd54-f44429f3a153
+    weight: 0
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,10 @@
+uuid: c5eedb3e-9660-43cc-abd4-7f2aba4639b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.layout_bil
+label: 'layout bilder'
+targetEntityType: paragraph
+cache: true

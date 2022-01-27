@@ -1,0 +1,34 @@
+uuid: dca95a6d-cc6f-4bdb-9902-0c7484f6db17
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gadget_img
+    - media.type.image
+    - node.type.gadgets
+  content:
+    - 'media:image:07eb4165-e622-4e60-9818-5e5982396a0c'
+id: node.gadgets.field_gadget_img
+field_name: field_gadget_img
+entity_type: node
+bundle: gadgets
+label: 'Top image'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 07eb4165-e622-4e60-9818-5e5982396a0c
+    weight: 0
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
