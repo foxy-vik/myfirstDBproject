@@ -66,6 +66,7 @@
         "drupal/time_field": "^2.0",
         "drupal/token": "^1.10",
         "drupal/viewfield": "^3.0@beta",
+        "drupal/views_bootstrap": "^4.3",
         "drupal/views_fieldsets": "^3.4",
         "drupal/webform": "^6.1",
         "drush/drush": "^11.0",
