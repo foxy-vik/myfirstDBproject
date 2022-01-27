@@ -2,8 +2,6 @@ uuid: 664350a1-5f75-4567-bab1-65f2e894bdc6
 langcode: en
 status: true
 dependencies:
-  config:
-    - node.type.page
   module:
     - comment
     - contextual
@@ -27,12 +25,8 @@ permissions:
   - 'access toolbar'
   - 'access tour'
   - 'administer url aliases'
-  - 'create page content'
   - 'create url aliases'
-  - 'delete own page content'
-  - 'delete page revisions'
   - 'edit own comments'
-  - 'edit own page content'
   - 'revert all revisions'
   - 'view all revisions'
   - 'view own unpublished content'

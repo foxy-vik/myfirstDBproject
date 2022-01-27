@@ -11,7 +11,7 @@ dependencies:
 id: topfrontpage_2
 theme: b5subtheme
 region: header
-weight: -8
+weight: -12
 provider: null
 plugin: 'block_content:8dec7007-af2d-47b7-b930-4ee8312365f8'
 settings:
