@@ -12,7 +12,7 @@ dependencies:
 id: views_block__test_field2_block_trending_now
 theme: b5subtheme
 region: breadcrumb
-weight: 0
+weight: -15
 provider: null
 plugin: 'views_block:test_field2-block_trending_now'
 settings:

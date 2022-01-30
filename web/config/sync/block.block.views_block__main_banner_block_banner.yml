@@ -12,7 +12,7 @@ dependencies:
 id: views_block__main_banner_block_banner
 theme: b5subtheme
 region: breadcrumb
-weight: -11
+weight: -16
 provider: null
 plugin: 'views_block:main_banner-block_banner'
 settings:

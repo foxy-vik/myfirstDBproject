@@ -12,7 +12,7 @@ _core:
 id: b5subtheme_breadcrumbs
 theme: b5subtheme
 region: content
-weight: -11
+weight: -13
 provider: null
 plugin: system_breadcrumb_block
 settings:

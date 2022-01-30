@@ -11,8 +11,8 @@ dependencies:
     - b5subtheme
 id: stayconnected
 theme: b5subtheme
-region: breadcrumb
-weight: -9
+region: content
+weight: -16
 provider: null
 plugin: 'block_content:41ff3035-4dfb-4a21-bc34-2815728dc581'
 settings:

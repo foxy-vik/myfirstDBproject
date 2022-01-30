@@ -5,14 +5,9 @@ dependencies:
   config:
     - block_content.type.copyright
     - field.field.block_content.copyright.field_copyright
-    - field.field.block_content.copyright.field_link_advertisement
-    - field.field.block_content.copyright.field_link_disclaimer
-    - field.field.block_content.copyright.field_link_privacy
-    - field.field.block_content.copyright.field_lonk_contact_us
   module:
     - field_layout
     - layout_discovery
-    - link
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -30,38 +25,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_link_advertisement:
-    type: link_default
-    weight: 29
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-  field_link_disclaimer:
-    type: link_default
-    weight: 27
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-  field_link_privacy:
-    type: link_default
-    weight: 28
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-  field_lonk_contact_us:
-    type: link_default
-    weight: 30
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
     third_party_settings: {  }
   info:
     type: string_textfield
