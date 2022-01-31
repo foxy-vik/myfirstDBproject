@@ -1,0 +1,8 @@
+uuid: cffe5c48-fddf-4d51-898c-57e72f38e790
+langcode: en
+status: true
+dependencies: {  }
+id: footer-menu
+label: '© Newspaper WordPress Theme by TagDiv'
+description: ''
+locked: false
