@@ -5,14 +5,14 @@ dependencies:
   module:
     - node
 id: gadgets_path
-label: 'gadgets path'
+label: 'nodes path'
 type: 'canonical_entities:node'
-pattern: '[node:original:field_tax_gadg]/[node:title]'
+pattern: '/[node:title]'
 selection_criteria:
-  79b4bf2a-b939-4554-9a95-7f346a66e34c:
+  ddbb015c-134b-4dd3-b408-3dd1318f5ce0:
     id: node_type
     negate: false
-    uuid: 79b4bf2a-b939-4554-9a95-7f346a66e34c
+    uuid: ddbb015c-134b-4dd3-b408-3dd1318f5ce0
     context_mapping:
       node: node
     bundles:

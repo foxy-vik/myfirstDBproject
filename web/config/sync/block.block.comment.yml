@@ -12,7 +12,7 @@ dependencies:
 id: comment
 theme: b5subtheme
 region: footer
-weight: 0
+weight: -18
 provider: null
 plugin: 'block_content:3ea85cf9-8c03-408b-96f6-81b28f49e3ac'
 settings:
