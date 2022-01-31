@@ -13,7 +13,7 @@ dependencies:
 id: blockauthorbottom
 theme: b5subtheme
 region: content
-weight: -10
+weight: -14
 provider: null
 plugin: 'block_content:ec9b5ddc-1d68-4410-955f-e1eadff10a63'
 settings:

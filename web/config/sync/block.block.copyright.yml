@@ -11,7 +11,7 @@ dependencies:
 id: copyright
 theme: b5subtheme
 region: footer
-weight: -14
+weight: -13
 provider: null
 plugin: 'block_content:85824304-4443-416b-9ed4-7b27f2441827'
 settings:

@@ -12,7 +12,7 @@ dependencies:
 id: views_block__dont_miss_block_2
 theme: b5subtheme
 region: content
-weight: -14
+weight: -18
 provider: null
 plugin: 'views_block:dont_miss-block_2'
 settings:

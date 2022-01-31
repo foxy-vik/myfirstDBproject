@@ -12,7 +12,7 @@ dependencies:
 id: views_block__make_it_modern_block_2
 theme: b5subtheme
 region: content
-weight: -12
+weight: -16
 provider: null
 plugin: 'views_block:make_it_modern-block_2'
 settings:

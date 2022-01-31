@@ -2,20 +2,31 @@ uuid: 664350a1-5f75-4567-bab1-65f2e894bdc6
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.restricted_html
   module:
+    - block_content
     - comment
+    - contact
     - contextual
+    - field_ui
     - file
+    - filter
+    - flag
+    - media
+    - menu_link_content
     - node
+    - paragraphs
     - path
     - system
+    - taxonomy
     - toolbar
     - tour
 _core:
   default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
 id: content_editor
 label: 'Content editor'
-weight: 2
+weight: -6
 is_admin: false
 permissions:
   - 'access administration pages'
@@ -24,10 +35,21 @@ permissions:
   - 'access files overview'
   - 'access toolbar'
   - 'access tour'
+  - 'administer block_content display'
+  - 'administer comment display'
+  - 'administer contact_message display'
+  - 'administer flagging display'
+  - 'administer media display'
+  - 'administer menu_link_content display'
+  - 'administer node display'
+  - 'administer paragraph display'
+  - 'administer taxonomy_term display'
   - 'administer url aliases'
+  - 'administer user display'
   - 'create url aliases'
   - 'edit own comments'
   - 'revert all revisions'
+  - 'use text format restricted_html'
   - 'view all revisions'
   - 'view own unpublished content'
   - 'view the administration theme'

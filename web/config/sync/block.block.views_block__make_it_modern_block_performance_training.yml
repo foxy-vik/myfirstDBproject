@@ -12,7 +12,7 @@ dependencies:
 id: views_block__make_it_modern_block_performance_training
 theme: b5subtheme
 region: sidebar_second
-weight: 0
+weight: -14
 provider: null
 plugin: 'views_block:make_it_modern-block_performance_training'
 settings:
