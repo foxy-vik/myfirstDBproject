@@ -7,12 +7,12 @@ dependencies:
 id: gadgets_path
 label: 'gadgets path'
 type: 'canonical_entities:node'
-pattern: '/Technology/[node:menu-link:parent]/[node:title]'
+pattern: '[node:original:field_tax_gadg]/[node:title]'
 selection_criteria:
-  49f78e29-c02a-4023-8b9c-026594bb8fbf:
+  79b4bf2a-b939-4554-9a95-7f346a66e34c:
     id: node_type
     negate: false
-    uuid: 49f78e29-c02a-4023-8b9c-026594bb8fbf
+    uuid: 79b4bf2a-b939-4554-9a95-7f346a66e34c
     context_mapping:
       node: node
     bundles:

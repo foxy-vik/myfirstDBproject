@@ -1,0 +1,24 @@
+uuid: ca933821-005b-4d53-8857-30d431c2cad2
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comments
+    - field.storage.comment.field_comment_date
+  module:
+    - datetime
+id: comment.comments.field_comment_date
+field_name: field_comment_date
+entity_type: comment
+bundle: comments
+label: 'comment date'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime
