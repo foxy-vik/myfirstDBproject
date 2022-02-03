@@ -1,0 +1,22 @@
+uuid: e8c5d928-a55f-449b-b370-e5f05b438235
+langcode: en
+status: false
+dependencies:
+  config:
+    - block_content.type.copyright
+    - core.entity_view_mode.block_content.token
+    - field.field.block_content.copyright.field_copyright
+id: block_content.copyright.token
+targetEntityType: block_content
+bundle: copyright
+mode: token
+content:
+  field_copyright:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: top
+hidden: {  }

@@ -1,0 +1,28 @@
+uuid: 19268d90-9dcb-43a6-981f-211f28eb2643
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_author
+    - field.storage.block_content.field_author_link_
+  module:
+    - link
+id: block_content.block_author.field_author_link_
+field_name: field_author_link_
+entity_type: block_content
+bundle: block_author
+label: 'author link '
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    attributes: {  }
+    uri: 'http://www.tagdiv.com'
+    title: 'http://www.tagdiv.com'
+    options: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

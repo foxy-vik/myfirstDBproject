@@ -1,0 +1,19 @@
+uuid: 4c89a27f-1e0d-4f70-92e1-c70eae15fe3f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_auth_text
+field_name: field_auth_text
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

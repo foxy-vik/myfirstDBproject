@@ -1,0 +1,49 @@
+uuid: 3b55a1b3-d75c-41f6-a32b-f5028383b2de
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.stay_connected
+    - field.field.block_content.stay_connected.field_para_twitter
+    - field.field.block_content.stay_connected.field_para_youtube
+    - field.field.block_content.stay_connected.field_paragr_fa
+  module:
+    - entity_reference_revisions
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: block_content.stay_connected.default
+targetEntityType: block_content
+bundle: stay_connected
+mode: default
+content:
+  field_para_twitter:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_para_youtube:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_paragr_fa:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

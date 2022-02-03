@@ -1,0 +1,52 @@
+uuid: 4f7bbd0b-85ce-4f50-be9d-b2fdd8804344
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.social_media_links_block_buttons.field_facebook_fiels
+    - field.field.paragraph.social_media_links_block_buttons.field_minuse
+    - field.field.paragraph.social_media_links_block_buttons.field_plus
+    - field.field.paragraph.social_media_links_block_buttons.field_share
+    - paragraphs.paragraphs_type.social_media_links_block_buttons
+  module:
+    - field_layout
+    - fontawesome
+    - layout_discovery
+    - social_media_links_field
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.social_media_links_block_buttons.default
+targetEntityType: paragraph
+bundle: social_media_links_block_buttons
+mode: default
+content:
+  field_facebook_fiels:
+    type: social_media_links_field_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_minuse:
+    type: fontawesome_icon_widget
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_plus:
+    type: fontawesome_icon_widget
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_share:
+    type: fontawesome_icon_widget
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

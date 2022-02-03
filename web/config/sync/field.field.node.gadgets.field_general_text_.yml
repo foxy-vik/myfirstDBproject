@@ -1,0 +1,24 @@
+uuid: 1a9dd2f6-ee43-4203-85c9-73dd3916c576
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_general_text_
+    - node.type.gadgets
+  module:
+    - text
+id: node.gadgets.field_general_text_
+field_name: field_general_text_
+entity_type: node
+bundle: gadgets
+label: 'Text for front'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<p>We woke reasonably late following the feast and free flowing wine the night before. After gathering ourselves and our packs, we headed down to our homestay family’s small dining room for breakfast.</p>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

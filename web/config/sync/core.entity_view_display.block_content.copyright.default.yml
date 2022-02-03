@@ -1,0 +1,21 @@
+uuid: cd842684-1cb7-48bd-8cf1-da02c2446192
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.copyright
+    - field.field.block_content.copyright.field_copyright
+id: block_content.copyright.default
+targetEntityType: block_content
+bundle: copyright
+mode: default
+content:
+  field_copyright:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: first
+hidden: {  }

@@ -1,0 +1,21 @@
+uuid: b34c5e0c-0ff8-4a10-8dc9-33059d567233
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_logo_about_us_follow_us
+    - field.storage.block_content.field_about_us
+  module:
+    - text
+id: block_content.footer_logo_about_us_follow_us.field_about_us
+field_name: field_about_us
+entity_type: block_content
+bundle: footer_logo_about_us_follow_us
+label: 'about us'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

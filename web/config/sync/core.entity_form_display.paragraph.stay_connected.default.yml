@@ -1,0 +1,49 @@
+uuid: 0978ac6b-4dcd-46fc-9478-13bebae82eec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.stay_connected.field_facebook_field
+    - field.field.paragraph.stay_connected.field_fans
+    - field.field.paragraph.stay_connected.field_like
+    - paragraphs.paragraphs_type.stay_connected
+  module:
+    - field_layout
+    - layout_discovery
+    - link
+    - social_media_links_field
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.stay_connected.default
+targetEntityType: paragraph
+bundle: stay_connected
+mode: default
+content:
+  field_facebook_field:
+    type: social_media_links_field_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_fans:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_like:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

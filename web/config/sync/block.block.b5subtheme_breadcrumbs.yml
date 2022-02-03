@@ -1,0 +1,34 @@
+uuid: 6c71e63b-e9f4-45cf-8c44-21732fae9c46
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+  theme:
+    - b5subtheme
+_core:
+  default_config_hash: 9oMZHR0012mNxwKlK2ipktgt7CWVlJLimMsqvka24BQ
+id: b5subtheme_breadcrumbs
+theme: b5subtheme
+region: content
+weight: -13
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Breadcrumbs gadgets'
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/Technology/gadgets/*'
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      gadgets: gadgets

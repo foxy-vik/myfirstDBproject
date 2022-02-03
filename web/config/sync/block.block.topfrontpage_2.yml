@@ -1,0 +1,25 @@
+uuid: 1eebe824-3933-43d0-8f1e-7030ae5be091
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:top_black_block_:8dec7007-af2d-47b7-b930-4ee8312365f8'
+  module:
+    - block_content
+  theme:
+    - b5subtheme
+id: topfrontpage_2
+theme: b5subtheme
+region: header
+weight: -12
+provider: null
+plugin: 'block_content:8dec7007-af2d-47b7-b930-4ee8312365f8'
+settings:
+  id: 'block_content:8dec7007-af2d-47b7-b930-4ee8312365f8'
+  label: 'top front page'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

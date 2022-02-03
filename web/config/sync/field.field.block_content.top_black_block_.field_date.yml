@@ -1,0 +1,24 @@
+uuid: 0812bcbf-a28f-41d2-a8ab-1decfcb4a498
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.top_black_block_
+    - field.storage.block_content.field_date
+  module:
+    - datetime
+id: block_content.top_black_block_.field_date
+field_name: field_date
+entity_type: block_content
+bundle: top_black_block_
+label: date
+description: '<div = ''weather''>[current-date:custom:Y]</div>'
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,21 @@
+uuid: 707b7bf7-b874-4c8e-93a7-bef8f6236a9a
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_label_follow_us
+field_name: field_label_follow_us
+entity_type: block_content
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

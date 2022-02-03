@@ -1,0 +1,19 @@
+uuid: 2ef38c47-4642-4404-aa41-ec3a98967245
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_text_under_pict_midle
+field_name: field_text_under_pict_midle
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

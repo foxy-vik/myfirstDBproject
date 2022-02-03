@@ -1,0 +1,47 @@
+uuid: 8049e167-391b-4df9-890d-ac88349f16b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_slider_menu
+    - system.menu.main
+  module:
+    - viewfield
+id: menu_link_content.main.field_slider_menu
+field_name: field_slider_menu
+entity_type: menu_link_content
+bundle: main
+label: 'slider menu'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  force_default: false
+  allowed_views:
+    comment: '0'
+    content: '0'
+    block_content: '0'
+    files: '0'
+    frontpage: '0'
+    main_banner: '0'
+    make_it_modern: '0'
+    media: '0'
+    media_library: '0'
+    user_admin_people: '0'
+    comments_recent: '0'
+    content_recent: '0'
+    taxonomy_term: '0'
+    trending_now: '0'
+    watchdog: '0'
+    who_s_new: '0'
+    who_s_online: '0'
+  allowed_display_types:
+    block: block
+    default: '0'
+    feed: '0'
+    page: '0'
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: viewfield

@@ -1,0 +1,25 @@
+uuid: cfd52e46-10e6-4d6b-be89-2b45b824671e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:copyright:85824304-4443-416b-9ed4-7b27f2441827'
+  module:
+    - block_content
+  theme:
+    - b5subtheme
+id: copyright
+theme: b5subtheme
+region: footer
+weight: -14
+provider: null
+plugin: 'block_content:85824304-4443-416b-9ed4-7b27f2441827'
+settings:
+  id: 'block_content:85824304-4443-416b-9ed4-7b27f2441827'
+  label: copyright
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: token
+visibility: {  }

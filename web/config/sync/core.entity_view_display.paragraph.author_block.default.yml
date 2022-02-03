@@ -1,0 +1,111 @@
+uuid: 2276f104-c486-4d04-8448-e8434208d25c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.author_block.field_auth_img
+    - field.field.paragraph.author_block.field_auth_link
+    - field.field.paragraph.author_block.field_auth_text
+    - paragraphs.paragraphs_type.author_block
+  module:
+    - layout_builder
+    - layout_discovery
+    - link
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          38e82f5b-b716-4b5a-93aa-2684dc83945e:
+            uuid: 38e82f5b-b716-4b5a-93aa-2684dc83945e
+            region: content
+            configuration:
+              id: 'field_block:paragraph:author_block:field_auth_img'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          98e2a98a-91a2-416b-bc67-1e1ab2357764:
+            uuid: 98e2a98a-91a2-416b-bc67-1e1ab2357764
+            region: content
+            configuration:
+              id: 'field_block:paragraph:author_block:field_auth_link'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: link
+                label: hidden
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          2ed4a2cf-772e-41f9-95a8-8c40f040dd57:
+            uuid: 2ed4a2cf-772e-41f9-95a8-8c40f040dd57
+            region: content
+            configuration:
+              id: 'field_block:paragraph:author_block:field_auth_text'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+id: paragraph.author_block.default
+targetEntityType: paragraph
+bundle: author_block
+mode: default
+content:
+  field_auth_img:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_auth_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_auth_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

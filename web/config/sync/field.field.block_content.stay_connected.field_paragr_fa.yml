@@ -1,0 +1,43 @@
+uuid: c0fe1dc1-f7c0-4874-a2fd-af474210d3b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.stay_connected
+    - field.storage.block_content.field_paragr_fa
+    - paragraphs.paragraphs_type.stay_connected
+  module:
+    - entity_reference_revisions
+id: block_content.stay_connected.field_paragr_fa
+field_name: field_paragr_fa
+entity_type: block_content
+bundle: stay_connected
+label: 'paragr fa'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      stay_connected: stay_connected
+    negate: 0
+    target_bundles_drag_drop:
+      author_block:
+        weight: 6
+        enabled: false
+      node_content_template:
+        weight: 7
+        enabled: false
+      social_column_for_stay_connect:
+        weight: 8
+        enabled: false
+      social_media_links_block_buttons:
+        weight: 9
+        enabled: false
+      stay_connected:
+        weight: 10
+        enabled: true
+field_type: entity_reference_revisions

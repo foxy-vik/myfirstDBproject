@@ -1,0 +1,21 @@
+uuid: 20bf05af-ca09-4c1c-b93f-ca6716a84466
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_auth_text
+    - paragraphs.paragraphs_type.author_block
+  module:
+    - text
+id: paragraph.author_block.field_auth_text
+field_name: field_auth_text
+entity_type: paragraph
+bundle: author_block
+label: 'auth text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

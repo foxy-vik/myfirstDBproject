@@ -1,0 +1,24 @@
+uuid: e5cded06-64b3-4736-a1ee-59693a12a2b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_pict2
+    - paragraphs.paragraphs_type.node_content_template
+  module:
+    - text
+id: paragraph.node_content_template.field_title_pict2
+field_name: field_title_pict2
+entity_type: paragraph
+bundle: node_content_template
+label: 'title pict2'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'City Guide for Vienna'
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text

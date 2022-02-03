@@ -1,0 +1,15 @@
+uuid: 7e2372d3-666c-4593-93e5-1d802e124171
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sR1M1docVrHEGikQQmZpzJIouiNkGuLubaXlSE3MAvo
+id: open_weather_map
+label: 'Open weather map'
+api_key: 0a66bec47e39d392b4606128466e0360
+base_url: 'https://api.openweathermap.org/data/2.5/weather'
+query: 'q=@location&appid=@api_key&lang=@language&units=metric'
+language: en
+location_service: weather_api_location_service_geonames
+address: 'New York'
+template: open_weather_map_entity_theme

@@ -1,0 +1,21 @@
+uuid: 12d10aea-010c-4d29-9561-01c5bdf1c50f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_top_image
+    - paragraphs.paragraphs_type.node_content_template
+id: paragraph.node_content_template.field_title_top_image
+field_name: field_title_top_image
+entity_type: paragraph
+bundle: node_content_template
+label: 'title top image'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Adderall and flirting with bulimia in an attempt to whittle herself'
+default_value_callback: ''
+settings: {  }
+field_type: string

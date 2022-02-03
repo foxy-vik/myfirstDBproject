@@ -1,0 +1,19 @@
+uuid: ca5cf682-2873-4753-8c31-490c053b89b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - link
+id: block_content.field_author_title_
+field_name: field_author_title_
+entity_type: block_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

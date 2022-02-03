@@ -1,0 +1,64 @@
+uuid: 98c134ad-fd60-4e85-865e-4552882357fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_logo_about_us_follow_us
+    - field.field.block_content.footer_logo_about_us_follow_us.field_about_us
+    - field.field.block_content.footer_logo_about_us_follow_us.field_follow_ua
+    - field.field.block_content.footer_logo_about_us_follow_us.field_label_follow_us
+    - field.field.block_content.footer_logo_about_us_follow_us.field_logo_footer
+  module:
+    - field_layout
+    - layout_discovery
+    - media_library
+    - social_media_links_field
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: block_content.footer_logo_about_us_follow_us.default
+targetEntityType: block_content
+bundle: footer_logo_about_us_follow_us
+mode: default
+content:
+  field_about_us:
+    type: text_textarea
+    weight: 28
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_follow_ua:
+    type: social_media_links_field_default
+    weight: 29
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_label_follow_us:
+    type: string_textfield
+    weight: 30
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_logo_footer:
+    type: media_library_widget
+    weight: 31
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
