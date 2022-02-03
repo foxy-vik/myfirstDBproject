@@ -1,8 +1,0 @@
-uuid: 1d7c264c-d793-464c-938e-020adb8c3a2c
-langcode: en
-status: true
-dependencies: {  }
-id: comments
-label: Comments
-target_entity_type_id: block_content
-description: ''
