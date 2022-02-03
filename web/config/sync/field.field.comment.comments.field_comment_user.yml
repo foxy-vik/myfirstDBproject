@@ -1,0 +1,32 @@
+uuid: c1829b96-2d6d-4350-93aa-3f3bcdfb9eb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comments
+    - field.storage.comment.field_comment_user
+id: comment.comments.field_comment_user
+field_name: field_comment_user
+entity_type: comment
+bundle: comments
+label: 'comment user'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        content_editor: content_editor
+        administrator: administrator
+    include_anonymous: true
+field_type: entity_reference

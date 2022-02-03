@@ -5,14 +5,14 @@ dependencies:
   module:
     - node
 id: gadgets_path
-label: 'gadgets path'
+label: 'nodes path'
 type: 'canonical_entities:node'
-pattern: '/Technology/[node:menu-link:parent]/[node:title]'
+pattern: '/[node:title]'
 selection_criteria:
-  49f78e29-c02a-4023-8b9c-026594bb8fbf:
+  ddbb015c-134b-4dd3-b408-3dd1318f5ce0:
     id: node_type
     negate: false
-    uuid: 49f78e29-c02a-4023-8b9c-026594bb8fbf
+    uuid: ddbb015c-134b-4dd3-b408-3dd1318f5ce0
     context_mapping:
       node: node
     bundles:

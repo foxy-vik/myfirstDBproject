@@ -1,0 +1,30 @@
+uuid: 0f637447-0291-4f65-b5fa-addc3581b1dd
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:comments:3ea85cf9-8c03-408b-96f6-81b28f49e3ac'
+  module:
+    - block_content
+    - system
+  theme:
+    - b5subtheme
+id: comment
+theme: b5subtheme
+region: footer
+weight: -18
+provider: null
+plugin: 'block_content:3ea85cf9-8c03-408b-96f6-81b28f49e3ac'
+settings:
+  id: 'block_content:3ea85cf9-8c03-408b-96f6-81b28f49e3ac'
+  label: Comment
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/Technology/*'
