@@ -28,4 +28,5 @@ web/config/sync/.htaccess
 
 # Ignore ganarate by npm
 /web/themes/custom/**/node_modules
+/web/themes/custom/**/css
 
