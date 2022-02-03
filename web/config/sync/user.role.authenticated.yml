@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - filter.format.restricted_html
   module:
+    - back_to_top
     - comment
     - contact
     - filter
@@ -16,9 +18,10 @@ _core:
   default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
 id: authenticated
 label: 'Authenticated user'
-weight: 1
+weight: -7
 is_admin: false
 permissions:
+  - 'access back_to_top settings'
   - 'access comments'
   - 'access content'
   - 'access shortcuts'
@@ -27,4 +30,5 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'use text format restricted_html'
   - 'view media'
