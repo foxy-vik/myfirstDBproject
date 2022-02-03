@@ -7,16 +7,15 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/scss/style.scss":
 /*!*****************************!*\
   !*** ./src/scss/style.scss ***!
   \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://b5subtheme/./src/scss/style.scss?");
+eval("throw new Error(\"Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\\nHookWebpackError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\\nSassError: File to import not found or unreadable: ../../../../themes/contrib/bootstrap5/scss/style.\\n        on line 9 of src/scss/style.scss\\n>> @import '../../../../themes/contrib/bootstrap5/scss/style';\\n\\n   ^\\n\\n    at tryRunOrWebpackError (/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/webpack/lib/HookWebpackError.js:88:9)\\n    at __webpack_require_module__ (/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/webpack/lib/Compilation.js:5023:12)\\n    at __webpack_require__ (/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/webpack/lib/Compilation.js:4980:18)\\n    at /var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/webpack/lib/Compilation.js:5051:20\\n    at symbolIterator (/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/neo-async/async.js:3485:9)\\n    at done (/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/neo-async/async.js:3527:9)\\n    at Hook.eval [as callAsync] (eval at create (/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:13:1)\\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/tapable/lib/Hook.js:18:14)\\n    at /var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/webpack/lib/Compilation.js:4958:43\\n    at symbolIterator (/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/neo-async/async.js:3482:9)\\n-- inner error --\\nError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\\nSassError: File to import not found or unreadable: ../../../../themes/contrib/bootstrap5/scss/style.\\n        on line 9 of src/scss/style.scss\\n>> @import '../../../../themes/contrib/bootstrap5/scss/style';\\n\\n   ^\\n\\n    at Object.<anonymous> (/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/css-loader/dist/cjs.js!/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/sass-loader/dist/cjs.js!/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/src/scss/style.scss:1:7)\\n    at /var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/webpack/lib/javascript/JavascriptModulesPlugin.js:432:11\\n    at Hook.eval [as call] (eval at create (/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/tapable/lib/HookCodeFactory.js:19:10), <anonymous>:5:1)\\n    at Hook.CALL_DELEGATE [as _call] (/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/tapable/lib/Hook.js:14:14)\\n    at /var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/webpack/lib/Compilation.js:5025:39\\n    at tryRunOrWebpackError (/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/webpack/lib/HookWebpackError.js:83:7)\\n    at __webpack_require_module__ (/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/webpack/lib/Compilation.js:5023:12)\\n    at __webpack_require__ (/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/webpack/lib/Compilation.js:4980:18)\\n    at /var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/webpack/lib/Compilation.js:5051:20\\n    at symbolIterator (/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/neo-async/async.js:3485:9)\\n\\nGenerated code for /var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/css-loader/dist/cjs.js!/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/node_modules/sass-loader/dist/cjs.js!/var/www/docker4Drupal/docker4drupal/developSite/web/themes/custom/b5subtheme/src/scss/style.scss\\n1 | throw new Error(\\\"Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\\\\nSassError: File to import not found or unreadable: ../../../../themes/contrib/bootstrap5/scss/style.\\\\n        on line 9 of src/scss/style.scss\\\\n>> @import '../../../../themes/contrib/bootstrap5/scss/style';\\\\n\\\\n   ^\\\\n\\\");\");\n\n//# sourceURL=webpack://b5subtheme/./src/scss/style.scss?");
 
 /***/ }),
 
@@ -26,7 +25,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/style.scss */ \"./src/scss/style.scss\");\n\n\n\n//# sourceURL=webpack://b5subtheme/./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/style.scss */ \"./src/scss/style.scss\");\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\n\n//# sourceURL=webpack://b5subtheme/./src/index.js?");
 
 /***/ })
 
@@ -57,6 +57,35 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scs
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
