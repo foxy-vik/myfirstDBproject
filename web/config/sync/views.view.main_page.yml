@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.main_page_mode
     - system.menu.admin
   module:
     - node
@@ -144,7 +144,8 @@ display:
       row:
         type: 'entity:node'
         options:
-          view_mode: teaser
+          relationship: none
+          view_mode: main_page_mode
       query:
         type: views_query
         options:
