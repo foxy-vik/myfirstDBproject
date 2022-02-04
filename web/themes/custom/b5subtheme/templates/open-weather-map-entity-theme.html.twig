@@ -1,0 +1,9 @@
+<div class="weather-details-{{ weather_details.plugin_id }} block-uuid-{{ weather_details.uuid }}">
+  {% if weather_details %}
+    {% for weather in weather_details.weather %}
+      <div class="weather"><div class="weather_city-name">{{ weather_details.name }}</div> <img class="weather_img" src="http://openweathermap.org/img/wn/{{ weather.icon }}.png"/> <div class="weather_temp">{{ weather_details.main.temp }}°С</div>
+        <div> {{ weather_details.updated_time |date("l, F d,  Y") }}</div>
+      </div>
+     {% endfor %}
+  {% endif %}
+</div>
