@@ -1,4 +1,4 @@
-@import "components/header";
+
 
 // Sub theme styling.
 @import 'variables_drupal';
@@ -9,3 +9,5 @@
 
 // Include bootstrap.
 @import '../../../../../themes/contrib/bootstrap5/scss/style';
+
+@import "components/header";

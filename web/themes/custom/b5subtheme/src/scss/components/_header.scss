@@ -1,0 +1,35 @@
+.region-header {
+  background-color: #222222;
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1170px;
+    margin: 0 auto;
+    color: #ffffff;
+    line-height: 28px;
+    font-family: 'Open Sans', 'Open Sans Regular', sans-serif;
+    font-size: 11px;
+
+    .weather {
+      display: flex;
+    }
+
+    .social-media-links--platforms{
+      display: flex;
+      li a{
+        color: #ffffff;
+      }
+    }
+
+    //menu in the top
+    .navbar-nav{
+      flex-direction: row;
+      li a{
+        color: #ffffff;
+      }
+    }
+  }
+
+}
+
