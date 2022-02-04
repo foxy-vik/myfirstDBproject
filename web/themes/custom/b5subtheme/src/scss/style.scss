@@ -10,4 +10,9 @@
 // Include bootstrap.
 @import '../../../../../themes/contrib/bootstrap5/scss/style';
 
+//functions
+@import "mixits";
+
+//main components
 @import "components/header";
+
