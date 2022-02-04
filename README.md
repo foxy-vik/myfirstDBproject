@@ -26,27 +26,36 @@ Follow [Docker4Drupal environment setup instructions](https://wodby.com/docs/1.0
     git clone -b stage git@github.com:foxy-vik/myfirstDBproject.git drupal9
     cd drupal9
     ```
-
+ ```
     drush config-set "system.site" uuid "fe7ea394-0677-4156-969d-5b33afb70dee"
-    
-    
-    
-    
-    
-    
-    
-    
+
+ ```
+
 
 2. Initialize the site
 
     This will initialize local settings and install the site via drush
 
     ```
-    fin init
+    docker-compose up -d
     ```
    A `composer.lock` file will be generated. This file should be committed to your repository.
+3. Compilation of styles
 
-3. Point your browser to
+
+    ```
+    npm init
+    npm install webpack --save-dev
+    npm install webpack-cli --save-dev
+
+    npm i css-loader sass-loader node-sass mini-css-extract-plugin --save-dev
+    ```
+  once run
+      ```
+      npm run build
+      ```
+
+5. Point your browser to
 
     ```
     http://drupal9.docksal
