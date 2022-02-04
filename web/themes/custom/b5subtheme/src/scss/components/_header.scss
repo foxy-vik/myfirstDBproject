@@ -1,0 +1,76 @@
+//@import "mixits";
+.region-header {
+  background-color: #222222;
+
+  .container {
+    display: flex;
+    max-width: 1170px;
+    margin: 0 auto;
+    color: #ffffff;
+    line-height: 28px;
+    font-family: 'Open Sans', 'Open Sans Regular', sans-serif;
+    font-size: 11px;
+
+    .weather {
+      display: flex;
+      margin-right: 20px;
+      align-items: center;
+
+      &_img {
+        @include size(18px, 18px);
+      }
+
+      &_temp {
+        padding-inline: 5px;;
+      }
+
+      &_city-name {
+        font-weight: bold;
+        margin-right: 20px;
+      }
+    }
+
+
+    //menu in the top
+    .navbar-nav {
+      flex-direction: row;
+      gap: 14px;
+
+      li a {
+        color: #ffffff;
+        padding-block: 2px;
+      }
+    }
+
+    .block-block-content {
+      margin-left: auto;
+
+      .social-media-links--platforms {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+
+        li {
+          @include size(22.8px, 22.8px);
+
+          a {
+            color: #ffffff;
+            padding-block: 2px;
+
+            svg {
+              font-size: 14px;
+              vertical-align: middle;
+              line-height: 22.8px;
+              margin: 2.5px 5px 2.5px 0;
+            }
+          }
+
+        }
+      }
+    }
+
+
+  }
+
+}
+
