@@ -1,0 +1,38 @@
+uuid: 0917cfae-060a-46ce-beda-6eaed62709fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.advertising
+    - field.field.block_content.advertising.field_ad_pict
+    - field.field.block_content.advertising.field_ad_title
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: block_content.advertising.default
+targetEntityType: block_content
+bundle: advertising
+mode: default
+content:
+  field_ad_pict:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_ad_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

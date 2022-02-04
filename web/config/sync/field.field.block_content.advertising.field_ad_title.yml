@@ -1,0 +1,24 @@
+uuid: d9b0e1ac-8646-46d0-8e64-e16f5c6b463c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.advertising
+    - field.storage.block_content.field_ad_title
+  module:
+    - text
+id: block_content.advertising.field_ad_title
+field_name: field_ad_title
+entity_type: block_content
+bundle: advertising
+label: ad_title
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '- Advertisement -'
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text
