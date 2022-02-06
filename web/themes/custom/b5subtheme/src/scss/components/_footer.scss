@@ -1,6 +1,9 @@
 .footer-light {
-  background-color: $black;
-  padding-bottom: 0;
+  //background-image:url("https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2021/06/footer-bg1.jpg");
+  //background-size:cover;
+  //background-position:center top;
+  //padding-bottom: 0;
+  background-color: #0c0d0e;
 
   //bottom copyright
   .menu--footer-menu {
@@ -12,7 +15,7 @@
       font-size: 12px;
       line-height: 34px;
       margin: 0;
-      font-family: open sans,open sans regular,sans-serif;;
+      font-family: open sans,open sans regular,sans-serif;
     }
 
 // right menu
@@ -39,4 +42,7 @@
       }
     }
   }
+  @import "footer-middle";
 }
+
+
