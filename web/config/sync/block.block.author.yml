@@ -1,0 +1,38 @@
+uuid: 4797e5ff-1a2a-463a-aaa7-983d6cd8aed4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_author:0694001b-f440-40b3-a916-22c590f8e9d9'
+  module:
+    - block_content
+    - node
+    - system
+  theme:
+    - b5subtheme
+id: author
+theme: b5subtheme
+region: sidebar_second
+weight: -17
+provider: null
+plugin: 'block_content:0694001b-f440-40b3-a916-22c590f8e9d9'
+settings:
+  id: 'block_content:0694001b-f440-40b3-a916-22c590f8e9d9'
+  label: author
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      fashion: fashion
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/fashion/*'

@@ -1,8 +1,8 @@
-//@import "mixins";
+//@import "mixits";
 .region-header {
   background-color: #222222;
-@import "header_logo";
-   .container {
+
+  .container {
     display: flex;
     max-width: 1170px;
     margin: 0 auto;
@@ -10,7 +10,7 @@
     line-height: 28px;
     font-family: 'Open Sans', 'Open Sans Regular', sans-serif;
     font-size: 11px;
-    flex-direction: column;
+
     .weather {
       display: flex;
       margin-right: 20px;
