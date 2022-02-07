@@ -1,0 +1,25 @@
+uuid: c50e0a59-aef4-4a28-8aa2-ea3cfc510198
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:advertising:c40ef7ba-0ad0-4266-9142-1f5a61c4630a'
+  module:
+    - block_content
+  theme:
+    - b5subtheme
+id: adverttop
+theme: b5subtheme
+region: nav_branding
+weight: -18
+provider: null
+plugin: 'block_content:c40ef7ba-0ad0-4266-9142-1f5a61c4630a'
+settings:
+  id: 'block_content:c40ef7ba-0ad0-4266-9142-1f5a61c4630a'
+  label: 'advert top'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

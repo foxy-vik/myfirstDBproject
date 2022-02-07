@@ -1,0 +1,63 @@
+#block-footerbottom {
+  font-family: open sans,open sans regular,sans-serif;
+  .field--name-field-logo-footer {
+    margin-top: 37px;
+    img {
+      width: 231px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  //ABOUT US
+  .field--name-field-about-us {
+    color: $white;
+
+    .field__label {
+      text-transform: uppercase;
+    }
+    .field__item{
+      color: #eaeaea;
+      font-size: 14px;
+      line-height: 1.6;
+      .follow-us__mail{
+        color: #1aa4ce;;
+      }
+    }
+  }
+
+  //FOLLOW US
+  .layout__region--third {
+    .field--name-field-label-follow-us {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: white !important;
+
+
+    }
+
+    .block-field-blockblock-contentfooter-logo-about-us-follow-usfield-follow-ua {
+      .social-media-links--platforms {
+        display: flex;
+        gap: 15px;
+        li{
+          @include size(39.2px, 39.2px);
+          border: 1px solid rgba(255,255,255,0.03);
+          border-radius: 10%;
+          background: rgba(255,255,255,0.03);;
+          a{
+            padding-left: 10px;
+            font-size: 14px;
+            vertical-align: middle;
+            line-height: 39.2px;
+            color: $white;
+            &:hover{
+              color: #1aa4ce;;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
