@@ -7,9 +7,73 @@
 
   //top part of the footer
   #block-footertopblock{
-    .layout__region--first{}
-    .layout__region--second{}
-    .layout__region--third{}
+    .layout__region--first{
+      .views-element-container{
+        h2{
+          font-size: 17px;
+          font-weight: bold;
+          margin-top: 0;
+          margin-bottom: 16px;
+          line-height: 31px;
+          text-align: left;
+          color:$white;
+          text-transform: uppercase;
+        }
+        .gadget-row{
+          display: flex;
+          flex-direction: column;
+          .gadget-col{
+
+          }
+        }
+      }
+    }
+    .layout__region--second{
+      .views-element-container{
+        h2{
+          font-size: 17px;
+          font-weight: bold;
+          margin-top: 0;
+          margin-bottom: 16px;
+          line-height: 31px;
+          text-align: left;
+          color:$white;
+          text-transform: uppercase;
+
+        }
+      }
+    }
+    .layout__region--third{
+      .views-element-container{
+        h2{
+          font-size: 17px;
+          font-weight: bold;
+          margin-top: 0;
+          margin-bottom: 16px;
+          line-height: 31px;
+          text-align: left;
+          color:$white;
+          text-transform: uppercase;
+        }
+        .popular-item{
+          display: flex;
+          justify-content: space-between;
+          color: #ffffff;
+
+          a{
+            color: #ffffff;
+            text-decoration: none;
+          }
+          &:hover{
+            color:#4db2ec;
+            a{
+              color:#4db2ec;
+            }
+          }
+
+        }
+      }
+    }
 
   }
 
