@@ -5,6 +5,14 @@
   //padding-bottom: 0;
   background-color: #0c0d0e;
 
+  //top part of the footer
+  #block-footertopblock{
+    .layout__region--first{}
+    .layout__region--second{}
+    .layout__region--third{}
+
+  }
+
   //bottom copyright
   .menu--footer-menu {
     display: flex;
