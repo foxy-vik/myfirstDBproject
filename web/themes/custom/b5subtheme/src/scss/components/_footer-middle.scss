@@ -12,6 +12,30 @@
     padding-top: 10px;
     padding-bottom: 30px;
     margin-top: 38px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .layout__region--first{
+      flex: 0 1 26%;
+      @media (min-width: 768px) {
+        padding-inline: 14px;
+      }
+    }
+    .layout__region--second{
+      flex: 0 1 41%;
+      @media (min-width: 768px) {
+        padding-inline: 14px;
+      }
+    }
+
+    .layout__region--third {
+      flex: 1 1 20%;
+      @media (min-width: 768px) {
+        padding-inline: 14px;
+      }
+    }
 
     .field--name-field-logo-footer {
       margin-top: 37px;
@@ -19,22 +43,37 @@
       img {
         width: 231px;
         display: block;
-        margin: 0 auto;
-      }
+        @media (max-width: 768px) {
+          width: 272px;
+          margin-bottom: 50px;
+        }
+        }
     }
 
     //ABOUT US
     .field--name-field-about-us {
       color: $white;
 
+      @media (max-width: 768px) {
+        margin-bottom: 50px;
+      }
+
       .field__label {
         text-transform: uppercase;
+        margin-top: 10px;
+        margin-bottom: 26px;
+        @media (max-width: 768px) {
+          text-align: center;
+        }
       }
 
       .field__item {
         color: #eaeaea;
         font-size: 14px;
         line-height: 1.6;
+        @media (max-width: 768px) {
+          text-align: center;
+        }
 
         .follow-us__mail {
           color: #1aa4ce;;
@@ -47,9 +86,12 @@
       .field--name-field-label-follow-us {
         text-transform: uppercase;
         font-weight: bold;
-        color: white !important;
-
-
+        color: $white;
+        margin-top: 10px;
+        margin-bottom: 26px;
+        @media (max-width: 768px) {
+          text-align: center;
+        }
       }
 
       .block-field-blockblock-contentfooter-logo-about-us-follow-usfield-follow-ua {
