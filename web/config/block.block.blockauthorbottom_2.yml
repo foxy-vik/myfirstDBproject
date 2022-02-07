@@ -1,0 +1,30 @@
+uuid: 42df6ee0-9d3a-4396-97e9-d63979625fec
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:block_author:ec9b5ddc-1d68-4410-955f-e1eadff10a63'
+  module:
+    - block_content
+    - system
+  theme:
+    - b5subtheme
+id: blockauthorbottom_2
+theme: b5subtheme
+region: content
+weight: -13
+provider: null
+plugin: 'block_content:ec9b5ddc-1d68-4410-955f-e1eadff10a63'
+settings:
+  id: 'block_content:ec9b5ddc-1d68-4410-955f-e1eadff10a63'
+  label: 'block author bottom'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /author
