@@ -1,8 +1,11 @@
-
 //bottom copyright
 .menu--footer-menu {
+  margin-bottom: -32px;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 
   h5 {
     color: #cccccc;
@@ -16,6 +19,14 @@
   .navbar-nav {
     flex-direction: row;
     padding-block: 8px;
+
+    @media (max-width: 768px) {
+      justify-content: flex-end;
+      padding-block: 4px;
+      li a{
+        padding-inline: 2px;
+      }
+    }
 
     li {
       margin-left: 8px;
