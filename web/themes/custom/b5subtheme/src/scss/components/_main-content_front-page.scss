@@ -1,0 +1,110 @@
+.node__content {
+  .block-views-blocktest-field2-block-trending-now {
+    position: relative;
+    @media (max-width: 768px) {
+      display: none;
+    }
+    &:hover{
+      h2{
+        background-color: $colorHover;
+      }
+    }
+
+    h2 {
+      background-color: #222;
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      padding: 2px 10px 1px;
+      line-height: 22px;
+      text-transform: uppercase;
+      color: #fff;
+      -webkit-transition: background-color 0.3s;
+      transition: background-color 0.3s;
+      cursor: default;
+      -webkit-user-select: none;
+      user-select: none;
+      position: absolute;
+      top: 0;
+      left: 28px;
+      @media (max-width: 992px) {
+        left: 0px;
+      }
+
+      &:hover {
+        background-color: $colorHover;
+      }
+    }
+
+    .slick-list {
+      max-width: 800px;
+      margin: 0 auto;
+      @media (max-width: 1200px) {
+        max-width: 550px;
+      }
+      @media (max-width: 992px) {
+        max-width: 480px;
+      }
+
+
+
+      .field-content {
+        font-size: 15px;
+        line-height: 25px;
+        margin: 0;
+
+        a {
+          color: #111;
+          text-transform: capitalize;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .slick__arrow {
+      width: 6%;
+      left: 93%;
+      @media (max-width: 1200px) {
+        width: 8%;
+      }
+      @media (max-width: 992px) {
+        width: 9%;
+      }
+
+      button {
+        margin-right: 7px;
+        width: 25px;
+        height: 25px;
+        color: #b7b7b7;
+        border: 1px solid #dcdcdc;
+        border-radius: 0;
+
+        &::before {
+          content: "<";
+          border-radius: 0;
+          color: #b7b7b7;
+          font-size: 10px;
+          line-height: 22px;
+          text-align: center;
+          vertical-align: middle;
+          font-weight: bold;
+        }
+
+        &:hover {
+          background-color: #4db2ec;
+          border-color: #4db2ec;
+
+          &::before {
+            color: #fff;
+          }
+        }
+      }
+
+      .slick-next {
+        &::before {
+          content: ">";
+        }
+      }
+    }
+
+  }
+}
