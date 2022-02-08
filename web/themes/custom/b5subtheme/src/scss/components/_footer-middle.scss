@@ -1,62 +1,124 @@
 #block-footerbottom {
-  font-family: open sans,open sans regular,sans-serif;
-  .field--name-field-logo-footer {
-    margin-top: 37px;
-    img {
-      width: 231px;
-      display: block;
-      margin: 0 auto;
-    }
+  //line under middle part
+  .middle-grey-line {
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
-  //ABOUT US
-  .field--name-field-about-us {
-    color: $white;
-
-    .field__label {
-      text-transform: uppercase;
+  .layout--threecol-section {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    margin-top: 38px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
     }
-    .field__item{
-      color: #eaeaea;
-      font-size: 14px;
-      line-height: 1.6;
-      .follow-us__mail{
-        color: #1aa4ce;;
+
+    .layout__region--first{
+      flex: 0 1 26%;
+      @media (min-width: 768px) {
+        padding-inline: 14px;
       }
     }
-  }
-
-  //FOLLOW US
-  .layout__region--third {
-    .field--name-field-label-follow-us {
-      text-transform: uppercase;
-      font-weight: bold;
-      color: white !important;
-
-
+    .layout__region--second{
+      flex: 0 1 41%;
+      @media (min-width: 768px) {
+        padding-inline: 14px;
+      }
     }
 
-    .block-field-blockblock-contentfooter-logo-about-us-follow-usfield-follow-ua {
-      .social-media-links--platforms {
-        display: flex;
-        gap: 15px;
-        li{
-          @include size(39.2px, 39.2px);
-          border: 1px solid rgba(255,255,255,0.03);
-          border-radius: 10%;
-          background: rgba(255,255,255,0.03);;
-          a{
-            padding-left: 10px;
-            font-size: 14px;
-            vertical-align: middle;
-            line-height: 39.2px;
-            color: $white;
-            &:hover{
-              color: #1aa4ce;;
-            }
-          }
+    .layout__region--third {
+      flex: 1 1 20%;
+      @media (min-width: 768px) {
+        padding-inline: 14px;
+      }
+    }
+
+    .field--name-field-logo-footer {
+      margin-top: 37px;
+
+      img {
+        width: 231px;
+        display: block;
+        @media (max-width: 768px) {
+          width: 272px;
+          margin-bottom: 50px;
+        }
+        }
+    }
+
+    //ABOUT US
+    .field--name-field-about-us {
+      color: $white;
+
+      @media (max-width: 768px) {
+        margin-bottom: 50px;
+      }
+
+      .field__label {
+        text-transform: uppercase;
+        margin-top: 10px;
+        margin-bottom: 26px;
+        @media (max-width: 768px) {
+          text-align: center;
+        }
+      }
+
+      .field__item {
+        color: #eaeaea;
+        font-size: 14px;
+        line-height: 1.6;
+        @media (max-width: 768px) {
+          text-align: center;
         }
 
+        .follow-us__mail {
+          color: #1aa4ce;;
+        }
+      }
+    }
+
+    //FOLLOW US
+    .layout__region--third {
+      .field--name-field-label-follow-us {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $white;
+        margin-top: 10px;
+        margin-bottom: 26px;
+        @media (max-width: 768px) {
+          text-align: center;
+        }
+      }
+
+      .block-field-blockblock-contentfooter-logo-about-us-follow-usfield-follow-ua {
+        .social-media-links--platforms {
+          display: flex;
+          gap: 15px;
+
+          li {
+            @include size(39.2px, 39.2px);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 10%;
+            background: rgba(255, 255, 255, 0.03);;
+
+            a {
+              padding-left: 10px;
+              font-size: 14px;
+              vertical-align: middle;
+              line-height: 39.2px;
+              color: $white;
+
+              &:hover {
+                color: #1aa4ce;;
+              }
+            }
+          }
+
+        }
       }
     }
   }
