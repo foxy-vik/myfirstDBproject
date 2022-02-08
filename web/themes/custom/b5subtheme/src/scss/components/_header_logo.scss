@@ -1,15 +1,26 @@
-.region-nav-branding {
+.navbar {
   .container {
-    display: flex;
-    .block-system-branding-block{
-      .navbar-brand{
-        img{
-          width: 272px;
-          height: 90px;
+    flex-direction: column;
+    flex-grow: 1;
+
+    .region-nav-branding {
+      .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 28px;
+        padding-bottom: 9px;
+
+        .block-system-branding-block {
+          .navbar-brand {
+            img {
+              width: 272px;
+              height: 90px;
+            }
+          }
         }
       }
     }
-
   }
-
 }
+
