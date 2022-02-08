@@ -1,16 +1,28 @@
-//@import "mixits";
+//top of the header
 .region-header {
   background-color: #222222;
   max-height: 28px;
 
   .container {
     display: flex;
-    max-width: 1170px;
+    max-width: 1068px;
     margin: 0 auto;
     color: #ffffff;
     line-height: 28px;
     font-family: 'Open Sans', 'Open Sans Regular', sans-serif;
     font-size: 11px;
+    @media (max-width: 1200px) {
+      max-width: 1068px;
+      padding: 0;
+    }
+    @media (max-width: 1024px) {
+      max-width: 740px;
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
 
     .weather {
       display: flex;
@@ -39,7 +51,7 @@
 
       li a {
         color: #ffffff;
-        padding-block: 2px;
+        padding-block:0;
       }
     }
 
@@ -58,6 +70,10 @@
             color: #ffffff;
             padding-block: 2px;
 
+            &:hover{
+              color:$colorHover;
+            }
+
             svg {
               font-size: 14px;
               vertical-align: middle;
@@ -69,9 +85,9 @@
         }
       }
     }
-
-
   }
-
 }
+@import "header_logo";
+
+
 
