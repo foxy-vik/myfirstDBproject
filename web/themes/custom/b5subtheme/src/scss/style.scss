@@ -11,9 +11,10 @@
 @import '../../../../../themes/contrib/bootstrap5/scss/style';
 
 //functions
-@import "mixits";
+@import "mixins";
 
 //main components
 @import "components/header";
 @import "components/footer";
+@import "components/main-content";
 
