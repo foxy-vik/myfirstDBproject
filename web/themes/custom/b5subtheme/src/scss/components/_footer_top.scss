@@ -1,173 +1,187 @@
 //top part of the footer
 #block-footertopblock {
-  .layout__region--first {
-    .views-element-container {
-      h2 {
-        padding-left: 20px;
-        font-size: 17px;
-        font-weight: bold;
-        margin-top: 0;
-        margin-bottom: 16px;
-        line-height: 31px;
-        text-align: left;
-        color: $white;
-        text-transform: uppercase;
-      }
-
-      .gadget-row {
-        display: flex;
-        flex-direction: column;
-      }
-      .editor-picks-row{
-        display: flex;
-        gap:15px;
-        padding-inline: 20px;
-        padding-bottom: 13px;
-        margin-bottom: 13px;
-        .views-field-field-general-image-background{
-          min-width: 100px;
-        }
-        .views-field-fieldset{
-          .editor-pics-item{
-            padding-left: 16px;
-            .views-field-title {
-              margin-bottom: 6px;
-              a {
-                font-size: 14px;
-                line-height: 1.4;
-                font-weight: bold;
-                color: $white;
-                text-decoration: none;
-
-                &:hover {
-                  color: $colorHover;
-                }
-              }
-            }
-
-            .views-field-created {
-              .field-content {
-                font-size: 11px;
-                margin-bottom: 7px;
-                line-height: 1;
-                min-height: 17px;
-                color: #767676;
-                top: 2px;
-              }
-            }
-
-          }
-
-        }
-      }
+  .layout--threecol-section {
+    @media (max-width: 768px) {
+      flex-direction: column;
     }
-  }
+    .layout__region--first {
+      .views-element-container {
+        h2 {
+          padding-left: 20px;
+          font-size: 17px;
+          font-weight: bold;
+          margin-top: 0;
+          margin-bottom: 16px;
+          line-height: 31px;
+          text-align: left;
+          color: $white;
+          text-transform: uppercase;
+        }
 
-  //popular posts
-  .layout__region--second {
-    padding-inline: 24px;
-    .views-element-container {
-      h2 {
-        padding-left: 20px;
-        font-size: 17px;
-        font-weight: bold;
-        margin-top: 0;
-        margin-bottom: 16px;
-        line-height: 31px;
-        text-align: left;
-        color: $white;
-        text-transform: uppercase;
-      }
-
-      .gadget-row {
-        display: flex;
-        flex-direction: column;
-
-        .gadget-col {
-          width: 100% !important;
+        .gadget-row {
           display: flex;
+          flex-direction: column;
+        }
+
+        .editor-picks-row {
+          display: flex;
+          gap: 15px;
           padding-inline: 20px;
           padding-bottom: 13px;
           margin-bottom: 13px;
 
-          .views-field-fieldset-1 {
-            .popular-post-img{
-              min-width: 100px;
-              img {
-                width: 97px;
-                height: 68px;
+          .views-field-field-general-image-background {
+            min-width: 100px;
+          }
+
+          .views-field-fieldset {
+            .editor-pics-item {
+              padding-left: 16px;
+
+              .views-field-title {
+                margin-bottom: 6px;
+
+                a {
+                  font-size: 14px;
+                  line-height: 1.4;
+                  font-weight: bold;
+                  color: $white;
+                  text-decoration: none;
+
+                  &:hover {
+                    color: $colorHover;
+                  }
+                }
               }
+
+              .views-field-created {
+                .field-content {
+                  font-size: 11px;
+                  margin-bottom: 7px;
+                  line-height: 1;
+                  min-height: 17px;
+                  color: #767676;
+                  top: 2px;
+                }
+              }
+
             }
 
           }
+        }
+      }
+    }
 
-          .popular-post-item {
-            padding-left: 16px;
+    //popular posts
+    .layout__region--second {
+      padding-inline: 24px;
 
-            .views-field-title {
-              margin-bottom: 6px;
-              a {
-                font-size: 14px;
-                line-height: 1.4;
-                font-weight: bold;
-                color: $white;
-                text-decoration: none;
+      .views-element-container {
+        h2 {
+          padding-left: 20px;
+          font-size: 17px;
+          font-weight: bold;
+          margin-top: 0;
+          margin-bottom: 16px;
+          line-height: 31px;
+          text-align: left;
+          color: $white;
+          text-transform: uppercase;
+        }
 
-                &:hover {
-                  color: $colorHover;
+        .gadget-row {
+          display: flex;
+          flex-direction: column;
+
+          .gadget-col {
+            width: 100% !important;
+            display: flex;
+            padding-inline: 20px;
+            padding-bottom: 13px;
+            margin-bottom: 13px;
+
+            .views-field-fieldset-1 {
+              .popular-post-img {
+                min-width: 100px;
+
+                img {
+                  width: 97px;
+                  height: 68px;
+                }
+              }
+
+            }
+
+            .popular-post-item {
+              padding-left: 16px;
+
+              .views-field-title {
+                margin-bottom: 6px;
+
+                a {
+                  font-size: 14px;
+                  line-height: 1.4;
+                  font-weight: bold;
+                  color: $white;
+                  text-decoration: none;
+
+                  &:hover {
+                    color: $colorHover;
+                  }
+                }
+              }
+
+              .views-field-created {
+                .field-content {
+                  font-size: 11px;
+                  margin-bottom: 7px;
+                  line-height: 1;
+                  min-height: 17px;
+                  color: #767676;
+                  top: 2px;
                 }
               }
             }
-
-            .views-field-created {
-              .field-content {
-                font-size: 11px;
-                margin-bottom: 7px;
-                line-height: 1;
-                min-height: 17px;
-                color: #767676;
-                top: 2px;
-              }
-            }
           }
         }
       }
     }
-  }
-}
 
-//popular category
-.layout__region--third {
-  .views-element-container {
-    h2 {
-      font-size: 17px;
-      font-weight: bold;
-      margin-top: 0;
-      margin-bottom: 16px;
-      line-height: 31px;
-      text-align: left;
-      color: $white;
-      text-transform: uppercase;
-    }
 
-    .popular-item {
-      display: flex;
-      justify-content: space-between;
-      color: #ffffff;
+    //popular category
+    .layout__region--third {
+      .views-element-container {
+        h2 {
+          font-size: 17px;
+          font-weight: bold;
+          margin-top: 0;
+          margin-bottom: 16px;
+          line-height: 31px;
+          text-align: left;
+          color: $white;
+          text-transform: uppercase;
+        }
 
-      a {
-        color: #ffffff;
-        text-decoration: none;
-      }
+        .popular-item {
+          display: flex;
+          justify-content: space-between;
+          color: #ffffff;
 
-      &:hover {
-        color: #4db2ec;
+          a {
+            color: #ffffff;
+            text-decoration: none;
+          }
 
-        a {
-          color: #4db2ec;
+          &:hover {
+            color: #4db2ec;
+
+            a {
+              color: #4db2ec;
+            }
+          }
+
         }
       }
-
     }
   }
 }
