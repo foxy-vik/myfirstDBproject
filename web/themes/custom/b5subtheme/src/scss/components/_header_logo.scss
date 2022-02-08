@@ -2,20 +2,35 @@
   .container {
     flex-direction: column;
     flex-grow: 1;
+    @media (max-width: 1024px) {
+      max-width: 980px;
+      padding: 0;
+    }
 
     .region-nav-branding {
+      width: 100%;
+      @media (max-width: 768px) {
+        display: none;
+      }
+
       .container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         padding-top: 28px;
         padding-bottom: 9px;
+
 
         .block-system-branding-block {
           .navbar-brand {
             img {
               width: 272px;
-              height: 90px;
+              height: 34%;
+              @media (max-width: 992px) {
+                max-width: 220px;
+                margin-left: 16px;
+              }
             }
           }
         }

@@ -5,12 +5,20 @@
 
   .container {
     display: flex;
-    max-width: 1170px;
+    max-width: 1068px;
     margin: 0 auto;
     color: #ffffff;
     line-height: 28px;
     font-family: 'Open Sans', 'Open Sans Regular', sans-serif;
     font-size: 11px;
+    @media (max-width: 1200px) {
+      max-width: 1068px;
+      padding: 0;
+    }
+    @media (max-width: 1024px) {
+      max-width: 980px;
+      padding: 0;
+    }
 
     @media (max-width: 768px) {
       display: none;
