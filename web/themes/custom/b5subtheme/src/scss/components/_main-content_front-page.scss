@@ -1,285 +1,289 @@
-.node__content {
-  .block-views-blocktest-field2-block-trending-now {
-    margin-block: 24px;
-    position: relative;
-    @media (max-width: 768px) {
-      display: none;
-    }
-
-    &:hover {
-      h2 {
-        background-color: $colorHover;
-      }
-    }
-
-    h2 {
-      @include tags;
-      position: absolute;
-      top: 0;
-      left: 28px;
-    }
-
-    .slick-list {
-      padding-left: 150px;
-
-      .field-content {
-        font-size: 15px;
-        line-height: 25px;
-        margin: 0;
-
-        a {
-          color: $black;
-          text-transform: capitalize;
-          text-decoration: none;
-        }
-      }
-    }
-
-    .slick__arrow {
-      display: inline-block;
-      width: unset;
-      left: unset;
-      right: 80px;
-
-      button {
-        margin-right: 7px;
-        width: 25px;
-        height: 25px;
-        color: $colorBorderGray;
-        border: 1px solid #dcdcdc;
-        border-radius: 0;
-
-        &::before {
-          content: "<";
-          border-radius: 0;
-          color: $colorBorderGray;
-          font-size: 10px;
-          line-height: 22px;
-          text-align: center;
-          vertical-align: middle;
-          font-weight: bold;
-        }
-
-        &:hover {
-          background-color: $colorHover;
-          border-color: #4db2ec;
-
-          &::before {
-            color: $white;
-          }
-        }
-      }
-
-      .slick-next {
-        left: 30px;
-
-        &::before {
-          content: ">";
-        }
-      }
-    }
-
-  }
-}
-
-
-.layout--twocol-section--50-50 {
-  gap: 5px;
-  flex-wrap: nowrap;
-  @media (max-width: 768px) {
-    flex-direction: column;
-    //top-right element
-    .block-views-blockmain-banner-block-2 {
-      display: none;
-    }
-  }
-  //hidden tax term main banner
-  a {
-    &[href$="/taxonomy/term/34"] {
-      display: none;
-    }
-
-    &[href$="/taxonomy/term/33"] {
-      display: none;
-    }
-
-    &[href$="/taxonomy/term/16"] {
-      display: none;
-    }
-  }
-}
-
-//bottom-right elements
-.block-views-blockmain-banner-block-1 {
-  .view-content {
-    display: flex;
-    gap:5px;
-  }
-}
-
-//tag - article
-.node--view-mode-banner {
-  //overflow: hidden;
+.block-views-blocktest-field2-block-trending-now {
+  max-width: 1068px;
+  margin-block: 24px;
   position: relative;
-  max-width: 532px;
+  @media (max-width: 768px) {
+    display: none;
+  }
 
   &:hover {
-    .node__content {
-      .field__items {
-        .field__item {
-          a {
-            background-color: $colorHover;
-          }
-        }
-      }
-
-      .field__item {
-        img {
-          transform: scale(1.2);
-        }
-      }
-    }
-
-  }
-
-  .field--name-title {
-    font-size: 27px;
-    font-weight: bold;
-    line-height: 34px;
-    color: $white;
-    text-decoration: none;
-    position: absolute;
-    left: 20px;
-    bottom: 46px;
-    z-index: 10;
-    @media (max-width: 992px) {
-      font-size: 16px;
-      line-height: 21px;
-      left: 15px;
+    h2 {
+      background-color: $colorHover;
     }
   }
 
-  //author
-  .node__meta {
-    padding: 0;
+  h2 {
+    @include tags;
     position: absolute;
-    bottom: 26px;
-    left: 20px;
-    color: $white;
-    font-size: 11px;
-    line-height: 11px;
-    z-index: 2;
+    top: 0;
+    left: 28px;
+  }
 
+  .slick-list {
+    padding-left: 150px;
 
-    .field {
+    .field-content {
+      font-size: 15px;
+      line-height: 25px;
+      margin: 0;
+
       a {
-        font-weight: bold;
-        color: $white;
+        color: $black;
+        text-transform: capitalize;
         text-decoration: none;
       }
     }
   }
 
-  h2 {
-    margin-bottom: 4px;
-  }
+  .slick__arrow {
+    display: inline-block;
+    width: unset;
+    left: unset;
+    right: 80px;
 
-  .node__content {
-    .field__items {
-      position: absolute;
-      left: 20px;
-      bottom: 35%;
-      z-index: 3;
-      @media (max-width: 992px) {
-        left: 15px;
+    button {
+      margin-right: 7px;
+      width: 25px;
+      height: 25px;
+      color: $colorBorderGray;
+      border: 1px solid #dcdcdc;
+      border-radius: 0;
+
+      &::before {
+        content: "<";
+        border-radius: 0;
+        color: $colorBorderGray;
+        font-size: 10px;
+        line-height: 22px;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: bold;
       }
 
+      &:hover {
+        background-color: $colorHover;
+        border-color: #4db2ec;
 
-      .field__item {
-        a {
-          @include tags;
+        &::before {
+          color: $white;
         }
       }
     }
 
-    .field__item {
+    .slick-next {
+      left: 30px;
+
+      &::before {
+        content: ">";
+      }
+    }
+  }
+
+}
+
+
+//GRID block
+.layout__region--content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr) repeat(3, 0);
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+
+  .banner-authored-time {
+    display: flex;
+    color: $white;
+    font-size: 11px;
+    line-height: 11px;
+    margin-top: 8px;
+    //author
+    a {
+      font-weight: bold;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  .views-element-container {
+    overflow: hidden;
+    position: relative;
+
+    .views-field-fieldset-1 {
+      position: absolute;
+      left: 20px;
+      bottom: 26px;
+
+      .views-field-title {
+        a {
+          @include titleBanner(27px, 34px);
+        }
+      }
+
+      .views-field-field-tax-gadg {
+        li {
+          list-style: none;
+          margin-left: 0;
+        }
+
+        a {
+          @include tags();
+        }
+      }
+    }
+
+    .views-row {
       overflow: hidden;
+      margin-right: 5px;
 
       img {
         transition: 0.5s;
       }
 
-      .gradient {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transition: background-color 0.3s ease;
-        z-index: 1;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0));
+      &:hover {
+        .views-field-field-tax-gadg {
+          a {
+            background-color: $colorHover;
+          }
+        }
+
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .gradient {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 99%;
+      height: 100%;
+      transition: background-color 0.3s ease;
+      z-index: 0;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0));
+    }
+  }
+
+  .block-views-block-banner-grid-top-right-block-banner-grid-left {
+    max-height: $heightBanner;
+    grid-area: 1 / 1 / 3 / 3;
+  }
+
+  .block-views-block-banner-grid-top-right-block-1 {
+    margin-bottom: 4px;
+    grid-area: 1 / 3 / 2 / 5;
+
+    .main-part-of-banner {
+      .views-field-title {
+        a {
+          font-size: 24px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+
+  .block-views-block-banner-grid-top-right-block-2 {
+    grid-area: 2 / 3 / 3 / 4;
+
+    .main-part-of-banner {
+      .views-field-title {
+        a {
+          font-size: 16px;
+          line-height: 21px;
+        }
+      }
+    }
+  }
+
+  .block-views-block-banner-grid-top-right-block-3 {
+    grid-area: 2 / 4 / 3 / 5;
+
+    .main-part-of-banner {
+      .views-field-title {
+        a {
+          font-size: 16px;
+          line-height: 21px;
+        }
       }
     }
   }
 }
 
-//banner right - top block - unique
-.block-views-blockmain-banner-block-2 {
-  .node__content {
-    max-height: 223px;
-    overflow: hidden;
-    @media (max-width: 1200px) {
-      max-height: 198px;
-    }
-    @media (max-width: 992px) {
-      max-height: 152px;
-    }
-  }
+@include media-breakpoint-down(lg) {
+  .layout__region--content {
 
-  .field--name-title {
-    font-size: 24px;
-    line-height: 30px;
-    left: 20px;
-    bottom: 14px;
-    @media (max-width: 992px) {
-      font-size: 15px;
-      line-height: 20px;
-      left: 15px;
+    .block-views-block-banner-grid-top-right-block-banner-grid-left {
+      .main-part-of-banner {
+        .views-field-title {
+          a {
+            font-size: 16px;
+            line-height: 21px;
+          }
+        }
+      }
     }
-  }
-}
-
-//banner right - bottom block - unique
-.block-views-blockmain-banner-block-1 {
-  .node__content {
-    max-height: 223px;
-    overflow: hidden;
-    //margin-right: 5px;
-    @media (max-width: 1200px) {
-      max-height: 198px;
+    .block-views-block-banner-grid-top-right-block-1 {
+      .main-part-of-banner {
+        .views-field-title {
+          a {
+            font-size: 15px;
+            line-height: 20px;
+          }
+        }
+      }
     }
-    @media (max-width: 992px) {
-      max-height: 152px;
+    .block-views-block-banner-grid-top-right-block-2 {
+      .main-part-of-banner {
+        .views-field-title {
+          a {
+            font-size: 13px;
+            line-height: 18px;
+          }
+        }
+      }
     }
-  }
-
-  h2 {
-    margin-bottom: 0;
-  }
-
-  .field--name-title {
-    font-size: 16px;
-    line-height: 21px;
-    left: 20px;
-    bottom: 16px;
-    @media (max-width: 992px) {
-      font-size: 13px;
-      line-height: 18px;
-      left: 15px;
+    .block-views-block-banner-grid-top-right-block-3 {
+      .main-part-of-banner {
+        .views-field-title {
+          a {
+            font-size: 13px;
+            line-height: 18px;
+          }
+        }
+      }
     }
   }
 
 }
+
+@include media-breakpoint-down(md) {
+  .layout__region--content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) repeat(2, 0);
+    grid-template-rows: repeat(2, 1fr) repeat(3, 0);
+    grid-row-gap: 4px;
+
+    .block-views-block-banner-grid-top-right-block-banner-grid-left {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+
+    .block-views-block-banner-grid-top-right-block-1 {
+      display: none;
+    }
+
+    .block-views-block-banner-grid-top-right-block-2 {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .block-views-block-banner-grid-top-right-block-3 {
+      grid-area: 2 / 2 / 3 / 3;
+    }
+  }
+
+
+}
+
 
 
 
