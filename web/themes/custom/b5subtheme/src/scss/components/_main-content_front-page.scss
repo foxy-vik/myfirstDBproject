@@ -94,3 +94,21 @@
 
   }
 }
+
+
+
+.layout--twocol-section--50-50{
+  @media (max-width: 768px) {
+    flex-direction: column;
+    //top-right element
+    .block-views-blockmain-banner-block-2{
+      display: none;
+    }
+  }
+}
+//bottom-right elements
+.block-views-blockmain-banner-block-1{
+  .view-content{
+    display: flex;
+  }
+}
