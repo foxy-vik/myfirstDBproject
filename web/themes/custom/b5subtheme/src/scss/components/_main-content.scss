@@ -1,7 +1,5 @@
 main{
   padding: 0;
   margin: 0;
-  .region-content{
-    @import "main-content_front-page";
-  }
 }
+@import "main-content_front-page";

@@ -39,7 +39,7 @@
       display: inline-block;
       width: unset;
       left: unset;
-      right: 40px;
+      right: 80px;
 
       button {
         margin-right: 7px;
@@ -84,6 +84,8 @@
 
 
 .layout--twocol-section--50-50 {
+  gap: 5px;
+  flex-wrap: nowrap;
   @media (max-width: 768px) {
     flex-direction: column;
     //top-right element
@@ -111,9 +113,9 @@
 .block-views-blockmain-banner-block-1 {
   .view-content {
     display: flex;
+    gap:5px;
   }
 }
-
 
 //tag - article
 .node--view-mode-banner {
@@ -150,6 +152,11 @@
     left: 20px;
     bottom: 46px;
     z-index: 10;
+    @media (max-width: 992px) {
+      font-size: 16px;
+      line-height: 21px;
+      left: 15px;
+    }
   }
 
   //author
@@ -161,6 +168,8 @@
     color: $white;
     font-size: 11px;
     line-height: 11px;
+    z-index: 2;
+
 
     .field {
       a {
@@ -171,11 +180,20 @@
     }
   }
 
+  h2 {
+    margin-bottom: 4px;
+  }
+
   .node__content {
     .field__items {
       position: absolute;
       left: 20px;
-      bottom: 33%;
+      bottom: 35%;
+      z-index: 3;
+      @media (max-width: 992px) {
+        left: 15px;
+      }
+
 
       .field__item {
         a {
@@ -186,8 +204,20 @@
 
     .field__item {
       overflow: hidden;
+
       img {
         transition: 0.5s;
+      }
+
+      .gradient {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: background-color 0.3s ease;
+        z-index: 1;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0));
       }
     }
   }
@@ -195,7 +225,60 @@
 
 //banner right - top block - unique
 .block-views-blockmain-banner-block-2 {
-  height: 225px;
+  .node__content {
+    max-height: 223px;
+    overflow: hidden;
+    @media (max-width: 1200px) {
+      max-height: 198px;
+    }
+    @media (max-width: 992px) {
+      max-height: 152px;
+    }
+  }
+
+  .field--name-title {
+    font-size: 24px;
+    line-height: 30px;
+    left: 20px;
+    bottom: 14px;
+    @media (max-width: 992px) {
+      font-size: 15px;
+      line-height: 20px;
+      left: 15px;
+    }
+  }
+}
+
+//banner right - bottom block - unique
+.block-views-blockmain-banner-block-1 {
+  .node__content {
+    max-height: 223px;
+    overflow: hidden;
+    //margin-right: 5px;
+    @media (max-width: 1200px) {
+      max-height: 198px;
+    }
+    @media (max-width: 992px) {
+      max-height: 152px;
+    }
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .field--name-title {
+    font-size: 16px;
+    line-height: 21px;
+    left: 20px;
+    bottom: 16px;
+    @media (max-width: 992px) {
+      font-size: 13px;
+      line-height: 18px;
+      left: 15px;
+    }
+  }
+
 }
 
 
