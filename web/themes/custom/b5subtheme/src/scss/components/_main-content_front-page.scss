@@ -1,5 +1,6 @@
 .node__content {
   .block-views-blocktest-field2-block-trending-now {
+    margin-block: 24px;
     position: relative;
     @media (max-width: 768px) {
       display: none;
@@ -12,24 +13,10 @@
     }
 
     h2 {
-      background-color: $black;
-      font-family: 'Roboto', sans-serif;
-      font-size: 12px;
-      padding: 2px 10px 1px;
-      line-height: 22px;
-      text-transform: uppercase;
-      color: $white;
-      transition: background-color 0.3s;
+      @include tags;
       position: absolute;
       top: 0;
       left: 28px;
-      @media (max-width: 992px) {
-        left: 0;
-      }
-
-      &:hover {
-        background-color: $colorHover;
-      }
     }
 
     .slick-list {
@@ -96,19 +83,120 @@
 }
 
 
-
-.layout--twocol-section--50-50{
+.layout--twocol-section--50-50 {
   @media (max-width: 768px) {
     flex-direction: column;
     //top-right element
-    .block-views-blockmain-banner-block-2{
+    .block-views-blockmain-banner-block-2 {
+      display: none;
+    }
+  }
+  //hidden tax term main banner
+  a {
+    &[href$="/taxonomy/term/34"] {
+      display: none;
+    }
+
+    &[href$="/taxonomy/term/33"] {
+      display: none;
+    }
+
+    &[href$="/taxonomy/term/16"] {
       display: none;
     }
   }
 }
+
 //bottom-right elements
-.block-views-blockmain-banner-block-1{
-  .view-content{
+.block-views-blockmain-banner-block-1 {
+  .view-content {
     display: flex;
   }
 }
+
+
+//tag - article
+.node--view-mode-banner {
+  //overflow: hidden;
+  position: relative;
+  max-width: 532px;
+
+  &:hover {
+    .node__content {
+      .field__items {
+        .field__item {
+          a {
+            background-color: $colorHover;
+          }
+        }
+      }
+
+      .field__item {
+        img {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+  }
+
+  .field--name-title {
+    font-size: 27px;
+    font-weight: bold;
+    line-height: 34px;
+    color: $white;
+    text-decoration: none;
+    position: absolute;
+    left: 20px;
+    bottom: 46px;
+    z-index: 10;
+  }
+
+  //author
+  .node__meta {
+    padding: 0;
+    position: absolute;
+    bottom: 26px;
+    left: 20px;
+    color: $white;
+    font-size: 11px;
+    line-height: 11px;
+
+    .field {
+      a {
+        font-weight: bold;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .node__content {
+    .field__items {
+      position: absolute;
+      left: 20px;
+      bottom: 33%;
+
+      .field__item {
+        a {
+          @include tags;
+        }
+      }
+    }
+
+    .field__item {
+      overflow: hidden;
+      img {
+        transition: 0.5s;
+      }
+    }
+  }
+}
+
+//banner right - top block - unique
+.block-views-blockmain-banner-block-2 {
+  height: 225px;
+}
+
+
+

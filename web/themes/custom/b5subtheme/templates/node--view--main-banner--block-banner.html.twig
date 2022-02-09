@@ -82,14 +82,6 @@
   <div{{ content_attributes.addClass('node__content') }}>
     {{ content }}
   </div>
-  {% if display_submitted %}
-    <footer class="node__meta">
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %} {{ author_name }}  {% endtrans %}
-        {{ metadata |date("F d, Y")}}
-      </div>
-    </footer>
-  {% endif %}
   {{ title_prefix }}
   {% if label and not page %}
     <h2{{ title_attributes }}>
@@ -97,4 +89,13 @@
     </h2>
   {% endif %}
   {{ title_suffix }}
+  {% if display_submitted %}
+    <footer class="node__meta">
+      <div{{ author_attributes.addClass('node__submitted') }}>
+        {% set newsDate = node.getCreatedTime|date("- F j, Y") %}
+        {% trans %}
+          {{ author_name }}  {{ newsDate }} {% endtrans %}
+      </div>
+    </footer>
+  {% endif %}
 </article>
