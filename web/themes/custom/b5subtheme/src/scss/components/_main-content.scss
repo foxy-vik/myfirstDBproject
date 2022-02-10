@@ -2,5 +2,8 @@ main{
   padding: 0;
   margin: 0;
 }
+a{
+  text-decoration: none;
+}
 @import "main-content_front-page";
 @import "main-content_blocks";
