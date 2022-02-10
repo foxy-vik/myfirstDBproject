@@ -9,7 +9,7 @@ dependencies:
 id: weatherapientityblock
 theme: b5subtheme
 region: header
-weight: -13
+weight: -20
 provider: null
 plugin: weather_api_entity_block
 settings:

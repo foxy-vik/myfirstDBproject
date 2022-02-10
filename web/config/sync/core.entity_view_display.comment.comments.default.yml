@@ -1,0 +1,36 @@
+uuid: 0487aeec-d2ea-4251-bffa-da8044b03e02
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comments
+    - field.field.comment.comments.comment_body
+    - field.field.comment.comments.field_comment_date
+    - field.field.comment.comments.field_comment_user
+  module:
+    - datetime
+    - text
+id: comment.comments.default
+targetEntityType: comment
+bundle: comments
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_comment_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_comment_user: true
+  links: true

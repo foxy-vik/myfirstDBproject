@@ -1,0 +1,33 @@
+uuid: fb99dbf1-644f-41e8-8487-925ed496f33f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.footer_top_blocks2.field_blocks
+    - paragraphs.paragraphs_type.footer_top_blocks2
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.footer_top_blocks2.default
+targetEntityType: paragraph
+bundle: footer_top_blocks2
+mode: default
+content:
+  field_blocks:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

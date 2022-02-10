@@ -4,25 +4,14 @@ status: true
 dependencies:
   config:
     - block_content.type.top_black_block_
-    - field.field.block_content.top_black_block_.field_date
     - field.field.block_content.top_black_block_.field_fa_links
   module:
-    - datetime
     - social_media_links_field
 id: block_content.top_black_block_.default
 targetEntityType: block_content
 bundle: top_black_block_
 mode: default
 content:
-  field_date:
-    type: datetime_custom
-    label: hidden
-    settings:
-      timezone_override: America/New_York
-      date_format: 'l, F d,  Y'
-    third_party_settings: {  }
-    weight: 1
-    region: first
   field_fa_links:
     type: social_media_links_field_default
     label: above

@@ -1,0 +1,25 @@
+uuid: a7e1d5fb-8b8c-4526-9f84-511a1f104248
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.trending_now
+  module:
+    - views
+  theme:
+    - b5subtheme
+id: views_block__trending_now_block_trending_now
+theme: b5subtheme
+region: breadcrumb
+weight: 0
+provider: null
+plugin: 'views_block:trending_now-block_trending_now'
+settings:
+  id: 'views_block:trending_now-block_trending_now'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility: {  }

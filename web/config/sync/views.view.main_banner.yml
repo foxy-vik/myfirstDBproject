@@ -7,6 +7,7 @@ dependencies:
     - node.type.gadgets
     - taxonomy.vocabulary.lifestyle
   content:
+    - 'taxonomy_term:lifestyle:104a2383-511d-4ff7-a6ef-f0137eedb985'
     - 'taxonomy_term:lifestyle:c5f07a0c-35db-47c5-8ef9-7df0d53069aa'
     - 'taxonomy_term:lifestyle:fda4e0e9-4245-4b00-843f-f6b50ae24192'
   module:
@@ -96,7 +97,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 3
+          items_per_page: 2
       exposed_form:
         type: basic
         options:
@@ -253,6 +254,10 @@ display:
           error_message: true
       style:
         type: default
+        options:
+          row_class: row-banner
+          default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:node'
         options:
@@ -281,10 +286,16 @@ display:
       tags: {  }
   block_1:
     id: block_1
-    display_title: Block
+    display_title: banner-right-bottom
     display_plugin: block
     position: 2
     display_options:
+      title: banner-right-bottom
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 2
       sorts:
         created:
           id: created
@@ -296,12 +307,129 @@ display:
           entity_type: node
           entity_field: created
           plugin_id: date
-          order: ASC
+          order: DESC
           expose:
             label: ''
             field_identifier: ''
           exposed: false
           granularity: second
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            gadgets: gadgets
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_tax_gadg_target_id_1:
+          id: field_tax_gadg_target_id_1
+          table: node__field_tax_gadg
+          field: field_tax_gadg_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            - 34
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: lifestyle
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: default
+        options:
+          row_class: row-banner
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: banner
+      defaults:
+        title: false
+        css_class: false
+        pager: false
+        style: false
+        row: false
+        sorts: false
+        filters: false
+        filter_groups: false
+      css_class: banner-1
+      display_description: ''
+      display_extenders: {  }
+      block_description: banner-right-bottom
+      block_hide_empty: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_2:
+    id: block_2
+    display_title: banner-right-top
+    display_plugin: block
+    position: 1
+    display_options:
+      title: Banner
       filters:
         status:
           id: status
@@ -336,9 +464,9 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: taxonomy_index_tid
-          operator: not
+          operator: or
           value:
-            - 24
+            - 29
           group: 1
           exposed: false
           expose:
@@ -425,11 +553,14 @@ display:
         groups:
           1: AND
       defaults:
-        sorts: false
+        title: false
+        css_class: false
         filters: false
         filter_groups: false
+      css_class: Main-banner-block-right
+      display_description: ''
       display_extenders: {  }
-      block_description: 'Banner right'
+      block_description: Banner
     cache_metadata:
       max-age: -1
       contexts:
@@ -441,17 +572,18 @@ display:
       tags: {  }
   block_banner:
     id: block_banner
-    display_title: Block
+    display_title: banner-left
     display_plugin: block
     position: 1
     display_options:
-      title: Banner
+      title: banner-left
       defaults:
         title: false
         css_class: false
       css_class: Main-banner-block
+      display_description: ''
       display_extenders: {  }
-      block_description: Banner
+      block_description: banner-left
     cache_metadata:
       max-age: -1
       contexts:

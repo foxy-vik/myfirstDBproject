@@ -1,0 +1,25 @@
+uuid: eee44ecd-4709-400a-954e-fda2a8edf566
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:banner:8360ac98-4883-436c-ba83-554cb4aa928e'
+  module:
+    - block_content
+  theme:
+    - b5subtheme
+id: bannermainnew
+theme: b5subtheme
+region: nav_main
+weight: 0
+provider: null
+plugin: 'block_content:8360ac98-4883-436c-ba83-554cb4aa928e'
+settings:
+  id: 'block_content:8360ac98-4883-436c-ba83-554cb4aa928e'
+  label: Banner-main-new
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: banner
+visibility: {  }

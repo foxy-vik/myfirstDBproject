@@ -1,0 +1,15 @@
+uuid: d15c54f2-baad-4a6f-a711-173ce76220cd
+langcode: en
+status: true
+dependencies: {  }
+name: '97_68'
+label: '97_68'
+effects:
+  20a23c0d-19c3-4691-9cfc-ccdc32d85407:
+    uuid: 20a23c0d-19c3-4691-9cfc-ccdc32d85407
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 97
+      height: 68
+      anchor: left-top

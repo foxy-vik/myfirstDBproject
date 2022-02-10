@@ -1,0 +1,10 @@
+uuid: 4e7df0ea-4035-4c3c-8d36-0c30a6f69834
+langcode: en
+status: true
+dependencies: {  }
+id: footer_top_blocks2
+label: footer_top_blocks
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

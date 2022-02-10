@@ -1,17 +1,17 @@
-uuid: 2bb808d8-0399-4dad-9d20-886153f4d738
+uuid: b092ab89-22a2-41d9-8244-d683a0b1b700
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
-    - datetime
-id: block_content.field_date
-field_name: field_date
+    - media
+id: block_content.field_ad_pict
+field_name: field_ad_pict
 entity_type: block_content
-type: datetime
+type: entity_reference
 settings:
-  datetime_type: date
-module: datetime
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

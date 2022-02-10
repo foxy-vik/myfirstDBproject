@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.gadgets.field_general_text_
     - field.field.node.gadgets.field_general_title
     - field.field.node.gadgets.field_tax_gadg
-    - image.style.large
+    - image.style.532_450
     - node.type.gadgets
   module:
     - layout_builder
@@ -31,10 +31,10 @@ content:
     type: media_thumbnail
     label: hidden
     settings:
-      image_link: ''
-      image_style: large
+      image_link: content
+      image_style: '532_450'
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_tax_gadg:
     type: entity_reference_label
@@ -42,7 +42,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   body: true

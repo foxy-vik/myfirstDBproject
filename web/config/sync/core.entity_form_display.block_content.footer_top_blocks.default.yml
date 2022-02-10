@@ -1,0 +1,28 @@
+uuid: a5fc06da-54fb-4061-94fd-3d03408f548b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_top_blocks
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: block_content.footer_top_blocks.default
+targetEntityType: block_content
+bundle: footer_top_blocks
+mode: default
+content:
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

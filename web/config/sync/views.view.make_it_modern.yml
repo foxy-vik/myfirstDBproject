@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.field_general_image_background
     - field.storage.node.field_general_text_
     - field.storage.node.field_tax_gadg
+    - image.style.97_68
     - image.style.media_library
     - image.style.thumbnail
     - node.type.gadgets
@@ -17,6 +18,7 @@ dependencies:
     - 'taxonomy_term:lifestyle:679aa2e8-8f74-4b4d-b82c-81668bdae4a2'
     - 'taxonomy_term:lifestyle:6ebc1d5a-0541-46be-b5a6-745949df6912'
     - 'taxonomy_term:lifestyle:a94c2f97-0459-47c9-81ac-59ec332dbe80'
+    - 'taxonomy_term:lifestyle:c4992640-4ef5-4cd7-a0f1-5dfbcb9e4bea'
     - 'taxonomy_term:lifestyle:db69fb38-d7c0-4122-94c6-d1124f724c66'
     - 'taxonomy_term:lifestyle:fda4e0e9-4245-4b00-843f-f6b50ae24192'
   module:
@@ -826,7 +828,7 @@ display:
         type: mini
         options:
           offset: 0
-          items_per_page: 4
+          items_per_page: 3
           total_pages: null
           id: 0
           tags:
@@ -1466,7 +1468,7 @@ display:
           type: media_thumbnail
           settings:
             image_link: ''
-            image_style: thumbnail
+            image_style: '97_68'
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -1477,14 +1479,14 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_gadget_img:
-          id: field_gadget_img
-          table: node__field_gadget_img
-          field: field_gadget_img
+        fieldset:
+          id: fieldset
+          table: views
+          field: fieldset
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: field
+          plugin_id: fieldset
           label: ''
           exclude: false
           alter:
@@ -1518,7 +1520,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1526,87 +1528,15 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: media_thumbnail
-          settings:
-            image_link: content
-            image_style: media_library
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        name:
-          id: name
-          table: taxonomy_term_field_data
-          field: name
-          relationship: term_node_tid
-          group_type: group
-          admin_label: ''
-          entity_type: taxonomy_term
-          entity_field: name
-          plugin_id: term_name
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          convert_spaces: false
+          fields:
+            - name
+            - title
+            - created
+          wrapper: fieldset
+          legend: ''
+          classes: editor-pics_item
+          collapsible: 1
+          collapsed: 0
         title:
           id: title
           table: node_field_data
@@ -1759,42 +1689,7 @@ display:
             field_identifier: ''
           exposed: false
           granularity: second
-      arguments:
-        field_tax_gadg_target_id:
-          id: field_tax_gadg_target_id
-          table: node__field_tax_gadg
-          field: field_tax_gadg_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: numeric
-          default_action: ignore
-          exception:
-            value: all
-            title_enable: false
-            title: All
-          title_enable: false
-          title: ''
-          default_argument_type: fixed
-          default_argument_options:
-            argument: ''
-          default_argument_skip_url: false
-          summary_options:
-            base_path: ''
-            count: true
-            override: false
-            items_per_page: 25
-          summary:
-            sort_order: asc
-            number_of_records: 0
-            format: default_summary
-          specify_validation: false
-          validate:
-            type: none
-            fail: 'not found'
-          validate_options: {  }
-          break_phrase: false
-          not: false
+      arguments: {  }
       filters:
         status:
           id: status
@@ -1868,16 +1763,11 @@ display:
         groups:
           1: AND
       style:
-        type: grid
+        type: default
         options:
           grouping: {  }
-          columns: 4
-          automatic_width: true
-          alignment: horizontal
-          row_class_custom: gadget-row
-          row_class_default: true
-          col_class_custom: gadget-col
-          col_class_default: true
+          row_class: editor-picks_row
+          default_row_class: true
       row:
         type: fields
         options: {  }
@@ -1892,19 +1782,7 @@ display:
         arguments: false
         filters: false
         filter_groups: false
-      relationships:
-        term_node_tid:
-          id: term_node_tid
-          table: node_field_data
-          field: term_node_tid
-          relationship: none
-          group_type: group
-          admin_label: term
-          entity_type: node
-          plugin_id: node_term_data
-          required: false
-          vids:
-            - lifestyle
+      relationships: {  }
       display_description: ''
       display_extenders: {  }
       block_description: 'editor picks'
@@ -1913,11 +1791,9 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_gadget_img'
         - 'config:field.storage.node.field_general_image_background'
   block_5:
     id: block_5
@@ -1927,6 +1803,63 @@ display:
     display_options:
       title: 'POPULAR CATEGORY'
       fields:
+        fieldset:
+          id: fieldset
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: fieldset
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_tax_gadg
+            - tid
+          wrapper: fieldset
+          legend: ''
+          classes: popular-item
+          collapsible: 1
+          collapsed: 0
         field_tax_gadg:
           id: field_tax_gadg
           table: node__field_tax_gadg
@@ -1964,14 +1897,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: span
           element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -3554,6 +3487,319 @@ display:
         - 'config:field.storage.node.field_gadget_img'
         - 'config:field.storage.node.field_general_image_background'
         - 'config:field.storage.node.field_tax_gadg'
+  block_9:
+    id: block_9
+    display_title: 'Make it modern block'
+    display_plugin: block
+    position: 2
+    display_options:
+      title: 'Make it modern'
+      fields:
+        field_general_image_background:
+          id: field_general_image_background
+          table: node__field_general_image_background
+          field: field_general_image_background
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: media_thumbnail
+          settings:
+            image_link: ''
+            image_style: media_library
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_tax_gadg:
+          id: field_tax_gadg
+          table: node__field_tax_gadg
+          field: field_tax_gadg
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: tag
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: false
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      pager:
+        type: mini
+        options:
+          offset: 0
+          items_per_page: 4
+          total_pages: null
+          id: 0
+          tags:
+            next: ' ›'
+            previous: '‹ '
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            gadgets: gadgets
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_tax_gadg_target_id:
+          id: field_tax_gadg_target_id
+          table: node__field_tax_gadg
+          field: field_tax_gadg_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            - 21
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: lifestyle
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        pager: false
+        fields: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+      block_description: 'make it modern block view'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_general_image_background'
+        - 'config:field.storage.node.field_tax_gadg'
   block_holiday_reciped:
     id: block_holiday_reciped
     display_title: 'HOLIDAY RECIPES'
@@ -5027,14 +5273,14 @@ display:
     display_options:
       title: 'POPULAR POSTS'
       fields:
-        field_general_image_background:
-          id: field_general_image_background
-          table: node__field_general_image_background
-          field: field_general_image_background
+        fieldset_1:
+          id: fieldset_1
+          table: views
+          field: fieldset
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: field
+          plugin_id: fieldset
           label: ''
           exclude: false
           alter:
@@ -5068,7 +5314,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -5076,21 +5322,14 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: media_thumbnail
-          settings:
-            image_link: ''
-            image_style: thumbnail
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
+          fields:
+            - field_general_image_background
+            - field_gadget_img
+          wrapper: fieldset
+          legend: ''
+          classes: popular-post_img
+          collapsible: 1
+          collapsed: 0
         field_gadget_img:
           id: field_gadget_img
           table: node__field_gadget_img
@@ -5144,7 +5383,7 @@ display:
           type: media_thumbnail
           settings:
             image_link: content
-            image_style: thumbnail
+            image_style: '97_68'
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -5155,16 +5394,14 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        name:
-          id: name
-          table: taxonomy_term_field_data
-          field: name
-          relationship: term_node_tid
+        fieldset:
+          id: fieldset
+          table: views
+          field: fieldset
+          relationship: none
           group_type: group
           admin_label: ''
-          entity_type: taxonomy_term
-          entity_field: name
-          plugin_id: term_name
+          plugin_id: fieldset
           label: ''
           exclude: false
           alter:
@@ -5198,7 +5435,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -5206,21 +5443,14 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          convert_spaces: false
+          fields:
+            - title
+            - created
+          wrapper: fieldset
+          legend: ''
+          classes: popular-post_item
+          collapsible: 1
+          collapsed: 0
         title:
           id: title
           table: node_field_data
@@ -5521,4 +5751,3 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_gadget_img'
-        - 'config:field.storage.node.field_general_image_background'
