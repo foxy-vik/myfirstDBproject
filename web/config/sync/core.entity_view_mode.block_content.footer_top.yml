@@ -1,0 +1,10 @@
+uuid: fa9d43d9-d031-46c8-b51d-2f2cdcd451c2
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.footer_top
+label: footer_top
+targetEntityType: block_content
+cache: true

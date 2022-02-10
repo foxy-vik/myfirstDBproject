@@ -1,6 +1,6 @@
 uuid: e7cbf033-40da-4093-9a65-87d0fa1a11f2
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.make_it_modern
@@ -12,7 +12,7 @@ dependencies:
 id: views_block__make_it_modern_block_2
 theme: b5subtheme
 region: content
-weight: -16
+weight: -15
 provider: null
 plugin: 'views_block:make_it_modern-block_2'
 settings:

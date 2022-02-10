@@ -1,6 +1,6 @@
 uuid: 5997cfdb-e9fa-425b-8c48-dcdb6ea722d1
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.main_banner

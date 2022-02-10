@@ -1,0 +1,132 @@
+uuid: 953bd4bf-5d5e-4291-9a34-d07ded222df2
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.gadgets
+    - taxonomy.vocabulary.lifestyle
+  module:
+    - block_content
+    - comment
+    - contact
+    - contextual
+    - field_ui
+    - file
+    - filter
+    - flag
+    - image
+    - media
+    - menu_link_content
+    - node
+    - paragraphs
+    - path
+    - pathauto
+    - search
+    - taxonomy
+id: writter
+label: Writter
+weight: -10
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access media overview'
+  - 'access taxonomy overview'
+  - 'access user contact forms'
+  - 'administer block_content display'
+  - 'administer block_content fields'
+  - 'administer block_content form display'
+  - 'administer comment display'
+  - 'administer comment fields'
+  - 'administer comment form display'
+  - 'administer comments'
+  - 'administer contact forms'
+  - 'administer contact_message display'
+  - 'administer contact_message fields'
+  - 'administer contact_message form display'
+  - 'administer display modes'
+  - 'administer flagging display'
+  - 'administer flagging fields'
+  - 'administer flagging form display'
+  - 'administer image styles'
+  - 'administer media display'
+  - 'administer media fields'
+  - 'administer media form display'
+  - 'administer media types'
+  - 'administer menu_link_content display'
+  - 'administer menu_link_content fields'
+  - 'administer menu_link_content form display'
+  - 'administer node display'
+  - 'administer node fields'
+  - 'administer node form display'
+  - 'administer paragraph display'
+  - 'administer paragraph fields'
+  - 'administer paragraph form display'
+  - 'administer paragraphs settings'
+  - 'administer pathauto'
+  - 'administer search'
+  - 'administer taxonomy'
+  - 'administer taxonomy_term display'
+  - 'administer taxonomy_term fields'
+  - 'administer taxonomy_term form display'
+  - 'administer url aliases'
+  - 'administer user display'
+  - 'administer user fields'
+  - 'administer user form display'
+  - 'create audio media'
+  - 'create document media'
+  - 'create gadgets content'
+  - 'create image media'
+  - 'create media'
+  - 'create remote_video media'
+  - 'create terms in lifestyle'
+  - 'create url aliases'
+  - 'create video media'
+  - 'delete all revisions'
+  - 'delete any audio media'
+  - 'delete any document media'
+  - 'delete any gadgets content'
+  - 'delete any image media'
+  - 'delete any media'
+  - 'delete any remote_video media'
+  - 'delete any video media'
+  - 'delete gadgets revisions'
+  - 'delete media'
+  - 'delete own audio media'
+  - 'delete own document media'
+  - 'delete own gadgets content'
+  - 'delete own image media'
+  - 'delete own remote_video media'
+  - 'delete own video media'
+  - 'delete terms in lifestyle'
+  - 'edit any audio media'
+  - 'edit any document media'
+  - 'edit any gadgets content'
+  - 'edit any image media'
+  - 'edit any remote_video media'
+  - 'edit any video media'
+  - 'edit own audio media'
+  - 'edit own comments'
+  - 'edit own document media'
+  - 'edit own gadgets content'
+  - 'edit own image media'
+  - 'edit own remote_video media'
+  - 'edit own video media'
+  - 'edit terms in lifestyle'
+  - 'revert all revisions'
+  - 'revert gadgets revisions'
+  - 'update any media'
+  - 'update media'
+  - 'use advanced search'
+  - 'use text format restricted_html'
+  - 'view all revisions'
+  - 'view gadgets revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'

@@ -1,6 +1,6 @@
 uuid: 52700700-6a7f-41ef-a144-e3e626410f51
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.dont_miss
@@ -12,7 +12,7 @@ dependencies:
 id: views_block__dont_miss_block_1
 theme: b5subtheme
 region: content
-weight: -19
+weight: -17
 provider: null
 plugin: 'views_block:dont_miss-block_1'
 settings:

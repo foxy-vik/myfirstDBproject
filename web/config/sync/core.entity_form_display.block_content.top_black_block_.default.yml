@@ -4,10 +4,8 @@ status: true
 dependencies:
   config:
     - block_content.type.top_black_block_
-    - field.field.block_content.top_black_block_.field_date
     - field.field.block_content.top_black_block_.field_fa_links
   module:
-    - datetime
     - field_layout
     - layout_discovery
     - social_media_links_field
@@ -21,15 +19,6 @@ targetEntityType: block_content
 bundle: top_black_block_
 mode: default
 content:
-  field_date:
-    type: datetime_datelist
-    weight: 28
-    region: content
-    settings:
-      increment: 15
-      date_order: YMD
-      time_type: '24'
-    third_party_settings: {  }
   field_fa_links:
     type: social_media_links_field_default
     weight: 34

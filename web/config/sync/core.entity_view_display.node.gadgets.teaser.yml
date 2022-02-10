@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.gadgets.field_general_text_
     - field.field.node.gadgets.field_general_title
     - field.field.node.gadgets.field_tax_gadg
-    - image.style.large
+    - image.style.532_450
     - node.type.gadgets
   module:
     - media
@@ -36,7 +36,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: large
+      image_style: '532_450'
     third_party_settings: {  }
     weight: 0
     region: content

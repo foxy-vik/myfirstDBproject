@@ -1,0 +1,68 @@
+uuid: 861768e0-8935-4811-b0e7-a08bd8f0b0c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_top_blocks
+    - views.view.make_it_modern
+  module:
+    - layout_builder
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_threecol_section
+        layout_settings:
+          label: 'footer top'
+          context_mapping: {  }
+          column_widths: 33-34-33
+        components:
+          5274587f-8cf6-4547-b871-9e011d47ba33:
+            uuid: 5274587f-8cf6-4547-b871-9e011d47ba33
+            region: first
+            configuration:
+              id: 'views_block:make_it_modern-block_4'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+          76f34c1e-a9c6-4f81-ac51-9a667312c000:
+            uuid: 76f34c1e-a9c6-4f81-ac51-9a667312c000
+            region: second
+            configuration:
+              id: 'views_block:make_it_modern-block_popular_posts_footer'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+          fb4f7aec-80ca-4080-8c34-489f69ab4edd:
+            uuid: fb4f7aec-80ca-4080-8c34-489f69ab4edd
+            region: third
+            configuration:
+              id: 'views_block:make_it_modern-block_5'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: block_content.footer_top_blocks.default
+targetEntityType: block_content
+bundle: footer_top_blocks
+mode: default
+content: {  }
+hidden: {  }

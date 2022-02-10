@@ -1,0 +1,15 @@
+uuid: c9fc3793-4b49-451a-a6de-70262839ee64
+langcode: en
+status: true
+dependencies: {  }
+name: '264_192'
+label: '264_192'
+effects:
+  c6cc8ae3-c423-4534-b043-68535a3b6313:
+    uuid: c6cc8ae3-c423-4534-b043-68535a3b6313
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 264
+      height: 192
+      anchor: center-center

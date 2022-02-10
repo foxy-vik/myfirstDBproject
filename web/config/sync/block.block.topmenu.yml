@@ -11,7 +11,7 @@ dependencies:
 id: topmenu
 theme: b5subtheme
 region: header
-weight: -11
+weight: -19
 provider: null
 plugin: 'system_menu_block:top-menu'
 settings:

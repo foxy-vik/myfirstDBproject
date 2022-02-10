@@ -1,6 +1,6 @@
 uuid: 7064e50a-c9a8-4997-bbd4-2f1e16044d87
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.make_it_modern

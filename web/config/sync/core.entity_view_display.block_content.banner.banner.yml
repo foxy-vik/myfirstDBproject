@@ -1,0 +1,21 @@
+uuid: 3037bffc-e40e-4131-a9b9-0fedae995b09
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.banner
+    - core.entity_view_mode.block_content.banner
+    - field.field.block_content.banner.body
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: block_content.banner.banner
+targetEntityType: block_content
+bundle: banner
+mode: banner
+content: {  }
+hidden:
+  body: true

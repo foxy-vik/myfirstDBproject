@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.main_page_mode
+    - core.entity_view_mode.node.teaser
     - system.menu.admin
   module:
     - node
@@ -75,7 +76,7 @@ display:
         type: mini
         options:
           offset: 0
-          items_per_page: 8
+          items_per_page: 1
           total_pages: null
           id: 0
           tags:
@@ -141,6 +142,10 @@ display:
             operator_list: {  }
       style:
         type: default
+        options:
+          row_class: main-content
+          default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:node'
         options:
@@ -155,9 +160,63 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      use_ajax: true
       header: {  }
       footer: {  }
       display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_1:
+    id: block_1
+    display_title: Block
+    display_plugin: block
+    position: 2
+    display_options:
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 8
+          total_pages: null
+          id: 0
+          tags:
+            next: ›
+            previous: ‹
+            first: '1'
+            last: '17'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 3
+      style:
+        type: default
+        options:
+          row_class: main-content
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+      defaults:
+        pager: false
+        style: false
+        row: false
+      display_extenders: {  }
+      block_description: 'main page content'
     cache_metadata:
       max-age: -1
       contexts:
@@ -173,6 +232,9 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      defaults:
+        css_class: false
+      css_class: main-content_container
       display_extenders: {  }
       path: front
       menu:

@@ -1,0 +1,70 @@
+uuid: 76be59a7-9ac7-4559-8440-ca65888cd665
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.banner
+    - field.field.block_content.banner.body
+    - views.view.main_banner
+  module:
+    - layout_builder
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: banner-sides
+          context_mapping: {  }
+          column_widths: 50-50
+        components:
+          319367a3-deeb-4dbb-88cc-1f9bf81a5ec2:
+            uuid: 319367a3-deeb-4dbb-88cc-1f9bf81a5ec2
+            region: first
+            configuration:
+              id: 'views_block:main_banner-block_banner'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: '1'
+            weight: 0
+            additional: {  }
+          d3b3b702-8fb1-43b8-aaeb-6b295cdd2f39:
+            uuid: d3b3b702-8fb1-43b8-aaeb-6b295cdd2f39
+            region: second
+            configuration:
+              id: 'views_block:main_banner-block_1'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 3
+            additional: {  }
+          87bad7d5-7d57-4394-94cc-b97a40d0c245:
+            uuid: 87bad7d5-7d57-4394-94cc-b97a40d0c245
+            region: second
+            configuration:
+              id: 'views_block:main_banner-block_2'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: '1'
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+id: block_content.banner.default
+targetEntityType: block_content
+bundle: banner
+mode: default
+content: {  }
+hidden:
+  body: true

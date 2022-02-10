@@ -1,6 +1,6 @@
 uuid: 5344c8c7-dd0c-4753-a630-86aa4a406291
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.most_popular

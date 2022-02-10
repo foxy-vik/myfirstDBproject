@@ -1,0 +1,15 @@
+uuid: 7511b167-5618-48a8-b01f-2d9c6517b5ec
+langcode: en
+status: true
+dependencies: {  }
+name: '532_254'
+label: '532_254'
+effects:
+  6978d732-725f-4939-aa20-171b7cec0a49:
+    uuid: 6978d732-725f-4939-aa20-171b7cec0a49
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 532
+      height: 254
+      anchor: center-center

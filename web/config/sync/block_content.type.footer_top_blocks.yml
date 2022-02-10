@@ -1,0 +1,8 @@
+uuid: 1b36ef12-f1c2-470f-9562-ca3ca43d7f3a
+langcode: en
+status: true
+dependencies: {  }
+id: footer_top_blocks
+label: 'footer top blocks'
+revision: 0
+description: ''

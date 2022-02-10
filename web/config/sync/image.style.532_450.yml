@@ -1,0 +1,15 @@
+uuid: 6d02bff4-8d4e-40c1-b94c-f67ca56180d9
+langcode: en
+status: true
+dependencies: {  }
+name: '532_450'
+label: '532_450'
+effects:
+  c20f542b-29ad-4ce5-8968-6201d952d007:
+    uuid: c20f542b-29ad-4ce5-8968-6201d952d007
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 532
+      height: 450
+      anchor: center-center
