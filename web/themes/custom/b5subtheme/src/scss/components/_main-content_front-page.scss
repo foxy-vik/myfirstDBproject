@@ -1,10 +1,13 @@
+
+.layout--twocol-section--75-25{
+  .layout__region--first{
+    flex:0 1 100%;
+  }
+}
 .block-views-blocktest-field2-block-trending-now {
   max-width: 1068px;
   margin-block: 24px;
   position: relative;
-  @media (max-width: 768px) {
-    display: none;
-  }
 
   &:hover {
     h2 {
@@ -210,7 +213,17 @@
   }
 }
 
+@include media-breakpoint-down(xl) {
+  .block-views-blocktest-field2-block-trending-now {
+    max-width: 930px;
+  }
+}
+
 @include media-breakpoint-down(lg) {
+  .block-views-blocktest-field2-block-trending-now {
+    max-width: 760px;
+  }
+
   .layout__region--content {
 
     .block-views-block-banner-grid-top-right-block-banner-grid-left {
@@ -258,6 +271,9 @@
 }
 
 @include media-breakpoint-down(md) {
+  .block-views-blocktest-field2-block-trending-now {
+    display: none;
+  }
   .layout__region--content {
     display: grid;
     grid-template-columns: repeat(2, 1fr) repeat(2, 0);
