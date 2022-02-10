@@ -168,7 +168,7 @@ third_party_settings:
               context_mapping: {  }
               views_label: ''
               items_per_page: '3'
-            weight: 3
+            weight: 4
             additional: {  }
           4050c840-ee0e-4316-bec7-70867ef0e5e2:
             uuid: 4050c840-ee0e-4316-bec7-70867ef0e5e2
@@ -181,7 +181,7 @@ third_party_settings:
               context_mapping: {  }
               views_label: ''
               items_per_page: none
-            weight: 4
+            weight: 5
             additional: {  }
           008dfb60-75ea-4c9a-af4e-fc3f724f2966:
             uuid: 008dfb60-75ea-4c9a-af4e-fc3f724f2966
@@ -194,7 +194,7 @@ third_party_settings:
               context_mapping: {  }
               views_label: ''
               items_per_page: none
-            weight: 2
+            weight: 3
             additional: {  }
           c6a65c48-bf25-4396-b20b-bd46c18a5b32:
             uuid: c6a65c48-bf25-4396-b20b-bd46c18a5b32
@@ -222,19 +222,6 @@ third_party_settings:
               views_label: ''
               items_per_page: none
             weight: 4
-            additional: {  }
-          0330de67-891e-415c-88c1-3b79543711b2:
-            uuid: 0330de67-891e-415c-88c1-3b79543711b2
-            region: first
-            configuration:
-              id: 'views_block:dont_miss-block_1'
-              label: ''
-              label_display: visible
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 1
             additional: {  }
           5b5988e5-f816-4364-85b7-46c7067158aa:
             uuid: 5b5988e5-f816-4364-85b7-46c7067158aa
@@ -269,6 +256,19 @@ third_party_settings:
             region: second
             configuration:
               id: 'views_block:make_it_modern-block_9'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 2
+            additional: {  }
+          155b6e98-1430-48f8-aacf-cad5e4b9e4fe:
+            uuid: 155b6e98-1430-48f8-aacf-cad5e4b9e4fe
+            region: first
+            configuration:
+              id: 'views_block:dont_miss-block_dont_miss_view'
               label: ''
               label_display: visible
               provider: views
