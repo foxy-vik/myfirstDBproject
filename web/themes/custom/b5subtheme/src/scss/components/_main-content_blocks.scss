@@ -1,5 +1,6 @@
 .layout--twocol-section--67-33 {
-
+  gap: 24px;
+  flex-wrap: nowrap;
   //title
   .views-element-container {
     h2 {
@@ -11,80 +12,122 @@
       border-top: 2px solid $black;
       margin-right: 10px;
     }
-    .form--inline{
-      display: flex;
-      justify-content: flex-end;
-      margin-top: -40px;
-    }
+  }
+  .form--inline {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -40px;
+  }
 
-    .form-select {
-      background: none;
-      border: none;
+  .form-select {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: $font-tags;
+    font-size: 13px;
+    color: #767676;
+
+
+    ul {
+      list-style: none;
       padding: 0;
-      font-family: $font-tags;
-      font-size: 13px;
-      color: #767676;
 
-
-      ul {
-        list-style: none;
-        padding: 0;
-
-        li {
-          transition: opacity 0.2s ease 0s;
-          opacity: 1;
-
-          a {
-            font-family: $font-tags;
-            font-size: 13px;
-            color: #767676;
-            line-height: 1;
-          }
-        }
-      }
-    }
-    .form-type-select{
-      label {
-        font-family: $font-tags;
-        font-size: 13px;
-        color: #767676;
-        line-height: 1;
-        width: 100%;
-        text-align: center;
-        padding-block: 7px;
-        &:hover {
-          background: #f9c100;
-          color: $white;
-        }
-      }
-    }
-    //rigth menu
-    .form-item-filter-dontmiss-second-down{
-      margin-top: 12px;
-      margin-right: 0;
-    }
-
-    #edit-filter-dontmiss-first {
-      ul {
-        display: flex;
-        gap: 30px;
-
-        li:first-child {
-          display: none;
-        }
+      li {
+        transition: opacity 0.2s ease 0s;
+        opacity: 1;
 
         a {
-          &:hover {
-            color: #f9c100;
-          }
+          font-family: $font-tags;
+          font-size: 13px;
+          color: #767676;
+          line-height: 1;
         }
-
       }
     }
   }
 
+
+  .form-item-filter-dontmiss-second-down {
+    position: relative;
+
+    label {
+      font-family: $font-tags;
+      font-size: 13px;
+      color: #767676;
+      line-height: 1;
+      width: 90px;
+      text-align: center;
+      padding-block: 7px;
+      display: inline-block;
+    }
+
+    .form-select {
+      display: none;
+
+      ul {
+        li:first-child {
+          display: none;
+        }
+
+        li a {
+          line-height: 26px;
+
+          &:hover {
+            color: #f9c100;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      label {
+        background: #f9c100;
+        color: $white;
+      }
+
+      .form-select {
+        display: block;
+        text-align: right;
+        position: absolute;
+        top: 33px;
+        right: 15px;
+
+        //bg
+        background-color: rgba(255, 255, 255, .95);
+        z-index: 999;
+        border-width: 0 1px 1px;
+        border-color: #ededed;
+        border-style: solid;
+      }
+    }
+
+    //rigth menu Dont miss
+    .form-item-filter-dontmiss-second-down {
+      margin-top: 12px;
+      margin-right: 0;
+    }
+
+  }
+  #edit-filter-dontmiss-first {
+    ul {
+      display: flex;
+      gap: 30px;
+
+      li:first-child {
+        display: none;
+      }
+
+      a {
+        &:hover {
+          color: #f9c100;
+        }
+      }
+
+    }
+  }
+
   //DONT MISS
-  .block-views-blockdont-miss-block-1 {
+  .block-views-blockdont-miss-block-dont-miss-view {
     h2 {
       @include titleBlock($black, #f9c100);
     }
@@ -159,5 +202,14 @@
       }
     }
   }
+
+  //main part content DONT MISS
+  .view-dont-miss{
+
+  }
+
 }
+
+
+
 
