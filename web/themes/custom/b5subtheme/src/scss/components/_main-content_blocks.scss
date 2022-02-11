@@ -1,4 +1,5 @@
 .layout--twocol-section--67-33 {
+  flex-wrap: nowrap;
   .views-element-container {
     h2 {
       @include titleBlock($black, #f9c100);
