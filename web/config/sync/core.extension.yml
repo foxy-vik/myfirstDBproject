@@ -76,7 +76,9 @@ module:
   token: 0
   toolbar: 0
   tour: 0
+  twig_tools: 0
   twig_tweak: 0
+  twig_vardumper: 0
   user: 0
   video_embed_field: 0
   viewfield: 0

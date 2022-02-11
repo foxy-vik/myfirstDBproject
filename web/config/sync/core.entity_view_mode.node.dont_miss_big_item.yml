@@ -1,0 +1,10 @@
+uuid: 6e52e062-3b85-4357-8469-1f0032b6a9cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.dont_miss_big_item
+label: dont_miss_big_item
+targetEntityType: node
+cache: true

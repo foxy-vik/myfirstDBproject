@@ -13,6 +13,7 @@
       margin-right: 10px;
     }
   }
+
   .form--inline {
     display: flex;
     justify-content: flex-end;
@@ -108,6 +109,7 @@
     }
 
   }
+
   #edit-filter-dontmiss-first {
     ul {
       display: flex;
@@ -116,7 +118,6 @@
       li:first-child {
         display: none;
       }
-
       a {
         &:hover {
           color: #f9c100;
@@ -136,6 +137,81 @@
     .wrapper {
       border-top: 2px solid #f9c100;
       margin-right: 10px;
+      .banner-authored-time{
+        display: flex;
+      }
+      .view-content {
+        display: flex;
+
+        .views-row {
+          flex: 1 0 50%;
+          padding-right: rem(24);
+        }
+        .all{
+          position: relative;
+        }
+        .taxonomy{
+          li{
+            margin-left: 0;
+            display: none;
+          }
+          li:first-child{
+            display: block;
+            position: absolute;
+            top: -24px;
+            left: 0;
+          }
+          a {
+            @include tags(#f9c100);
+          }
+        }
+
+        .another-four {
+          flex: 1 0 50%;
+          padding-left: rem(24);
+          .views-row{
+            margin-bottom: 10px;
+            display: flex;
+          }
+
+          .all {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .views-field-field-gadget-img {
+            max-width: 100px;
+            height: auto;
+          }
+
+          .banner-authored-time {
+            @include dateMain(#767676);
+            padding-left: 12px;
+          }
+
+          .views-field-title {
+            padding-left: 10px;
+            a {
+              @include titleBlockSmall($black);
+              &:hover {
+                color: #f9c100;
+              }
+            }
+          }
+
+          .views-field-uid {
+            display: none;
+          }
+
+          .teaser-text {
+            display: none;
+          }
+
+          .taxonomy {
+            display: none;
+          }
+        }
+      }
     }
   }
 
@@ -201,11 +277,6 @@
         }
       }
     }
-  }
-
-  //main part content DONT MISS
-  .view-dont-miss{
-
   }
 
 }

@@ -1,9 +1,17 @@
+$html-font-size: 16px;
+@function stripUnit($value) {
+  @return $value / ($value * 0 + 1);
+}
+@function rem($pxValue) {
+  @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+}
+
 @mixin size($height, $width){
   height: $height;
   width: $width;
 }
 
-@mixin tags(){
+@mixin tags($bgC){
   text-decoration: none;
   background-color: $black;
   font-family: $font-tags;
@@ -18,7 +26,7 @@
   }
 
   &:hover {
-    background-color: $colorHover;
+    background-color: $bgC;
   }
 }
 
@@ -39,6 +47,21 @@
   font-family: $font-tags;
   font-size: 14px;
   text-transform: uppercase;
+}
+
+@mixin titleBlockSmall($color){
+  color: $color;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: bold;
+  text-align: left;
+}
+
+@mixin dateMain($color){
+  color: $color;
+  font-size: 11px;
+  line-height: 11px;
+  margin-top: 8px;
 }
 
 @mixin socialMedia($bgC, $fontS, $padding){

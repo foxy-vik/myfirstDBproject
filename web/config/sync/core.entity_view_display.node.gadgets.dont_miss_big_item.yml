@@ -1,8 +1,9 @@
-uuid: c7d81164-b78b-4223-a9c6-e2b075c1f0b3
+uuid: 0539d75c-6d46-4134-98f9-60efe7835a82
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.dont_miss_big_item
     - field.field.node.gadgets.body
     - field.field.node.gadgets.field_gadget_img
     - field.field.node.gadgets.field_gadget_paragr
@@ -11,26 +12,28 @@ dependencies:
     - field.field.node.gadgets.field_general_text_
     - field.field.node.gadgets.field_general_title
     - field.field.node.gadgets.field_tax_gadg
+    - image.style.385_360
     - node.type.gadgets
   module:
     - layout_builder
+    - media
     - text
     - user
 third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: node.gadgets.default
+id: node.gadgets.dont_miss_big_item
 targetEntityType: node
 bundle: gadgets
-mode: default
+mode: dont_miss_big_item
 content:
   field_gadget_img:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     label: hidden
     settings:
-      view_mode: default
-      link: false
+      image_link: ''
+      image_style: '385_360'
     third_party_settings: {  }
     weight: 0
     region: content
@@ -40,7 +43,7 @@ content:
     settings:
       trim_length: 120
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_tax_gadg:
     type: entity_reference_label
@@ -50,14 +53,10 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
 hidden:
   body: true
   field_gadget_paragr: true
   field_gadgets_links: true
   field_general_image_background: true
   field_general_title: true
+  links: true

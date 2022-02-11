@@ -16,7 +16,7 @@
   }
 
   h2 {
-    @include tags;
+    @include tags($colorHover);
     position: absolute;
     top: 0;
     left: 28px;
@@ -129,7 +129,7 @@
         }
 
         a {
-          @include tags();
+          @include tags($colorHover);
         }
       }
     }

@@ -1,9 +1,16 @@
-main{
+main {
   padding: 0;
   margin: 0;
 }
-a{
+
+a {
   text-decoration: none;
 }
+
+li {
+  list-style: none;
+}
+
+
 @import "main-content_front-page";
 @import "main-content_blocks";

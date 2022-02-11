@@ -1,0 +1,15 @@
+uuid: dc48759e-df26-4c5f-adfe-0b4e91f1221e
+langcode: en
+status: true
+dependencies: {  }
+name: img_teaser_97_68
+label: 'img teaser 97_68'
+effects:
+  9eab1e0f-3c55-46e4-b8ee-0eafe5c5b61f:
+    uuid: 9eab1e0f-3c55-46e4-b8ee-0eafe5c5b61f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 97
+      height: 68
+      anchor: center-center

@@ -18,6 +18,7 @@ function b5subtheme_preprocess_views_view_unformatted__dont_miss__block_dont_mis
   $view = $variables['view'];
  //only for block unique display by machine name dont_miss
   if ($view->id() == 'dont_miss' && $view->curreny_display = 'block_dont_miss_view') {
-    $variables['rows'][0]['content']['#view_mode'] = 'dont_miss_big_item';
+    $key = array_key_first($variables['rows']);
+//    $variables['rows'][$key]['content'];
   }
 }

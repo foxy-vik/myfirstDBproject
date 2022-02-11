@@ -12,38 +12,38 @@ dependencies:
     - field.field.node.gadgets.field_general_text_
     - field.field.node.gadgets.field_general_title
     - field.field.node.gadgets.field_tax_gadg
-    - image.style.532_450
+    - image.style.img_teaser_97_68
     - node.type.gadgets
   module:
     - media
-    - text
     - user
 id: node.gadgets.teaser
 targetEntityType: node
 bundle: gadgets
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_gadget_img:
     type: media_thumbnail
     label: hidden
     settings:
       image_link: ''
-      image_style: '532_450'
+      image_style: img_teaser_97_68
     third_party_settings: {  }
     weight: 0
     region: content
+  field_general_image_background:
+    type: media_thumbnail
+    label: above
+    settings:
+      image_link: ''
+      image_style: img_teaser_97_68
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
+  body: true
   field_gadget_paragr: true
   field_gadgets_links: true
-  field_general_image_background: true
   field_general_text_: true
   field_general_title: true
   field_tax_gadg: true
