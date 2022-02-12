@@ -6,7 +6,7 @@ dependencies:
     - field.storage.node.field_gadget_img
     - field.storage.node.field_general_image_background
     - field.storage.node.field_general_text_
-    - image.style.532_450
+    - image.style.dont_miss_banner_324_234
     - image.style.large
     - image.style.media_library
     - node.type.gadgets
@@ -1076,6 +1076,64 @@ display:
     position: 1
     display_options:
       fields:
+        fieldset_2:
+          id: fieldset_2
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: fieldset
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_gadget_img
+            - field_general_image_background
+            - term_node_tid
+          wrapper: fieldset
+          legend: ''
+          classes: dont-miss-taxonomy
+          collapsible: 1
+          collapsed: 0
         field_gadget_img:
           id: field_gadget_img
           table: node__field_gadget_img
@@ -1129,7 +1187,7 @@ display:
           type: media_thumbnail
           settings:
             image_link: ''
-            image_style: '532_450'
+            image_style: dont_miss_banner_324_234
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -1193,7 +1251,7 @@ display:
           type: media_thumbnail
           settings:
             image_link: ''
-            image_style: '532_450'
+            image_style: dont_miss_banner_324_234
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -1691,10 +1749,175 @@ display:
                   collapsible: false
                   is_secondary: false
                 select_all_none: false
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            gadgets: gadgets
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: term_node_tid
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: string
+          operator: word
+          value: Fashion
+          group: 1
+          exposed: true
+          expose:
+            operator_id: name_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: name_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: name
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            placeholder: ''
+          is_grouped: true
+          group_info:
+            label: ''
+            description: ''
+            identifier: name1
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: '1'
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: All
+                operator: longerthan
+                value: '1'
+              2:
+                title: Vogue
+                operator: '!='
+                value: Vogue
+              3:
+                title: 'Style Hunter'
+                operator: word
+                value: 'Style Hunter'
+              4:
+                title: 'Health & Fitness'
+                operator: word
+                value: 'Health & Fitness'
+              5:
+                title: Travel
+                operator: word
+                value: Travel
+        name_1:
+          id: name_1
+          table: taxonomy_term_field_data
+          field: name
+          relationship: term_node_tid
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: string
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: name_1_op
+            label: Name
+            description: null
+            use_operator: false
+            operator: name_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: name_1
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: null
+          is_grouped: true
+          group_info:
+            label: 'More '
+            description: ''
+            identifier: tags_down
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: Racing
+                operator: '='
+                value: Racing
+              2:
+                title: Reviews
+                operator: '='
+                value: Reviews
+              3:
+                title: 'Mobile phones'
+                operator: '='
+                value: 'Mobile phones'
+              4:
+                title: Photogaphy
+                operator: '='
+                value: Photogaphy
+              5:
+                title: 'Make it modern'
+                operator: '='
+                value: 'Make it modern'
+              6:
+                title: Decorating
+                operator: '='
+                value: Decorating
+              7:
+                title: Recipes
+                operator: '='
+                value: Recipes
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       defaults:
         pager: false
         exposed_form: false
         fields: false
+        filters: false
+        filter_groups: false
       display_description: ''
       display_extenders: {  }
     cache_metadata:

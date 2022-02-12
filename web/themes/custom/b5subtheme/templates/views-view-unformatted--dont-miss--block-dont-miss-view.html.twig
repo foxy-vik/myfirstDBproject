@@ -20,11 +20,7 @@
 {% endif %}
 {% set first = 1 %}
 {% for row in rows %}
- {{ loop.index }}
-
-  {% if loop.index == 1 %}{% endif %}
-
-
+   {% if loop.index == 1 %}{{ loop.index }}{% endif %}
   {%
     set row_classes = [
       default_row_class ? 'views-row',

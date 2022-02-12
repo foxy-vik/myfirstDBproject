@@ -1,0 +1,15 @@
+uuid: 32b96ee9-082a-4728-a558-c311653b14bc
+langcode: en
+status: true
+dependencies: {  }
+name: dont_miss_banner_324_234
+label: 'dont miss banner 324_234'
+effects:
+  086d1d0e-46b4-4567-be93-24b921f26c8e:
+    uuid: 086d1d0e-46b4-4567-be93-24b921f26c8e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 324
+      height: 234
+      anchor: center-center

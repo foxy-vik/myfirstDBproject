@@ -16,7 +16,7 @@
 
         .navbar-brand {
           img {
-            width: 272px;
+            width: rem(272);
             height: 34%;
           }
         }
@@ -31,8 +31,9 @@
     }
     .navbar-brand {
       img {
-        max-width: 220px;
-        margin-left: 16px;}
+        max-width: rem(220);
+        margin-left: rem(16);
+      }
     }
   }
 
