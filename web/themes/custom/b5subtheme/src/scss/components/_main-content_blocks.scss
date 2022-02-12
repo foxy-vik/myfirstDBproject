@@ -50,6 +50,30 @@
   }
 
   .views-row {
+    .views-field-field-general-text- {
+      font-family: $font-tags;
+      font-size: rem(14);
+      color: $grey;
+      line-height: rem(24);
+      padding-block: rem(7);
+    }
+
+    //author
+    .views-field-uid {
+      a {
+        font-size: rem(11);
+        line-height: rem(11);
+        font-weight: bold;
+        color: $black;
+      }
+    }
+    //DATE
+    .views-field-created{
+      font-size: 11px;
+      line-height: 1;
+      color: $grey;
+    }
+
     .views-field-title {
       a {
         font-size: rem(20);
@@ -57,6 +81,7 @@
         margin: 0 0 rem(6) 0;
         color: $black;
         font-weight: 400;
+
         &:hover {
           color: $yellow;
         }
@@ -68,6 +93,8 @@
   .form-item-tags-down {
     position: relative;
     margin-right: 0;
+    margin-top: 12px;
+
 
     label {
       font-family: $font-tags;
@@ -97,7 +124,7 @@
         }
       }
     }
-
+//HOVER RIGHT MENU
     &:hover {
       label {
         background: $yellow;
@@ -108,8 +135,9 @@
         display: block;
         text-align: right;
         position: absolute;
-        top: 33px;
-        right: 15px;
+        top: rem(33);
+        right: 0;
+        width: rem(120);
 
         //bg
         background-color: rgba(255, 255, 255, .95);
@@ -117,15 +145,12 @@
         border-width: 0 1px 1px;
         border-color: #ededed;
         border-style: solid;
+
+        ul{
+          margin-right: rem(10);
+        }
       }
     }
-
-    //rigth menu Dont miss
-    .form-item-tags-down {
-      margin-top: 12px;
-      margin-right: 0;
-    }
-
   }
 
   //menu DONT MISS left
@@ -238,8 +263,11 @@
           }
         }
       }
-      .wrapper-time-author{
+
+      .wrapper-time-author {
         display: flex;
+        align-items: center;
+        gap: 6px;
       }
     }
   }
