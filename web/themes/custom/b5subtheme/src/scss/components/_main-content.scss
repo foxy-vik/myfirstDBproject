@@ -10,6 +10,8 @@ li {
   list-style: none;
 }
 
-
+@import "main-content_main-navigation";
+//top black line ... banner ... logo
 @import "main-content_front-page";
+//all blocks
 @import "main-content_blocks";
