@@ -20,6 +20,11 @@
 {% endif %}
 {% set first = 1 %}
 {% for row in rows %}
+ {{ loop.index }}
+
+  {% if loop.index == 1 %}
+
+
   {%
     set row_classes = [
       default_row_class ? 'views-row',
