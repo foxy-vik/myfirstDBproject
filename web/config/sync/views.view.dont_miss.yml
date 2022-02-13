@@ -1004,13 +1004,13 @@ display:
             widget: select
             multiple: false
             remember: false
-            default_group: '2'
+            default_group: '1'
             default_group_multiple: {  }
             group_items:
               1:
                 title: All
-                operator: '!='
-                value: Vogue
+                operator: contains
+                value: life
               2:
                 title: Travel
                 operator: '='
@@ -1035,6 +1035,7 @@ display:
         title: false
         pager: false
         exposed_form: false
+        group_by: false
         relationships: false
         fields: false
         sorts: false
@@ -1054,6 +1055,7 @@ display:
           required: false
           vids:
             - lifestyle
+      group_by: true
       display_description: ''
       display_extenders: {  }
       block_description: 'Lifestyle news'
@@ -1698,8 +1700,8 @@ display:
           total_pages: null
           id: 0
           tags:
-            next: ››
-            previous: ‹‹
+            next: ''
+            previous: ''
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -1839,6 +1841,10 @@ display:
                 title: Travel
                 operator: word
                 value: Travel
+              6:
+                title: Gadgets
+                operator: '='
+                value: Gadgets
         name_1:
           id: name_1
           table: taxonomy_term_field_data
@@ -1915,9 +1921,11 @@ display:
       defaults:
         pager: false
         exposed_form: false
+        group_by: false
         fields: false
         filters: false
         filter_groups: false
+      group_by: true
       display_description: ''
       display_extenders: {  }
     cache_metadata:

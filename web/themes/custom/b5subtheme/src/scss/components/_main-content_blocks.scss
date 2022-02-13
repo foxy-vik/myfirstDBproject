@@ -67,8 +67,9 @@
         color: $black;
       }
     }
+
     //DATE
-    .views-field-created{
+    .views-field-created {
       font-size: 11px;
       line-height: 1;
       color: $grey;
@@ -89,11 +90,49 @@
     }
   }
 
+  .js-form-item {
+    margin-block: 0;
+  }
+
+  //pagination
+  .pager__items {
+    display: flex;
+    text-align: left;
+    max-height: rem(26);
+    gap: rem(4);
+    .pager__item {
+      padding: 0;
+      width: rem(26);
+      height: rem(26);
+      color: $grey;
+      border: 1px solid #dcdcdc;
+      border-radius: 0;
+      a {
+        color: $grey;
+        font-size: rem(20);
+        line-height: rem(22);
+        text-align: center;
+        vertical-align: middle;
+        font-weight: bold;
+        display: block;
+        margin: 0 auto;
+      }
+
+      &:hover {
+        background: $yellow;
+
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+
   //menu right
   .form-item-tags-down {
     position: relative;
     margin-right: 0;
-    margin-top: 12px;
+    padding-top: rem(12);
 
 
     label {
@@ -124,7 +163,8 @@
         }
       }
     }
-//HOVER RIGHT MENU
+
+    //HOVER RIGHT MENU
     &:hover {
       label {
         background: $yellow;
@@ -135,7 +175,7 @@
         display: block;
         text-align: right;
         position: absolute;
-        top: rem(33);
+        top: rem(20);
         right: 0;
         width: rem(120);
 
@@ -146,8 +186,9 @@
         border-color: #ededed;
         border-style: solid;
 
-        ul{
+        ul {
           margin-right: rem(10);
+          padding-top: rem(10);
         }
       }
     }
