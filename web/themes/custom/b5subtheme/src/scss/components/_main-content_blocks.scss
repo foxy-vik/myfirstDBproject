@@ -19,7 +19,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-top: -38px;
+    margin-top: -28px;
+    margin-bottom: rem(28);
   }
 
   .form-select {
@@ -132,7 +133,6 @@
   .form-item-tags-down {
     position: relative;
     margin-right: 0;
-    padding-top: rem(12);
 
 
     label {
@@ -199,6 +199,7 @@
     ul {
       display: flex;
       gap: 30px;
+      margin-bottom: 0;
 
       li:first-child {
         display: none;
