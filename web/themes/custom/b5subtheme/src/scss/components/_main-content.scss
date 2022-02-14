@@ -14,7 +14,7 @@ li {
 @include media-breakpoint-down(md) {
   .container {
     max-width: 100%;
-    padding-inline: 12px;
+    padding-inline: 6px;
     display: block;
     margin: 0 auto;
   }

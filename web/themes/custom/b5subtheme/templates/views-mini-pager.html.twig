@@ -29,11 +29,7 @@
             </a>
           </li>
       {% endif %}
-      {# @todo changed TWO arrows start & last #}
-      {% if items.current %}
-      {% endif %}
-
-      {% if items.next %}
+       {% if items.next %}
         <li class="pager__item pager__item--next">
           <a href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" rel="next"{{ items.next.attributes|without('href', 'title', 'rel') }}>
             <span class="visually-hidden">{{ 'Next page'|t }}</span>

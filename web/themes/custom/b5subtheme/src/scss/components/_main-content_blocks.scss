@@ -447,6 +447,7 @@
       margin-right: rem(10);
     }
 
+    //TODO add into another list with JS
     //top menu
     .form-select {
       ul {
@@ -476,6 +477,7 @@
     //tags
     .views-field-name {
       margin-top: -24px;
+
       a {
         @include tags($black);
 
@@ -552,10 +554,37 @@
 
 }
 
+@include media-breakpoint-down(sm) {
+  .life-style-items {
+    padding-right: 0;
+
+    .views-row {
+      flex: 1 0 50%;
+    }
+  }
+}
+
 @include media-breakpoint-down(md) {
   .layout--twocol-section--67-33 {
     flex-direction: column;
     gap: 0;
+
+    //dont miss
+    .block-views-blockdont-miss-block-dont-miss-view {
+      .view-filters {
+        display: none;
+      }
+      .view-content{
+        flex-direction: column;
+        img{
+          margin-top: 10px;
+          width: 100%;
+          display: block;
+          margin-inline: auto;
+        }
+      }
+    }
+
     //make it modern
     .block-views-blockmake-it-modern-block-9 {
       .views-row {
@@ -567,22 +596,27 @@
       }
     }
 
+    //lifestyle news
     .block-views-blockdont-miss-block-2 {
       .life-style-main {
         flex-direction: column;
-        img{
+
+        img {
           width: 100%;
         }
       }
-      .life-style-items{
-        .views-row{
+
+      .life-style-items {
+        .views-row {
           flex: 1 0 100%;
         }
-        img{
+
+        img {
           width: rem(168);
         }
       }
     }
+
   }
 }
 
