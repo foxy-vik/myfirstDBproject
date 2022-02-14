@@ -378,6 +378,50 @@
     }
   }
 
+  //make it modern
+  .block-views-blockmake-it-modern-block-9 {
+    .wrapper {
+      padding-top: rem(20);
+    }
+
+    .view-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(10);
+    }
+
+    .views-row {
+      flex: 1 0 48%;
+    }
+
+    .views-field-field-general-image-background {
+      max-height: rem(152);
+    }
+
+    .views-field-field-tax-gadg {
+      position: relative;
+    }
+
+    .tag {
+      position: absolute;
+      top: - rem(24);
+
+      a {
+        @include tags($colorHover);
+      }
+    }
+
+    .views-field-title {
+      a {
+        @include titleBlockSmall($black);
+
+        &:hover {
+          color: $colorHover;
+        }
+      }
+    }
+  }
+
 }
 
 

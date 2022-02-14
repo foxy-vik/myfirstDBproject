@@ -1,0 +1,15 @@
+uuid: a157dbf2-6ab3-4ade-96ba-84e4e81d30d9
+langcode: en
+status: true
+dependencies: {  }
+name: '152_106'
+label: '152_106'
+effects:
+  ac4c2492-89a2-4749-bdbc-4abc467cfc9c:
+    uuid: ac4c2492-89a2-4749-bdbc-4abc467cfc9c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 152
+      height: 106
+      anchor: center-center
