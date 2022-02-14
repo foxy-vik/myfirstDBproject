@@ -438,6 +438,21 @@
 
 }
 
+@include media-breakpoint-down(md) {
+  .layout--twocol-section--67-33 {
+    flex-direction: column;
+    gap:0;
+    .block-views-blockmake-it-modern-block-9{
+      .views-row{
+        margin-block: rem(10);
+      }
+      .views-field-field-general-image-background{
+        max-height: none;
+      }
+    }
+  }
+}
+
 
 
 
