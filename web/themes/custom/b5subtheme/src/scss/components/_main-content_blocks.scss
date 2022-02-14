@@ -437,25 +437,29 @@
   }
 
   //lifestyle news
-  .block-views-blockdont-miss-block-2{
+  .block-views-blockdont-miss-block-2 {
     h2 {
       @include titleBlock($white, $green);
     }
+
     .wrapper {
       border-top: rem(2) solid $green;
       margin-right: rem(10);
     }
+
     //top menu
-    .form-select{
-      ul{
+    .form-select {
+      ul {
         display: flex;
-        gap:rem(30);
+        gap: rem(30);
 
         li:first-child {
           display: none;
         }
+
         li a {
           line-height: rem(26);
+
           &:hover {
             color: $green;
           }
@@ -464,13 +468,32 @@
     }
 
     //top two items
-    .life-style-main{
+    .life-style-main {
       display: flex;
+
+      .views-row {
+        position: relative;
+      }
+
+      .views-field-name {
+        position: absolute;
+        top: rem(138);
+        left: 0;
+        a {
+          @include tags($black);
+          &:hover{
+            background-color: $green;
+          }
+        }
+      }
     }
-    .life-style-items{
+
+    //four another
+    .life-style-items {
       display: flex;
       flex-wrap: wrap;
-      .views-row{
+
+      .views-row {
         flex: 1 0 50%;
       }
     }
@@ -481,13 +504,14 @@
 @include media-breakpoint-down(md) {
   .layout--twocol-section--67-33 {
     flex-direction: column;
-    gap:0;
+    gap: 0;
     //make it modern
-    .block-views-blockmake-it-modern-block-9{
-      .views-row{
+    .block-views-blockmake-it-modern-block-9 {
+      .views-row {
         margin-block: rem(10);
       }
-      .views-field-field-general-image-background{
+
+      .views-field-field-general-image-background {
         max-height: none;
       }
     }
