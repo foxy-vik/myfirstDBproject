@@ -15,6 +15,7 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
+{{ dump() }}
 {% if title %}
   <h3>{{ title }}</h3>
 {% endif %}
@@ -29,17 +30,15 @@
    <div{{ row.attributes.addClass(row_classes) }}>
      {{- row.content -}}
    </div>
- {% endif %}
-     {% if loop.index == 1 %}
+ {% elseif loop.index == 2 %}
        <div{{ row.attributes.addClass(row_classes) }}>
          {{- row.content -}}
        </div>
    </div>
        <div class="life-style-items">
-       {% endif %}
-
+       {% else %}
     <div{{ row.attributes.addClass(row_classes) }}>
       {{- row.content -}}
-    </div>
+    </div> {% endif %}
       {% endfor %}
        </div>

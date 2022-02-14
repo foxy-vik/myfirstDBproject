@@ -311,7 +311,7 @@
       .wrapper-time-author {
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: rem(6);
       }
     }
   }
@@ -436,12 +436,53 @@
     }
   }
 
+  //lifestyle news
+  .block-views-blockdont-miss-block-2{
+    h2 {
+      @include titleBlock($white, $green);
+    }
+    .wrapper {
+      border-top: rem(2) solid $green;
+      margin-right: rem(10);
+    }
+    //top menu
+    .form-select{
+      ul{
+        display: flex;
+        gap:rem(30);
+
+        li:first-child {
+          display: none;
+        }
+        li a {
+          line-height: rem(26);
+          &:hover {
+            color: $green;
+          }
+        }
+      }
+    }
+
+    //top two items
+    .life-style-main{
+      display: flex;
+    }
+    .life-style-items{
+      display: flex;
+      flex-wrap: wrap;
+      .views-row{
+        flex: 1 0 50%;
+      }
+    }
+  }
+
 }
 
 @include media-breakpoint-down(md) {
   .layout--twocol-section--67-33 {
     flex-direction: column;
     gap:0;
+    //make it modern
     .block-views-blockmake-it-modern-block-9{
       .views-row{
         margin-block: rem(10);

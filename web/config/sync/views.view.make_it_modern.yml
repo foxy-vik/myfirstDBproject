@@ -7,8 +7,8 @@ dependencies:
     - field.storage.node.field_general_image_background
     - field.storage.node.field_general_text_
     - field.storage.node.field_tax_gadg
-    - image.style.152_106
     - image.style.97_68
+    - image.style.dont_miss_banner_324_234
     - image.style.media_library
     - image.style.thumbnail
     - node.type.gadgets
@@ -3549,7 +3549,7 @@ display:
           type: media_thumbnail
           settings:
             image_link: ''
-            image_style: '152_106'
+            image_style: dont_miss_banner_324_234
           group_column: target_id
           group_columns: {  }
           group_rows: true
