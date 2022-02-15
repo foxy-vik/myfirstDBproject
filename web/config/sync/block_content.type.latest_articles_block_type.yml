@@ -1,0 +1,8 @@
+uuid: cc176ad5-b2de-4001-9222-1f07dbbb32b5
+langcode: en
+status: true
+dependencies: {  }
+id: latest_articles_block_type
+label: 'Latest articles block type'
+revision: 0
+description: ''

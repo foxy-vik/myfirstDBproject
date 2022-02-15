@@ -1,0 +1,10 @@
+uuid: bbf7b8ad-a6e6-49e9-9151-4fd921eaf7a7
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.latest_articles
+label: 'latest articles'
+targetEntityType: block_content
+cache: true

@@ -1,0 +1,10 @@
+uuid: 4e7ed61a-d33c-4d71-85ad-bb558f008722
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.latest_articles_view_mode
+label: 'Latest articles view mode'
+targetEntityType: node
+cache: true
