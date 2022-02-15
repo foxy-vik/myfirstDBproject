@@ -50,6 +50,11 @@
     }
   }
 
+  .author-date {
+    display: flex;
+    gap: 0.375rem;
+  }
+
   .views-row {
     .views-field-field-general-text- {
       font-family: $font-tags;
@@ -104,6 +109,10 @@
     padding-left: 0;
     margin-bottom: rem(48);
     margin-top: rem(10);
+
+    .not-active{
+      opacity: 0.5;
+    }
 
     .pager__item {
       padding: 0;
@@ -723,15 +732,20 @@
     //tag
     .views-field-field-tax-gadg {
       margin-top: -1.5rem;
+
       a {
         @include tags($black);
-        &:hover{
+
+        &:hover {
           background-color: $purple;
         }
       }
 
     }
 
+    .views-field-created {
+      line-height: 2.5;
+    }
 
 
     .pager__items {
@@ -903,6 +917,12 @@
 
       .views-field-field-general-text- {
         display: none;
+      }
+    }
+
+    .block-views-blockmake-it-modern-block-holiday-reciped {
+      img{
+        width: 100%;
       }
     }
 
