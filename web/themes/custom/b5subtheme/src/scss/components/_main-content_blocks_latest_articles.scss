@@ -1,0 +1,10 @@
+.layout--twocol-section--67-33 {
+  .view-id-main_page{
+    .view-header{
+      @include titleBlock($white, $black);
+      position: absolute;
+      top: -2.125rem;
+    }
+  }
+}
+@include media-breakpoint-down(md) {}
