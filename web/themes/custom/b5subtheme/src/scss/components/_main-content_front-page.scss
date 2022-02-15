@@ -1,9 +1,10 @@
 
-.layout--twocol-section--75-25{
-  .layout__region--first{
-    flex:0 1 100%;
+.layout--twocol-section--75-25 {
+  .layout__region--first {
+    flex: 0 1 100%;
   }
 }
+
 .block-views-blocktest-field2-block-trending-now {
   max-width: 1068px;
   margin-block: 24px;
@@ -137,6 +138,7 @@
     .views-row {
       overflow: hidden;
       margin-right: 5px;
+      position: relative;
 
       img {
         transition: 0.5s;
@@ -236,6 +238,7 @@
         }
       }
     }
+
     .block-views-block-banner-grid-top-right-block-1 {
       .main-part-of-banner {
         .views-field-title {
@@ -246,6 +249,7 @@
         }
       }
     }
+
     .block-views-block-banner-grid-top-right-block-2 {
       .main-part-of-banner {
         .views-field-title {
@@ -256,6 +260,7 @@
         }
       }
     }
+
     .block-views-block-banner-grid-top-right-block-3 {
       .main-part-of-banner {
         .views-field-title {
@@ -294,6 +299,16 @@
 
     .block-views-block-banner-grid-top-right-block-3 {
       grid-area: 2 / 2 / 3 / 3;
+    }
+
+    .view-display-id-block_banner_grid_left {
+      .views-row {
+        max-height: 320px;
+      }
+    }
+
+    img {
+      width: 100%;
     }
   }
 

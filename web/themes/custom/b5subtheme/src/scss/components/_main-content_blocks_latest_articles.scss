@@ -110,4 +110,17 @@
 
 
 @include media-breakpoint-down(md) {
+  .layout--twocol-section--67-33 {
+    .block-views-blockmain-page-block-1 {
+      .views-row {
+        flex: 1 0 100%;
+      }
+      .disabled {
+        display: none;
+      }
+      .pager__item--last{
+        display: none;
+      }
+    }
+  }
 }

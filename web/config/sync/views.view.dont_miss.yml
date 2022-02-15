@@ -469,7 +469,7 @@ display:
           required: false
           vids:
             - lifestyle
-      use_ajax: true
+      use_ajax: false
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -1272,6 +1272,7 @@ display:
           1: AND
       defaults:
         title: false
+        use_ajax: false
         pager: false
         exposed_form: false
         group_by: false
@@ -1294,6 +1295,7 @@ display:
           required: false
           vids:
             - lifestyle
+      use_ajax: false
       group_by: true
       display_description: ''
       display_extenders: {  }
