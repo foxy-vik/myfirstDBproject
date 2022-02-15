@@ -57,7 +57,9 @@
   {% if multiple %}
     <div{{ attributes.addClass(classes, 'field__items') }}>
       {% for item in items %}
+        {% if loop.index == 1 %}
         <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+        {% endif %}
       {% endfor %}
     </div>
   {% else %}

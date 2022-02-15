@@ -60,14 +60,54 @@
     }
 
     //date
-    .node__meta{
+    .node__meta {
       padding-block: 0;
     }
-    .node__submitted{
+
+    .node__submitted {
       @include dateMain($grey);
     }
+
+    .js-pager__items {
+      justify-content: left;
+      gap: 0.5rem;
+
+      .active {
+        a {
+          background-color: $colorHover;
+          color: $white;
+          border-color: $colorHover;
+        }
+      }
+
+      .disabled {
+        span {
+          border: none;
+        }
+      }
+    }
   }
+
+  .page-item {
+    a {
+      color: #666;
+      padding: 5px 11px;
+      border: 1px solid #e3e3e3;
+      display: inline-block;
+      margin: 0 8px 8px 0;
+      min-width: 33px;
+      text-align: center;
+
+      &:hover {
+        color: $white;
+        background-color: #444;
+        border-color: #444;
+      }
+    }
+  }
+
 }
+
 
 @include media-breakpoint-down(md) {
 }
