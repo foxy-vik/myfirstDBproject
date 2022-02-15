@@ -10,8 +10,8 @@ dependencies:
     - b5subtheme
 id: bannermainnew
 theme: b5subtheme
-region: nav_main
-weight: 0
+region: nav_additional
+weight: -17
 provider: null
 plugin: 'block_content:8360ac98-4883-436c-ba83-554cb4aa928e'
 settings:
