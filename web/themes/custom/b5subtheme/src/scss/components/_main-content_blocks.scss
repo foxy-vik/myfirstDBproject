@@ -554,6 +554,7 @@
       }
     }
   }
+
   //house design
   .block-views-blockmake-it-modern-block-2 {
     h2 {
@@ -609,13 +610,16 @@
       }
     }
   }
+
   .block-views-blockmake-it-modern-block-performance-training {
     .view-content {
-      margin-top: rem(16);
+      margin-top: rem(26);
     }
 
     .views-row {
       display: flex;
+      gap: rem(10);
+      margin-bottom: rem(26);
     }
 
     .views-field-field-gadget-img {
@@ -636,6 +640,17 @@
 
     .author-date {
       display: flex;
+      gap: rem(8);
+      margin-block: rem(10);
+
+      span {
+        display: block;
+        line-height: 1.2rem;
+      }
+    }
+
+    .field-content {
+      line-height: 1.3rem;
     }
   }
 
@@ -700,94 +715,107 @@
       .views-row {
         margin-block: rem(10);
       }
+    }
 
-      .views-field-field-general-image-background {
-        max-height: none;
-        gap: 0;
+    .views-field-field-general-image-background {
+      max-height: none;
+      gap: 0;
+    }
 
-        //advert
-        .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
-          display: none;
-        }
+    //advert
+    .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
+      display: none;
+    }
 
-        .block-views-blockmake-it-modern-block-9 {
-          .views-row {
-            gap: 0;
+    //dont miss
+    .block-views-blockdont-miss-block-dont-miss-view {
+      .view-filters {
+        display: none;
+      }
 
-            //dont miss
-            .block-views-blockdont-miss-block-dont-miss-view {
-              .view-filters {
-                display: none;
-              }
+      .view-content {
+        flex-direction: column;
 
-              .view-content {
-                flex-direction: column;
-
-                img {
-                  margin-top: 10px;
-                  width: 100%;
-                  display: block;
-                  margin-inline: auto;
-                }
-              }
-            }
-
-            //make it modern
-            .block-views-blockmake-it-modern-block-9 {
-              .views-row {
-                margin-block: rem(10);
-              }
-
-              .views-field-field-general-image-background {
-                max-height: none;
-              }
-            }
-
-            //lifestyle news
-            .block-views-blockdont-miss-block-2 {
-              .life-style-main {
-                flex-direction: column;
-
-                img {
-                  width: 100%;
-                }
-              }
-
-              .life-style-items {
-                .views-row {
-                  flex: 1 0 100%;
-                }
-
-                img {
-                  width: rem(168);
-                }
-              }
-            }
-
-          }
-        }
-
-        //house design
-        .block-views-blockmake-it-modern-block-2 {
-          .view-content {
-            flex-direction: column;
-            gap: rem(10);
-          }
-
-          .date-house {
-            display: block;
-            @include dateMain($grey);
-          }
-
-          .views-row {
-            display: flex;
-            gap: rem(10);
-          }
+        img {
+          margin-top: 10px;
+          width: 100%;
+          display: block;
+          margin-inline: auto;
         }
       }
     }
+
+    //make it modern
+    .block-views-blockmake-it-modern-block-9 {
+      .views-row {
+        gap: 0;
+        margin-block: rem(10);
+      }
+
+      .views-field-field-general-image-background {
+        max-height: none;
+      }
+    }
+
+    //lifestyle news
+    .block-views-blockdont-miss-block-2 {
+      .life-style-main {
+        flex-direction: column;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .life-style-items {
+        .views-row {
+          flex: 1 0 100%;
+        }
+
+        img {
+          width: rem(168);
+        }
+      }
+    }
+
+    //house design
+    .block-views-blockmake-it-modern-block-2 {
+      .view-content {
+        flex-direction: column;
+        gap: rem(10);
+      }
+
+      .date-house {
+        display: block;
+        @include dateMain($grey);
+      }
+
+      .views-row {
+        display: flex;
+        gap: rem(10);
+      }
+    }
+
+    //perfomance training
+    .block-views-blockmake-it-modern-block-performance-training {
+      .views-field-title {
+        a {
+          @include titleBlockSmall($black);
+          &:hover{
+            color: $colorHover;
+          }
+        }
+      }
+
+      .views-field-field-general-text- {
+        display: none;
+      }
+    }
+
   }
 }
+
+
 
 
 
