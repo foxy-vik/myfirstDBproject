@@ -590,7 +590,7 @@
     margin: 0 auto;
   }
 
- }
+}
 
 @include media-breakpoint-down(sm) {
   .life-style-items {
@@ -601,7 +601,7 @@
     }
   }
   //house design
-  .block-views-blockmake-it-modern-block-2{
+  .block-views-blockmake-it-modern-block-2 {
     h2 {
       @include titleBlock($white, $mint);
     }
@@ -639,7 +639,7 @@
       }
     }
 
-    .date-house{
+    .date-house {
       display: none;
     }
 
@@ -672,6 +672,7 @@
     .views-field-fieldset {
       flex: 1 0 65%;
     }
+
     .views-field-title {
       a {
         &:hover {
@@ -679,7 +680,8 @@
         }
       }
     }
-    .author-date{
+
+    .author-date {
       display: flex;
     }
   }
@@ -703,86 +705,89 @@
 
       .views-field-field-general-image-background {
         max-height: none;
-    gap: 0;
-
-    //advert
-    .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
-      display: none;
-    }
-
-    .block-views-blockmake-it-modern-block-9 {
-      .views-row {
         gap: 0;
 
-        //dont miss
-        .block-views-blockdont-miss-block-dont-miss-view {
-          .view-filters {
-            display: none;
-          }
-
-          .view-content {
-            flex-direction: column;
-
-            img {
-              margin-top: 10px;
-              width: 100%;
-              display: block;
-              margin-inline: auto;
-            }
-          }
+        //advert
+        .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
+          display: none;
         }
 
-        //make it modern
         .block-views-blockmake-it-modern-block-9 {
           .views-row {
-            margin-block: rem(10);
-          }
+            gap: 0;
 
-          .views-field-field-general-image-background {
-            max-height: none;
+            //dont miss
+            .block-views-blockdont-miss-block-dont-miss-view {
+              .view-filters {
+                display: none;
+              }
+
+              .view-content {
+                flex-direction: column;
+
+                img {
+                  margin-top: 10px;
+                  width: 100%;
+                  display: block;
+                  margin-inline: auto;
+                }
+              }
+            }
+
+            //make it modern
+            .block-views-blockmake-it-modern-block-9 {
+              .views-row {
+                margin-block: rem(10);
+              }
+
+              .views-field-field-general-image-background {
+                max-height: none;
+              }
+            }
+
+            //lifestyle news
+            .block-views-blockdont-miss-block-2 {
+              .life-style-main {
+                flex-direction: column;
+
+                img {
+                  width: 100%;
+                }
+              }
+
+              .life-style-items {
+                .views-row {
+                  flex: 1 0 100%;
+                }
+
+                img {
+                  width: rem(168);
+                }
+              }
+            }
+
           }
         }
 
-        //lifestyle news
-        .block-views-blockdont-miss-block-2 {
-          .life-style-main {
+        //house design
+        .block-views-blockmake-it-modern-block-2 {
+          .view-content {
             flex-direction: column;
-
-            img {
-              width: 100%;
-            }
+            gap: rem(10);
           }
 
-          .life-style-items {
-            .views-row {
-              flex: 1 0 100%;
-            }
+          .date-house {
+            display: block;
+            @include dateMain($grey);
+          }
 
-            img {
-              width: rem(168);
-            }
+          .views-row {
+            display: flex;
+            gap: rem(10);
           }
         }
-
       }
     }
-
-    //house design
-    .block-views-blockmake-it-modern-block-2 {
-      .view-content{
-        flex-direction: column;
-        gap:rem(10);
-      }
-      .date-house{
-        display: block;
-        @include dateMain($grey);
-      }
-
-      .views-row{
-       display: flex;
-        gap:rem(10);
-      }
-   }
   }
 }
 

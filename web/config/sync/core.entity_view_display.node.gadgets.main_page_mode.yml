@@ -279,14 +279,15 @@ third_party_settings:
             additional: {  }
         third_party_settings: {  }
       -
-        layout_id: layout_onecol
+        layout_id: layout_twocol_section
         layout_settings:
-          label: advertising
+          label: advertising-full
           context_mapping: {  }
+          column_widths: 75-25
         components:
           e4ab2df7-569e-4b32-aee0-3a29031d7903:
             uuid: e4ab2df7-569e-4b32-aee0-3a29031d7903
-            region: content
+            region: first
             configuration:
               id: 'block_content:eaec81f9-ce96-4723-8c19-3d3630fab9ef'
               label: advert

@@ -1,0 +1,15 @@
+uuid: ec2d9030-9650-4751-9fbe-e1833914323f
+langcode: en
+status: true
+dependencies: {  }
+name: training_222_155
+label: 'training 222 - 155'
+effects:
+  6dc4c1ab-f250-454b-8182-c41d3af4f8c7:
+    uuid: 6dc4c1ab-f250-454b-8182-c41d3af4f8c7
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 222
+      height: 155
+      anchor: center-center
