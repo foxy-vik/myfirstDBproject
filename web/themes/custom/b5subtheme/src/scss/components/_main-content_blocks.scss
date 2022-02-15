@@ -29,7 +29,7 @@
     padding: 0;
     font-family: $font-tags;
     font-size: rem(13);
-    color: #767676;
+    color: $grey;
 
 
     ul {
@@ -101,6 +101,9 @@
     text-align: left;
     max-height: rem(26);
     gap: rem(4);
+    padding-left: 0;
+    margin-bottom: rem(48);
+    margin-top: rem(10);
 
     .pager__item {
       padding: 0;
@@ -278,7 +281,7 @@
           }
 
           .views-field-created {
-            @include dateMain(#767676);
+            @include dateMain($grey);
             padding-left: rem(12);
           }
 
@@ -436,40 +439,6 @@
     }
   }
 
-  //Advertisement
-  .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
-    .wrapper {
-      border: none;
-      margin-bottom: rem(20);
-    }
-
-    .field--name-field-ad-title {
-      text-align: center;
-    }
-
-    img {
-      display: block;
-      margin: 0 auto;
-    }
-  }
-
-}
-
-// Advertisement
-.layout--twocol-section--75-25 {
-  .layout__region--first {
-    flex: 1 0 100% !important;
-    margin-bottom: rem(16);
-  }
-
-  .field--name-field-ad-title {
-    text-align: center;
-  }
-
-  img {
-    display: block;
-    margin: 0 auto;
-  }
   //lifestyle news
   .block-views-blockdont-miss-block-2 {
     h2 {
@@ -586,7 +555,42 @@
     }
   }
 
+  //Advertisement
+  .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
+    .wrapper {
+      border: none;
+      margin-bottom: rem(20);
+    }
+
+    .field--name-field-ad-title {
+      text-align: center;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
 }
+
+// Advertisement
+.layout--twocol-section--75-25 {
+  .layout__region--first {
+    flex: 1 0 100% !important;
+    margin-bottom: rem(16);
+  }
+
+  .field--name-field-ad-title {
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+ }
 
 @include media-breakpoint-down(sm) {
   .life-style-items {
@@ -596,6 +600,90 @@
       flex: 1 0 50%;
     }
   }
+  //house design
+  .block-views-blockmake-it-modern-block-2{
+    h2 {
+      @include titleBlock($white, $mint);
+    }
+
+    .wrapper {
+      border-top: rem(2) solid $mint;
+    }
+
+    .view-content {
+      padding-top: rem(16);
+      display: flex;
+      gap: rem(16);
+      justify-content: space-between;
+    }
+
+    .views-field-field-tax-gadg {
+      margin-top: -24px;
+
+      a {
+        @include tags($black);
+
+        &:hover {
+          background-color: $mint;
+        }
+      }
+    }
+
+    .views-field-title {
+      a {
+        @include titleBlockSmall($black);
+
+        &:hover {
+          color: $mint;
+        }
+      }
+    }
+
+    .date-house{
+      display: none;
+    }
+
+    .pager__item {
+      margin-top: rem(10);
+
+      &:hover {
+        background: $mint;
+
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .block-views-blockmake-it-modern-block-performance-training {
+    .view-content {
+      margin-top: rem(16);
+    }
+
+    .views-row {
+      display: flex;
+    }
+
+    .views-field-field-gadget-img {
+      flex: 1 0 35%;
+    }
+
+    .views-field-fieldset {
+      flex: 1 0 65%;
+    }
+    .views-field-title {
+      a {
+        &:hover {
+          color: $colorHover;
+        }
+      }
+    }
+    .author-date{
+      display: flex;
+    }
+  }
+
 }
 
 @include media-breakpoint-down(md) {
@@ -608,32 +696,6 @@
     flex-direction: column;
     gap: 0;
 
-    //advert
-    .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41{
-      display: none;
-    }
-
-    .block-views-blockmake-it-modern-block-9 {
-      .views-row {
-    gap: 0;
-
-    //dont miss
-    .block-views-blockdont-miss-block-dont-miss-view {
-      .view-filters {
-        display: none;
-      }
-      .view-content{
-        flex-direction: column;
-        img{
-          margin-top: 10px;
-          width: 100%;
-          display: block;
-          margin-inline: auto;
-        }
-      }
-    }
-
-    //make it modern
     .block-views-blockmake-it-modern-block-9 {
       .views-row {
         margin-block: rem(10);
@@ -641,30 +703,86 @@
 
       .views-field-field-general-image-background {
         max-height: none;
+    gap: 0;
+
+    //advert
+    .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
+      display: none;
+    }
+
+    .block-views-blockmake-it-modern-block-9 {
+      .views-row {
+        gap: 0;
+
+        //dont miss
+        .block-views-blockdont-miss-block-dont-miss-view {
+          .view-filters {
+            display: none;
+          }
+
+          .view-content {
+            flex-direction: column;
+
+            img {
+              margin-top: 10px;
+              width: 100%;
+              display: block;
+              margin-inline: auto;
+            }
+          }
+        }
+
+        //make it modern
+        .block-views-blockmake-it-modern-block-9 {
+          .views-row {
+            margin-block: rem(10);
+          }
+
+          .views-field-field-general-image-background {
+            max-height: none;
+          }
+        }
+
+        //lifestyle news
+        .block-views-blockdont-miss-block-2 {
+          .life-style-main {
+            flex-direction: column;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .life-style-items {
+            .views-row {
+              flex: 1 0 100%;
+            }
+
+            img {
+              width: rem(168);
+            }
+          }
+        }
+
       }
     }
 
-    //lifestyle news
-    .block-views-blockdont-miss-block-2 {
-      .life-style-main {
+    //house design
+    .block-views-blockmake-it-modern-block-2 {
+      .view-content{
         flex-direction: column;
-
-        img {
-          width: 100%;
-        }
+        gap:rem(10);
+      }
+      .date-house{
+        display: block;
+        @include dateMain($grey);
       }
 
-      .life-style-items {
-        .views-row {
-          flex: 1 0 100%;
-        }
-
-        img {
-          width: rem(168);
-        }
+      .views-row{
+       display: flex;
+        gap:rem(10);
       }
-    }
-
+   }
   }
 }
 
