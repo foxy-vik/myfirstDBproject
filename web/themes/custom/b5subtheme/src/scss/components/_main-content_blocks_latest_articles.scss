@@ -1,10 +1,73 @@
 .layout--twocol-section--67-33 {
-  .view-id-main_page{
-    .view-header{
+  .block-views-blockmain-page-block-1 {
+    position: relative;
+
+    .wrapper {
+      margin-top: rem(26);
+    }
+
+    //title latest articles
+    .view-header {
       @include titleBlock($white, $black);
       position: absolute;
-      top: -2.125rem;
+      top: -2.025rem;
+    }
+
+    .view-content {
+      margin-block: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(40);
+    }
+
+    .views-row {
+      flex: 1 0 46%;
+      margin-bottom: rem(20);
+    }
+
+    img {
+      width: 100%;
+    }
+
+
+    .field--name-field-tax-gadg {
+      margin-top: -1.5rem;
+
+      a {
+        @include tags($black);
+
+        &:hover {
+          background-color: $colorHover;
+        }
+      }
+    }
+
+    h3 {
+      font-size: 1.35rem;
+    }
+
+    .field--name-title {
+      display: block;
+      font-size: rem(20);
+      line-height: rem(25);
+      margin: rem(13) 0 rem(6) 0;
+      color: $black;
+      font-weight: 400;
+
+      &:hover {
+        color: $colorHover;
+      }
+    }
+
+    //date
+    .node__meta{
+      padding-block: 0;
+    }
+    .node__submitted{
+      @include dateMain($grey);
     }
   }
 }
-@include media-breakpoint-down(md) {}
+
+@include media-breakpoint-down(md) {
+}
