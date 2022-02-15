@@ -29,7 +29,7 @@
     padding: 0;
     font-family: $font-tags;
     font-size: rem(13);
-    color: #767676;
+    color: $grey;
 
 
     ul {
@@ -102,6 +102,8 @@
     max-height: rem(26);
     gap: rem(4);
     padding-left: 0;
+    margin-bottom: rem(48);
+    margin-top: rem(10);
 
     .pager__item {
       padding: 0;
@@ -279,7 +281,7 @@
           }
 
           .views-field-created {
-            @include dateMain(#767676);
+            @include dateMain($grey);
             padding-left: 12px;
           }
 
@@ -475,6 +477,10 @@
       }
     }
 
+    .date-house{
+      display: none;
+    }
+
     .pager__item {
       margin-top: rem(10);
 
@@ -532,6 +538,17 @@
         max-height: none;
       }
     }
+
+    //house design
+    .block-views-blockmake-it-modern-block-2 {
+      .view-content{
+        flex-direction: column;
+      }
+      .date-house{
+        display: block;
+        @include dateMain($grey);
+      }
+   }
   }
 }
 
