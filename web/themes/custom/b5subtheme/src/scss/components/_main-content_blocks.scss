@@ -654,6 +654,99 @@
     }
   }
 
+  //most popular
+  .block-views-blockmake-it-modern-block-most-popular-front {
+    .view-content {
+      margin-top: rem(26);
+    }
+
+    .views-row {
+      display: flex;
+      gap: rem(8);
+      margin-block: rem(12);
+    }
+
+    .views-field-field-gadget-img {
+      flex-basis: 35%;
+    }
+
+    .views-field-fieldset {
+      flex-basis: 60%;
+    }
+
+    .views-field-title {
+      line-height: 1.2rem;
+      padding-bottom: 0.3rem;
+
+      a {
+        @include titleBlockSmall($black);
+
+        &:hover {
+          color: $colorHover;
+        }
+      }
+    }
+
+    .pager__item {
+      margin-top: rem(10);
+
+      &:hover {
+        background: $colorHover;
+
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .block-views-blockmake-it-modern-block-holiday-reciped {
+    h2 {
+      @include titleBlock($white, $purple);
+    }
+
+    .wrapper {
+      border-top: rem(2) solid $purple;
+      padding-top: rem(20);
+    }
+
+    .views-field-title {
+      a {
+        margin-bottom: rem(2);
+
+        &:hover {
+          color: $purple;
+        }
+      }
+    }
+
+    //tag
+    .views-field-field-tax-gadg {
+      margin-top: -1.5rem;
+      a {
+        @include tags($black);
+        &:hover{
+          background-color: $purple;
+        }
+      }
+
+    }
+
+
+
+    .pager__items {
+      padding-left: 0;
+      margin-top: rem(10);
+
+      .pager__item {
+        &:hover {
+          background: $purple;
+        }
+      }
+    }
+
+  }
+
   //Advertisement
   .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
     .wrapper {
@@ -801,7 +894,8 @@
       .views-field-title {
         a {
           @include titleBlockSmall($black);
-          &:hover{
+
+          &:hover {
             color: $colorHover;
           }
         }
