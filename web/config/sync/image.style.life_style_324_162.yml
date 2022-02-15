@@ -1,0 +1,15 @@
+uuid: be61de97-de0d-4637-a63c-7032b61e9a2d
+langcode: en
+status: true
+dependencies: {  }
+name: life_style_324_162
+label: 'life style 324 162'
+effects:
+  96055bd1-79f1-4d43-a601-b05bdd16eb52:
+    uuid: 96055bd1-79f1-4d43-a601-b05bdd16eb52
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 324
+      height: 162
+      anchor: center-center

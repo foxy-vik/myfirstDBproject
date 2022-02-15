@@ -71,7 +71,7 @@
 
     //DATE
     .views-field-created {
-      font-size: 11px;
+      font-size: rem(11);
       line-height: 1;
       color: $grey;
     }
@@ -110,7 +110,7 @@
       width: rem(26);
       height: rem(26);
       color: $grey;
-      border: 1px solid #dcdcdc;
+      border: rem(1) solid #dcdcdc;
       border-radius: 0;
 
       a {
@@ -187,7 +187,7 @@
         //bg
         background-color: rgba(255, 255, 255, .95);
         z-index: 999;
-        border-width: 0 1px 1px;
+        border-width: 0 rem(1) rem(1);
         border-color: #ededed;
         border-style: solid;
 
@@ -203,7 +203,7 @@
   .form-item-name1 {
     ul {
       display: flex;
-      gap: 30px;
+      gap: rem(30);
       margin-bottom: 0;
 
       li:first-child {
@@ -227,8 +227,8 @@
 
     //line
     .wrapper {
-      border-top: 2px solid $yellow;
-      margin-right: 10px;
+      border-top: rem(2) solid $yellow;
+      margin-right: rem(10);
 
       .view-content {
         display: flex;
@@ -248,7 +248,7 @@
             li:first-child {
               display: block;
               position: absolute;
-              bottom: 8px;
+              bottom: rem(8);
               left: 0;
             }
 
@@ -267,7 +267,7 @@
           padding-left: rem(24);
 
           .views-row {
-            margin-bottom: 10px;
+            margin-bottom: rem(10);
             display: flex;
 
             .views-field-fieldset-2 {
@@ -282,11 +282,11 @@
 
           .views-field-created {
             @include dateMain($grey);
-            padding-left: 12px;
+            padding-left: rem(12);
           }
 
           .views-field-title {
-            padding-left: 10px;
+            padding-left: rem(10);
 
             a {
               @include titleBlockSmall($black);
@@ -314,7 +314,7 @@
       .wrapper-time-author {
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: rem(6);
       }
     }
   }
@@ -327,18 +327,18 @@
 
     //line
     .wrapper {
-      border-top: 2px solid $black;
-      margin-right: 10px;
+      border-top: rem(2) solid $black;
+      margin-right: rem(10);
       display: block;
-      padding-top: 26px;
+      padding-top: rem(26);
     }
 
     .paragraph--type--stay-connected {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-height: 42px;
-      margin-bottom: 8px;
+      max-height: rem(42);
+      margin-bottom: rem(8);
 
       &:hover {
         .field__item {
@@ -357,27 +357,27 @@
       }
 
       .social-media-link-icon--facebook {
-        @include size(40px, 40px);
-        @include socialMedia(#516eab, 10px, 8px);
+        @include size(rem(40), rem(40));
+        @include socialMedia(#516eab, rem(10), rem(8));
       }
 
       .social-media-link-icon--twitter {
-        @include size(40px, 40px);
-        @include socialMedia(#29c5f6, 10px, 8px);
+        @include size(rem(40), rem(40));
+        @include socialMedia(#29c5f6, rem(10), rem(8));
       }
 
       .social-media-link-icon--youtube {
-        @include size(40px, 40px);
-        @include socialMedia(#e14e42, 10px, 10px);
+        @include size(rem(40), rem(40));
+        @include socialMedia(#e14e42, rem(10), rem(10));
       }
 
       .field__item {
         a {
           color: $black;
-          font-size: 11px;
+          font-size: rem(11);
           font-weight: bold;
           text-decoration: none;
-          line-height: 15px;
+          line-height: rem(15);
         }
       }
     }
@@ -429,7 +429,7 @@
 
     .pager__items {
       padding-left: 0;
-      margin-top: 10px;
+      margin-top: rem(10);
 
       .pager__item {
         &:hover {
@@ -439,6 +439,167 @@
     }
   }
 
+  //lifestyle news
+  .block-views-blockdont-miss-block-2 {
+    h2 {
+      @include titleBlock($white, $green);
+    }
+
+    .wrapper {
+      border-top: rem(2) solid $green;
+      margin-right: rem(10);
+    }
+
+    //TODO add into another list with JS
+    //top menu
+    .form-select {
+      ul {
+        display: flex;
+        gap: rem(30);
+
+        li:first-child {
+          display: none;
+        }
+
+        li a {
+          line-height: rem(26);
+
+          &:hover {
+            color: $green;
+          }
+        }
+      }
+    }
+
+
+    //tags for all
+    .views-row {
+      position: relative;
+    }
+
+    //tags
+    .views-field-name {
+      margin-top: -24px;
+
+      a {
+        @include tags($black);
+
+        &:hover {
+          background-color: $green;
+        }
+      }
+    }
+
+    //top two items
+    .life-style-main {
+      display: flex;
+
+      .author-date {
+        display: flex;
+        gap: rem(6);
+      }
+
+      .views-field-created {
+        line-height: 2.5;
+      }
+
+      .views-field-title {
+        a:hover {
+          color: $green;
+        }
+      }
+    }
+
+    //four another
+    .life-style-items {
+      display: flex;
+      flex-wrap: wrap;
+      padding-right: rem(10);
+
+      .views-row {
+        flex: 1 0 50%;
+        margin-bottom: rem(16);
+        overflow: hidden;
+      }
+
+      .views-field-field-gadget-img {
+        float: left;
+        margin-right: rem(10);
+      }
+
+      .views-field-name, .views-field-uid, .views-field-field-general-text- {
+        display: none;
+      }
+
+      img {
+        width: rem(97);
+        height: auto;
+      }
+
+      .views-field-title {
+        a {
+          @include titleBlockSmall($black);
+
+          &:hover {
+            color: $green;
+          }
+        ;
+        }
+      }
+    }
+
+    .pager__item {
+      &:hover {
+        background: $green;
+      }
+    }
+  }
+
+  //Advertisement
+  .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
+    .wrapper {
+      border: none;
+      margin-bottom: rem(20);
+    }
+
+    .field--name-field-ad-title {
+      text-align: center;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+}
+
+// Advertisement
+.layout--twocol-section--75-25 {
+  .layout__region--first {
+    flex: 1 0 100% !important;
+    margin-bottom: rem(16);
+  }
+
+  .field--name-field-ad-title {
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+ }
+
+@include media-breakpoint-down(sm) {
+  .life-style-items {
+    padding-right: 0;
+
+    .views-row {
+      flex: 1 0 50%;
+    }
+  }
   //house design
   .block-views-blockmake-it-modern-block-2{
     h2 {
@@ -526,6 +687,11 @@
 }
 
 @include media-breakpoint-down(md) {
+  .layout--twocol-section--75-25 {
+    .layout__region--first {
+      display: none;
+    }
+  }
   .layout--twocol-section--67-33 {
     flex-direction: column;
     gap: 0;
@@ -537,6 +703,67 @@
 
       .views-field-field-general-image-background {
         max-height: none;
+    gap: 0;
+
+    //advert
+    .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
+      display: none;
+    }
+
+    .block-views-blockmake-it-modern-block-9 {
+      .views-row {
+        gap: 0;
+
+        //dont miss
+        .block-views-blockdont-miss-block-dont-miss-view {
+          .view-filters {
+            display: none;
+          }
+
+          .view-content {
+            flex-direction: column;
+
+            img {
+              margin-top: 10px;
+              width: 100%;
+              display: block;
+              margin-inline: auto;
+            }
+          }
+        }
+
+        //make it modern
+        .block-views-blockmake-it-modern-block-9 {
+          .views-row {
+            margin-block: rem(10);
+          }
+
+          .views-field-field-general-image-background {
+            max-height: none;
+          }
+        }
+
+        //lifestyle news
+        .block-views-blockdont-miss-block-2 {
+          .life-style-main {
+            flex-direction: column;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .life-style-items {
+            .views-row {
+              flex: 1 0 100%;
+            }
+
+            img {
+              width: rem(168);
+            }
+          }
+        }
+
       }
     }
 

@@ -1,0 +1,15 @@
+uuid: 5bd1910e-ad57-4513-a3e6-0a2818213c56
+langcode: en
+status: true
+dependencies: {  }
+name: make_it_modern_345_240
+label: 'make it modern 345 240'
+effects:
+  e3ca7132-d206-4667-ac20-729d1a811e65:
+    uuid: e3ca7132-d206-4667-ac20-729d1a811e65
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 340
+      height: 240
+      anchor: center-center
