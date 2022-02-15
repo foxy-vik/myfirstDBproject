@@ -436,40 +436,6 @@
     }
   }
 
-  //Advertisement
-  .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
-    .wrapper {
-      border: none;
-      margin-bottom: rem(20);
-    }
-
-    .field--name-field-ad-title {
-      text-align: center;
-    }
-
-    img {
-      display: block;
-      margin: 0 auto;
-    }
-  }
-
-}
-
-// Advertisement
-.layout--twocol-section--75-25 {
-  .layout__region--first {
-    flex: 1 0 100% !important;
-    margin-bottom: rem(16);
-  }
-
-  .field--name-field-ad-title {
-    text-align: center;
-  }
-
-  img {
-    display: block;
-    margin: 0 auto;
-  }
   //lifestyle news
   .block-views-blockdont-miss-block-2 {
     h2 {
@@ -586,7 +552,42 @@
     }
   }
 
+  //Advertisement
+  .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
+    .wrapper {
+      border: none;
+      margin-bottom: rem(20);
+    }
+
+    .field--name-field-ad-title {
+      text-align: center;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
 }
+
+// Advertisement
+.layout--twocol-section--75-25 {
+  .layout__region--first {
+    flex: 1 0 100% !important;
+    margin-bottom: rem(16);
+  }
+
+  .field--name-field-ad-title {
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+ }
 
 @include media-breakpoint-down(sm) {
   .life-style-items {
@@ -609,62 +610,66 @@
     gap: 0;
 
     //advert
-    .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41{
+    .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
       display: none;
     }
 
     .block-views-blockmake-it-modern-block-9 {
       .views-row {
-    gap: 0;
+        gap: 0;
 
-    //dont miss
-    .block-views-blockdont-miss-block-dont-miss-view {
-      .view-filters {
-        display: none;
-      }
-      .view-content{
-        flex-direction: column;
-        img{
-          margin-top: 10px;
-          width: 100%;
-          display: block;
-          margin-inline: auto;
+        //dont miss
+        .block-views-blockdont-miss-block-dont-miss-view {
+          .view-filters {
+            display: none;
+          }
+
+          .view-content {
+            flex-direction: column;
+
+            img {
+              margin-top: 10px;
+              width: 100%;
+              display: block;
+              margin-inline: auto;
+            }
+          }
         }
+
+        //make it modern
+        .block-views-blockmake-it-modern-block-9 {
+          .views-row {
+            margin-block: rem(10);
+          }
+
+          .views-field-field-general-image-background {
+            max-height: none;
+          }
+        }
+
+        //lifestyle news
+        .block-views-blockdont-miss-block-2 {
+          .life-style-main {
+            flex-direction: column;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .life-style-items {
+            .views-row {
+              flex: 1 0 100%;
+            }
+
+            img {
+              width: rem(168);
+            }
+          }
+        }
+
       }
     }
-
-    //make it modern
-    .block-views-blockmake-it-modern-block-9 {
-      .views-row {
-        margin-block: rem(10);
-      }
-
-      .views-field-field-general-image-background {
-        max-height: none;
-      }
-    }
-
-    //lifestyle news
-    .block-views-blockdont-miss-block-2 {
-      .life-style-main {
-        flex-direction: column;
-
-        img {
-          width: 100%;
-        }
-      }
-
-      .life-style-items {
-        .views-row {
-          flex: 1 0 100%;
-        }
-
-        img {
-          width: rem(168);
-        }
-      }
-    }
-
   }
 }
 
