@@ -50,6 +50,11 @@
     }
   }
 
+  .author-date {
+    display: flex;
+    gap: 0.375rem;
+  }
+
   .views-row {
     .views-field-field-general-text- {
       font-family: $font-tags;
@@ -104,6 +109,10 @@
     padding-left: 0;
     margin-bottom: rem(48);
     margin-top: rem(10);
+
+    .not-active{
+      opacity: 0.5;
+    }
 
     .pager__item {
       padding: 0;
@@ -654,6 +663,104 @@
     }
   }
 
+  //most popular
+  .block-views-blockmake-it-modern-block-most-popular-front {
+    .view-content {
+      margin-top: rem(26);
+    }
+
+    .views-row {
+      display: flex;
+      gap: rem(8);
+      margin-block: rem(12);
+    }
+
+    .views-field-field-gadget-img {
+      flex-basis: 35%;
+    }
+
+    .views-field-fieldset {
+      flex-basis: 60%;
+    }
+
+    .views-field-title {
+      line-height: 1.2rem;
+      padding-bottom: 0.3rem;
+
+      a {
+        @include titleBlockSmall($black);
+
+        &:hover {
+          color: $colorHover;
+        }
+      }
+    }
+
+    .pager__item {
+      margin-top: rem(10);
+
+      &:hover {
+        background: $colorHover;
+
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .block-views-blockmake-it-modern-block-holiday-reciped {
+    h2 {
+      @include titleBlock($white, $purple);
+    }
+
+    .wrapper {
+      border-top: rem(2) solid $purple;
+      padding-top: rem(20);
+    }
+
+    .views-field-title {
+      a {
+        margin-bottom: rem(2);
+
+        &:hover {
+          color: $purple;
+        }
+      }
+    }
+
+    //tag
+    .views-field-field-tax-gadg {
+      margin-top: -1.5rem;
+
+      a {
+        @include tags($black);
+
+        &:hover {
+          background-color: $purple;
+        }
+      }
+
+    }
+
+    .views-field-created {
+      line-height: 2.5;
+    }
+
+
+    .pager__items {
+      padding-left: 0;
+      margin-top: rem(10);
+
+      .pager__item {
+        &:hover {
+          background: $purple;
+        }
+      }
+    }
+
+  }
+
   //Advertisement
   .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
     .wrapper {
@@ -801,7 +908,8 @@
       .views-field-title {
         a {
           @include titleBlockSmall($black);
-          &:hover{
+
+          &:hover {
             color: $colorHover;
           }
         }
@@ -809,6 +917,12 @@
 
       .views-field-field-general-text- {
         display: none;
+      }
+    }
+
+    .block-views-blockmake-it-modern-block-holiday-reciped {
+      img{
+        width: 100%;
       }
     }
 
