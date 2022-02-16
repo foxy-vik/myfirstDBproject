@@ -108,18 +108,18 @@
 
   .page-item {
     a {
-      color: #666;
-      padding: 5px 11px;
-      border: 1px solid #e3e3e3;
+      color: $lightGrey;
+      padding: rem(5) rem(11);
+      border: rem(1) solid $lightWhite;
       display: inline-block;
-      margin: 0 8px 8px 0;
-      min-width: 33px;
+      margin: 0 rem(8) rem(8) 0;
+      min-width: rem(33);
       text-align: center;
 
       &:hover {
         color: $white;
-        background-color: #444;
-        border-color: #444;
+        background-color: $darkGrey;
+        border-color: $darkGrey;
       }
     }
   }

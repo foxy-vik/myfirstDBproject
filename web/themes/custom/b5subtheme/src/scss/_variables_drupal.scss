@@ -23,23 +23,27 @@ $local-tasks-secondary-margin: 0 0 1rem 0 !default;
 $table-striped-bg: #f9f9f9 !default;
 
 //custom
-$heightBanner:450px;
+$heightBanner: 450px;
 
 //main fonts
-$font-family-base:  open sans,open sans regular,sans-serif;
-$font-family-sans-serif: open sans,open sans regular,sans-serif;
+$font-family-base: open sans, open sans regular, sans-serif;
+$font-family-sans-serif: open sans, open sans regular, sans-serif;
 $font-tags: 'Roboto', sans-serif;
 
 //main colors
-$colorHover:#4db2ec;
-$container-padding-x: 0;
+$colorHover: #4db2ec;
 $colorBorderGray: #b7b7b7;
 $grey: #767676;
+$lightGrey: #666;
+$darkGrey: #444;
 $yellow: #f9c100;
 $mint: #5d7987;
 $green: #3a863d;
-$purple:#8954c1;
+$purple: #8954c1;
+$lightWhite: #e3e3e3;
 
 //custom breackpoints
 $lg: 992px;
+
+$container-padding-x: 0;
 
