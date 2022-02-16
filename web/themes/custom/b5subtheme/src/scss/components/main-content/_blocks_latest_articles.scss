@@ -1,3 +1,14 @@
+//exclude from display
+.node--view-mode-main-page-mode{
+  margin-bottom: 6rem;
+  &>h3{
+    display: none;
+  }
+  &>.node__meta{
+    display: none;
+  }
+}
+
 .layout--twocol-section--67-33 {
   .block-views-blockmain-page-block-1 {
     position: relative;
@@ -10,7 +21,7 @@
     .view-header {
       @include titleBlock($white, $black);
       position: absolute;
-      top: -2.025rem;
+      top: -3rem;
     }
 
     .view-content {
@@ -88,7 +99,10 @@
     }
     .view-footer{
       text-align: right;
-      margin-top: -7.5rem;
+      margin-top: -3.4rem;
+      margin-bottom: 2.2rem;
+      color: $grey;
+      font-size: rem(12);
     }
   }
 
