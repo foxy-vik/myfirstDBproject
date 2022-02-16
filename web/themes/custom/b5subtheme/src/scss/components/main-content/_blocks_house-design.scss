@@ -1,0 +1,79 @@
+.layout--twocol-section--67-33 {
+  //house design
+  .block-views-blockmake-it-modern-block-2 {
+    h2 {
+      @include titleBlock($white, $mint);
+    }
+
+    .wrapper {
+      border-top: rem(2) solid $mint;
+    }
+
+    .view-content {
+      padding-top: rem(16);
+      display: flex;
+      gap: rem(16);
+      justify-content: space-between;
+    }
+
+    .views-field-field-tax-gadg {
+      margin-top: -24px;
+
+      a {
+        @include tags($black);
+
+        &:hover {
+          background-color: $mint;
+        }
+      }
+    }
+
+    .views-field-title {
+      a {
+        @include titleBlockSmall($black);
+
+        &:hover {
+          color: $mint;
+        }
+      }
+    }
+
+    .date-house {
+      display: none;
+    }
+
+    .pager__item {
+      margin-top: rem(10);
+
+      &:hover {
+        background: $mint;
+
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .layout--twocol-section--67-33 {
+    //house design
+    .block-views-blockmake-it-modern-block-2 {
+      .view-content {
+        flex-direction: column;
+        gap: rem(10);
+      }
+
+      .date-house {
+        display: block;
+        @include dateMain($grey);
+      }
+
+      .views-row {
+        display: flex;
+        gap: rem(10);
+      }
+    }
+  }
+}

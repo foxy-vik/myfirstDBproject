@@ -1,0 +1,62 @@
+uuid: 339d81ed-de78-4a1a-ae41-f7efb02cc02e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.latest_articles_view_mode
+    - field.field.node.gadgets.body
+    - field.field.node.gadgets.field_gadget_img
+    - field.field.node.gadgets.field_gadget_paragr
+    - field.field.node.gadgets.field_gadgets_links
+    - field.field.node.gadgets.field_general_image_background
+    - field.field.node.gadgets.field_general_text_
+    - field.field.node.gadgets.field_general_title
+    - field.field.node.gadgets.field_tax_gadg
+    - image.style.life_style_324_162
+    - node.type.gadgets
+  module:
+    - layout_builder
+    - media
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.gadgets.latest_articles_view_mode
+targetEntityType: node
+bundle: gadgets
+mode: latest_articles_view_mode
+content:
+  field_gadget_img:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: life_style_324_162
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_general_image_background:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: life_style_324_162
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tax_gadg:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  body: true
+  field_gadget_paragr: true
+  field_gadgets_links: true
+  field_general_text_: true
+  field_general_title: true
+  links: true

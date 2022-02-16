@@ -1,0 +1,21 @@
+uuid: c358e9dc-efbc-46bc-8394-7f272b80cee0
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.lifestyle
+  module:
+    - text
+id: taxonomy_term.lifestyle.default
+targetEntityType: taxonomy_term
+bundle: lifestyle
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.latest_articles_view_mode
     - core.entity_view_mode.node.main_page_mode
-    - core.entity_view_mode.node.teaser
     - system.menu.admin
   module:
     - node
@@ -73,23 +73,10 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: mini
+        type: some
         options:
           offset: 0
           items_per_page: 1
-          total_pages: null
-          id: 0
-          tags:
-            next: ››
-            previous: ‹‹
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
       exposed_form:
         type: basic
         options:
@@ -160,7 +147,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      use_ajax: true
+      use_ajax: false
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -169,7 +156,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -190,7 +176,7 @@ display:
             next: ›
             previous: ‹
             first: '1'
-            last: '17'
+            last: ››
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -210,11 +196,41 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: latest_articles_view_mode
       defaults:
         pager: false
         style: false
         row: false
+        header: false
+        footer: false
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'Latest articles'
+            format: basic_html
+          tokenize: false
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: 'Page [view:current-page]  of  [view:page-count] '
+            format: basic_html
+          tokenize: false
       display_extenders: {  }
       block_description: 'main page content'
     cache_metadata:
@@ -232,8 +248,14 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 1
       defaults:
         css_class: false
+        pager: false
       css_class: main-content_container
       display_extenders: {  }
       path: front
@@ -247,7 +269,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

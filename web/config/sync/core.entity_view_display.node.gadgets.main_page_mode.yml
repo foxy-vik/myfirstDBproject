@@ -334,12 +334,6 @@ third_party_settings:
             weight: 4
             additional: {  }
         third_party_settings: {  }
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-        components: {  }
-        third_party_settings: {  }
 id: node.gadgets.main_page_mode
 targetEntityType: node
 bundle: gadgets
