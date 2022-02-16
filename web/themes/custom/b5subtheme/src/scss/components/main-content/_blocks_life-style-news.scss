@@ -1,0 +1,144 @@
+.layout--twocol-section--67-33 {
+  //lifestyle news
+  .block-views-blockdont-miss-block-2 {
+    h2 {
+      @include titleBlock($white, $green);
+    }
+
+    .wrapper {
+      border-top: rem(2) solid $green;
+      margin-right: rem(10);
+    }
+
+    //TODO add into another list with JS
+    //top menu
+    .form-select {
+      ul {
+        display: flex;
+        gap: rem(30);
+
+        li:first-child {
+          display: none;
+        }
+
+        li a {
+          line-height: rem(26);
+
+          &:hover {
+            color: $green;
+          }
+        }
+      }
+    }
+
+
+    //tags for all
+    .views-row {
+      position: relative;
+    }
+
+    //tags
+    .views-field-name {
+      margin-top: -24px;
+
+      a {
+        @include tags($black);
+
+        &:hover {
+          background-color: $green;
+        }
+      }
+    }
+
+    //top two items
+    .life-style-main {
+      display: flex;
+
+      .author-date {
+        display: flex;
+        gap: rem(6);
+      }
+
+      .views-field-created {
+        line-height: 2.5;
+      }
+
+      .views-field-title {
+        a:hover {
+          color: $green;
+        }
+      }
+    }
+
+    //four another
+    .life-style-items {
+      display: flex;
+      flex-wrap: wrap;
+      padding-right: rem(10);
+
+      .views-row {
+        flex: 1 0 50%;
+        margin-bottom: rem(16);
+        overflow: hidden;
+      }
+
+      .views-field-field-gadget-img {
+        float: left;
+        margin-right: rem(10);
+      }
+
+      .views-field-name, .views-field-uid, .views-field-field-general-text- {
+        display: none;
+      }
+
+      img {
+        width: rem(97);
+        height: auto;
+      }
+
+      .views-field-title {
+        a {
+          @include titleBlockSmall($black);
+
+          &:hover {
+            color: $green;
+          }
+        ;
+        }
+      }
+    }
+
+    .pager__item {
+      &:hover {
+        background: $green;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+
+  .layout--twocol-section--67-33 {
+    //lifestyle news
+    .block-views-blockdont-miss-block-2 {
+      .life-style-main {
+        flex-direction: column;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .life-style-items {
+        .views-row {
+          flex: 1 0 100%;
+        }
+
+        img {
+          width: rem(168);
+        }
+      }
+    }
+  }
+}
+

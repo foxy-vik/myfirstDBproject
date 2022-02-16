@@ -1,0 +1,66 @@
+.layout--twocol-section--67-33 {
+  .block-views-blockmake-it-modern-block-performance-training {
+    .view-content {
+      margin-top: rem(26);
+    }
+
+    .views-row {
+      display: flex;
+      gap: rem(10);
+      margin-bottom: rem(26);
+    }
+
+    .views-field-field-gadget-img {
+      flex: 1 0 35%;
+    }
+
+    .views-field-fieldset {
+      flex: 1 0 65%;
+    }
+
+    .views-field-title {
+      a {
+        &:hover {
+          color: $colorHover;
+        }
+      }
+    }
+
+    .author-date {
+      display: flex;
+      gap: rem(8);
+      margin-block: rem(10);
+
+      span {
+        display: block;
+        line-height: 1.2rem;
+      }
+    }
+
+    .field-content {
+      line-height: 1.3rem;
+    }
+  }
+}
+
+
+@include media-breakpoint-down(md) {
+  .layout--twocol-section--67-33 {
+    //perfomance training
+    .block-views-blockmake-it-modern-block-performance-training {
+      .views-field-title {
+        a {
+          @include titleBlockSmall($black);
+
+          &:hover {
+            color: $colorHover;
+          }
+        }
+      }
+
+      .views-field-field-general-text- {
+        display: none;
+      }
+    }
+  }
+}
