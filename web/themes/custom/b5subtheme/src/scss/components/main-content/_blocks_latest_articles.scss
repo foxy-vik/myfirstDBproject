@@ -1,144 +1,145 @@
 //exclude from display
-.node--view-mode-main-page-mode{
+.node--view-mode-main-page-mode {
   margin-bottom: 6rem;
-  &>h3{
+
+  & > h3 {
     display: none;
   }
-  &>.node__meta{
+
+  & > .node__meta {
     display: none;
   }
 }
 
-.layout--twocol-section--67-33 {
-  .block-views-blockmain-page-block-1 {
-    position: relative;
+.block-views-blockmain-page-block-1 {
+  position: relative;
 
-    .wrapper {
-      margin-top: rem(26);
-    }
-
-    //title latest articles
-    .view-header {
-      @include titleBlock($white, $black);
-      position: absolute;
-      top: -3rem;
-    }
-
-    .view-content {
-      margin-block: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: rem(40);
-    }
-
-    .views-row {
-      flex: 1 0 46%;
-      margin-bottom: rem(20);
-    }
-
-    img {
-      width: 100%;
-    }
-
-
-    .field--name-field-tax-gadg {
-      margin-top: -1.5rem;
-
-      a {
-        @include tags($black);
-
-        &:hover {
-          background-color: $colorHover;
-        }
-      }
-    }
-
-    h3 {
-      font-size: 1.35rem;
-    }
-
-    .field--name-title {
-      display: block;
-      font-size: rem(20);
-      line-height: rem(25);
-      margin: rem(13) 0 rem(6) 0;
-      color: $black;
-      font-weight: 400;
-
-      &:hover {
-        color: $colorHover;
-      }
-    }
-
-    //date
-    .node__meta {
-      padding-block: 0;
-    }
-
-    .node__submitted {
-      @include dateMain($grey);
-    }
-
-    .js-pager__items {
-      justify-content: left;
-      gap: 0.5rem;
-
-      .active {
-        a {
-          background-color: $colorHover;
-          color: $white;
-          border-color: $colorHover;
-        }
-      }
-
-      .disabled {
-        span {
-          border: none;
-        }
-      }
-    }
-    .view-footer{
-      text-align: right;
-      margin-top: -3.4rem;
-      margin-bottom: 2.2rem;
-      color: $grey;
-      font-size: rem(12);
-    }
+  .wrapper {
+    margin-top: rem(26);
   }
 
-  .page-item {
+  //title latest articles
+  .view-header {
+    @include titleBlock($white, $black);
+    position: absolute;
+    top: -3rem;
+  }
+
+  .view-content {
+    margin-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(40);
+  }
+
+  .views-row {
+    flex: 1 0 46%;
+    margin-bottom: rem(20);
+  }
+
+  img {
+    width: 100%;
+  }
+
+
+  .field--name-field-tax-gadg {
+    margin-top: -1.5rem;
+
     a {
-      color: $lightGrey;
-      padding: rem(5) rem(11);
-      border: rem(1) solid $lightWhite;
-      display: inline-block;
-      margin: 0 rem(8) rem(8) 0;
-      min-width: rem(33);
-      text-align: center;
+      @include tags($black);
 
       &:hover {
-        color: $white;
-        background-color: $darkGrey;
-        border-color: $darkGrey;
+        background-color: $colorHover;
       }
     }
   }
 
+  h3 {
+    font-size: 1.35rem;
+  }
+
+  .field--name-title {
+    display: block;
+    font-size: rem(20);
+    line-height: rem(25);
+    margin: rem(13) 0 rem(6) 0;
+    color: $black;
+    font-weight: 400;
+
+    &:hover {
+      color: $colorHover;
+    }
+  }
+
+  //date
+  .node__meta {
+    padding-block: 0;
+  }
+
+  .node__submitted {
+    @include dateMain($grey);
+  }
+
+  .js-pager__items {
+    justify-content: left;
+    gap: 0.5rem;
+
+    .active {
+      a {
+        background-color: $colorHover;
+        color: $white;
+        border-color: $colorHover;
+      }
+    }
+
+    .disabled {
+      span {
+        border: none;
+      }
+    }
+  }
+
+  .view-footer {
+    text-align: right;
+    margin-top: -3.4rem;
+    margin-bottom: 2.2rem;
+    color: $grey;
+    font-size: rem(12);
+  }
+}
+
+.page-item {
+  a {
+    color: $lightGrey;
+    padding: rem(5) rem(11);
+    border: rem(1) solid $lightWhite;
+    display: inline-block;
+    margin: 0 rem(8) rem(8) 0;
+    min-width: rem(33);
+    text-align: center;
+
+    &:hover {
+      color: $white;
+      background-color: $darkGrey;
+      border-color: $darkGrey;
+    }
+  }
 }
 
 
 @include media-breakpoint-down(md) {
-  .layout--twocol-section--67-33 {
-    .block-views-blockmain-page-block-1 {
-      .views-row {
-        flex: 1 0 100%;
-      }
-      .disabled {
-        display: none;
-      }
-      .pager__item--last{
-        display: none;
-      }
+  .block-views-blockmain-page-block-1 {
+    .views-row {
+      flex: 1 0 100%;
+    }
+
+    .disabled {
+      display: none;
+    }
+
+    .pager__item--last {
+      display: none;
     }
   }
+
 }
