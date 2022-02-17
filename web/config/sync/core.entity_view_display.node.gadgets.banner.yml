@@ -11,6 +11,8 @@ dependencies:
     - field.field.node.gadgets.field_general_image_background
     - field.field.node.gadgets.field_general_text_
     - field.field.node.gadgets.field_general_title
+    - field.field.node.gadgets.field_main_content_page_paragrap
+    - field.field.node.gadgets.field_tags
     - field.field.node.gadgets.field_tax_gadg
     - image.style.532_450
     - node.type.gadgets
@@ -51,4 +53,6 @@ hidden:
   field_general_image_background: true
   field_general_text_: true
   field_general_title: true
+  field_main_content_page_paragrap: true
+  field_tags: true
   links: true

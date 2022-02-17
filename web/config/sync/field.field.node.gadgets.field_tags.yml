@@ -1,0 +1,77 @@
+uuid: 69769d61-6296-4626-a8cb-9a771e219a13
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.gadgets
+    - paragraphs.paragraphs_type.logo_author_name_date_icon_messa
+    - paragraphs.paragraphs_type.tags
+    - paragraphs.paragraphs_type.title_
+  module:
+    - entity_reference_revisions
+id: node.gadgets.field_tags
+field_name: field_tags
+entity_type: node
+bundle: gadgets
+label: 'top of the page'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      tags: tags
+      title_: title_
+      logo_author_name_date_icon_messa: logo_author_name_date_icon_messa
+    negate: 0
+    target_bundles_drag_drop:
+      author_block:
+        weight: -28
+        enabled: false
+      date_:
+        weight: -27
+        enabled: false
+      footer_top_blocks2:
+        weight: -26
+        enabled: false
+      icon_message:
+        weight: -25
+        enabled: false
+      image_only:
+        weight: -24
+        enabled: false
+      image_text:
+        weight: -23
+        enabled: false
+      logo_author_name_date_icon_messa:
+        weight: -29
+        enabled: true
+      main_text_:
+        weight: -22
+        enabled: false
+      node_content_template:
+        weight: -21
+        enabled: false
+      quotes:
+        weight: -20
+        enabled: false
+      social_column_for_stay_connect:
+        weight: -19
+        enabled: false
+      social_media_links_block_buttons:
+        weight: -18
+        enabled: false
+      stay_connected:
+        weight: -17
+        enabled: false
+      tags:
+        weight: -31
+        enabled: true
+      title_:
+        weight: -30
+        enabled: true
+field_type: entity_reference_revisions

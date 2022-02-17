@@ -1,0 +1,15 @@
+uuid: e9766534-9d24-4348-80c0-61540f0d142c
+langcode: en
+status: true
+dependencies: {  }
+name: icon_30_30
+label: 'icon 30 30'
+effects:
+  0ce08ff7-278c-4cfa-bd37-4bf6c8924294:
+    uuid: 0ce08ff7-278c-4cfa-bd37-4bf6c8924294
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 30
+      height: 30
+      anchor: center-center

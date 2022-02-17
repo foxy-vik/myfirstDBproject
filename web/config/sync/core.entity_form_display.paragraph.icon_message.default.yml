@@ -1,0 +1,30 @@
+uuid: 9fbda38f-9ad1-4d45-adc3-18baa15e24e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.icon_message.field_message_field
+    - paragraphs.paragraphs_type.icon_message
+  module:
+    - field_layout
+    - fontawesome
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.icon_message.default
+targetEntityType: paragraph
+bundle: icon_message
+mode: default
+content:
+  field_message_field:
+    type: fontawesome_icon_widget
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

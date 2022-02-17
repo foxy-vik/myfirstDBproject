@@ -1,0 +1,33 @@
+uuid: 863af838-581b-4e2f-9397-918dbe9fb0a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_only.field_pict1
+    - paragraphs.paragraphs_type.image_only
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.image_only.default
+targetEntityType: paragraph
+bundle: image_only
+mode: default
+content:
+  field_pict1:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

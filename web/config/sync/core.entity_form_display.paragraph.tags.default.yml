@@ -1,0 +1,33 @@
+uuid: 717a7a60-a9eb-4d70-9ab6-06033cab86dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tags.field_taxonomy_
+    - paragraphs.paragraphs_type.tags
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.tags.default
+targetEntityType: paragraph
+bundle: tags
+mode: default
+content:
+  field_taxonomy_:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

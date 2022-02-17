@@ -1,0 +1,32 @@
+uuid: b80792e0-792f-4639-93db-0c89f44a0140
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quotes.field_quotes_text
+    - paragraphs.paragraphs_type.quotes
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.quotes.default
+targetEntityType: paragraph
+bundle: quotes
+mode: default
+content:
+  field_quotes_text:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

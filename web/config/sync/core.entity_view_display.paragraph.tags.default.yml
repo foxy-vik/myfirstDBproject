@@ -1,16 +1,16 @@
-uuid: 92585542-43d1-4366-a41e-ac5b62bd4f67
+uuid: 7028531c-34c3-4755-8b3a-6619cd588683
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.footer_top_blocks2.field_blocks
-    - paragraphs.paragraphs_type.footer_top_blocks2
-id: paragraph.footer_top_blocks2.default
+    - field.field.paragraph.tags.field_taxonomy_
+    - paragraphs.paragraphs_type.tags
+id: paragraph.tags.default
 targetEntityType: paragraph
-bundle: footer_top_blocks2
+bundle: tags
 mode: default
 content:
-  field_blocks:
+  field_taxonomy_:
     type: entity_reference_label
     label: hidden
     settings:

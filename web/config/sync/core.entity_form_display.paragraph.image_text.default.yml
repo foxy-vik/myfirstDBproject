@@ -1,0 +1,42 @@
+uuid: 9c569c21-1de5-4b81-bd15-a0a64c961725
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_text.field_pict1
+    - field.field.paragraph.image_text.field_title_top_image
+    - paragraphs.paragraphs_type.image_text
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.image_text.default
+targetEntityType: paragraph
+bundle: image_text
+mode: default
+content:
+  field_pict1:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title_top_image:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

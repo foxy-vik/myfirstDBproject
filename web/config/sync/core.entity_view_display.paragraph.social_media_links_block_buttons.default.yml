@@ -23,7 +23,7 @@ mode: default
 content:
   field_facebook_fiels:
     type: social_media_links_field_default
-    label: above
+    label: hidden
     settings:
       appearance:
         orientation: h
@@ -52,7 +52,7 @@ content:
     region: content
   field_share:
     type: fontawesome_icon_formatter
-    label: above
+    label: hidden
     settings:
       layers: false
     third_party_settings: {  }

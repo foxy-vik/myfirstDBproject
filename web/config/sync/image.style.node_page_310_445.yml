@@ -1,0 +1,15 @@
+uuid: 5741f190-d432-45e7-a1cb-96ed43f16d49
+langcode: en
+status: true
+dependencies: {  }
+name: node_page_310_445
+label: 'node page 310 445'
+effects:
+  1148409e-0903-4c2f-adc8-2a009feb8b74:
+    uuid: 1148409e-0903-4c2f-adc8-2a009feb8b74
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 310
+      height: 445
+      anchor: center-center
