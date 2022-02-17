@@ -29,8 +29,12 @@
 .field--name-field-icon-author {
   flex-basis: 6%;
 
+
   img {
     border-radius: 50%;
+    max-width: rem(30);
+    height: auto;
+
   }
 }
 
@@ -137,15 +141,57 @@
 }
 
 
-
 // text main
-.field--type-text-long{
-  max-width: 600px;
+.field--type-text-long {
+  max-width: rem(600);
   margin-inline: auto;
   margin-bottom: rem(26);
-  p{
+
+  p {
     font-size: rem(14);
     line-height: 1.6;
     font-weight: 300;
   }
+
+  strong {
+    font-weight: bold;
+  }
 }
+
+
+//image title
+.field--name-field-title-top-image {
+  font-family: Verdana, BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: left;
+  margin: rem(6) 0 rem(26) 0;
+  font-size: rem(11);
+  font-style: italic;
+  font-weight: normal;
+  line-height: rem(17);
+  color: $darkGrey;
+}
+
+
+//text-image
+.paragraph--type--text-image-caption-under-the-pic {
+  display: flex;
+  gap: 2rem;
+  .field--name-field-main-text{
+    padding-left: rem(48);
+    flex-basis: 80%;
+  }
+}
+
+//quotes
+.field--name-field-quotes-text {
+  max-width: rem(600);
+  padding: 0;
+  margin: rem(40) 5% rem(38);
+  font-style: italic;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  line-height: rem(40);
+
+}
+
