@@ -3,6 +3,7 @@
     display: unset;
   }
 }
+
 //main container for top items
 .field--name-field-tags {
   margin-block: 1rem;
@@ -57,12 +58,9 @@
   font-size: rem(12);
 }
 
-//social media part
-
-
 //pictures
-.field__item{
-  img{
+.field__item {
+  img {
     display: block;
     margin: 0 auto;
     width: 100%;
@@ -70,3 +68,84 @@
   }
 }
 
+// ----  social media part
+.paragraph {
+  .social-media-links--platforms {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    justify-content: center;
+    gap: 0.5rem;
+
+    li {
+      display: flex;
+      border-radius: 1.7rem;
+      line-height: rem(19);
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      span {
+        display: block;
+        margin-block: auto;
+      }
+
+      a {
+        color: $white;
+        font-size: rem(12);
+        padding-inline: 1rem;
+        margin-block: 0.4rem;
+      }
+
+      & > a {
+        font-size: rem(8);
+        border-right: rem(1) solid $white;
+      }
+    }
+
+    li:first-child {
+      background-color: $fb-color;
+    }
+
+    li:nth-child(2) {
+      background-color: $twitterC;
+    }
+
+    li:nth-child(3) {
+      background-color: $pinterestC;
+    }
+
+    li:nth-child(4) {
+      background-color: $whatsUpC;
+    }
+  }
+}
+
+.field--name-field-share {
+  display: none;
+}
+
+//+
+.field--name-field-plus {
+  display: none;
+}
+
+//-
+.field--name-field-minuse {
+  display: none;
+}
+
+
+
+// text main
+.field--type-text-long{
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: rem(26);
+  p{
+    font-size: rem(14);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+}
