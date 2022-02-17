@@ -1,23 +1,23 @@
-uuid: 4797e5ff-1a2a-463a-aaa7-983d6cd8aed4
+uuid: 3cf8346f-e4a2-4919-9532-5b2b8aae44c2
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:block_author:0694001b-f440-40b3-a916-22c590f8e9d9'
+    - 'block_content:advertising:8d054a56-c643-4503-86ef-964d0fc93e41'
   module:
     - block_content
     - system
   theme:
     - b5subtheme
-id: author
+id: advertrigthside
 theme: b5subtheme
 region: sidebar_second
-weight: -17
+weight: 0
 provider: null
-plugin: 'block_content:0694001b-f440-40b3-a916-22c590f8e9d9'
+plugin: 'block_content:8d054a56-c643-4503-86ef-964d0fc93e41'
 settings:
-  id: 'block_content:0694001b-f440-40b3-a916-22c590f8e9d9'
-  label: author
+  id: 'block_content:8d054a56-c643-4503-86ef-964d0fc93e41'
+  label: 'advert rigth side'
   label_display: '0'
   provider: block_content
   status: true

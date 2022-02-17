@@ -6,8 +6,6 @@ dependencies:
     - core.entity_view_mode.node.main_page_node
     - field.field.node.gadgets.body
     - field.field.node.gadgets.field_gadget_img
-    - field.field.node.gadgets.field_gadget_paragr
-    - field.field.node.gadgets.field_gadgets_links
     - field.field.node.gadgets.field_general_image_background
     - field.field.node.gadgets.field_general_text_
     - field.field.node.gadgets.field_general_title
@@ -16,7 +14,6 @@ dependencies:
     - field.field.node.gadgets.field_tax_gadg
     - node.type.gadgets
   module:
-    - entity_reference_revisions
     - layout_builder
     - media
     - text
@@ -45,24 +42,6 @@ content:
       link: false
     third_party_settings: {  }
     weight: 6
-    region: content
-  field_gadget_paragr:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  field_gadgets_links:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 5
     region: content
   field_general_image_background:
     type: media_thumbnail

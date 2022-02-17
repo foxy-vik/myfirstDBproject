@@ -5,16 +5,19 @@ dependencies:
   config:
     - field.field.paragraph.image_only.field_pict1
     - paragraphs.paragraphs_type.image_only
+  module:
+    - media
 id: paragraph.image_only.default
 targetEntityType: paragraph
 bundle: image_only
 mode: default
 content:
   field_pict1:
-    type: entity_reference_label
+    type: media_thumbnail
     label: hidden
     settings:
-      link: true
+      image_link: ''
+      image_style: ''
     third_party_settings: {  }
     weight: 0
     region: content

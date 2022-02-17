@@ -1,0 +1,21 @@
+uuid: 12d3334c-eed8-4117-b37b-161bbf7aef1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_main_text
+    - paragraphs.paragraphs_type.text_image_caption_under_the_pic
+  module:
+    - text
+id: paragraph.text_image_caption_under_the_pic.field_main_text
+field_name: field_main_text
+entity_type: paragraph
+bundle: text_image_caption_under_the_pic
+label: 'main text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

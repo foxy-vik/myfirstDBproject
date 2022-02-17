@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.main_text_
     - paragraphs.paragraphs_type.quotes
     - paragraphs.paragraphs_type.social_media_links_block_buttons
+    - paragraphs.paragraphs_type.text_image_caption_under_the_pic
   module:
     - entity_reference_revisions
 id: node.gadgets.field_main_content_page_paragrap
@@ -26,56 +27,60 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      image_only: image_only
       social_media_links_block_buttons: social_media_links_block_buttons
+      image_only: image_only
       main_text_: main_text_
       image_text: image_text
+      text_image_caption_under_the_pic: text_image_caption_under_the_pic
       quotes: quotes
     negate: 0
     target_bundles_drag_drop:
       author_block:
-        weight: -26
+        weight: -27
         enabled: false
       date_:
-        weight: -25
+        weight: -26
         enabled: false
       footer_top_blocks2:
-        weight: -24
+        weight: -25
         enabled: false
       icon_message:
-        weight: -23
+        weight: -24
         enabled: false
       image_only:
-        weight: -31
+        weight: -32
         enabled: true
       image_text:
-        weight: -28
-        enabled: true
-      logo_author_name_date_icon_messa:
-        weight: -22
-        enabled: false
-      main_text_:
-        weight: -29
-        enabled: true
-      node_content_template:
-        weight: -21
-        enabled: false
-      quotes:
-        weight: -27
-        enabled: true
-      social_column_for_stay_connect:
-        weight: -20
-        enabled: false
-      social_media_links_block_buttons:
         weight: -30
         enabled: true
+      logo_author_name_date_icon_messa:
+        weight: -23
+        enabled: false
+      main_text_:
+        weight: -31
+        enabled: true
+      node_content_template:
+        weight: -22
+        enabled: false
+      quotes:
+        weight: -28
+        enabled: true
+      social_column_for_stay_connect:
+        weight: -21
+        enabled: false
+      social_media_links_block_buttons:
+        weight: -33
+        enabled: true
       stay_connected:
-        weight: -19
+        weight: -20
         enabled: false
       tags:
-        weight: -18
+        weight: -19
         enabled: false
+      text_image_caption_under_the_pic:
+        weight: -29
+        enabled: true
       title_:
-        weight: -17
+        weight: -18
         enabled: false
 field_type: entity_reference_revisions

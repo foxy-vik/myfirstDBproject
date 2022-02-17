@@ -6,8 +6,6 @@ dependencies:
     - core.entity_view_mode.node.main_page_mode
     - field.field.node.gadgets.body
     - field.field.node.gadgets.field_gadget_img
-    - field.field.node.gadgets.field_gadget_paragr
-    - field.field.node.gadgets.field_gadgets_links
     - field.field.node.gadgets.field_general_image_background
     - field.field.node.gadgets.field_general_text_
     - field.field.node.gadgets.field_general_title
@@ -374,8 +372,6 @@ content:
     region: content
 hidden:
   body: true
-  field_gadget_paragr: true
-  field_gadgets_links: true
   field_general_text_: true
   field_general_title: true
   field_main_content_page_paragrap: true

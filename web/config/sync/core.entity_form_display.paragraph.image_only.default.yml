@@ -8,6 +8,7 @@ dependencies:
   module:
     - field_layout
     - layout_discovery
+    - media_library
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -19,14 +20,11 @@ bundle: image_only
 mode: default
 content:
   field_pict1:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 0
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
 hidden:
   created: true
