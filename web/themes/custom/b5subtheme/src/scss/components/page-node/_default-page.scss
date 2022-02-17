@@ -3,3 +3,48 @@
     display: unset;
   }
 }
+//title
+.field--name-field-main-title{
+  color: #222222;
+  font-size: rem(42);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+//line -author - date - logo comments
+.paragraph--type--logo-author-name-date-icon-messa{
+  display: flex;
+  border-top: rem(1) solid $colorBorderLine;
+  border-bottom: rem(1) solid $colorBorderLine;
+  padding-block: rem(10);
+}
+.field--name-field-icon-author{
+  flex-basis: 5%;
+  img{
+    border-radius: 50%;
+  }
+}
+.field--name-field-user-name{
+  flex-basis: 35%;
+  a{
+    color: $black;
+    font-size: rem(12);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+
+.field--name-field-date-created{
+  border-left: rem(1) solid $colorBorderGray;
+  padding-left:1rem;
+  flex-basis: 55%;
+  @include dateMain($grey);
+  font-size: rem(12);
+}
+.fontawesome-icon{
+  color: $darkGrey;
+  font-size: rem(12);
+}
+
+//social media part
+
