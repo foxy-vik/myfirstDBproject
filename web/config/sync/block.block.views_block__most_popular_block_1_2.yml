@@ -1,22 +1,22 @@
-uuid: 6ad34f15-ec53-484b-8c1d-670294302870
+uuid: dbfdde1b-c6d8-4c11-aec3-792cb680fcc3
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.make_it_modern
+    - views.view.most_popular
   module:
     - system
     - views
   theme:
     - b5subtheme
-id: views_block__make_it_modern_block_performance_training
+id: views_block__most_popular_block_1_2
 theme: b5subtheme
 region: sidebar_second
-weight: -14
+weight: 0
 provider: null
-plugin: 'views_block:make_it_modern-block_performance_training'
+plugin: 'views_block:most_popular-block_1'
 settings:
-  id: 'views_block:make_it_modern-block_performance_training'
+  id: 'views_block:most_popular-block_1'
   label: ''
   label_display: visible
   provider: views
@@ -26,4 +26,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: '/fashion/*'
+    pages: '/node/*'

@@ -1,0 +1,33 @@
+uuid: d2c2cd10-0e51-42bf-a9fa-2ba77f34e00d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_user_name
+    - paragraphs.paragraphs_type.logo_author_name_date_icon_messa
+  content:
+    - 'user:user:36ba6b18-43a3-4eaf-993a-a495cb5fe8ea'
+id: paragraph.logo_author_name_date_icon_messa.field_user_name
+field_name: field_user_name
+entity_type: paragraph
+bundle: logo_author_name_date_icon_messa
+label: user_name
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 36ba6b18-43a3-4eaf-993a-a495cb5fe8ea
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: true
+field_type: entity_reference

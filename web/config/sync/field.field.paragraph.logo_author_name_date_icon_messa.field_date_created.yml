@@ -1,0 +1,21 @@
+uuid: 129de9cf-d3b2-4e39-838f-2945888fa7e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_date_created
+    - paragraphs.paragraphs_type.logo_author_name_date_icon_messa
+  module:
+    - datetime
+id: paragraph.logo_author_name_date_icon_messa.field_date_created
+field_name: field_date_created
+entity_type: paragraph
+bundle: logo_author_name_date_icon_messa
+label: date_created
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

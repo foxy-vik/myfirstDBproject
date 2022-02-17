@@ -1,0 +1,55 @@
+uuid: 6f27ac00-5111-4488-8340-597b00af03f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.logo_author_name_date_icon_messa.field_date_created
+    - field.field.paragraph.logo_author_name_date_icon_messa.field_icon_author
+    - field.field.paragraph.logo_author_name_date_icon_messa.field_message_field
+    - field.field.paragraph.logo_author_name_date_icon_messa.field_user_name
+    - image.style.icon_30_30
+    - paragraphs.paragraphs_type.logo_author_name_date_icon_messa
+  module:
+    - datetime
+    - fontawesome
+    - media
+id: paragraph.logo_author_name_date_icon_messa.default
+targetEntityType: paragraph
+bundle: logo_author_name_date_icon_messa
+mode: default
+content:
+  field_date_created:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'F j, Y'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_icon_author:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: icon_30_30
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_message_field:
+    type: fontawesome_icon_formatter
+    label: hidden
+    settings:
+      layers: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_user_name:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

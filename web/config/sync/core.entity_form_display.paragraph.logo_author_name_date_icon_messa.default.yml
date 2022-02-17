@@ -1,0 +1,58 @@
+uuid: 47ad525b-8e4e-4feb-95b2-41ec040aab85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.logo_author_name_date_icon_messa.field_date_created
+    - field.field.paragraph.logo_author_name_date_icon_messa.field_icon_author
+    - field.field.paragraph.logo_author_name_date_icon_messa.field_message_field
+    - field.field.paragraph.logo_author_name_date_icon_messa.field_user_name
+    - paragraphs.paragraphs_type.logo_author_name_date_icon_messa
+  module:
+    - datetime
+    - field_layout
+    - fontawesome
+    - layout_discovery
+    - media_library
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.logo_author_name_date_icon_messa.default
+targetEntityType: paragraph
+bundle: logo_author_name_date_icon_messa
+mode: default
+content:
+  field_date_created:
+    type: datetime_default
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_icon_author:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_message_field:
+    type: fontawesome_icon_widget
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_user_name:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

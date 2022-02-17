@@ -1,0 +1,21 @@
+uuid: 6594b9b4-7bad-40b5-b5d5-903335e2fb8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_pict2
+    - paragraphs.paragraphs_type.text_image_caption_under_the_pic
+  module:
+    - text
+id: paragraph.text_image_caption_under_the_pic.field_title_pict2
+field_name: field_title_pict2
+entity_type: paragraph
+bundle: text_image_caption_under_the_pic
+label: 'title pict2'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -6,7 +6,6 @@ dependencies:
     - 'block_content:block_author:0694001b-f440-40b3-a916-22c590f8e9d9'
   module:
     - block_content
-    - node
     - system
   theme:
     - b5subtheme
@@ -25,14 +24,7 @@ settings:
   info: ''
   view_mode: full
 visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles:
-      fashion: fashion
   request_path:
     id: request_path
     negate: false
-    pages: '/fashion/*'
+    pages: '/node/*'

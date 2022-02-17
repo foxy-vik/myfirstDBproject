@@ -1,0 +1,24 @@
+uuid: e3fdd99f-49a8-41c8-83fd-c5be480480c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.date_.field_date_created
+    - paragraphs.paragraphs_type.date_
+  module:
+    - datetime
+id: paragraph.date_.default
+targetEntityType: paragraph
+bundle: date_
+mode: default
+content:
+  field_date_created:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

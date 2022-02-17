@@ -161,7 +161,7 @@ display:
       tags: {  }
   block_1:
     id: block_1
-    display_title: Block
+    display_title: Block_main_page
     display_plugin: block
     position: 2
     display_options:
@@ -203,6 +203,7 @@ display:
         row: false
         header: false
         footer: false
+      display_description: ''
       header:
         area:
           id: area
@@ -255,8 +256,10 @@ display:
           items_per_page: 1
       defaults:
         css_class: false
+        show_admin_links: false
         pager: false
       css_class: main-content_container
+      show_admin_links: false
       display_extenders: {  }
       path: front
       menu:

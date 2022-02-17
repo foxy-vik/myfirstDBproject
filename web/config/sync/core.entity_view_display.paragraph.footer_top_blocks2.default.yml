@@ -12,7 +12,7 @@ mode: default
 content:
   field_blocks:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }

@@ -1,0 +1,23 @@
+uuid: 00179cfc-d25c-4b96-b5c9-1e56c5ddfb8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.icon_message.field_message_field
+    - paragraphs.paragraphs_type.icon_message
+  module:
+    - fontawesome
+id: paragraph.icon_message.default
+targetEntityType: paragraph
+bundle: icon_message
+mode: default
+content:
+  field_message_field:
+    type: fontawesome_icon_formatter
+    label: hidden
+    settings:
+      layers: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

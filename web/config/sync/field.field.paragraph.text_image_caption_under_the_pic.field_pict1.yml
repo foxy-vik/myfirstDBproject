@@ -1,0 +1,29 @@
+uuid: f9c0857a-b79c-4524-a5db-588702b67953
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pict1
+    - media.type.image
+    - paragraphs.paragraphs_type.text_image_caption_under_the_pic
+id: paragraph.text_image_caption_under_the_pic.field_pict1
+field_name: field_pict1
+entity_type: paragraph
+bundle: text_image_caption_under_the_pic
+label: pict1
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

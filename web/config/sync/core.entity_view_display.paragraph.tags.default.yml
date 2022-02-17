@@ -1,0 +1,21 @@
+uuid: 7028531c-34c3-4755-8b3a-6619cd588683
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tags.field_taxonomy_
+    - paragraphs.paragraphs_type.tags
+id: paragraph.tags.default
+targetEntityType: paragraph
+bundle: tags
+mode: default
+content:
+  field_taxonomy_:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

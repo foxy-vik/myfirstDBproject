@@ -1,0 +1,52 @@
+uuid: 07e2673b-a1b2-4ca3-9942-2fa560e5f174
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_image_caption_under_the_pic.field_main_text
+    - field.field.paragraph.text_image_caption_under_the_pic.field_pict1
+    - field.field.paragraph.text_image_caption_under_the_pic.field_title_pict2
+    - paragraphs.paragraphs_type.text_image_caption_under_the_pic
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.text_image_caption_under_the_pic.default
+targetEntityType: paragraph
+bundle: text_image_caption_under_the_pic
+mode: default
+content:
+  field_main_text:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_pict1:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title_pict2:
+    type: text_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,30 @@
+uuid: ada06bc2-9d44-4a51-a90e-089dae65ef51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.date_.field_date_created
+    - paragraphs.paragraphs_type.date_
+  module:
+    - datetime
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.date_.default
+targetEntityType: paragraph
+bundle: date_
+mode: default
+content:
+  field_date_created:
+    type: datetime_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

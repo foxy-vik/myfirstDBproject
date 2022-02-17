@@ -1,0 +1,10 @@
+uuid: 0343ee80-bf62-4daf-aa8e-36917434c0aa
+langcode: en
+status: true
+dependencies: {  }
+id: text_image_caption_under_the_pic
+label: 'text - image / caption under the picture'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

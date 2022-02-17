@@ -1,0 +1,15 @@
+uuid: 73f27799-743a-421c-be69-41daa060c2a6
+langcode: en
+status: true
+dependencies: {  }
+name: general_image_700_465
+label: 'general image 700 465'
+effects:
+  8d917a9f-4f6f-4904-96ad-3b3fdb13e6ca:
+    uuid: 8d917a9f-4f6f-4904-96ad-3b3fdb13e6ca
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 700
+      height: 465
+      anchor: center-center

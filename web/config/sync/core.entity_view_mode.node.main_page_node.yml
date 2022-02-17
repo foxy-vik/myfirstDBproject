@@ -1,0 +1,10 @@
+uuid: bcaf19ed-08a2-4298-a2b6-0bc8d4369b91
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.main_page_node
+label: 'Main page node'
+targetEntityType: node
+cache: true
