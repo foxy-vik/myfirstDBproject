@@ -1,0 +1,58 @@
+.block-block-contentec9b5ddc-1d68-4410-955f-e1eadff10a63 {
+  border: rem(1) solid $colorBorderLine;
+  padding: rem(21);
+  margin-block: 1rem;
+
+  .field--name-field-media-image {
+    max-width: rem(117);
+    height: auto;
+    float: left;
+    margin-right: rem(21);
+  }
+
+  //Social media for author.
+  .social-media-links--platforms {
+    display: flex;
+    gap: rem(20);
+    a{
+      color: $black;
+      svg{
+        font-size: rem(15);
+        vertical-align: middle;
+        line-height: rem(15);
+      }
+    }
+  }
+}
+
+.field--name-field-author-title- {
+  margin: rem(7) 0 0.5rem;
+
+  a {
+    font-size: rem(15);
+    line-height: rem(21);
+    font-weight: 800;
+    color: $colorMainTitleInPages;
+
+    &:hover {
+      color: $colorHover;
+    }
+  }
+}
+
+.field--name-field-author-link- {
+  a {
+    margin-bottom: rem(6);
+    font-size: rem(11);
+    font-style: italic;
+    line-height: rem(21);
+    color: $darkGrey;
+  }
+}
+
+.field--name-field-author-text {
+  margin-bottom: rem(6);
+  font-size: rem(12);
+  line-height: rem(18);
+  color: $darkGrey;
+}
