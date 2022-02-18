@@ -1,5 +1,219 @@
-.paragraph{
-  .layout__region--content{
+.paragraph {
+  .layout__region--content {
     display: unset;
   }
+}
+
+// Main container for top items.
+.field--name-field-tags {
+  margin-block: 1rem;
+}
+
+// Title.
+.field--name-field-main-title {
+  color: $colorMainTitleInPages;
+  font-size: rem(42);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+// Line - author - date - logo comments.
+.paragraph--type--logo-author-name-date-icon-messa {
+  display: flex;
+  align-items: center;
+  border-top: rem(1) solid $colorBorderLine;
+  border-bottom: rem(1) solid $colorBorderLine;
+  padding-block: rem(10);
+}
+
+.field--name-field-icon-author {
+  flex-basis: 6%;
+
+  img {
+    border-radius: 50%;
+    max-width: rem(30);
+    height: auto;
+  }
+}
+
+.field--name-field-user-name {
+  flex-basis: 35%;
+
+  a {
+    color: $black;
+    font-size: rem(12);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+
+.field--name-field-date-created {
+  border-left: rem(1) solid $colorBorderGray;
+  padding-left: 1rem;
+  flex-basis: 55%;
+  @include dateMain($grey);
+  font-size: rem(12);
+}
+
+.fontawesome-icon {
+  color: $darkGrey;
+  font-size: rem(12);
+}
+
+// Pictures.
+.field__item {
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+  }
+}
+
+// ----  social media part
+.paragraph {
+  .social-media-links--platforms {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    justify-content: center;
+    gap: 0.5rem;
+
+    li {
+      display: flex;
+      border-radius: 1.7rem;
+      line-height: rem(19);
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      span {
+        display: block;
+        margin-block: auto;
+      }
+
+      a {
+        color: $white;
+        font-size: rem(12);
+        padding-inline: 1rem;
+        margin-block: 0.4rem;
+      }
+
+      & > a {
+        font-size: rem(8);
+        border-right: rem(1) solid $white;
+      }
+    }
+
+    li:first-child {
+      background-color: $fb-color;
+    }
+
+    li:nth-child(2) {
+      background-color: $twitterC;
+    }
+
+    li:nth-child(3) {
+      background-color: $pinterestC;
+    }
+
+    li:nth-child(4) {
+      background-color: $whatsUpC;
+    }
+  }
+}
+
+.field--name-field-share {
+  display: none;
+}
+
+//Plus.
+.field--name-field-plus {
+  display: none;
+}
+
+//Minus.
+.field--name-field-minuse {
+  display: none;
+}
+
+// Main text.
+.field--type-text-long {
+  max-width: rem(600);
+  margin-inline: auto;
+  margin-bottom: rem(26);
+
+  p {
+    font-size: rem(14);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+}
+
+
+// Image title.
+.field--name-field-title-top-image {
+  font-family: Verdana, BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: left;
+  margin: rem(6) 0 rem(26) 0;
+  font-size: rem(11);
+  font-style: italic;
+  font-weight: normal;
+  line-height: rem(17);
+  color: $darkGrey;
+}
+
+// Image text.
+.paragraph--type--text-image-caption-under-the-pic {
+  display: flex;
+  gap: 2rem;
+
+  .field--name-field-main-text {
+    padding-left: rem(48);
+    flex-basis: 80%;
+  }
+}
+
+// Quotes.
+.field--name-field-quotes-text {
+  max-width: rem(600);
+  padding: 0;
+  margin: rem(40) 5% rem(38);
+  font-style: italic;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  line-height: rem(40);
+
+}
+
+// Book.
+.book-pager {
+  p {
+    color: $lightGrey;
+    font-size: rem(14);
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  a {
+    font-size: 1rem;
+    line-height: 1.3;
+    font-weight: 600;
+    color: $black;
+
+    &:hover {
+      color: $colorHover;
+    }
+  }
+}
+
+.node__links {
+  display: none;
 }
