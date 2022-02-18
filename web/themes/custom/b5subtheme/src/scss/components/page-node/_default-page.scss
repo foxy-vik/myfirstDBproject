@@ -2,19 +2,22 @@
   .layout__region--content {
     display: unset;
   }
+  // Title.
+  .main-title {
+    margin-inline: 0;
+    p {
+      color: $colorMainTitleInPages;
+      font-size: 2.325rem;
+      line-height: rem(50);
+      font-weight: 800;
+    }
+  }
+
 }
 
 // Main container for top items.
 .field--name-field-tags {
   margin-block: 1rem;
-}
-
-// Title.
-.field--name-field-main-title {
-  color: $colorMainTitleInPages;
-  font-size: rem(42);
-  line-height: 1.2;
-  font-weight: 800;
 }
 
 // Line - author - date - logo comments.
@@ -216,5 +219,8 @@
 }
 
 .node__links {
+  display: none;
+}
+.menu{
   display: none;
 }

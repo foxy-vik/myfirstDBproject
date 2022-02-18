@@ -1,47 +1,45 @@
-.layout--twocol-section--67-33 {
+.block-views-blockmake-it-modern-block-most-popular-front {
+  .view-content {
+    margin-top: rem(26);
+  }
 
-  .block-views-blockmake-it-modern-block-most-popular-front {
-    .view-content {
-      margin-top: rem(26);
-    }
+  .views-row {
+    display: flex;
+    gap: rem(8);
+    margin-block: rem(12);
+  }
 
-    .views-row {
-      display: flex;
-      gap: rem(8);
-      margin-block: rem(12);
-    }
+  .views-field-field-gadget-img {
+    flex-basis: 35%;
+  }
 
-    .views-field-field-gadget-img {
-      flex-basis: 35%;
-    }
+  .views-field-fieldset {
+    flex-basis: 60%;
+  }
 
-    .views-field-fieldset {
-      flex-basis: 60%;
-    }
+  .views-field-title {
+    line-height: 1.2rem;
+    padding-bottom: 0.3rem;
 
-    .views-field-title {
-      line-height: 1.2rem;
-      padding-bottom: 0.3rem;
-
-      a {
-        @include titleBlockSmall($black);
-
-        &:hover {
-          color: $colorHover;
-        }
-      }
-    }
-
-    .pager__item {
-      margin-top: rem(10);
+    a {
+      @include titleBlockSmall($black);
 
       &:hover {
-        background: $colorHover;
+        color: $colorHover;
+      }
+    }
+  }
 
-        a {
-          color: $white;
-        }
+  .pager__item {
+    margin-top: rem(10);
+
+    &:hover {
+      background: $colorHover;
+
+      a {
+        color: $white;
       }
     }
   }
 }
+
