@@ -10,8 +10,8 @@
 }
 
 //title
-.field--name-field-main-title {
-  color: #222222;
+.main-title {
+  color: $colorMainTitleInPages;
   font-size: rem(42);
   line-height: 1.2;
   font-weight: 800;
@@ -176,7 +176,8 @@
 .paragraph--type--text-image-caption-under-the-pic {
   display: flex;
   gap: 2rem;
-  .field--name-field-main-text{
+
+  .field--name-field-main-text {
     padding-left: rem(48);
     flex-basis: 80%;
   }
@@ -193,5 +194,32 @@
   font-size: 2rem;
   line-height: rem(40);
 
+}
+
+
+//book
+.book-pager {
+  p {
+    color: $lightGrey;
+    font-size: rem(14);
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  a {
+    font-size: 1rem;
+    line-height: 1.3;
+    font-weight: 600;
+    color: $black;
+
+    &:hover {
+      color: $colorHover;
+    }
+  }
+}
+
+.node__links {
+  display: none;
 }
 
