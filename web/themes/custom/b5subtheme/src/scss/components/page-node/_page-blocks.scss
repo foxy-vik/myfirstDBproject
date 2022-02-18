@@ -1,0 +1,30 @@
+.block-block-content0694001b-f440-40b3-a916-22c590f8e9d9{
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  img{
+    max-width: rem(196);
+    height: auto;
+    border-radius: 50%;
+  }
+
+  .field--name-field-author-title-{
+    padding-block: 1rem;
+    text-align: center;
+    a{
+      color: $black;
+      font-size: rem(18);
+      font-weight: 600;
+      &:hover{
+        color: $colorHover;
+      }
+    }
+  }
+
+  .field--type-string-long{
+    text-align: center;
+    font-size: rem(13);
+    line-height: 1.4;
+    font-weight: 300;
+    padding-block: 1rem;
+  }
+}
