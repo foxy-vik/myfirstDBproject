@@ -22,9 +22,11 @@ li {
 }
 
 @import "main-content_main-navigation";
-//top black line ... banner ... logo
+//Top  banner ... logo.
 @import "main-content_front-page";
-//all blocks
+//All blocks.
 @import "main-content_blocks";
 
 @import "page-node/default-page";
+
+@import "page-node/card-author";
