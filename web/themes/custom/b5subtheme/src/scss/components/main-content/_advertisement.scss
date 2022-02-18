@@ -1,25 +1,22 @@
-.layout--twocol-section--67-33 {
+.block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
+  .wrapper {
+    border: none !important;
+    margin-bottom: rem(20);
+  }
 
-  .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
-    .wrapper {
-      border: none;
-      margin-bottom: rem(20);
-    }
+  .field--name-field-ad-title {
+    text-align: center;
+  }
 
-    .field--name-field-ad-title {
-      text-align: center;
-    }
-
-    img {
-      display: block;
-      margin: 0 auto;
-    }
+  img {
+    display: block;
+    margin: 0 auto;
   }
 }
 
 @include media-breakpoint-down(md) {
-    //advert
-    .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
-      display: none;
-    }
+  //advert
+  .block-block-content8d054a56-c643-4503-86ef-964d0fc93e41 {
+    display: none;
+  }
 }
