@@ -55,46 +55,6 @@
     gap: 0.375rem;
   }
 
-  .views-row {
-    .views-field-field-general-text- {
-      font-family: $font-tags;
-      font-size: rem(14);
-      color: $grey;
-      line-height: rem(24);
-      padding-block: rem(7);
-    }
-
-    //author
-    .views-field-uid {
-      a {
-        font-size: rem(11);
-        line-height: rem(11);
-        font-weight: bold;
-        color: $black;
-      }
-    }
-
-    //DATE
-    .views-field-created {
-      font-size: rem(11);
-      line-height: 1;
-      color: $grey;
-    }
-
-    .views-field-title {
-      a {
-        font-size: rem(20);
-        line-height: rem(25);
-        margin: 0 0 rem(6) 0;
-        color: $black;
-        font-weight: 400;
-
-        &:hover {
-          color: $yellow;
-        }
-      }
-    }
-  }
 
   .js-form-item {
     margin-block: 0;
@@ -139,6 +99,47 @@
         a {
           color: $white;
         }
+      }
+    }
+  }
+}
+
+.views-row {
+  .views-field-field-general-text- {
+    font-family: $font-tags;
+    font-size: rem(14);
+    color: $grey;
+    line-height: rem(24);
+    padding-block: rem(7);
+  }
+
+  //author
+  .views-field-uid {
+    a {
+      font-size: rem(11);
+      line-height: rem(11);
+      font-weight: bold;
+      color: $black;
+    }
+  }
+
+  //DATE
+  .views-field-created {
+    font-size: rem(11);
+    line-height: 1;
+    color: $grey;
+  }
+
+  .views-field-title {
+    a {
+      font-size: rem(20);
+      line-height: rem(25);
+      margin: 0 0 rem(6) 0;
+      color: $black;
+      font-weight: 400;
+
+      &:hover {
+        color: $yellow;
       }
     }
   }

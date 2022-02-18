@@ -1,0 +1,76 @@
+uuid: 43eb9d20-7d84-4cdd-a656-6fd2401c310c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pict_text
+    - paragraphs.paragraphs_type.image_text
+    - paragraphs.paragraphs_type.text_image_caption_under_the_pic
+  module:
+    - entity_reference_revisions
+id: paragraph.text_image_caption_under_the_pic.field_pict_text
+field_name: field_pict_text
+entity_type: paragraph
+bundle: text_image_caption_under_the_pic
+label: pict-text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      image_text: image_text
+    negate: 0
+    target_bundles_drag_drop:
+      author_block:
+        weight: 17
+        enabled: false
+      date_:
+        weight: 18
+        enabled: false
+      footer_top_blocks2:
+        weight: 19
+        enabled: false
+      icon_message:
+        weight: 20
+        enabled: false
+      image_only:
+        weight: 21
+        enabled: false
+      image_text:
+        weight: 22
+        enabled: true
+      logo_author_name_date_icon_messa:
+        weight: 23
+        enabled: false
+      main_text_:
+        weight: 24
+        enabled: false
+      node_content_template:
+        weight: 25
+        enabled: false
+      quotes:
+        weight: 26
+        enabled: false
+      social_column_for_stay_connect:
+        weight: 27
+        enabled: false
+      social_media_links_block_buttons:
+        weight: 28
+        enabled: false
+      stay_connected:
+        weight: 29
+        enabled: false
+      tags:
+        weight: 30
+        enabled: false
+      text_image_caption_under_the_pic:
+        weight: 31
+        enabled: false
+      title_:
+        weight: 32
+        enabled: false
+field_type: entity_reference_revisions

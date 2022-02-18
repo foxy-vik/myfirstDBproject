@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.lifestyle.field_color_fashion
     - taxonomy.vocabulary.lifestyle
   module:
+    - color_field
     - field_layout
     - layout_discovery
     - path
@@ -18,6 +20,14 @@ targetEntityType: taxonomy_term
 bundle: lifestyle
 mode: default
 content:
+  field_color_fashion:
+    type: color_field_widget_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_color: ''
+      placeholder_opacity: ''
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0
