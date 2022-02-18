@@ -1,0 +1,25 @@
+uuid: 539bb10b-4258-4db2-ace2-5f6cff8d87d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_color_fashion
+    - taxonomy.vocabulary.lifestyle
+  module:
+    - color_field
+id: taxonomy_term.lifestyle.field_color_fashion
+field_name: field_color_fashion
+entity_type: taxonomy_term
+bundle: lifestyle
+label: color_fashion
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    color: '#dd3333'
+    opacity: !!float 1
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

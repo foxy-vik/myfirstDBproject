@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.lifestyle.field_color_fashion
     - taxonomy.vocabulary.lifestyle
   module:
+    - color_field
     - text
 id: taxonomy_term.lifestyle.default
 targetEntityType: taxonomy_term
@@ -17,5 +19,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_color_fashion:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden: {  }

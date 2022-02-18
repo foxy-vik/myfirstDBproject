@@ -412,6 +412,10 @@ display:
             group_items: {  }
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: block-views-blockmake-it-modern-block-most-popular-front
+          default_row_class: false
       row:
         type: fields
       query:
@@ -443,6 +447,43 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      pager:
+        type: infinite_scroll
+        options:
+          offset: 0
+          items_per_page: 4
+          total_pages: null
+          id: 21
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          views_infinite_scroll:
+            button_text: 'Load more ⌄'
+            automatically_load_content: false
+            initially_load_all_pages: false
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+      row:
+        type: fields
+        options: {  }
+      defaults:
+        css_class: false
+        pager: false
+        style: false
+        row: false
+      css_class: block-views-blockmake-it-modern-block-most-popular-front
       display_extenders: {  }
     cache_metadata:
       max-age: -1

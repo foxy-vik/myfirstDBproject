@@ -4,12 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.text_image_caption_under_the_pic.field_main_text
-    - field.field.paragraph.text_image_caption_under_the_pic.field_pict1
-    - field.field.paragraph.text_image_caption_under_the_pic.field_title_pict2
+    - field.field.paragraph.text_image_caption_under_the_pic.field_pict_text
     - paragraphs.paragraphs_type.text_image_caption_under_the_pic
   module:
     - field_layout
     - layout_discovery
+    - paragraphs
     - text
 third_party_settings:
   field_layout:
@@ -29,23 +29,17 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_pict1:
-    type: entity_reference_autocomplete
-    weight: 1
+  field_pict_text:
+    type: entity_reference_paragraphs
+    weight: 3
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_title_pict2:
-    type: text_textfield
-    weight: 2
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
 hidden:
   created: true

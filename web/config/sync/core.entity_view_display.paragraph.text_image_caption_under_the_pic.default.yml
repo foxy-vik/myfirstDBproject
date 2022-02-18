@@ -4,12 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.text_image_caption_under_the_pic.field_main_text
-    - field.field.paragraph.text_image_caption_under_the_pic.field_pict1
-    - field.field.paragraph.text_image_caption_under_the_pic.field_title_pict2
-    - image.style.node_page_310_445
+    - field.field.paragraph.text_image_caption_under_the_pic.field_pict_text
     - paragraphs.paragraphs_type.text_image_caption_under_the_pic
   module:
-    - media
+    - entity_reference_revisions
     - text
 id: paragraph.text_image_caption_under_the_pic.default
 targetEntityType: paragraph
@@ -23,20 +21,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_pict1:
-    type: media_thumbnail
+  field_pict_text:
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: node_page_310_445
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    weight: 1
-    region: content
-  field_title_pict2:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
 hidden: {  }
