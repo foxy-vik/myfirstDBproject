@@ -1,0 +1,10 @@
+uuid: 08dd6b40-f9f7-4071-bf62-8d4a5bd7d210
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.page_taxonomy_
+label: 'page taxonomy '
+targetEntityType: node
+cache: true
