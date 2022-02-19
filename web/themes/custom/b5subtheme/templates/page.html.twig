@@ -94,8 +94,11 @@ set footer_classes = ' ' ~
   {%
   set content_classes = (page.sidebar_first and page.sidebar_second) ? 'col-12 col-lg-6' : ((page.sidebar_first or page.sidebar_second) ? 'col-12 col-lg-8' : 'col-12' )
    %}
-
-
+  <div class="container-fluid">
+    {% if page.highlights %}
+      {{ page.highlights }}
+    {% endif %}
+  </div>
   <div class="{{ b5_top_container }}">
     {% if page.breadcrumb %}
       {{ page.breadcrumb }}
