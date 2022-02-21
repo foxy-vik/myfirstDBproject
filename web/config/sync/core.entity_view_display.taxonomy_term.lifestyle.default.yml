@@ -3,30 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.lifestyle.field_color_fashion
+    - field.field.taxonomy_term.lifestyle.field_background_taxonomy
     - taxonomy.vocabulary.lifestyle
   module:
-    - color_field
+    - layout_builder
     - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 id: taxonomy_term.lifestyle.default
 targetEntityType: taxonomy_term
 bundle: lifestyle
 mode: default
 content:
-  description:
+  field_background_taxonomy:
     type: text_default
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: -4
     region: content
-  field_color_fashion:
-    type: color_field_formatter_text
-    label: above
-    settings:
-      format: hex
-      opacity: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
-hidden: {  }
+hidden:
+  description: true

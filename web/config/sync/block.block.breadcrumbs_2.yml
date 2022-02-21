@@ -1,0 +1,24 @@
+uuid: d375ddc0-72a1-4171-90e0-73dbaa5c9c4f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - b5subtheme
+id: breadcrumbs_2
+theme: b5subtheme
+region: banner
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /lifestyle

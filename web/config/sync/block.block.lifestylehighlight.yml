@@ -1,0 +1,30 @@
+uuid: 67d48cc5-0842-40d8-b146-944cdf81b94e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:highlight_:304b0427-eec8-4052-9d3a-06b71cdfd4d2'
+  module:
+    - block_content
+    - system
+  theme:
+    - b5subtheme
+id: lifestylehighlight
+theme: b5subtheme
+region: banner
+weight: 0
+provider: null
+plugin: 'block_content:304b0427-eec8-4052-9d3a-06b71cdfd4d2'
+settings:
+  id: 'block_content:304b0427-eec8-4052-9d3a-06b71cdfd4d2'
+  label: 'LIFESTYLE '
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /lifestyle

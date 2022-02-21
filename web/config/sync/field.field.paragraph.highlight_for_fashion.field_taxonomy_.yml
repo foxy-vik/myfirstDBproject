@@ -1,0 +1,33 @@
+uuid: d913cf75-91ee-45ef-a573-4e354d27cfbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_taxonomy_
+    - paragraphs.paragraphs_type.highlight_for_fashion
+    - taxonomy.vocabulary.lifestyle
+  content:
+    - 'taxonomy_term:lifestyle:59f4e8cb-ced6-4bf1-958a-e2c43261a850'
+id: paragraph.highlight_for_fashion.field_taxonomy_
+field_name: field_taxonomy_
+entity_type: paragraph
+bundle: highlight_for_fashion
+label: 'taxonomy '
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    target_uuid: 59f4e8cb-ced6-4bf1-958a-e2c43261a850
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lifestyle: lifestyle
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

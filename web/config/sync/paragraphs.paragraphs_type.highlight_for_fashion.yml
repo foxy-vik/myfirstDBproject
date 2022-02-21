@@ -1,0 +1,10 @@
+uuid: 6b87bb36-610d-4b2f-a35a-d86e73ec632f
+langcode: en
+status: true
+dependencies: {  }
+id: highlight_for_fashion
+label: 'highlight for fashion'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

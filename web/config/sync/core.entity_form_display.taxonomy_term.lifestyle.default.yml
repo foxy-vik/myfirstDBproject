@@ -3,13 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.lifestyle.field_color_fashion
+    - field.field.taxonomy_term.lifestyle.field_background_taxonomy
     - taxonomy.vocabulary.lifestyle
   module:
-    - color_field
     - field_layout
     - layout_discovery
     - path
+    - text
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -20,13 +20,13 @@ targetEntityType: taxonomy_term
 bundle: lifestyle
 mode: default
 content:
-  field_color_fashion:
-    type: color_field_widget_default
+  field_background_taxonomy:
+    type: text_textfield
     weight: 3
     region: content
     settings:
-      placeholder_color: ''
-      placeholder_opacity: ''
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   name:
     type: string_textfield

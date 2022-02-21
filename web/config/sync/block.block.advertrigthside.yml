@@ -27,4 +27,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: '/node/*'
+    pages: "/node/*\r\n/fashion\r\n/gadgets\r\n/lifestyle\r\n/video"

@@ -1,0 +1,70 @@
+uuid: 9d39748d-6aed-4b8d-b746-bd3e21504002
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.full
+    - field.field.taxonomy_term.lifestyle.field_background_taxonomy
+    - taxonomy.vocabulary.lifestyle
+  content:
+    - 'block_content:advertising:8d054a56-c643-4503-86ef-964d0fc93e41'
+  module:
+    - block_content
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'main-section fashion'
+          context_mapping: {  }
+          column_widths: 67-33
+        components:
+          e3bee172-9113-4d18-886e-58c25b28984d:
+            uuid: e3bee172-9113-4d18-886e-58c25b28984d
+            region: first
+            configuration:
+              id: 'field_block:taxonomy_term:lifestyle:description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          fbbb7d24-6d6d-477c-a160-925c4be48fed:
+            uuid: fbbb7d24-6d6d-477c-a160-925c4be48fed
+            region: second
+            configuration:
+              id: 'block_content:8d054a56-c643-4503-86ef-964d0fc93e41'
+              label: 'advert rigth side'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: taxonomy_term.lifestyle.full
+targetEntityType: taxonomy_term
+bundle: lifestyle
+mode: full
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_background_taxonomy: true

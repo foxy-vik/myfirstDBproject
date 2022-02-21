@@ -1,0 +1,52 @@
+uuid: c37ad6f2-50d8-4123-8c8b-0ee16e1bea34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.highlight_for_fashion.field_main_text
+    - field.field.paragraph.highlight_for_fashion.field_pict1
+    - field.field.paragraph.highlight_for_fashion.field_taxonomy_
+    - paragraphs.paragraphs_type.highlight_for_fashion
+  module:
+    - field_layout
+    - layout_discovery
+    - media_library
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.highlight_for_fashion.default
+targetEntityType: paragraph
+bundle: highlight_for_fashion
+mode: default
+content:
+  field_main_text:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_pict1:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_taxonomy_:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

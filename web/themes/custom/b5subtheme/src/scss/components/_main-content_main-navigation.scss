@@ -15,6 +15,12 @@
 
   li {
     padding: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 48px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: $black;
 
      &:first-child:hover {
       border-bottom: 2px solid $colorHover;

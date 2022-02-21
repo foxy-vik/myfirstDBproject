@@ -1,8 +1,9 @@
-uuid: c7d81164-b78b-4223-a9c6-e2b075c1f0b3
+uuid: d2d78210-8bc6-45c3-9250-19ac2ebf825d
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.page_taxonomy_
     - field.field.node.gadgets.body
     - field.field.node.gadgets.field_gadget_img
     - field.field.node.gadgets.field_general_image_background
@@ -20,20 +21,11 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: node.gadgets.default
+id: node.gadgets.page_taxonomy_
 targetEntityType: node
 bundle: gadgets
-mode: default
+mode: page_taxonomy_
 content:
-  field_main_content_page_paragrap:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_tags:
     type: entity_reference_revisions_entity_view
     label: hidden
@@ -45,16 +37,16 @@ content:
     region: content
   field_tax_gadg:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
 hidden:
   body: true
@@ -62,3 +54,4 @@ hidden:
   field_general_image_background: true
   field_general_text_: true
   field_general_title: true
+  field_main_content_page_paragrap: true

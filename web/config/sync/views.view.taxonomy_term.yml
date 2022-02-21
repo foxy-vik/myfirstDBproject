@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.latest_articles_view_mode
     - core.entity_view_mode.node.teaser
   module:
     - node
@@ -222,6 +223,7 @@ display:
       row:
         type: 'entity:node'
         options:
+          relationship: none
           view_mode: teaser
       query:
         type: views_query
@@ -303,9 +305,45 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      pager:
+        type: mini
+        options:
+          offset: 0
+          items_per_page: 8
+          total_pages: null
+          id: 25
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: latest_articles_view_mode
       query:
         type: views_query
         options: {  }
+      defaults:
+        css_class: false
+        pager: false
+        style: false
+        row: false
+      css_class: block-views-blockmain-page-block-1
       display_extenders: {  }
       path: taxonomy/term/%
     cache_metadata:
