@@ -1,0 +1,42 @@
+uuid: e58b7859-37d1-44f7-b382-03925e83a8b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.highlight_
+    - field.field.block_content.highlight_.field_highlight_
+  module:
+    - field_layout
+    - layout_discovery
+    - paragraphs
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: block_content.highlight_.default
+targetEntityType: block_content
+bundle: highlight_
+mode: default
+content:
+  field_highlight_:
+    type: entity_reference_paragraphs
+    weight: 26
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

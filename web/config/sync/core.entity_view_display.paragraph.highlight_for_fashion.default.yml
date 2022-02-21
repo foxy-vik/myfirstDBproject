@@ -1,0 +1,33 @@
+uuid: a537722c-f0aa-44a6-b1fa-73e571818ce6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.highlight_for_fashion.field_main_text
+    - field.field.paragraph.highlight_for_fashion.field_pict1
+    - field.field.paragraph.highlight_for_fashion.field_taxonomy_
+    - paragraphs.paragraphs_type.highlight_for_fashion
+  module:
+    - text
+id: paragraph.highlight_for_fashion.default
+targetEntityType: paragraph
+bundle: highlight_for_fashion
+mode: default
+content:
+  field_main_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_taxonomy_:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_pict1: true

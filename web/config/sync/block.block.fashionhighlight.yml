@@ -1,0 +1,30 @@
+uuid: 142adfad-04fe-45d5-9d90-d8d7324fd99b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:highlight_:6de57f11-164f-434a-bcd1-028496e3eb44'
+  module:
+    - block_content
+    - system
+  theme:
+    - b5subtheme
+id: fashionhighlight
+theme: b5subtheme
+region: highlights
+weight: 0
+provider: null
+plugin: 'block_content:6de57f11-164f-434a-bcd1-028496e3eb44'
+settings:
+  id: 'block_content:6de57f11-164f-434a-bcd1-028496e3eb44'
+  label: Fashion
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /fashion

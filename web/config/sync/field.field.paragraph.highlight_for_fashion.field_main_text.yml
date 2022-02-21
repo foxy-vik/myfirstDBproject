@@ -1,0 +1,24 @@
+uuid: 3c3d121e-0288-4983-a1e5-661878afa736
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_main_text
+    - paragraphs.paragraphs_type.highlight_for_fashion
+  module:
+    - text
+id: paragraph.highlight_for_fashion.field_main_text
+field_name: field_main_text
+entity_type: paragraph
+bundle: highlight_for_fashion
+label: 'main text'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: "<p>Custom category description. You must learn one thing. The world was made to be free in. Give up all the other worlds Except the one in which you belong.</p>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

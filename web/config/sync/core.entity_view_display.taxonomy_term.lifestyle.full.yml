@@ -1,16 +1,15 @@
 uuid: 9d39748d-6aed-4b8d-b746-bd3e21504002
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.full
-    - field.field.taxonomy_term.lifestyle.field_color_fashion
+    - field.field.taxonomy_term.lifestyle.field_background_taxonomy
     - taxonomy.vocabulary.lifestyle
   content:
     - 'block_content:advertising:8d054a56-c643-4503-86ef-964d0fc93e41'
   module:
     - block_content
-    - color_field
     - layout_builder
     - text
 third_party_settings:
@@ -37,26 +36,6 @@ third_party_settings:
                 type: text_default
                 label: hidden
                 settings: {  }
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          d18ae4c3-bb21-499c-91e3-4503a622a8d4:
-            uuid: d18ae4c3-bb21-499c-91e3-4503a622a8d4
-            region: second
-            configuration:
-              id: 'field_block:taxonomy_term:lifestyle:field_color_fashion'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: color_field_formatter_swatch
-                label: hidden
-                settings:
-                  shape: square
-                  width: '50'
-                  height: '50'
-                  opacity: true
-                  data_attribute: false
                 third_party_settings: {  }
             weight: 0
             additional: {  }
@@ -87,16 +66,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_color_fashion:
-    type: color_field_formatter_swatch
-    label: hidden
-    settings:
-      shape: square
-      width: '50'
-      height: '50'
-      opacity: true
-      data_attribute: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-hidden: {  }
+hidden:
+  field_background_taxonomy: true

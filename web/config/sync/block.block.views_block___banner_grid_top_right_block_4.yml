@@ -1,0 +1,29 @@
+uuid: bc92c0b6-c613-423a-a15e-c079ded2ee0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view._banner_grid_top_right
+  module:
+    - system
+    - views
+  theme:
+    - b5subtheme
+id: views_block___banner_grid_top_right_block_4
+theme: b5subtheme
+region: banner
+weight: 0
+provider: null
+plugin: 'views_block:_banner_grid_top_right-block_4'
+settings:
+  id: 'views_block:_banner_grid_top_right-block_4'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /lifestyle

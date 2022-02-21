@@ -1,0 +1,21 @@
+uuid: 63a7dff4-a8a3-44c4-8d2c-b952e16eccca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_background_taxonomy
+    - taxonomy.vocabulary.lifestyle
+  module:
+    - text
+id: taxonomy_term.lifestyle.field_background_taxonomy
+field_name: field_background_taxonomy
+entity_type: taxonomy_term
+bundle: lifestyle
+label: background_taxonomy
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

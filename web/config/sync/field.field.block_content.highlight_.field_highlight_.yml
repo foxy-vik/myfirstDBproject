@@ -1,0 +1,79 @@
+uuid: 2dcfe9cd-b23c-4c13-a41a-82eff8d3fcc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.highlight_
+    - field.storage.block_content.field_highlight_
+    - paragraphs.paragraphs_type.highlight_for_fashion
+  module:
+    - entity_reference_revisions
+id: block_content.highlight_.field_highlight_
+field_name: field_highlight_
+entity_type: block_content
+bundle: highlight_
+label: 'Highlight '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      highlight_for_fashion: highlight_for_fashion
+    negate: 0
+    target_bundles_drag_drop:
+      author_block:
+        weight: 18
+        enabled: false
+      date_:
+        weight: 19
+        enabled: false
+      footer_top_blocks2:
+        weight: 20
+        enabled: false
+      highlight_for_fashion:
+        weight: 21
+        enabled: true
+      icon_message:
+        weight: 22
+        enabled: false
+      image_only:
+        weight: 23
+        enabled: false
+      image_text:
+        weight: 24
+        enabled: false
+      logo_author_name_date_icon_messa:
+        weight: 25
+        enabled: false
+      main_text_:
+        weight: 26
+        enabled: false
+      node_content_template:
+        weight: 27
+        enabled: false
+      quotes:
+        weight: 28
+        enabled: false
+      social_column_for_stay_connect:
+        weight: 29
+        enabled: false
+      social_media_links_block_buttons:
+        weight: 30
+        enabled: false
+      stay_connected:
+        weight: 31
+        enabled: false
+      tags:
+        weight: 32
+        enabled: false
+      text_image_caption_under_the_pic:
+        weight: 33
+        enabled: false
+      title_:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions

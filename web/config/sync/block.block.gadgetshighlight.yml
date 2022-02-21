@@ -1,0 +1,30 @@
+uuid: 9ab9f57b-4375-45ab-90b0-543e7cae06ff
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:highlight_:e13d8743-b79c-4815-a464-a01df626d62c'
+  module:
+    - block_content
+    - system
+  theme:
+    - b5subtheme
+id: gadgetshighlight
+theme: b5subtheme
+region: banner
+weight: 0
+provider: null
+plugin: 'block_content:e13d8743-b79c-4815-a464-a01df626d62c'
+settings:
+  id: 'block_content:e13d8743-b79c-4815-a464-a01df626d62c'
+  label: 'Gadgets '
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /gadgets

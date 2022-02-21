@@ -13,54 +13,19 @@ dependencies:
     - field.field.node.gadgets.field_tags
     - field.field.node.gadgets.field_tax_gadg
     - node.type.gadgets
-  content:
-    - 'block_content:advertising:8d054a56-c643-4503-86ef-964d0fc93e41'
   module:
-    - block_content
     - entity_reference_revisions
     - layout_builder
     - user
 third_party_settings:
   layout_builder:
-    enabled: true
+    enabled: false
     allow_custom: false
-    sections:
-      -
-        layout_id: layout_twocol_section
-        layout_settings:
-          label: 'tags main '
-          context_mapping: {  }
-          column_widths: 67-33
-        components:
-          a4a4b097-8e8c-42eb-b03f-713465821b39:
-            uuid: a4a4b097-8e8c-42eb-b03f-713465821b39
-            region: second
-            configuration:
-              id: 'block_content:8d054a56-c643-4503-86ef-964d0fc93e41'
-              label: 'advert rigth side'
-              label_display: '0'
-              provider: block_content
-              status: true
-              info: ''
-              view_mode: full
-              context_mapping: {  }
-            weight: 0
-            additional: {  }
-        third_party_settings: {  }
 id: node.gadgets.page_taxonomy_
 targetEntityType: node
 bundle: gadgets
 mode: page_taxonomy_
 content:
-  field_main_content_page_paragrap:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_tags:
     type: entity_reference_revisions_entity_view
     label: hidden
@@ -72,16 +37,16 @@ content:
     region: content
   field_tax_gadg:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
 hidden:
   body: true
@@ -89,3 +54,4 @@ hidden:
   field_general_image_background: true
   field_general_text_: true
   field_general_title: true
+  field_main_content_page_paragrap: true
