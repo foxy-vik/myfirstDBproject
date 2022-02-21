@@ -99,6 +99,11 @@ set footer_classes = ' ' ~
       {{ page.highlights }}
     {% endif %}
   </div>
+  <div class="container-fluid">
+    {% if page.banner %}
+      {{ page.banner }}
+    {% endif %}
+  </div>
   <div class="{{ b5_top_container }}">
     {% if page.breadcrumb %}
       {{ page.breadcrumb }}
