@@ -60,45 +60,46 @@
     margin-block: 0;
   }
 
-  //pagination
-  .pager__items {
-    display: flex;
-    text-align: left;
-    max-height: rem(26);
-    gap: rem(4);
-    padding-left: 0;
-    margin-bottom: rem(48);
-    margin-top: rem(10);
 
-    .not-active{
-      opacity: 0.5;
+}
+//pagination
+.pager__items {
+  display: flex;
+  text-align: left;
+  max-height: rem(26);
+  gap: rem(4);
+  padding-left: 0;
+  margin-bottom: rem(48);
+  margin-top: rem(10);
+
+  .not-active{
+    opacity: 0.5;
+  }
+
+  .pager__item {
+    padding: 0;
+    width: rem(26);
+    height: rem(26);
+    color: $grey;
+    border: rem(1) solid #dcdcdc;
+    border-radius: 0;
+
+    a {
+      color: $grey;
+      font-size: rem(20);
+      line-height: rem(22);
+      text-align: center;
+      vertical-align: middle;
+      font-weight: bold;
+      display: block;
+      margin: 0 auto;
     }
 
-    .pager__item {
-      padding: 0;
-      width: rem(26);
-      height: rem(26);
-      color: $grey;
-      border: rem(1) solid #dcdcdc;
-      border-radius: 0;
+    &:hover {
+      background: $yellow;
 
       a {
-        color: $grey;
-        font-size: rem(20);
-        line-height: rem(22);
-        text-align: center;
-        vertical-align: middle;
-        font-weight: bold;
-        display: block;
-        margin: 0 auto;
-      }
-
-      &:hover {
-        background: $yellow;
-
-        a {
-          color: $white;
-        }
+        color: $white;
       }
     }
   }
