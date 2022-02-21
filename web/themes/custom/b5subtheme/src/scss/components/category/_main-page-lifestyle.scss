@@ -5,6 +5,37 @@
     margin-inline: auto;
   }
 
+  .breadcrumb {
+    color: $grey;
+
+    a {
+      color: $grey;
+    }
+  }
+
+  h2 {
+    color: $black;
+    margin-top: rem(20);
+  }
+
+  .field--name-field-taxonomy-{
+    a{
+      background-color: $white;
+      border: rem(1) solid $lightWhite;
+      color: $black;
+      &:hover{
+        background-color: $black;
+        color:$white;
+      }
+    }
+  }
+
+  .field--name-field-main-text {
+    p {
+      color: $grey;
+    }
+  }
+
   .block-block-content304b0427-eec8-4052-9d3a-06b71cdfd4d2 {
     max-width: 66.75rem;
     display: block;
@@ -84,7 +115,8 @@
   .region-banner {
     .view-content {
       flex-direction: column;
-      img{
+
+      img {
         width: 100%;
       }
     }
