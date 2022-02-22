@@ -19,8 +19,10 @@
     padding: rem(10);
     list-style: none;
     position: relative;
+  }
 
-    span, a {
+  & > li {
+    & > span, & > a {
       font-weight: 600;
       font-size: rem(14);
       line-height: rem(48);
@@ -59,36 +61,175 @@
     }
   }
 
-  //Hover fashion.
+  //Hover "fashion".
   li:nth-child(2):hover {
     .menu-level-1 {
       width: 10rem;
-      top: rem(13);
+      top: 4.4125rem;
       left: -8.5rem;
       margin-left: 0;
+      padding-bottom: 9.125rem;
 
-      a, span {
-        display: block;
-        text-align: right;
+      .menu-item {
+        & > a, & > span {
+          display: block;
+          text-align: right;
+        }
       }
 
-      .menu-level-2{
-        display: block;
-        position: absolute;
-        left: rem(112);
-        top: -2rem;
-        width: 62.5rem;
-        background-color: rgba(255, 255, 255, 0.95);
-        z-index: 0;
-        border-width: 0 1px 1px;
-        border-color: #ededed;
-        border-style: solid;
-        padding: rem(10) rem(20) rem(10) rem(20);
+      li {
+        //Show ALL.
+        &:first-child, &:nth-child(2):hover, &:nth-child(3):hover {
+          .menu-level-2 {
+            display: block;
+            position: absolute;
+            left: rem(112);
+            top: -0.67rem;
+            width: 62.5rem;
+            max-height: 19.5rem;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 0;
+            border-width: 0 1px 1px;
+            border-color: #ededed;
+            border-style: solid;
+            padding: rem(10) rem(20) rem(10) rem(20);
+
+            .menu-item > a {
+              display: none;
+            }
+
+            .pager__items {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        //New Look.
+        &:nth-child(2):hover{
+          .menu-level-2 {
+            top: -2.47rem;
+          }
+        }
+
+        //Street fashion.
+        &:nth-child(3):hover{
+          .menu-level-2 {
+            top: -4.1rem;
+          }
+        }
+
+        .menu-level-2 {
+          display: none;
+        }
       }
     }
   }
 
+  //Styles for view ALL in fashion.
+  .views-view-grid {
+
+    .views-col {
+      padding-inline: 0.5rem;
+
+      .views-field-field-tax-gadg {
+        .tag {
+          margin-top: -1.625rem;
+          a {
+            @include tags($black);
+            display: inline-block;
+            line-height: 0.975rem;
+          }
+        }
+      }
+
+    }
+
+    .views-field-title {
+      line-height: 0.5rem;
+
+      a {
+        @include titleBlockSmall($black);
+        font-size: 0.775rem;
+      }
+    }
+
+    .views-field-created {
+      span {
+        font-size: 0.55rem;
+      }
+    }
+  }
+
+  //Hover 'Gadgets'.
+  li:nth-child(3):hover {
+    .view-display-id-block_3 {
+      display: block;
+      position: absolute;
+      width: 70rem;
+      top: 4.4125rem;
+      left: -10.5rem;
+      margin-left: 0;
+      z-index: 100;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-width: 0 1px 1px;
+      border-color: #ededed;
+      border-style: solid;
+      max-height: 15.75rem;
+
+
+      .views-view-grid {
+
+        padding: 0.625rem 1.25rem 0.625rem 1.25rem;
+        .views-col {
+          padding-inline: 0.5rem;
+
+          .views-field-field-tax-gadg {
+            .tag {
+              margin-top: -1.625rem;
+              a {
+                @include tags($black);
+                display: inline-block;
+                line-height: 0.975rem;
+              }
+            }
+          }
+
+        }
+
+        .views-field-title {
+          line-height: 0.5rem;
+
+          a {
+            @include titleBlockSmall($black);
+            font-size: 0.775rem;
+          }
+        }
+
+        .views-field-name{
+          margin-top: -1.5rem;
+          a{
+            @include tags($black);
+          }
+        }
+
+        .views-field-created {
+          span {
+            font-size: 0.55rem;
+          }
+        }
+
+        img{
+          max-height: rem(133);
+        }
+      }
+
+      .pager{
+        margin-left: rem(20);
+      }
+    }
+  }
 }
+
 
 .menu-level-0 {
   //Features.
@@ -105,7 +246,7 @@
       .menu-level-1 {
         display: block;
         position: absolute;
-        top: 0;
+        top: rem(70);
         left: -0.5rem;
         width: rem(280);
         background-color: rgba(255, 255, 255, 0.95);
@@ -114,6 +255,7 @@
         border-color: #ededed;
         border-style: solid;
         padding: rem(10) rem(20) rem(10) rem(20);
+        margin-left: 0;
       }
     }
   }
@@ -138,7 +280,7 @@
         .menu-level-2 {
           display: block;
           position: absolute;
-          right: -18rem;
+          right: -17.5rem;
           top: -2.3rem;
           width: rem(280);
           background-color: rgba(255, 255, 255, 0.95);
@@ -147,6 +289,7 @@
           border-color: #ededed;
           border-style: solid;
           padding: rem(10) rem(20) rem(10) rem(20);
+
         }
       }
     }
