@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.gadgets.body
+    - field.field.node.gadgets.field_banner_img_video
     - field.field.node.gadgets.field_gadget_img
     - field.field.node.gadgets.field_general_image_background
     - field.field.node.gadgets.field_general_text_
@@ -11,6 +12,7 @@ dependencies:
     - field.field.node.gadgets.field_main_content_page_paragrap
     - field.field.node.gadgets.field_tags
     - field.field.node.gadgets.field_tax_gadg
+    - field.field.node.gadgets.field_video
     - node.type.gadgets
   module:
     - entity_reference_revisions
@@ -25,6 +27,15 @@ targetEntityType: node
 bundle: gadgets
 mode: default
 content:
+  field_banner_img_video:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_main_content_page_paragrap:
     type: entity_reference_revisions_entity_view
     label: hidden
@@ -32,7 +43,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_tags:
     type: entity_reference_revisions_entity_view
@@ -49,12 +60,21 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 4
+    region: content
+  field_video:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
 hidden:
   body: true

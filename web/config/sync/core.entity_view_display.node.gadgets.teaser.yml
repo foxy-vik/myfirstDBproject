@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.gadgets.body
+    - field.field.node.gadgets.field_banner_img_video
     - field.field.node.gadgets.field_gadget_img
     - field.field.node.gadgets.field_general_image_background
     - field.field.node.gadgets.field_general_text_
@@ -12,6 +13,7 @@ dependencies:
     - field.field.node.gadgets.field_main_content_page_paragrap
     - field.field.node.gadgets.field_tags
     - field.field.node.gadgets.field_tax_gadg
+    - field.field.node.gadgets.field_video
     - image.style.532_450
     - node.type.gadgets
   module:
@@ -41,10 +43,12 @@ content:
     weight: 0
     region: content
 hidden:
+  field_banner_img_video: true
   field_general_image_background: true
   field_general_text_: true
   field_general_title: true
   field_main_content_page_paragrap: true
   field_tags: true
   field_tax_gadg: true
+  field_video: true
   links: true

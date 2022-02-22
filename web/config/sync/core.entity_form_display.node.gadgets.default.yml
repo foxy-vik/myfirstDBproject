@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.gadgets.body
+    - field.field.node.gadgets.field_banner_img_video
     - field.field.node.gadgets.field_gadget_img
     - field.field.node.gadgets.field_general_image_background
     - field.field.node.gadgets.field_general_text_
@@ -11,6 +12,7 @@ dependencies:
     - field.field.node.gadgets.field_main_content_page_paragrap
     - field.field.node.gadgets.field_tags
     - field.field.node.gadgets.field_tax_gadg
+    - field.field.node.gadgets.field_video
     - node.type.gadgets
   module:
     - field_layout
@@ -44,6 +46,13 @@ content:
     weight: 8
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_banner_img_video:
+    type: media_library_widget
+    weight: 27
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_gadget_img:
     type: media_library_widget
@@ -121,6 +130,18 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_video:
+    type: entity_reference_paragraphs
+    weight: 26
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
   path:
     type: path
