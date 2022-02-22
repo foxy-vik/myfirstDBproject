@@ -1,0 +1,38 @@
+.block-views-blockcomments-recent-block-1 {
+  //title
+  h2 {
+    @include titleBlock($white, $black);
+  }
+
+  .wrapper {
+    border-top: rem(2) solid $black;
+  }
+
+  .views-row, .field-content {
+    font-size: rem(12);
+    color: $lightGrey;
+    padding-block: 0.75rem;
+
+    a {
+      font-size: rem(12);
+      color: $lightGrey;
+      text-transform: capitalize;
+    }
+
+    p {
+      display: inline;
+      font-style: italic;
+      font-size: rem(13);
+      font-weight: 600;
+      color: $black;
+    }
+  }
+
+}
+
+.field--name-field-comments-for-pages {
+  .layout__region--content {
+    display: unset;
+  }
+
+}
