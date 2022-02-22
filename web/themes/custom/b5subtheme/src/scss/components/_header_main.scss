@@ -1,7 +1,6 @@
 header {
   border-bottom: rem(1) solid $lightWhite;
-  //@include box-shadow(0 0 rem(38)  rgba(34, 60, 80, 0.2));
-  box-shadow: 0 0 2rem 1rem rgba(34, 60, 80, 0.2);
+ box-shadow: 0 0 2rem 1rem rgba(34, 60, 80, 0.2);
 
   .navbar-light{
     padding-bottom: 0;

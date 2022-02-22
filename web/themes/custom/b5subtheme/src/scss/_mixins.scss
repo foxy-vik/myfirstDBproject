@@ -73,17 +73,3 @@ $html-font-size: 16px;
   padding-top: $padding;
   text-shadow: rem(3) rem(2) rem(2) rgba(150, 150, 150, 0.61);
 }
-
-
-@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
-  @if $inset {
-    -webkit-box-shadow:inset $top $left $blur $color;
-    -moz-box-shadow:inset $top $left $blur $color;
-    box-shadow:inset $top $left $blur $color;
-  } @else {
-    -webkit-box-shadow: $top $left $blur $color;
-    -moz-box-shadow: $top $left $blur $color;
-    box-shadow: $top $left $blur $color;
-  }
-}
-
