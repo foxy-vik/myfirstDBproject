@@ -19,6 +19,7 @@
     z-index: -1;
   }
 }
+
 .region-highlights, .region-banner {
   .breadcrumb {
     padding-top: 1rem;
@@ -77,3 +78,21 @@
   }
 }
 
+.wrapper {
+  position: relative;
+}
+
+//Title taxonomy.
+.view-taxonomy-term {
+
+  &::after {
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: $black;
+  }
+
+}
