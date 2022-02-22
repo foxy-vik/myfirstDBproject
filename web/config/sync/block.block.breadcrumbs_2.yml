@@ -9,7 +9,7 @@ dependencies:
 id: breadcrumbs_2
 theme: b5subtheme
 region: banner
-weight: 0
+weight: -21
 provider: null
 plugin: system_breadcrumb_block
 settings:
