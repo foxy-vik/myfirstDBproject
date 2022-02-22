@@ -12,7 +12,7 @@ dependencies:
 id: author
 theme: b5subtheme
 region: sidebar_second
-weight: -17
+weight: -22
 provider: null
 plugin: 'block_content:0694001b-f440-40b3-a916-22c590f8e9d9'
 settings:

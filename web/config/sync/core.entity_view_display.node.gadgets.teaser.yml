@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.gadgets.body
+    - field.field.node.gadgets.field_comments_for_pages
     - field.field.node.gadgets.field_gadget_img
     - field.field.node.gadgets.field_general_image_background
     - field.field.node.gadgets.field_general_text_
@@ -41,6 +42,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_comments_for_pages: true
   field_general_image_background: true
   field_general_text_: true
   field_general_title: true
