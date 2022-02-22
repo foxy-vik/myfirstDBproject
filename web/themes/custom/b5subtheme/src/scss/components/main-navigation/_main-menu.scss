@@ -19,9 +19,23 @@
     padding: rem(10);
     list-style: none;
     position: relative;
+
+    .is-active {
+      &::before{
+        position: absolute;
+        width: 100%;
+        content: "";
+        display: block;
+        height: 3px;
+        left: 0;
+        bottom: 0;
+        background: $colorHover;
+      }
+    }
   }
 
   & > li {
+    position: relative;
     & > span, & > a {
       font-weight: 600;
       font-size: rem(14);
@@ -47,10 +61,6 @@
         width: 100%;
         left: 0;
       }
-    }
-
-    &:first-child {
-      border-bottom: rem(3) solid $colorHover;
     }
   }
 
