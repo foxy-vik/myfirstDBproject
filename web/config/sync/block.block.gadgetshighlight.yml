@@ -12,7 +12,7 @@ dependencies:
 id: gadgetshighlight
 theme: b5subtheme
 region: banner
-weight: 0
+weight: -20
 provider: null
 plugin: 'block_content:e13d8743-b79c-4815-a464-a01df626d62c'
 settings:

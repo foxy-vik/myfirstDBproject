@@ -12,7 +12,7 @@ dependencies:
 id: views_block___banner_grid_top_right_block_4
 theme: b5subtheme
 region: banner
-weight: 0
+weight: -18
 provider: null
 plugin: 'views_block:_banner_grid_top_right-block_4'
 settings:
