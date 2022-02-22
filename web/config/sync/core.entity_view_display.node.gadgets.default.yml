@@ -43,22 +43,11 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_tax_gadg:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
 hidden:
   body: true
   field_gadget_img: true
   field_general_image_background: true
   field_general_text_: true
   field_general_title: true
+  field_tax_gadg: true
+  links: true
