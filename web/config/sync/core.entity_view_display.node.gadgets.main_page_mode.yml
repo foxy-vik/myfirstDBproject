@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.main_page_mode
     - field.field.node.gadgets.body
     - field.field.node.gadgets.field_comments_for_pages
+    - field.field.node.gadgets.field_banner_img_video
     - field.field.node.gadgets.field_gadget_img
     - field.field.node.gadgets.field_general_image_background
     - field.field.node.gadgets.field_general_text_
@@ -13,6 +14,7 @@ dependencies:
     - field.field.node.gadgets.field_main_content_page_paragrap
     - field.field.node.gadgets.field_tags
     - field.field.node.gadgets.field_tax_gadg
+    - field.field.node.gadgets.field_video
     - image.style.385_360
     - node.type.gadgets
     - views.view._banner_grid_top_right
@@ -374,7 +376,9 @@ content:
 hidden:
   body: true
   field_comments_for_pages: true
+  field_banner_img_video: true
   field_general_text_: true
   field_general_title: true
   field_main_content_page_paragrap: true
   field_tags: true
+  field_video: true
