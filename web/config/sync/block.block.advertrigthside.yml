@@ -12,7 +12,7 @@ dependencies:
 id: advertrigthside
 theme: b5subtheme
 region: sidebar_second
-weight: 0
+weight: -21
 provider: null
 plugin: 'block_content:8d054a56-c643-4503-86ef-964d0fc93e41'
 settings:

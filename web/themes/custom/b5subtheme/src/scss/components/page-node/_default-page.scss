@@ -221,3 +221,12 @@
 .node__links {
   display: none;
 }
+
+.region{
+  .node__meta{
+    display: none;
+  }
+  .profile{
+    display: none;
+  }
+}
