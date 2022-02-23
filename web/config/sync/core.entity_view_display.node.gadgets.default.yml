@@ -28,6 +28,18 @@ targetEntityType: node
 bundle: gadgets
 mode: default
 content:
+<<<<<<< HEAD
+=======
+  field_banner_img_video:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+>>>>>>> 52ab2cc (task4436 - installed module Simple Popup Blocks)
   field_comments_for_pages:
     type: comment_default
     label: hidden
