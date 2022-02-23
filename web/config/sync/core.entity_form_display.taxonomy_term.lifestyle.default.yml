@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.lifestyle.field_background_taxonomy
+    - field.field.taxonomy_term.lifestyle.field_title_taxonomy
     - taxonomy.vocabulary.lifestyle
   module:
     - field_layout
@@ -23,6 +24,14 @@ content:
   field_background_taxonomy:
     type: text_textfield
     weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title_taxonomy:
+    type: text_textfield
+    weight: 4
     region: content
     settings:
       size: 60
