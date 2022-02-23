@@ -375,8 +375,8 @@ content:
     region: content
 hidden:
   body: true
-  field_comments_for_pages: true
   field_banner_img_video: true
+  field_comments_for_pages: true
   field_general_text_: true
   field_general_title: true
   field_main_content_page_paragrap: true

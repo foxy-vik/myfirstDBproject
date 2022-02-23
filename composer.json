@@ -63,6 +63,7 @@
         "drupal/paragraphs": "^1.12",
         "drupal/pathauto": "^1.8",
         "drupal/redirect": "^1.7",
+        "drupal/simple_popup_blocks": "^2.8",
         "drupal/slick": "^2.4",
         "drupal/slick_views": "^2.6",
         "drupal/smart_date": "^3.4",
