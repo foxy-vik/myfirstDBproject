@@ -3,7 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment.default
     - field.field.node.gadgets.body
+    - field.field.node.gadgets.field_comments_for_pages
     - field.field.node.gadgets.field_banner_img_video
     - field.field.node.gadgets.field_gadget_img
     - field.field.node.gadgets.field_general_image_background
@@ -15,6 +17,7 @@ dependencies:
     - field.field.node.gadgets.field_video
     - node.type.gadgets
   module:
+    - comment
     - entity_reference_revisions
     - layout_builder
     - user
@@ -27,6 +30,15 @@ targetEntityType: node
 bundle: gadgets
 mode: default
 content:
+  field_comments_for_pages:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 7
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_banner_img_video:
     type: entity_reference_entity_view
     label: above
@@ -82,3 +94,4 @@ hidden:
   field_general_image_background: true
   field_general_text_: true
   field_general_title: true
+  field_tax_gadg: true

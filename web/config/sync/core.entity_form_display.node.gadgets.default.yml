@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.gadgets.body
+    - field.field.node.gadgets.field_comments_for_pages
     - field.field.node.gadgets.field_banner_img_video
     - field.field.node.gadgets.field_gadget_img
     - field.field.node.gadgets.field_general_image_background
@@ -15,6 +16,7 @@ dependencies:
     - field.field.node.gadgets.field_video
     - node.type.gadgets
   module:
+    - comment
     - field_layout
     - layout_discovery
     - media_library
@@ -44,6 +46,12 @@ content:
   created:
     type: datetime_timestamp
     weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_comments_for_pages:
+    type: comment_default
+    weight: 26
     region: content
     settings: {  }
     third_party_settings: {  }

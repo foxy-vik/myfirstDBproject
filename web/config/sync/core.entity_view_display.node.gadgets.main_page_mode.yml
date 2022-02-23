@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.main_page_mode
     - field.field.node.gadgets.body
+    - field.field.node.gadgets.field_comments_for_pages
     - field.field.node.gadgets.field_banner_img_video
     - field.field.node.gadgets.field_gadget_img
     - field.field.node.gadgets.field_general_image_background
@@ -374,6 +375,7 @@ content:
     region: content
 hidden:
   body: true
+  field_comments_for_pages: true
   field_banner_img_video: true
   field_general_text_: true
   field_general_title: true
