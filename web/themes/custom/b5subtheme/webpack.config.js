@@ -5,8 +5,8 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, './css')
+    filename: 'js/[name].bundle.js',
+    path: path.resolve(__dirname, './dist')
   },
   module: {
     rules: [{
@@ -20,7 +20,7 @@ module.exports = {
   },
   plugins: [
     new miniCss({
-      filename: 'style.css',
+      filename: 'css/style.css',
     }),
   ]
 };
