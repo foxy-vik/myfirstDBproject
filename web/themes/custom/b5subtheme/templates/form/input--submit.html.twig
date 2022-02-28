@@ -14,9 +14,8 @@
 {% if attributes.hasClass('button') and not attributes.hasClass('field-add-more-submit') %}
   {%
     set classes = [
-      'btn',
+      'btn-search',
       attributes.hasClass('button--danger') ? 'btn-danger' : '',
-      (not attributes.hasClass('media-library-item__remove') and not attributes.hasClass('button--danger')) ? 'btn-primary' : ''
     ]
   %}
   <input{{ attributes.addClass(classes) }} />
