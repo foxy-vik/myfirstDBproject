@@ -1,0 +1,47 @@
+.view-display-id-block_5 {
+  .view-content {
+    justify-content: center;
+    gap: rem(10);
+
+    .views-row:first-child::after, .views-row:last-child::after {
+      background: unset;
+    }
+
+    .views-row {
+      overflow: hidden;
+      img {
+        transition: 0.7s ease;
+      }
+
+      &:hover {
+        .views-field-field-banner-img-video {
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+
+  .views-field-title a:hover {
+    color: $white;
+  }
+
+  .views-field-field-tax-gadg {
+    a {
+      @include tags($black);
+
+      &:hover {
+        background-color: $colorHover;
+      }
+    }
+  }
+
+}
+
+.block-block-content07e1d595-2846-49f1-a6f9-24593887dee5{
+  max-width: 66.75rem;
+  display: block;
+  margin-inline: auto;
+}
+

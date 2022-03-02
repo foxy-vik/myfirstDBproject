@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.latest_articles_view_mode
     - field.field.node.gadgets.body
     - field.field.node.gadgets.field_comments_for_pages
+    - field.field.node.gadgets.field_banner_img_video
     - field.field.node.gadgets.field_gadget_img
     - field.field.node.gadgets.field_general_image_background
     - field.field.node.gadgets.field_general_text_
@@ -13,9 +14,11 @@ dependencies:
     - field.field.node.gadgets.field_main_content_page_paragrap
     - field.field.node.gadgets.field_tags
     - field.field.node.gadgets.field_tax_gadg
+    - field.field.node.gadgets.field_video
     - image.style.life_style_324_162
     - node.type.gadgets
   module:
+    - entity_reference_revisions
     - layout_builder
     - media
     - user
@@ -52,6 +55,15 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+    weight: 3
+    region: content
+  field_video:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     weight: 2
     region: content
 hidden:
@@ -61,6 +73,7 @@ hidden:
   field_banner_img_video: true
 >>>>>>> 52ab2cc (task4436 - installed module Simple Popup Blocks)
   field_comments_for_pages: true
+  field_banner_img_video: true
   field_general_text_: true
   field_general_title: true
   field_main_content_page_paragrap: true

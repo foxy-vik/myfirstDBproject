@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.lifestyle.field_background_taxonomy
+    - field.field.taxonomy_term.lifestyle.field_title_taxonomy
     - taxonomy.vocabulary.lifestyle
   module:
     - layout_builder
@@ -17,12 +18,13 @@ targetEntityType: taxonomy_term
 bundle: lifestyle
 mode: default
 content:
-  field_background_taxonomy:
+  field_title_taxonomy:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: -4
+    weight: 0
     region: content
 hidden:
   description: true
+  field_background_taxonomy: true

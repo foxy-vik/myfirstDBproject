@@ -1,0 +1,30 @@
+uuid: 936b1ff3-55cf-4d6b-aef4-7516ae6e41ca
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:highlight_:07e1d595-2846-49f1-a6f9-24593887dee5'
+  module:
+    - block_content
+    - system
+  theme:
+    - b5subtheme
+id: video
+theme: b5subtheme
+region: banner
+weight: 0
+provider: null
+plugin: 'block_content:07e1d595-2846-49f1-a6f9-24593887dee5'
+settings:
+  id: 'block_content:07e1d595-2846-49f1-a6f9-24593887dee5'
+  label: VIDEO
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /video
