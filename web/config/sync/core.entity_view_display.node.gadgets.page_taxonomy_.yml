@@ -53,12 +53,8 @@ content:
     region: content
 hidden:
   body: true
-<<<<<<< HEAD
-=======
   field_banner_img_video: true
->>>>>>> 52ab2cc (task4436 - installed module Simple Popup Blocks)
   field_comments_for_pages: true
-  field_banner_img_video: true
   field_gadget_img: true
   field_general_image_background: true
   field_general_text_: true
