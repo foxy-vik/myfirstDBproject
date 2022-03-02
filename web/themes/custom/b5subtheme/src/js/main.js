@@ -13,8 +13,9 @@
          */
     Drupal.behaviors.searchButton = {
         attach: function (context, settings) {
-            $('#block-searchiconbtn', context).once('myCustomBehaviour').on('click', function () {
-           $('.search-block-form').slideToggle("slow");
+     $('.region-nav-additional', context).once('myCustomBehaviour').each(function () {
+        $(this).find('#block-searchiconbtn').on('click', function () {
+          $('.search-block-form').slideToggle("slow");
             });
             $(context).find('.btn-search').val('Search >');
         }
