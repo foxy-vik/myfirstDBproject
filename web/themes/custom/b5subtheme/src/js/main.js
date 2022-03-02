@@ -17,7 +17,8 @@
         $(this).find('#block-searchiconbtn').on('click', function () {
           $('.search-block-form').slideToggle("slow");
             });
-            $(context).find('.btn-search').val('Search >');
+              $(this).find('.btn-search').val('Search >');
+      });
         }
     };
 
