@@ -49,18 +49,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_comments_for_pages:
+    type: comment_default
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_banner_img_video:
     type: media_library_widget
     weight: 27
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
-  field_comments_for_pages:
-    type: comment_default
-    weight: 26
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_gadget_img:
     type: media_library_widget

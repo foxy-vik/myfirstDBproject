@@ -30,15 +30,6 @@ targetEntityType: node
 bundle: gadgets
 mode: default
 content:
-  field_banner_img_video:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 5
-    region: content
   field_comments_for_pages:
     type: comment_default
     label: hidden
@@ -47,6 +38,15 @@ content:
       pager_id: 7
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_banner_img_video:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_main_content_page_paragrap:
     type: entity_reference_revisions_entity_view
