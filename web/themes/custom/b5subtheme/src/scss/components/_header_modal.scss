@@ -1,0 +1,86 @@
+.ui-widget-overlay {
+  background: #0b0b0b;
+  opacity: 0.8;
+}
+
+//Background.
+.ui-dialog.ui-widget-content {
+  width: rem(500) !important;
+  height: rem(500) !important;
+  border-radius: unset;
+  border: unset;
+
+  &::after {
+    background-image: url('https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/10/login-mod.jpg');
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    z-index: -3;
+  }
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    background: rgba(0, 69, 130, .8);
+    background: linear-gradient(45deg, rgba(0, 69, 130, 0.8) 0%, rgba(38, 134, 146, 0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2a80cb', endColorstr='#42bdcd', GradientType=1);
+    z-index: -2;
+  }
+}
+
+#drupal-modal {
+  padding-inline: rem(100);
+  max-height: 18rem !important;
+
+  .form-item{
+    position: relative;
+  }
+
+  label{
+    font-size: 15px;
+    font-weight: 400;
+    color: $white;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    text-transform: uppercase;
+    transition: all .2s ease;
+
+  }
+
+  input {
+    border: unset;
+    background: unset;
+    border-bottom: 1px solid white;
+    border-radius: unset;
+    &:focus + label{
+      top: -18px;
+      font-size: 11px;
+      opacity: .6;
+    }
+    &:focus{
+      box-shadow: unset;
+    }
+  }
+
+  .description {
+    display: none;
+  }
+}
+
+.ui-dialog .ui-dialog-buttonpane, .ui-dialog .ui-dialog-titlebar {
+  background: unset;
+  border: unset;
+}
