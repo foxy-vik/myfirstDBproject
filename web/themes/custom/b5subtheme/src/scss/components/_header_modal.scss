@@ -44,11 +44,12 @@
   padding-inline: rem(100);
   max-height: 18rem !important;
 
-  .form-item{
+  .form-item {
     position: relative;
+    margin-bottom: 2rem;
   }
 
-  label{
+  label {
     font-size: 15px;
     font-weight: 400;
     color: $white;
@@ -58,6 +59,9 @@
     text-transform: uppercase;
     transition: all .2s ease;
 
+    &:after {
+      background: unset;
+    }
   }
 
   input {
@@ -65,12 +69,14 @@
     background: unset;
     border-bottom: 1px solid white;
     border-radius: unset;
-    &:focus + label{
+
+    &:focus + label, &:active + label {
       top: -18px;
       font-size: 11px;
       opacity: .6;
     }
-    &:focus{
+
+    &:focus {
       box-shadow: unset;
     }
   }
@@ -83,4 +89,80 @@
 .ui-dialog .ui-dialog-buttonpane, .ui-dialog .ui-dialog-titlebar {
   background: unset;
   border: unset;
+}
+
+.ui-widget-header {
+  &::before {
+    content: 'SIGN IN';
+    color: $white;
+    font-size: 1rem;
+    margin: 1.5rem auto;
+  }
+
+  &::after {
+    content: 'Welcome! Log into your account';
+    color: $white;
+    font-size: rem(13);
+    margin: 1.5rem auto;
+  }
+}
+
+.ui-dialog-title {
+  display: none;
+}
+
+//Close btn.
+.ui-icon-closethick{
+  opacity: 0;
+}
+
+.ui-dialog-titlebar-close{
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 0.3;
+  box-shadow: unset;
+  &:focus{
+    box-shadow: unset !important;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+  &:before, &:after {
+    position: absolute;
+    left: 0;
+    top: -2rem;
+    content: ' ';
+    height: rem(20);
+    width: rem(2);
+    background-color: $white;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+
+}
+.btn-close, .ui-dialog .ui-dialog-titlebar-close{
+  background: unset;
+}
+
+//Login.
+.ui-dialog .ui-dialog-buttonset{
+  width: 100%;
+  .ui-button{
+    display: block;
+    margin:0 auto;
+    width: 18.75rem;
+    height: 3.125rem;
+    background: $white;
+    &:hover{
+      background-color: #deea4b;
+    }
+  }
 }
