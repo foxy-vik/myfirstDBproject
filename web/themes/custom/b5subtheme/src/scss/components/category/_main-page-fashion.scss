@@ -1,10 +1,15 @@
+.lifestyle-fashion{
+  .region-highlights {
+    background-image: url(https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/38.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
 .region-highlights {
   position: relative;
   max-height: rem(445);
-  background-image: url(../../img/38.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   padding-bottom: 445px;
   z-index: 0;
 
