@@ -25,16 +25,20 @@
   Drupal.behaviors.listMenu = {
     attach: function (context, settings) {
       $('#views-exposed-form-dont-miss-block-2 .tabs', context).once('myCustomBehaviourListMenu').each(function () {
-  //       $(this).addClass('jsfied');
-        let primaryUl = $(this).find('ul');
-        primaryUl.addClass('primary');
-  //
-  //       let containerEl = primaryUl.parent();
-  //       if (containerEl.width() < elem.width()) {
-  //         elem.first().appendTo('#edit-tags-down ul')
-  //       }
-  //       console.log(parentEl.width());
-  //       console.log(elem.width());
+        const container = $(this);
+        container.find('ul').addClass('primary');
+        const primary = $(this).find('.primary');
+
+        const secondary = primary.clone().appendTo(primary.last());
+        secondary.removeClass('primary').addClass('secondary').hide();
+        secondary.wrap(function () {
+          return '<li class="more">' + '</li>';
+        });
+        $(this).find('.more').prepend('<button type="button" aria-haspopup="true" aria-expanded="false"> More</button>');
+        const moreBtn = $(this).find('.more button').click(function () {
+          secondary.toggle();
+          moreBtn.attr('aria-expanded', container.classList.contains('show-secondary'));
+        });
       });
     }
   };
@@ -51,32 +55,3 @@
 
 
 })(jQuery);
-
-const container = document.querySelector('#views-exposed-form-dont-miss-block-2 .tabs');
-container.firstElementChild.classList.add('primary');
-const primary = container.querySelector('.primary');
-const primaryItems = container.querySelectorAll('.primary > li:not(.more)');
-container.classList.add('--jsfied');
-
-// insert "more" button and duplicate the list
-
-
-primary.insertAdjacentHTML('beforeend', `
-  <li class="more">
-    <button type="button" aria-haspopup="true" aria-expanded="false">
-      More
-    </button>
-    <ul class="secondary">
-      ${primary.innerHTML}
-    </ul>
-  </li>
-`)
-const secondary = container.querySelector('.secondary');
-const moreLi = primary.querySelector('.more');
-const moreBtn = moreLi.querySelector('button');
-
-moreBtn.addEventListener('click', (e) => {
-  e.preventDefault()
-  container.classList.toggle('show-secondary')
-  moreBtn.setAttribute('aria-expanded', container.classList.contains('show-secondary'))
-})
