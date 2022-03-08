@@ -18,9 +18,28 @@
           $('.search-block-form').slideToggle("slow");
         });
         $(this).find('.btn-search').val('Search >');
-
       });
+    }
+  };
 
+  Drupal.behaviors.listMenu = {
+    attach: function (context, settings) {
+      $('#views-exposed-form-dont-miss-block-2 .tabs', context).once('myCustomBehaviourListMenu').each(function () {
+        const container = $(this);
+        container.find('ul').addClass('primary');
+        const primary = $(this).find('.primary');
+
+        const secondary = primary.clone().appendTo(primary.last());
+        secondary.removeClass('primary').addClass('secondary').hide();
+        secondary.wrap(function () {
+          return '<li class="more">' + '</li>';
+        });
+        $(this).find('.more').prepend('<button type="button" aria-haspopup="true" aria-expanded="false"> More</button>');
+        const moreBtn = $(this).find('.more button').click(function () {
+          secondary.toggle();
+          moreBtn.attr('aria-expanded', container.classList.contains('show-secondary'));
+        });
+      });
     }
   };
 
