@@ -24,7 +24,20 @@
   }
 
   .slick-list {
-    padding-left: 150px;
+    margin-left: rem(150);
+    margin-right: rem(90);
+
+    .slick__slide {
+      a {
+        font-size: rem(15);
+        line-height: rem(25);
+        font-family: $font-tags;
+
+        &:hover {
+          color: $black;
+        }
+      }
+    }
 
     .field-content {
       font-size: 15px;
