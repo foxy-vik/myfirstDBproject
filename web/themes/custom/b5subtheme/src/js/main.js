@@ -18,10 +18,17 @@
           $('.search-block-form').slideToggle("slow");
         });
         $(this).find('.btn-search').val('Search >');
-
       });
-
     }
   };
+
+  Drupal.behaviors.listMenu = {
+    attach: function (context, settings) {
+      $('.form-select', context).once('myCustomBehaviourListMenu').each(function () {
+        $(this).find('ul li').addClass('test-qwery');
+      });
+    }
+  };
+
 
 })(jQuery);
