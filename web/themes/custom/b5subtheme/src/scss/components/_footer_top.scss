@@ -148,7 +148,7 @@
     }
 
 
-    //popular category
+    //Popular category.
     .layout__region--third {
       .views-element-container {
         h2 {
@@ -161,27 +161,26 @@
           color: $white;
           text-transform: uppercase;
         }
+      }
+    }
+    //Item for count every category.
+    .category-item {
+      color: $white;
+      padding-block: 0.5rem;
 
-        .popular-item {
-          display: flex;
-          justify-content: space-between;
-          color: #ffffff;
+      a {
+        color: $white;
+        text-transform: uppercase;
+      }
 
-          a {
-            color: #ffffff;
-            text-decoration: none;
-          }
+      &:hover {
+        color: #4db2ec;
 
-          &:hover {
-            color: #4db2ec;
-
-            a {
-              color: #4db2ec;
-            }
-          }
-
+        a {
+          color: #4db2ec;
         }
       }
+
     }
   }
 }
