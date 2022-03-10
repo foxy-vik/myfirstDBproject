@@ -25,7 +25,13 @@
   Drupal.behaviors.listMenu = {
     attach: function (context, settings) {
       $('.form-select', context).once('myCustomBehaviourListMenu').each(function () {
-        $(this).find('ul li').addClass('test-qwery');
+        let elem = $(this).find('ul');
+        let parentEl = elem.parent();
+        if (parentEl.width()<elem.width()){
+          elem.first().appendTo('#edit-tags-down ul')
+        }
+        console.log(parentEl.width());
+        console.log(elem.width());
       });
     }
   };
