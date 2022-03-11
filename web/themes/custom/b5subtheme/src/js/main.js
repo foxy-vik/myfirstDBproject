@@ -39,10 +39,15 @@
   Drupal.behaviors.addClassMenuDark = {
     attach: function (context, settings) {
       $('.navbar-light', context).once('darkClass').each(function () {
-
+        let screenWidth = $(document).width();
         let colEl = $(this).find('.collapsed');
-        let widthColEl = colEl.width();
-        console.log(widthColEl);
+        if (screenWidth <= 768) {
+          colEl.addClass('navbar-dark');
+        } else {
+          colEl.removeClass('navbar-dark');
+        }
+
+        console.log(screenWidth);
       });
     }
   };
