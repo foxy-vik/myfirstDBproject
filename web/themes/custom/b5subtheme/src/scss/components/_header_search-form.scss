@@ -9,7 +9,6 @@
 
 
 .block-search{
-  display: none;
   transition: 0.3s ease;
   padding-bottom: 1rem;
   z-index: 3;
@@ -18,8 +17,8 @@
   position: relative;
 }
 
-.active {
-  display: block;
+#block-b5subtheme-search-form {
+  display: none;
   position: absolute;
   top: 3rem;
   left: -14rem;

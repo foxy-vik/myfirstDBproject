@@ -1,18 +1,26 @@
-// $(document).find('#block-searchiconbtn').on('click', function () {
-//     $('.search-block-form').toggleClass('active');
-// });
 
-let link = document.querySelector('#block-searchiconbtn');
-let formLink = document.querySelector('.search-block-form');
-let searchBtn = document.querySelector('.btn-search');
+/**
+ * @file
+ *
+ * Main JS.
+ */
 
-searchBtn.value = 'Search >';
+(function ($) {
 
-link.addEventListener('click', addClass);
+    'use strict';
+        /**
+         * Show and hive search-block.
+         */
+    Drupal.behaviors.searchButton = {
+        attach: function (context, settings) {
+     $('.region-nav-additional', context).once('myCustomBehaviour').each(function () {
+        $(this).find('#block-searchiconbtn').on('click', function () {
+          $('.search-block-form').slideToggle("slow");
+            });
+              $(this).find('.btn-search').val('Search >');
+      });
+        }
+    };
 
-function addClass(){
-    formLink.classList.toggle('active');
-}
-
-
+})(jQuery);
 
