@@ -84,6 +84,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_comments_for_pages: true
   field_banner_img_video: true
   field_comments_for_pages: true
   field_main_content_page_paragrap: true
