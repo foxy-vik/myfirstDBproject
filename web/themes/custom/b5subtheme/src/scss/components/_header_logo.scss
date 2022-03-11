@@ -1,5 +1,6 @@
 .navbar {
   padding-top: rem(28);
+
   .container {
     flex-direction: column;
     flex-grow: 1;
@@ -39,11 +40,11 @@
     }
 
     //Image logo light/
-    .field--name-field-logo-header-light{
+    .field--name-field-logo-header-light {
       display: none;
     }
 
-    .wrapper-main-navigation{
+    .wrapper-main-navigation {
       width: 100%;
     }
   }
@@ -77,12 +78,18 @@
   @include media-breakpoint-down(md) {
     padding: 0;
     background-color: $black;
-    .container{
+    .container {
       flex-direction: row;
       flex-wrap: nowrap;
-      justify-content: center;
-      .wrapper-main-navigation{
+      justify-content: space-between;
+
+      .navbar-light {
+        flex-basis: 30%;
+      }
+
+      .wrapper-main-navigation {
         width: unset;
+        flex-basis: 70%;
       }
     }
     .container .region-nav-branding {
@@ -92,9 +99,13 @@
       display: block;
     }
     //Logo & search btn.
-    #block-searchiconbtn{
-      .wrapper{
+    #block-searchiconbtn {
+      width: 100%;
+
+      .wrapper {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
     }
   }

@@ -27,11 +27,22 @@
       $('.form-select', context).once('myCustomBehaviourListMenu').each(function () {
         let elem = $(this).find('ul');
         let parentEl = elem.parent();
-        if (parentEl.width()<elem.width()){
+        if (parentEl.width() < elem.width()) {
           elem.first().appendTo('#edit-tags-down ul')
         }
         console.log(parentEl.width());
         console.log(elem.width());
+      });
+    }
+  };
+
+  Drupal.behaviors.addClassMenuDark = {
+    attach: function (context, settings) {
+      $('.navbar-light', context).once('darkClass').each(function () {
+
+        let colEl = $(this).find('.collapsed');
+        let widthColEl = colEl.width();
+        console.log(widthColEl);
       });
     }
   };

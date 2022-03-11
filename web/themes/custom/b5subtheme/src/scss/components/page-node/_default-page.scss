@@ -197,8 +197,8 @@
 }
 
 // Book.
-.book-pager {
-  p {
+.menu, .book-pager {
+   p {
     color: $lightGrey;
     font-size: rem(14);
     font-weight: 300;
@@ -215,6 +215,10 @@
     &:hover {
       color: $colorHover;
     }
+  }
+  .menu-item--collapsed{
+    list-style-type: none;
+    list-style-image: unset;
   }
 }
 
