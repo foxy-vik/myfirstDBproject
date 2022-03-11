@@ -49,16 +49,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-<<<<<<< HEAD
-=======
-  field_banner_img_video:
-    type: media_library_widget
-    weight: 27
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
->>>>>>> 52ab2cc (task4436 - installed module Simple Popup Blocks)
   field_comments_for_pages:
     type: comment_default
     weight: 26
