@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Bootstrap5 subtheme file.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function b5subtheme_preprocess_html(&$variables) {
+  /** @var \Drupal\taxonomy\TermInterface $term */
+  $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+  if ($term) {
+    /*
+     * Created bundle - vocabulary 'Tags'(mashine name 'lifestyle').
+     */
+    $bundleTerms = $term->bundle();
+    if ($bundleTerms == 'lifestyle') {
+      $termName = $term->getName();
+      $bodyClass = mb_strtolower("$bundleTerms-$termName");
+      $variables['attributes']['class'][] = $bodyClass;
+    }
+  }
+}
