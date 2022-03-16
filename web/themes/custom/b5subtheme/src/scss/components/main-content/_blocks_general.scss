@@ -1,14 +1,21 @@
 .layout--twocol-section--67-33 {
   gap: rem(24);
   flex-wrap: nowrap;
+  align-items: flex-start;
 
-  //title
+  //Right part of front page.
+  .layout__region--second{
+    position: sticky;
+    top: 0;
+  }
+
+  //Title.
   .views-element-container {
     h2 {
       @include titleBlock($white, $black);
     }
 
-    //line
+    //Line.
     .wrapper {
       border-top: rem(2) solid $black;
       margin-right: rem(10);
