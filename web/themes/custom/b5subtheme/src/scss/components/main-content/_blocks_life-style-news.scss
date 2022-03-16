@@ -15,10 +15,24 @@
     .form-select {
       ul {
         display: flex;
-        gap: rem(30);
+        justify-content: flex-end;
+        max-width: rem(326);
 
         li:first-child {
           display: none;
+        }
+        li{
+          display: block;
+          padding-inline: rem(10);
+
+          a,
+          button {
+            width: 100%;
+            display: block;
+            font-size: 1em;
+            line-height: 1;
+            text-align: center;
+          }
         }
 
         li a {
@@ -28,6 +42,18 @@
             color: $green;
           }
         }
+      }
+    }
+    .tabs{
+
+      .secondary{
+        display: none;
+      }
+    }
+
+    .show-secondary{
+      .secondary{
+        display: block;
       }
     }
 
@@ -115,6 +141,8 @@
     }
   }
 }
+
+
 
 @include media-breakpoint-down(md) {
 
