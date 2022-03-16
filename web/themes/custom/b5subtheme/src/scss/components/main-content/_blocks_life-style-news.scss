@@ -10,13 +10,11 @@
       margin-right: rem(10);
     }
 
-    //TODO add into another list with JS
-    //top menu
+    //Top menu.
     .form-select {
       ul {
         display: flex;
         justify-content: flex-end;
-        max-width: rem(326);
 
         li:first-child {
           display: none;
@@ -44,21 +42,14 @@
         }
       }
     }
-    .tabs{
 
-      .secondary{
+    .tabs{
+      .more{
         display: none;
       }
     }
 
-    .show-secondary{
-      .secondary{
-        display: block;
-      }
-    }
-
-
-    //tags for all
+    //Tags for all.
     .views-row {
       position: relative;
     }
