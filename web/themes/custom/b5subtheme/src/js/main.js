@@ -72,8 +72,6 @@ primary.insertAdjacentHTML('beforeend', `
   </li>
 `)
 const secondary = container.querySelector('.secondary');
-const secondaryItems = secondary.querySelectorAll('li');
-const allItems = container.querySelectorAll('li');
 const moreLi = primary.querySelector('.more');
 const moreBtn = moreLi.querySelector('button');
 
