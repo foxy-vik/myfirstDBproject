@@ -19,7 +19,8 @@
         li:first-child {
           display: none;
         }
-        li{
+
+        li {
           display: block;
           padding-inline: rem(10);
 
@@ -43,8 +44,8 @@
       }
     }
 
-    .tabs{
-      .more{
+    .tabs {
+      .more {
         display: none;
       }
     }
@@ -133,10 +134,11 @@
   }
 }
 
+
 @include media-breakpoint-down(md) {
 
   .layout--twocol-section--67-33 {
-    //lifestyle news
+    //lifestyle news.
     .block-views-blockdont-miss-block-2 {
       .life-style-main {
         flex-direction: column;
@@ -153,6 +155,124 @@
 
         img {
           width: rem(168);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 35.3rem) {
+
+  .layout--twocol-section--67-33 {
+    .block-views-blockdont-miss-block-2 {
+      .tabs {
+        .more {
+          position: relative;
+          display: block;
+
+          button {
+            line-height: 1.525rem;
+            color: $lightGrey;
+            border: unset;
+            background: unset;
+          }
+
+          &:hover {
+            background-color: $green;
+
+            button {
+              &:hover {
+                background-color: $green;
+                color: $white;
+              }
+            }
+          }
+
+          .secondary {
+            position: absolute;
+            top: rem(28);
+            right: -0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            background-color: $white;
+            z-index: 3;
+            width: 8.625rem;
+
+            li {
+              display: none;
+            }
+
+            li:nth-child(2) {
+              display: unset;
+            }
+          ;
+
+          }
+        }
+
+
+        .primary {
+          li:nth-child(2) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .form--inline {
+      .form-item {
+        margin-right: 0;
+      }
+    }
+
+  }
+}
+
+@media (max-width: 31.5rem) {
+  .layout--twocol-section--67-33 {
+    .block-views-blockdont-miss-block-2 {
+      .tabs {
+        .more {
+          .secondary {
+            li:nth-child(3) {
+              display: unset;
+            }
+          }
+        }
+
+        .primary {
+          li:nth-child(3) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 27.75rem) {
+  .layout--twocol-section--67-33 {
+    .block-views-blockdont-miss-block-2 {
+      .tabs {
+        .more {
+          .secondary {
+            li {
+              display: unset;
+            }
+            li:first-child{
+              display: none;
+            }
+          }
+        }
+
+        .primary {
+          li{
+            display: none;
+          }
+          li:last-child{
+            display: unset;
+          }
         }
       }
     }

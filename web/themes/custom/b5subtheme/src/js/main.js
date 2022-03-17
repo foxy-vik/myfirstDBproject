@@ -35,7 +35,7 @@
           return '<li class="more">' + '</li>';
         });
         $(this).find('.more').prepend('<button type="button" aria-haspopup="true" aria-expanded="false"> More</button>');
-        const moreBtn = $(this).find('.more button').mouseover(function () {
+        const moreBtn = $(this).find('.more button').click(function () {
           secondary.toggle();
           moreBtn.attr('aria-expanded', container.classList.contains('show-secondary'));
         });
