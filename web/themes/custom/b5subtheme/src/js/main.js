@@ -28,7 +28,6 @@
         const container = $(this);
         container.find('ul').addClass('primary');
         const primary = $(this).find('.primary');
-
         const secondary = primary.clone().appendTo(primary.last());
         secondary.removeClass('primary').addClass('secondary').hide();
         secondary.wrap(function () {
