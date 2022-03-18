@@ -3,3 +3,4 @@ paragraph_behaviors:
   css:
     theme:
       css/paragraph_behaviors_style.css: {}
+      
