@@ -1,0 +1,9 @@
+.paragraph-text_image_caption_under_the_pic--images-per-row-right{
+    display: flex;
+    flex-direction: row;
+}
+
+.paragraph-text_image_caption_under_the_pic--images-per-row-left{
+    display: flex;
+    flex-direction: row-reverse;
+}
