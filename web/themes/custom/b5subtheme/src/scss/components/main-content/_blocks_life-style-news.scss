@@ -2,7 +2,7 @@
   //lifestyle news
   .block-views-blockdont-miss-block-2 {
     h2 {
-      display: none;
+      @include titleBlock($white, $green);
     }
 
     .wrapper {

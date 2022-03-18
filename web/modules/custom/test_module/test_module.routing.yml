@@ -1,0 +1,15 @@
+test_module.example:
+  path: '/test-module/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\test_module\Controller\TestModuleController::build'
+  requirements:
+    _permission: 'access content'
+
+test_module.settings_form:
+  path: '/admin/config/system/test-module'
+  defaults:
+    _title: 'test_module settings'
+    _form: 'Drupal\test_module\Form\SettingsForm'
+  requirements:
+    _permission: 'administer test_module configuration'

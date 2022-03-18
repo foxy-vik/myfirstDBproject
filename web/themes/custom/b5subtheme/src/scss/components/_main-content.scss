@@ -14,9 +14,12 @@ li {
 @include media-breakpoint-down(md) {
   .container {
     max-width: 100%;
-    padding-inline: 6px;
+    padding-inline: rem(12);
     display: block;
     margin: 0 auto;
+    .region-content{
+      padding-inline: rem(12);
+    }
   }
 
 }
@@ -25,7 +28,7 @@ li {
 @import "main-content_front-page";
 //All blocks.
 @import "main-content_blocks";
-
+@import "page-node/image-position";
 @import "page-node/default-page";
 @import "page-node/card-author";
 @import "page-node/page-blocks";

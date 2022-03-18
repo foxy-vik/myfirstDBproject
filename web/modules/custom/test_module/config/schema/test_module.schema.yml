@@ -1,0 +1,8 @@
+# Schema for the configuration files of the test_module module.
+test_module.settings:
+  type: config_object
+  label: 'test_module settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'

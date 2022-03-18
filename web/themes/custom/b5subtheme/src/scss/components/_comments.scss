@@ -36,3 +36,29 @@
   }
 
 }
+
+.comment__meta {
+  padding-block: 1rem;
+  .comment__submitted {
+    display: flex;
+    a {
+      text-transform: uppercase;
+      font-size: rem(14);
+      line-height: rem(14);
+      font-weight: 700;
+      color: $black;
+    }
+    .comment-date-time{
+      @include dateMain($darkGrey);
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+.field--type-text-long{
+  max-width: unset;
+  p{
+    font-family: Verdana, sans-serif;
+    font-size: rem(14);
+  }
+}

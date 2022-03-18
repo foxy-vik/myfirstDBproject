@@ -1,0 +1,6 @@
+test_module.settings_form:
+  title: 'test_module'
+  description: 'Configure test_module.'
+  parent: system.admin_config_system
+  route_name: test_module.settings_form
+  weight: 10
