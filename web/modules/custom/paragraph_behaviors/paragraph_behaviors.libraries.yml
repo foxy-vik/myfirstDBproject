@@ -1,0 +1,5 @@
+paragraph_behaviors:
+  version: VERSION
+  css:
+    theme:
+      css/paragraph_behaviors_style.css: {}
