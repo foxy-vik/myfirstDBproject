@@ -1,7 +1,0 @@
-name: paragraph behaviors
-type: module
-description: Custom code for paragraphs enhacment.
-package: Viktoria's custom
-core_version_requirement: ^8 || ^9
-dependencies:
-  - paragraphs:paragraphs
