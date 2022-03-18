@@ -2,7 +2,7 @@
   //lifestyle news
   .block-views-blockdont-miss-block-2 {
     h2 {
-      @include titleBlock($white, $green);
+      display: none;
     }
 
     .wrapper {
@@ -10,17 +10,25 @@
       margin-right: rem(10);
     }
 
-    //TODO add into another list with JS
-    //top menu
+   .form-type-select .tabs .more{
+      display: none;
+    }
+
+    //Top menu.
     .form-select {
+      margin-top: -1.75rem;
       ul {
-        display: flex;
-        gap: rem(30);
-
-        li:first-child {
-          display: none;
+         li {
+          display: inline-block;
+          padding-inline: rem(10);
+          a,
+          button {
+            display: inline-block;
+            font-size: 1em;
+            line-height: 1;
+            text-align: center;
+          }
         }
-
         li a {
           line-height: rem(26);
 
@@ -29,10 +37,24 @@
           }
         }
       }
+      .primary{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
     }
 
+    .tabs{
+      overflow: hidden;
+      height: 2rem;
+      .tabs-first-child{
+        display: none;
+      }
+    }
 
-    //tags for all
+    //Tags for all.
     .views-row {
       position: relative;
     }
@@ -113,14 +135,37 @@
         background: $green;
       }
     }
+
+    .form--inline{
+      display: unset;
+
+      .form-item-file-style-filter{
+        width: 100%;
+      }
+      h2{
+        @include titleBlock($white, $green);
+        display: inline-block;
+      }
+    }
   }
 }
+
 
 @include media-breakpoint-down(md) {
 
   .layout--twocol-section--67-33 {
-    //lifestyle news
+    //lifestyle news.
     .block-views-blockdont-miss-block-2 {
+
+      .form-select{
+        .primary{
+          width: 90%;
+        }
+      }
+
+      .form-type-select .tabs .more{
+        display: block;
+      }
       .life-style-main {
         flex-direction: column;
 
@@ -142,3 +187,61 @@
   }
 }
 
+  .layout--twocol-section--67-33 {
+    .block-views-blockdont-miss-block-2 {
+      .tabs {
+        .more {
+          position: absolute;
+          top: -28px;
+          right: 0;
+          //position: relative;
+          display: block;
+
+          button {
+            line-height: 1.525rem;
+            color: $lightGrey;
+            border: unset;
+            background: unset;
+          }
+
+          &:hover {
+            background-color: $green;
+
+            button {
+              &:hover {
+                background-color: $green;
+                color: $white;
+              }
+            }
+          }
+
+
+          .secondary {
+            position: absolute;
+            top: rem(28);
+            right: -0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            background-color: $white;
+            z-index: 3;
+            width: 8.625rem;
+            li{
+              display: none;
+            }
+            .show{
+              display: block;
+            }
+          }
+        }
+
+      }
+    }
+
+    .form--inline {
+      .form-item {
+        margin-right: 0;
+      }
+    }
+
+  }
