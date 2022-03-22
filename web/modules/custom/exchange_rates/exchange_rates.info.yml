@@ -1,0 +1,7 @@
+name: exchange_rates
+type: module
+description: This is the easiest way to get the latest currency exchange rates.
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - yes
