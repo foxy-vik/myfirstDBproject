@@ -2,8 +2,6 @@
 
 namespace Drupal\exchange_rates\Plugin\Block;
 
-use Drupal;
-use Drupal\Core\Block\Annotation\Block;
 use Drupal\Core\Block\BlockBase;
 
 /**
@@ -25,7 +23,7 @@ class ExampleBlock extends BlockBase {
     $url = 'http://api.exchangeratesapi.io/v1/latest?access_key=' . $appID;
     $method = 'GET';
 
-    $client = Drupal::httpClient();
+    $client = \Drupal::httpClient();
     $response = $client->request($method, $url);
 
     $code = $response->getStatusCode();
@@ -38,12 +36,16 @@ class ExampleBlock extends BlockBase {
     $uahUSD = round($uahEUR / $allRates['rates']['USD'], 4);
     $uahPL = round($uahEUR / $allRates['rates']['PLN'], 4);
 
-
     $build['content'] = [
       '#theme' => 'rates_block',
       '#usd' => $uahUSD,
       '#euro' => $uahEUR,
       '#pl' => $uahPL,
+      '#attached' => [
+        'library' => [
+          'exchange_rates/rates',
+        ],
+      ],
     ];
     return $build;
   }
