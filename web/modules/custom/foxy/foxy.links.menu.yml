@@ -1,7 +1,0 @@
-foxy.settings_form:
-  title: 'foxy'
-  description: 'Configure foxy.'
-  parent: system.admin_config_system
-  route_name: foxy.settings_form
-  menu_name: main
-  weight: 10
