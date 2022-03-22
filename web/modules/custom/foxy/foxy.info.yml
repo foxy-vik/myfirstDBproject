@@ -1,0 +1,6 @@
+name: foxy
+type: module
+description: This module creates a page with a list of cats and a form where users can leave photos of their pets.
+package: Custom
+core_version_requirement: ^9 || ^10
+configure: foxy.settings_form

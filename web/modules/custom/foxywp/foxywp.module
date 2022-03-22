@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function foxywp_help($route_name, RouteMatchInterface $route_match) {
+  if ($route_name == 'help.page.foxywp') {
+    $output = '<h3>' . t('My first hook') . '</h3>';
+    $output .= '<p>' . t('This is module about cats exhibition.') . '</p>';
+    return $output;
+  }
+
+}
+
+/**
+ * Implements hook_theme().
+ *
+ * @param $existing
+ * @param $type
+ * @param $theme
+ * @param $path
+ *
+ * @return array
+ */
+function foxywp_theme($existing, $type, $theme, $path): array {
+  return [
+    'cat_twig' => [
+      // 'render element'=>'form',
+      'variables' => [
+        'form' => [],
+        'image' => NULL,
+      ],
+    ],
+    // Template for output info.
+    'cat_twig_table' => [
+      'variables' => [
+        'header' => [],
+        'rows' => [],
+      ],
+      'file' => 'foxywp.theme.inc',
+    ],
+  ];
+}

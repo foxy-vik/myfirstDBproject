@@ -1,0 +1,4 @@
+administer foxy configuration:
+  title: 'Administer foxy configuration'
+  description: 'Optional description.'
+  restrict access: true

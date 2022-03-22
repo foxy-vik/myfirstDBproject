@@ -1,0 +1,6 @@
+foxywp.mypage:
+  title: 'Cats exhibition'
+  description: 'Link to my cats module page'
+  route_name: foxywp.my_page
+  weight: 10
+  menu_name: main

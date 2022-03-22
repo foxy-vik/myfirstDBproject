@@ -1,0 +1,19 @@
+{{ dump() }}
+{{ header }}
+
+{% for item in rows %}
+  <ul class="cats-output-info">
+    <li> {{ item.cats_name }} </li>
+    <li> {{ item.email }} </li>
+    <li> {{ item.time }} </li>
+    <li><img src='{{ item.picture_cat }}' width='150' height='250'/></li>
+  </ul>
+
+  {{ item.photo }}
+
+
+{% endfor %}
+
+
+{{ photo }}
+{{ date }}
