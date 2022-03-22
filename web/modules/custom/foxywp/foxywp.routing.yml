@@ -1,0 +1,20 @@
+foxywp.my_page:
+  path: '/foxywp/cats'
+  defaults:
+    _controller: '\Drupal\foxywp\Controller\FoxywpController::myPage'
+    _title: 'Hello!'
+  requirements:
+    _permission: 'access content'
+
+
+foxywp.displaycats:
+  path: '/foxywp/index'
+  defaults:
+    _controller: '\Drupal\foxywp\Controller\FoxywpController::index'
+    _title: 'Cats info'
+  requirements:
+    _permission: 'access content'
+
+
+
+

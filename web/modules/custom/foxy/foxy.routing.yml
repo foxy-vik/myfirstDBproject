@@ -1,0 +1,31 @@
+foxy.example:
+  path: '/foxy/weather'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\foxy\Controller\FoxyController::build'
+  requirements:
+    _permission: 'access content'
+
+foxy.settings_form:
+  path: '/admin/config/system/foxy'
+  defaults:
+    _title: 'foxy settings'
+    _form: 'Drupal\foxy\Form\SettingsForm'
+  requirements:
+    _permission: 'administer foxy configuration'
+
+foxy.collect_phone:
+  path: '/collect-phone'
+  defaults:
+    _title: 'Collect Phone - Form API example.'
+    _form: '\Drupal\foxy\Form\CollectPhone'
+  requirements:
+    _permission: 'access content'
+
+foxy.form_weather:
+  path: '/foxy/form-weather'
+  defaults:
+    _title: 'Form weather'
+    _form: 'Drupal\foxy\Form\FormWeather'
+  requirements:
+    _permission: 'access content'
