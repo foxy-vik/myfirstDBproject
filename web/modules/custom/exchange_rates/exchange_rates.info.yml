@@ -1,4 +1,4 @@
-name: exchange_rates
+name: Exchange rates for Ukrainian gryvna
 type: module
 description: This is the easiest way to get the latest currency exchange rates.
 package: Custom

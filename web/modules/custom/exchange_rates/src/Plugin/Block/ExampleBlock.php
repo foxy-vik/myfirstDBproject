@@ -9,7 +9,7 @@ use Drupal\Core\Block\BlockBase;
  *
  * @Block(
  *   id = "exchange_rates_example",
- *   admin_label = @Translation("Example"),
+ *   admin_label = @Translation("Exchange rates for Ukraine"),
  *   category = @Translation("exchange_rates")
  * )
  */
