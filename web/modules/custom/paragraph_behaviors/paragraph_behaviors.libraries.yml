@@ -1,6 +1,4 @@
-paragraph_behaviors:
-  version: VERSION
-  css:
-    theme:
-      css/paragraph_behaviors_style.css: {}
-      
+  paragraph_behaviors:
+    css:
+      theme:
+        css/paragraph-behaviors-style.css: {}
