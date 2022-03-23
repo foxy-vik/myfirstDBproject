@@ -68,7 +68,7 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
     $method = 'GET';
 
     try {
-      $clientResponse = $this->client->request('GET', $url);
+      $clientResponse = $this->client->request($method, $url);
       $code = $clientResponse->getStatusCode();
       if ($code !== 200) {
         return $build;
@@ -93,7 +93,7 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
     }
     catch (GuzzleException $e) {
       $build['content'][] = [
-        '#markup' => t('You can leave us a message using the contact form below.'),
+        '#markup' => $this->t('Error'),
       ];
       return $build;
     }
