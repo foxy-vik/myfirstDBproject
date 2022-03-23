@@ -28,10 +28,25 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['example'] = [
+    $form['api_id'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Example'),
-      '#default_value' => $this->config('exchange_rates.settings')->get('example'),
+      '#title' => $this->t('Add here your API Access Key'),
+      '#default_value' => t('14484123d2770bca142e4f40a0b5f0a5'),
+    ];
+    $form['check_currency'] = [
+      '#type' => 'checkboxes',
+      '#options' => [
+        'USD' => $this->t('USD - United States Dollar'),
+        'EUR' => $this->t('EUR - European Union Euro'),
+        'GBP' => $this->t('GBP - United Kingdom Pound sterling'),
+        'PLN' => $this->t('PLN - Poland złoty'),
+        'CHF' => $this->t('CHF - Swiss Franc'),
+        'CAD' => $this->t('CAD - Canadian Dollar'),
+        'AUD' => $this->t('AUD - Australian Dollar'),
+        'HUF' => $this->t('HUF - Hungarian Forint'),
+        'AED' => $this->t('AED - United Arab Emirates Dirham'),
+      ],
+      '#title' => t('Choose the currency that will be converted:'),
     ];
     return parent::buildForm($form, $form_state);
   }
@@ -40,8 +55,8 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    if ($form_state->getValue('example') != 'example') {
-      $form_state->setErrorByName('example', $this->t('The value is not correct.'));
+    if ($form_state->getValue('api_id') != 'validation') {
+      $form_state->setErrorByName('api_id', $this->t('The value is not correct.'));
     }
     parent::validateForm($form, $form_state);
   }
@@ -50,8 +65,9 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $optionsCheckboxes = $form_state->getValues('check_currency');
     $this->config('exchange_rates.settings')
-      ->set('example', $form_state->getValue('example'))
+      ->set('example', $form_state->getValue('api_id'))
       ->save();
     parent::submitForm($form, $form_state);
   }
