@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function exchange_rates_schema() {
+  $schema['currency_data'] = [
+    'description' => 'Table description for rate currency.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'currency_key' =>[
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'primary kay' => [
+        'id',
+      ],
+    ],
+  ];
+  return $schema;
+}
