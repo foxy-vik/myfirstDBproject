@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @Block(
  *   id = "exchange_rates_text_block_for_exchange",
- *   admin_label = @Translation("text block for exchange"),
+ *   admin_label = @Translation("Currency exchange"),
  *   category = @Translation("Custom")
  * )
  */
