@@ -63,6 +63,7 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
    */
   public function build() {
     $build['content'] = [];
+    $form = \Drupal::formBuilder()->getForm('Drupal\exchange_rates\Form\SettingsForm');
     $appID = '14484123d2770bca142e4f40a0b5f0a5';
     $url = 'http://api.exchangeratesapi.io/v1/latest?access_key=' . $appID;
     $method = 'GET';
