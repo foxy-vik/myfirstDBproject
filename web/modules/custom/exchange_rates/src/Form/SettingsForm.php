@@ -48,6 +48,10 @@ class SettingsForm extends ConfigFormBase {
       ],
       '#title' => t('Choose the currency that will be converted:'),
     ];
+    $form['submit_btn'] = [
+      '#type' => 'submit',
+      '#value' => $this->t('Add Access key and currencies'),
+    ];
     return parent::buildForm($form, $form_state);
   }
 
@@ -55,7 +59,8 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    if ($form_state->getValue('api_id') != 'validation') {
+    $key_API = $form_state->getValue('api_id');
+    if (strlen($key_API) != 32) {
       $form_state->setErrorByName('api_id', $this->t('The value is not correct.'));
     }
     parent::validateForm($form, $form_state);
@@ -65,7 +70,14 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $optionsCheckboxes = $form_state->getValues('check_currency');
+    $valueApiKey = $form_state->getValue('api_id');
+    $optionsCheckboxes = $form_state->getValue('check_currency');
+    $data = [
+      'currency_key' => $valueApiKey,
+    ];
+
+    \Drupal::database()->insert('currency_data')->fields($data)->execute();
+    \Drupal::messenger()->addStatus('Succesfully saved into database');
     $this->config('exchange_rates.settings')
       ->set('example', $form_state->getValue('api_id'))
       ->save();
