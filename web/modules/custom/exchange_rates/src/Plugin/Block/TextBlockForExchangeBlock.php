@@ -2,10 +2,11 @@
 
 namespace Drupal\exchange_rates\Plugin\Block;
 
+use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\GuzzleException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -25,6 +26,20 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
    * @var \GuzzleHttp\ClientInterface
    */
   protected $client;
+  /**
+   * Get Cache service.
+   *
+   * @var \Drupal\Core\Cache\CacheBackendInterface
+   *   Cache service.
+   */
+  private CacheBackendInterface $cache;
+
+  /**
+   * The time.
+   *
+   * @var \Drupal\Component\Datetime\TimeInterface
+   */
+  private $time;
 
   /**
    * Constructs a new TextBlockForExchangeBlock instance.
@@ -40,10 +55,21 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
    *   The plugin implementation definition.
    * @param \GuzzleHttp\ClientInterface $client
    *   The HTTP client.
+   * @param \Drupal\Core\Cache\CacheBackendInterface $cache_backend
+   *   Cache backend instance to use.
+   * @param \Drupal\Component\Datetime\TimeInterface $time
+   *   The time.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, ClientInterface $client) {
+  public function __construct(array $configuration,
+  $plugin_id,
+  $plugin_definition,
+                              ClientInterface $client,
+                              CacheBackendInterface $cache_backend,
+                              TimeInterface $time) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->client = $client;
+    $this->cache = $cache_backend;
+    $this->time = $time;
   }
 
   /**
@@ -54,34 +80,45 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('http_client')
+      $container->get('http_client'),
+      $container->get('cache.default'),
+      $container->get('datetime.time'),
     );
   }
 
   /**
    * {@inheritdoc}
+   *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    */
   public function build() {
     $build['content'] = [];
-    $form = \Drupal::formBuilder()->getForm('Drupal\exchange_rates\Form\SettingsForm');
     $query = \Drupal::database()->select('currency_data', 'db_table');
     $query->fields('db_table', ['currency_key']);
     $result = $query->execute()->fetchAll();
     $keyApi = $result[0]->currency_key;
     $url = 'http://api.exchangeratesapi.io/v1/latest?access_key=' . $keyApi;
     $method = 'GET';
+    $cid = 'CACHE_UNIQUE_ID';
 
     try {
-      $clientResponse = $this->client->request($method, $url);
-      $code = $clientResponse->getStatusCode();
+      $currency_data = $this->cache->get($cid);
+      if (!$currency_data) {
+        $expire = $this->time->getRequestTime() + 3600;
+        $currency_data = json_decode(
+        $this->client->request($method, $url)->getBody()->getContents(),
+        TRUE);
+      }
+      // $this->cache->set($cid, $currency_data, $expire);
+      // $clientResponse = $this->client->request($method, $url);
+      $code = $this->client->request($method, $url)->getStatusCode();
       if ($code !== 200) {
         return $build;
       }
-      $body = $clientResponse->getBody()->getContents();
-      $allRates = json_decode($body, TRUE);
-      $uahEUR = $allRates['rates']['UAH'];
-      $uahUSD = round($uahEUR / $allRates['rates']['USD'], 4);
-      $uahPL = round($uahEUR / $allRates['rates']['PLN'], 4);
+      $header = $this->client->request($method, $url)->getHeaders();
+      $uahEUR = $currency_data['rates']['UAH'];
+      $uahUSD = round($uahEUR / $currency_data['rates']['USD'], 4);
+      $uahPL = round($uahEUR / $currency_data['rates']['PLN'], 4);
       $build['content'][] = [
         '#theme' => 'rates_block',
         '#usd' => $uahUSD,
