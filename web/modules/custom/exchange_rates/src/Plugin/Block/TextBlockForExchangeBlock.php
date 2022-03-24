@@ -110,7 +110,6 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
         TRUE);
       }
       // $this->cache->set($cid, $currency_data, $expire);
-      // $clientResponse = $this->client->request($method, $url);
       $code = $this->client->request($method, $url)->getStatusCode();
       if ($code !== 200) {
         return $build;
