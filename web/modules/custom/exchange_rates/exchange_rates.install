@@ -20,6 +20,12 @@ function exchange_rates_schema() {
         'length' => 200,
         'default' => '',
       ],
+      'currencies' => [
+        'description' => "Currency values",
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => 'USD',
+      ]
     ],
     'primary key' => ['id'],
   ];

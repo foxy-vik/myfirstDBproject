@@ -33,6 +33,7 @@ class SettingsForm extends ConfigFormBase {
       '#title' => $this->t('Add here your API Access Key'),
       '#default_value' => t('14484123d2770bca142e4f40a0b5f0a5'),
     ];
+
     $form['check_currency'] = [
       '#type' => 'checkboxes',
       '#options' => [
@@ -72,8 +73,10 @@ class SettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $valueApiKey = $form_state->getValue('api_id');
     $optionsCheckboxes = $form_state->getValue('check_currency');
+    $optionsCheckboxesToString = implode('-', $optionsCheckboxes);
     $data = [
       'currency_key' => $valueApiKey,
+      'currencies' => $optionsCheckboxesToString,
     ];
 
     \Drupal::database()->insert('currency_data')->fields($data)->execute();
