@@ -1,5 +1,8 @@
-<div class="ratesAll">
-    {% if usd %} <div class="rate-item">USD {{ usd }}</div> {% endif %}
-    {% if euro %} <div class="rate-item">EUR {{ euro }}</div> {% endif %}
-    {% if pl %} <div class="rate-item">PLN {{ pl }}</div> {% endif %}
-</div>
+{% if currencies %}
+    <div class="ratesAll">
+        {% for key, currency in currencies %}
+            <div class="rate-item">{{ key }} {{ currency }}</div>
+        {% endfor %}
+    </div>
+{% endif %}
+

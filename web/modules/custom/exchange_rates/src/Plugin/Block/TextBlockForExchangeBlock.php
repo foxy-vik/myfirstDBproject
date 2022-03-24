@@ -94,35 +94,43 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
   public function build() {
     $build['content'] = [];
     $query = \Drupal::database()->select('currency_data', 'db_table');
-    $query->fields('db_table', ['currency_key']);
+    $query->fields('db_table', ['currency_key', 'currencies']);
     $result = $query->execute()->fetchAll();
-    $keyApi = $result[0]->currency_key;
+    $lastResult = count($result) - 1;
+    $keyApi = $result[$lastResult]->currency_key;
+    $allCurrenciesNames = explode('-', $result[$lastResult]->currencies);
     $url = 'http://api.exchangeratesapi.io/v1/latest?access_key=' . $keyApi;
     $method = 'GET';
     $cid = 'CACHE_UNIQUE_ID';
 
     try {
-      $currency_data = $this->cache->get($cid);
+      $currency_data = $this->cache->get($cid, TRUE);
+      ksm($currency_data);
       if (!$currency_data) {
         $expire = $this->time->getRequestTime() + 3600;
         $currency_data = json_decode(
         $this->client->request($method, $url)->getBody()->getContents(),
         TRUE);
       }
-      // $this->cache->set($cid, $currency_data, $expire);
+//      $this->cache->set($this->cacheKey, $path_lookups, $this->getRequestTime() + $twenty_four_hours);
+
+     //$this->cache->set($cid, $currency_data);
       $code = $this->client->request($method, $url)->getStatusCode();
       if ($code !== 200) {
         return $build;
       }
       $header = $this->client->request($method, $url)->getHeaders();
       $uahEUR = $currency_data['rates']['UAH'];
-      $uahUSD = round($uahEUR / $currency_data['rates']['USD'], 4);
-      $uahPL = round($uahEUR / $currency_data['rates']['PLN'], 4);
+      $currency_rate_array = [];
+      foreach ($allCurrenciesNames as $value) {
+        if ($value != 0) {
+          $currency_rate_array[$value] = round($uahEUR / $currency_data['rates'][$value], 4);
+        }
+      }
+
       $build['content'][] = [
         '#theme' => 'rates_block',
-        '#usd' => $uahUSD,
-        '#euro' => $uahEUR,
-        '#pl' => $uahPL,
+        '#currencies' => $currency_rate_array,
         '#attached' => [
           'library' => [
             'exchange_rates/rates',
