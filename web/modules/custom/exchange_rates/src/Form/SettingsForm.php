@@ -28,6 +28,7 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    // @todo I will change inserting data into config in the next module.
     $form['api_id'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Add here your API Access Key'),
