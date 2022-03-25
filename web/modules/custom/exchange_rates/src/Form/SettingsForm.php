@@ -4,6 +4,7 @@ namespace Drupal\exchange_rates\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
  * Configure exchange_rates settings for this site.

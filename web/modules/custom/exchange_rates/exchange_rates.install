@@ -2,10 +2,8 @@
 
 /**
  * @file
- *  Created a database.
+ * Created a database.
  */
-
-use Drupal\Core\Database\Database;
 
 /**
  * Implements hook_schema().
