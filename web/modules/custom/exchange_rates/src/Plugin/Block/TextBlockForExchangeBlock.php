@@ -6,6 +6,7 @@ use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\social_media_links\Plugin\SocialMediaLinks\Platform\Drupal;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -99,12 +100,7 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
     $currency_data = $this->cache->get($cid, TRUE);
     if (!$currency_data) {
       try {
-
-        $query = \Drupal::database()->select('currency_data', 'db_table');
-        $query->fields('db_table', ['currency_key']);
-        $result = $query->execute()->fetchAll();
-        $last_result = count($result) - 1;
-        $api_key = $result[$last_result]->currency_key;
+        $api_key = \Drupal::config('exchange_rates.settings')->get('key_api');
         $url = "http://api.exchangeratesapi.io/v1/latest?access_key=$api_key";
         $response = $this->client->request('GET', $url);
         if ($response->getStatusCode() != 200) {
@@ -128,11 +124,8 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
   public function build() {
     $build['content'] = [];
     $currency_data = $this->getCurrencyData();
-    $query = \Drupal::database()->select('currency_data', 'db_table');
-    $query->fields('db_table', ['currency_key', 'currencies']);
-    $result = $query->execute()->fetchAll();
-    $lastResult = count($result) - 1;
-    $allCurrenciesNames = explode('-', $result[$lastResult]->currencies);
+    $allCurrenciesNames = \Drupal::config('exchange_rates.settings')->get('currencies');
+
     $uahEUR = $currency_data['rates']['UAH'];
     $currency_rate_array = [];
     foreach ($allCurrenciesNames as $value) {

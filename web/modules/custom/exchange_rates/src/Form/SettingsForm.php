@@ -4,7 +4,7 @@ namespace Drupal\exchange_rates\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
-use \Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
  * Configure exchange_rates settings for this site.
@@ -31,13 +31,19 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    // @todo I will change inserting data into config in the next module.
     $form['api_id'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Add here your API Access Key'),
-      '#default_value' => t('14484123d2770bca142e4f40a0b5f0a5'),
+      '#default_value' => $this->config('exchange_rates.settings')
+        ->get('key_api'),
     ];
-
+    $default_currencies = $this->config('exchange_rates.settings')->get('currencies');
+    $default_currency = [];
+    foreach ($default_currencies as $value) {
+      if ($value) {
+        $default_currency[] = $value;
+      }
+    }
     $form['check_currency'] = [
       '#type' => 'checkboxes',
       '#options' => [
@@ -51,11 +57,8 @@ class SettingsForm extends ConfigFormBase {
         'HUF' => $this->t('HUF - Hungarian Forint'),
         'AED' => $this->t('AED - United Arab Emirates Dirham'),
       ],
+      '#default_value' => $default_currency,
       '#title' => t('Choose the currency that will be converted:'),
-    ];
-    $form['submit_btn'] = [
-      '#type' => 'submit',
-      '#value' => $this->t('Add Access key and currencies'),
     ];
     return parent::buildForm($form, $form_state);
   }
@@ -75,18 +78,10 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $valueApiKey = $form_state->getValue('api_id');
-    $optionsCheckboxes = $form_state->getValue('check_currency');
-    $optionsCheckboxesToString = implode('-', $optionsCheckboxes);
-    $data = [
-      'currency_key' => $valueApiKey,
-      'currencies' => $optionsCheckboxesToString,
-    ];
-
-    \Drupal::database()->insert('currency_data')->fields($data)->execute();
-    \Drupal::messenger()->addStatus('Succesfully saved into database');
+    \Drupal::messenger()->addStatus('Successfully saved into database');
     $this->config('exchange_rates.settings')
-      ->set('example', $form_state->getValue('api_id'))
+      ->set('key_api', $form_state->getValue('api_id'))
+      ->set('currencies', $form_state->getValue('check_currency'))
       ->save();
     parent::submitForm($form, $form_state);
   }
