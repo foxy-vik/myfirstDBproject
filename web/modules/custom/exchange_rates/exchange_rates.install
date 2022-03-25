@@ -1,12 +1,17 @@
 <?php
 
+/**
+ * @file
+ *  Created a database.
+ */
+
 use Drupal\Core\Database\Database;
 
 /**
  * Implements hook_schema().
  */
 function exchange_rates_schema() {
-  $schema ['currency_data'] = [
+  $schema['currency_data'] = [
     'fields' => [
       'id' => [
         'description' => 'The primary identifier',
@@ -25,7 +30,7 @@ function exchange_rates_schema() {
         'type' => 'varchar',
         'length' => 255,
         'default' => 'USD',
-      ]
+      ],
     ],
     'primary key' => ['id'],
   ];
