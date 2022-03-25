@@ -89,62 +89,72 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
   }
 
   /**
+   * Comment todo.
+   *
+   * @return array|false
+   *   Description todo.
+   */
+  protected function getCurrencyData() {
+    $cid = $this->getPluginId();
+    $currency_data = $this->cache->get($cid, TRUE);
+    if (!$currency_data) {
+      try {
+
+        $query = \Drupal::database()->select('currency_data', 'db_table');
+        $query->fields('db_table', ['currency_key']);
+        $result = $query->execute()->fetchAll();
+        $last_result = count($result) - 1;
+        $api_key = $result[$last_result]->currency_key;
+        $url = "http://api.exchangeratesapi.io/v1/latest?access_key=$api_key";
+        $response = $this->client->request('GET', $url);
+        if ($response->getStatusCode() != 200) {
+          throw new \Exception('Failed to retrieve data.');
+        }
+        $currency_data = json_decode($response->getBody()->getContents(), TRUE);
+        $expire = $this->time->getRequestTime() + self::CACHE_TIME;
+        $this->cache->set($cid, $currency_data, $expire);
+      }
+      catch (\Throwable $e) {
+      }
+    }
+    return $currency_data;
+  }
+
+  /**
    * {@inheritdoc}
    *
    * @throws \GuzzleHttp\Exception\GuzzleException
    */
   public function build() {
     $build['content'] = [];
+    $currency_data = $this->getCurrencyData();
     $query = \Drupal::database()->select('currency_data', 'db_table');
     $query->fields('db_table', ['currency_key', 'currencies']);
     $result = $query->execute()->fetchAll();
     $lastResult = count($result) - 1;
-    $keyApi = $result[$lastResult]->currency_key;
     $allCurrenciesNames = explode('-', $result[$lastResult]->currencies);
-    $url = 'http://api.exchangeratesapi.io/v1/latest?access_key=' . $keyApi;
-    $method = 'GET';
-    $cid = 'CACHE_UNIQUE_ID';
-
-    try {
-      $cacheVar = $this->cache->get($cid, TRUE);
-      if (!$cacheVar) {
-        $expire = $this->time->getRequestTime() + self::CACHE_TIME;
-        $currency_data = json_decode(
-        $this->client->request($method, $url)->getBody()->getContents(),
-        TRUE);
+    $uahEUR = $currency_data['rates']['UAH'];
+    $currency_rate_array = [];
+    foreach ($allCurrenciesNames as $value) {
+      if ($value) {
+        $currency_rate_array[$value] = round($uahEUR / $currency_data['rates'][$value], 4);
       }
-      // @todo Add data into cache $this->cache->set($cid, $currency_data, $expire);.
-      $code = $this->client->request($method, $url)->getStatusCode();
-      if ($code !== 200) {
-        return $build;
-      }
-      $uahEUR = $currency_data['rates']['UAH'];
-      $currency_rate_array = [];
-      foreach ($allCurrenciesNames as $value) {
-        if ($value) {
-          $currency_rate_array[$value] = round($uahEUR / $currency_data['rates'][$value], 4);
-        }
-      }
-
-      $build['content'][] = [
-        '#theme' => 'rates_block',
-        '#currencies' => $currency_rate_array,
-        '#attached' => [
-          'library' => [
-            'exchange_rates/rates',
-          ],
-        ],
-        '#cache' => [
-          'max-age' => self::CACHE_TIME,
-        ],
-      ];
-      return $build;
     }
-    catch (GuzzleException $e) {
-      $build['content'][] = [
-        '#markup' => $this->t('Error'),
-      ];
-      return $build;
-    }
+
+    $build['content'][] = [
+      '#theme' => 'rates_block',
+      '#currencies' => $currency_rate_array,
+      '#attached' => [
+        'library' => [
+          'exchange_rates/rates',
+        ],
+      ],
+      '#cache' => [
+        'max-age' => self::CACHE_TIME,
+      ],
+    ];
+    return $build;
+
   }
+
 }
