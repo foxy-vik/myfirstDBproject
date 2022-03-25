@@ -41,6 +41,8 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
    */
   private $time;
 
+  const CACHE_TIME = 3600;
+
   /**
    * Constructs a new TextBlockForExchangeBlock instance.
    *
@@ -104,22 +106,18 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
     $cid = 'CACHE_UNIQUE_ID';
 
     try {
-      $currency_data = $this->cache->get($cid, TRUE);
-      ksm($currency_data);
-      if (!$currency_data) {
-        $expire = $this->time->getRequestTime() + 3600;
+      $cacheVar = $this->cache->get($cid, TRUE);
+      if (!$cacheVar) {
+        $expire = $this->time->getRequestTime() + self::CACHE_TIME;
         $currency_data = json_decode(
         $this->client->request($method, $url)->getBody()->getContents(),
         TRUE);
       }
-//      $this->cache->set($this->cacheKey, $path_lookups, $this->getRequestTime() + $twenty_four_hours);
-
-     //$this->cache->set($cid, $currency_data);
+      // @todo Add data into cache $this->cache->set($cid, $currency_data, $expire);.
       $code = $this->client->request($method, $url)->getStatusCode();
       if ($code !== 200) {
         return $build;
       }
-      $header = $this->client->request($method, $url)->getHeaders();
       $uahEUR = $currency_data['rates']['UAH'];
       $currency_rate_array = [];
       foreach ($allCurrenciesNames as $value) {
