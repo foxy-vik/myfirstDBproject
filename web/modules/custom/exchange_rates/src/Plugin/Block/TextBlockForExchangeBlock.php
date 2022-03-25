@@ -121,7 +121,7 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
       $uahEUR = $currency_data['rates']['UAH'];
       $currency_rate_array = [];
       foreach ($allCurrenciesNames as $value) {
-        if ($value != 0) {
+        if ($value) {
           $currency_rate_array[$value] = round($uahEUR / $currency_data['rates'][$value], 4);
         }
       }
@@ -134,6 +134,9 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
             'exchange_rates/rates',
           ],
         ],
+        '#cache' => [
+          'max-age' => self::CACHE_TIME,
+        ],
       ];
       return $build;
     }
@@ -144,5 +147,4 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
       return $build;
     }
   }
-
 }
