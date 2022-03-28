@@ -9,6 +9,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -99,7 +100,7 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
    */
   public function defaultConfiguration() {
     return [
-      'foo' => $this->t('Hello world!'),
+      'city_weather' => ['standard', 'metric', 'imperial'],
     ];
   }
 
@@ -107,10 +108,12 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state) {
-    $form['foo'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Foo'),
-      '#default_value' => $this->configuration['foo'],
+    $form['city'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Select here your city'),
+      '#options' => $this->configuration['city_weather'],
+      // @todo default_value.
+    //   '#default_value' => ,
     ];
     return $form;
   }
@@ -119,15 +122,44 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->configuration['foo'] = $form_state->getValue('foo');
+    $this->configuration['city_weather'] = $form_state->getValue('city');
   }
 
   /**
    * {@inheritdoc}
+   *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    */
   public function build() {
+    $key_api_weather = $this->configFactory->get('weather.settings')->get('key_weather_api');
+    $city_name_weather = 'Lutsk';
+    $lutsk_weather = 'Lutsk';
+    // @todo metric change mechanism.
+    $url_weather = "https://api.openweathermap.org/data/2.5/weather?q=$city_name_weather&appid=$key_api_weather&units=metric";
+    $url_lutsk_weather = "https://api.openweathermap.org/data/2.5/weather?q=$lutsk_weather&appid=$key_api_weather";
+    try {
+      if ($url_lutsk_weather) {
+        $response_lutsk = $this->client->request('GET', $url_lutsk_weather);
+      }
+      $response = $this->client->request('GET', $url_weather);
+      $weather_data = json_decode($response->getBody()->getContents(), TRUE);
+      $main_data_weather = $weather_data['weather'][0];
+    }
+    catch (GuzzleException $e) {
+    }
     $build['content'] = [
-      '#markup' => $this->t('It works!'),
+      '#markup' => '<h4>' . $this->t('City name: ')
+      . $city_name_weather . '</h4>',
+    ];
+    $build['content'][] = [
+      '#theme' => 'weather_block_template',
+      '#data_weather' => $weather_data,
+      '#main_data_weather' => $main_data_weather,
+      '#attached' => [
+        'library' => [
+          'weather/weather',
+        ],
+      ],
     ];
     return $build;
   }
