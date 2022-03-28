@@ -123,6 +123,7 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
         $this->cache->set($cid, $currency_data, $expire);
       }
       catch (\Throwable $e) {
+        return FALSE;
       }
     }
     return $currency_data;
