@@ -1,0 +1,7 @@
+exchange_rates.settings_form:
+  path: '/admin/config/system/exchange-rates'
+  defaults:
+    _title: 'Exchange rates settings'
+    _form: 'Drupal\exchange_rates\Form\SettingsForm'
+  requirements:
+    _permission: 'administer exchange_rates configuration'

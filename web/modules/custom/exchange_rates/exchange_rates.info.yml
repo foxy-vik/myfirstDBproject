@@ -1,0 +1,6 @@
+name: Exchange rates for Ukrainian gryvna
+type: module
+description: This is the easiest way to get the latest currency exchange rates.
+package: Custom
+core_version_requirement: ^9 || ^10
+

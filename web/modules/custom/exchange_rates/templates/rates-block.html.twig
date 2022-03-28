@@ -1,0 +1,8 @@
+{% if currencies %}
+    <div class="ratesAll">
+        {% for key, currency in currencies %}
+            <div class="rate-item">{{ key }} {{ currency }}</div>
+        {% endfor %}
+    </div>
+{% endif %}
+
