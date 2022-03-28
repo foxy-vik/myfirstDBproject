@@ -3,14 +3,14 @@ weather.settings:
   type: config_object
   label: 'Weather settings'
   mapping:
-    example:
+    key_weather_api:
       type: string
-      label: 'Example'
+      label: 'Key for Weather API'
 
 block.settings.weather_block:
   type: block_settings
-  label: 'Weather block block'
+  label: 'Weather block'
   mapping:
-    foo:
-      type: string
-      label: Foo
+    city_weather:
+      type: sequence
+      label: 'Select your weather units'
