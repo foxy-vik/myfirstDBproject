@@ -1,5 +1,5 @@
 exchange_rates.settings_form:
-  title: 'exchange_rates'
+  title: 'Exchange rates'
   description: 'Configure exchange_rates.'
   parent: system.admin_config_system
   route_name: exchange_rates.settings_form
