@@ -136,7 +136,9 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
    */
   public function build() {
     $build['content'] = [];
-    $currency_data = $this->getCurrencyData();
+    if (!($currency_data = $this->getCurrencyData())) {
+      return $build;
+    }
     $allCurrenciesNames = $this->configFactory->get('exchange_rates.settings')->get('currencies');
     $currency_data_arr = $currency_data->data;
 
