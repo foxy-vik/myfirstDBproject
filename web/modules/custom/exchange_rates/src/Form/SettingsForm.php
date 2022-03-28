@@ -64,12 +64,6 @@ class SettingsForm extends ConfigFormBase {
         ->get('key_api'),
     ];
     $default_currencies = $this->config('exchange_rates.settings')->get('currencies');
-    $default_currency = [];
-    foreach ($default_currencies as $value) {
-      if ($value) {
-        $default_currency[] = $value;
-      }
-    }
     $form['check_currency'] = [
       '#type' => 'checkboxes',
       '#options' => [
