@@ -5,8 +5,8 @@ namespace Drupal\exchange_rates\Plugin\Block;
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\CacheBackendInterface;
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\social_media_links\Plugin\SocialMediaLinks\Platform\Drupal;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -42,6 +42,13 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
    */
   private $time;
 
+  /**
+   * Configuration Factory.
+   *
+   * @var \Drupal\Core\Config\ConfigFactory
+   */
+  protected $configFactory;
+
   const CACHE_TIME = 3600;
 
   /**
@@ -62,23 +69,27 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
    *   Cache backend instance to use.
    * @param \Drupal\Component\Datetime\TimeInterface $time
    *   The time.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
+   *   The configuration factory.
    */
   public function __construct(array $configuration,
   $plugin_id,
   $plugin_definition,
                               ClientInterface $client,
                               CacheBackendInterface $cache_backend,
-                              TimeInterface $time) {
+                              TimeInterface $time,
+                              ConfigFactoryInterface $configFactory) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->client = $client;
     $this->cache = $cache_backend;
     $this->time = $time;
+    $this->configFactory = $configFactory;
   }
 
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition): ContainerFactoryPluginInterface|TextBlockForExchangeBlock|static {
     return new static(
       $configuration,
       $plugin_id,
@@ -86,6 +97,7 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
       $container->get('http_client'),
       $container->get('cache.default'),
       $container->get('datetime.time'),
+      $container->get('config.factory'),
     );
   }
 
@@ -100,7 +112,7 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
     $currency_data = $this->cache->get($cid, TRUE);
     if (!$currency_data) {
       try {
-        $api_key = \Drupal::config('exchange_rates.settings')->get('key_api');
+        $api_key = $this->configFactory->get('exchange_rates.settings')->get('key_api');
         $url = "http://api.exchangeratesapi.io/v1/latest?access_key=$api_key";
         $response = $this->client->request('GET', $url);
         if ($response->getStatusCode() != 200) {
@@ -124,7 +136,7 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
   public function build() {
     $build['content'] = [];
     $currency_data = $this->getCurrencyData();
-    $allCurrenciesNames = \Drupal::config('exchange_rates.settings')->get('currencies');
+    $allCurrenciesNames = $this->configFactory->get('exchange_rates.settings')->get('currencies');
 
     $uahEUR = $currency_data['rates']['UAH'];
     $currency_rate_array = [];

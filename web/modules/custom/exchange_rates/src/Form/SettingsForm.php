@@ -4,6 +4,8 @@ namespace Drupal\exchange_rates\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Messenger\MessengerInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Configure exchange_rates settings for this site.
@@ -11,6 +13,31 @@ use Drupal\Core\Form\FormStateInterface;
 class SettingsForm extends ConfigFormBase {
 
   use \Drupal\Core\StringTranslation\StringTranslationTrait;
+
+  /**
+   * The messenger service.
+   *
+   * @var \Drupal\Core\Messenger\MessengerInterface
+   */
+  protected $messenger;
+
+  /**
+   * Constructs a new SettingsForm instance.
+   *
+   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
+   *   The messenger service.
+   */
+  public function __construct(MessengerInterface $messenger) {
+    $this->messenger = $messenger;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static($container->get('messenger'),
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -77,7 +104,7 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    \Drupal::messenger()->addStatus('Successfully saved into database');
+    $this->messenger->addStatus('Successfully saved into database');
     $this->config('exchange_rates.settings')
       ->set('key_api', $form_state->getValue('api_id'))
       ->set('currencies', $form_state->getValue('check_currency'))
