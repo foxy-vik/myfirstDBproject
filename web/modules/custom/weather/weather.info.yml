@@ -1,0 +1,5 @@
+name: Weather
+type: module
+description: Module to parse out the weather response from openweathermap.org.
+package: Custom
+core_version_requirement: ^9 || ^10

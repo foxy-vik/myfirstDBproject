@@ -1,0 +1,4 @@
+administer weather configuration:
+  title: 'Administer weather configuration'
+  description: 'Optional description.'
+  restrict access: true
