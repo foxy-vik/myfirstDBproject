@@ -11,6 +11,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation;
 
 /**
  * Provides a weather block block.
@@ -131,16 +132,18 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
    * @throws \GuzzleHttp\Exception\GuzzleException
    */
   public function build() {
+
+    $clien_ip = \Drupal::request()->getClientIp();
+    $responce_ip = $this->client->request('GET', 'http://ip-api.com/json/24.48.0.1');
+    $response_ip_content = json_decode($responce_ip->getBody()->getContents());
+    ksm($response_ip_content->city);
+
     $key_api_weather = $this->configFactory->get('weather.settings')->get('key_weather_api');
     $city_name_weather = 'Lutsk';
     $lutsk_weather = 'Lutsk';
     // @todo metric change mechanism.
     $url_weather = "https://api.openweathermap.org/data/2.5/weather?q=$city_name_weather&appid=$key_api_weather&units=metric";
-    $url_lutsk_weather = "https://api.openweathermap.org/data/2.5/weather?q=$lutsk_weather&appid=$key_api_weather";
     try {
-      if ($url_lutsk_weather) {
-        $response_lutsk = $this->client->request('GET', $url_lutsk_weather);
-      }
       $response = $this->client->request('GET', $url_weather);
       $weather_data = json_decode($response->getBody()->getContents(), TRUE);
       $main_data_weather = $weather_data['weather'][0];
