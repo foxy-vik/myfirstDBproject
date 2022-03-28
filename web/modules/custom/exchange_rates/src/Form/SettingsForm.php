@@ -101,7 +101,7 @@ class SettingsForm extends ConfigFormBase {
     $this->messenger->addStatus('Successfully saved into database');
     $this->config('exchange_rates.settings')
       ->set('key_api', $form_state->getValue('api_id'))
-      ->set('currencies', $form_state->getValue('check_currency'))
+      ->set('currencies', array_filter($form_state->getValue('check_currency')))
       ->save();
     parent::submitForm($form, $form_state);
   }
