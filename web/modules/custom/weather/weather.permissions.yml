@@ -1,4 +1,3 @@
 administer weather configuration:
   title: 'Administer weather configuration'
-  description: 'Optional description.'
-  restrict access: true
+  description: 'There is a permissions for weather in different regions.'
