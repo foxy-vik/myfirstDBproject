@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for exchange_rates module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function exchange_rates_theme($existing, $type, $theme, $path) {
+  return [
+    'rates_block' => [
+      'variables' => [
+        'currencies' => [],
+      ],
+    ],
+  ];
+}
