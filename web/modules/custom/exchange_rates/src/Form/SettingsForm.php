@@ -77,7 +77,7 @@ class SettingsForm extends ConfigFormBase {
         'HUF' => $this->t('HUF - Hungarian Forint'),
         'AED' => $this->t('AED - United Arab Emirates Dirham'),
       ],
-      '#default_value' => $default_currency,
+      '#default_value' => $default_currencies,
       '#title' => $this->t('Choose the currency that will be converted:'),
     ];
     return parent::buildForm($form, $form_state);
