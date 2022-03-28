@@ -57,7 +57,7 @@ class SettingsForm extends ConfigFormBase {
         'AED' => $this->t('AED - United Arab Emirates Dirham'),
       ],
       '#default_value' => $default_currency,
-      '#title' => t('Choose the currency that will be converted:'),
+      '#title' => $this->t('Choose the currency that will be converted:'),
     ];
     return parent::buildForm($form, $form_state);
   }
