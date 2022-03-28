@@ -25,13 +25,40 @@ class SettingsForm extends ConfigFormBase {
   }
 
   /**
+   * Get weather info.
+   */
+  public function getWeather() {
+    $key_api_weather = $this->config('weather.settings')->get('key_weather_api');
+    $url_weather = "https://api.openweathermap.org/data/2.5/weather?id=524901&lang=fr&appid=$key_api_weather";
+    try {
+      $response = \Drupal::httpClient()->request('GET', $url_weather);
+      $weather_data = json_decode($response->getBody()->getContents(), TRUE);
+
+    }
+    catch (GuzzleException $e) {
+    }
+    return $weather_data;
+  }
+
+
+  /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['example'] = [
+    $default_cities = ['Lutsk', 'Kiev', 'Rivne'];
+    $this->getWeather();
+    $form['api_key'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Example'),
-      '#default_value' => $this->config('weather.settings')->get('example'),
+      '#title' => $this->t('Please add the key for Weather API:'),
+      '#default_value' => $this->config('weather.settings')->get('key_weather_api'),
+      '#require' => TRUE,
+    ];
+    $form['city_weather'] = [
+      '#type' => 'select',
+      '#title' => t('Select a location'),
+      '#default_value' => $default_cities[0],
+      '#options' => $default_cities,
+      '#require' => TRUE,
     ];
     return parent::buildForm($form, $form_state);
   }
@@ -40,8 +67,9 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    if ($form_state->getValue('example') != 'example') {
-      $form_state->setErrorByName('example', $this->t('The value is not correct.'));
+    $api_key_length = strlen($form_state->getValue('api_key'));
+    if ($api_key_length != 32) {
+      $form_state->setErrorByName('api_key', $this->t('The value is not correct.'));
     }
     parent::validateForm($form, $form_state);
   }
@@ -50,8 +78,9 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $test_city = $form_state->getValue('city_weather');
     $this->config('weather.settings')
-      ->set('example', $form_state->getValue('example'))
+      ->set('key_weather_api', $form_state->getValue('api_key'))
       ->save();
     parent::submitForm($form, $form_state);
   }
