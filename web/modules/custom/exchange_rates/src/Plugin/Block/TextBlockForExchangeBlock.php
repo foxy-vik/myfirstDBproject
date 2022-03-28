@@ -137,12 +137,13 @@ class TextBlockForExchangeBlock extends BlockBase implements ContainerFactoryPlu
     $build['content'] = [];
     $currency_data = $this->getCurrencyData();
     $allCurrenciesNames = $this->configFactory->get('exchange_rates.settings')->get('currencies');
+    $currency_data_arr = $currency_data->data;
 
-    $uahEUR = $currency_data['rates']['UAH'];
+    $uahEUR = $currency_data_arr['rates']['UAH'];
     $currency_rate_array = [];
     foreach ($allCurrenciesNames as $value) {
       if ($value) {
-        $currency_rate_array[$value] = round($uahEUR / $currency_data['rates'][$value], 4);
+        $currency_rate_array[$value] = round($uahEUR / $currency_data_arr['rates'][$value], 4);
       }
     }
 
