@@ -114,7 +114,6 @@ class SettingsForm extends ConfigFormBase {
     $url = "https://api.openweathermap.org/data/2.5/weather?q=$city_name_for_weather&appid=$api_key";
     try {
       $response = $this->client->request('GET', $url);
-      $response_city_name = json_decode($response->getBody()->getContents());
     }
     catch (GuzzleException $e) {
       $form_state->setErrorByName('city_weather',
