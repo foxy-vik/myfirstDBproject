@@ -85,10 +85,6 @@ class SettingsForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $this->getWeather();
-    $form['system_messages'] = [
-      '#markup' => '<div id="weather-system-messages"></div>',
-      '#weight' => -10,
-    ];
     $form['api_key'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Please add the key for Weather API:'),
@@ -106,6 +102,8 @@ class SettingsForm extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
+   *
+   * @throws \Exception
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $api_key_length = strlen($form_state->getValue('api_key'));
@@ -114,6 +112,9 @@ class SettingsForm extends ConfigFormBase {
     $url = "https://api.openweathermap.org/data/2.5/weather?q=$city_name_for_weather&appid=$api_key";
     try {
       $response = $this->client->request('GET', $url);
+      if ($response->getStatusCode() != 200) {
+        throw new \Exception('Failed to retrieve data.');
+      }
     }
     catch (GuzzleException $e) {
       $form_state->setErrorByName('city_weather',
