@@ -11,7 +11,6 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpFoundation;
 
 /**
  * Provides a weather block block.
@@ -132,32 +131,33 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
    * @throws \GuzzleHttp\Exception\GuzzleException
    */
   public function build() {
-
-    $clien_ip = \Drupal::request()->getClientIp();
-    $responce_ip = $this->client->request('GET', 'http://ip-api.com/json/24.48.0.1');
-    $response_ip_content = json_decode($responce_ip->getBody()->getContents());
-    ksm($response_ip_content->city);
-
+    // @todo Detect user location by IP -> \Drupal::request()->getClientIp();.
+    $client_ip = '51.15.45.2';
+    $responce_ip = $this->client->request('GET', "http://ip-api.com/json/$client_ip");
+    $response_ip_content = json_decode($responce_ip->getBody()->getContents(), TRUE);
     $key_api_weather = $this->configFactory->get('weather.settings')->get('key_weather_api');
-    $city_name_weather = 'Lutsk';
-    $lutsk_weather = 'Lutsk';
-    // @todo metric change mechanism.
-    $url_weather = "https://api.openweathermap.org/data/2.5/weather?q=$city_name_weather&appid=$key_api_weather&units=metric";
+    $city_name_weather = $response_ip_content['city'];
+    $country_code_weather = $response_ip_content['countryCode'];
+    $lutsk_url_weather = "https://api.openweathermap.org/data/2.5/weather?q=Lutsk&appid=$key_api_weather&units=metric";
+    $url_weather = "https://api.openweathermap.org/data/2.5/weather?q=$city_name_weather,$country_code_weather&appid=$key_api_weather&units=metric";
     try {
       $response = $this->client->request('GET', $url_weather);
+      $lutsk_response = $this->client->request('GET', $lutsk_url_weather)
+        ->getBody()->getContents();
+      $lutsk_data_weather = json_decode($lutsk_response, TRUE);
       $weather_data = json_decode($response->getBody()->getContents(), TRUE);
       $main_data_weather = $weather_data['weather'][0];
     }
     catch (GuzzleException $e) {
     }
     $build['content'] = [
-      '#markup' => '<h4>' . $this->t('City name: ')
-      . $city_name_weather . '</h4>',
+      '#markup' => $this->t('some text'),
     ];
     $build['content'][] = [
       '#theme' => 'weather_block_template',
       '#data_weather' => $weather_data,
       '#main_data_weather' => $main_data_weather,
+      '#lutsk_weather' => $lutsk_data_weather,
       '#attached' => [
         'library' => [
           'weather/weather',
