@@ -4,6 +4,7 @@ namespace Drupal\weather\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * Configure Weather settings for this site.
@@ -33,7 +34,6 @@ class SettingsForm extends ConfigFormBase {
     try {
       $response = \Drupal::httpClient()->request('GET', $url_weather);
       $weather_data = json_decode($response->getBody()->getContents(), TRUE);
-
     }
     catch (GuzzleException $e) {
     }
