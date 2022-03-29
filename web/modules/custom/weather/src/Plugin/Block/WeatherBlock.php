@@ -133,8 +133,8 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
   public function build() {
     // @todo Detect user location by IP -> \Drupal::request()->getClientIp();.
     $client_ip = '51.15.45.2';
-    $responce_ip = $this->client->request('GET', "http://ip-api.com/json/$client_ip");
-    $response_ip_content = json_decode($responce_ip->getBody()->getContents(), TRUE);
+    $response_ip = $this->client->request('GET', "http://ip-api.com/json/$client_ip");
+    $response_ip_content = json_decode($response_ip->getBody()->getContents(), TRUE);
     $key_api_weather = $this->configFactory->get('weather.settings')->get('key_weather_api');
     $city_name_weather = $response_ip_content['city'];
     $country_code_weather = $response_ip_content['countryCode'];

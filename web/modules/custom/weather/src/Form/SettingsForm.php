@@ -84,8 +84,11 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $default_cities = ['Lutsk', 'Kiev', 'Rivne'];
     $this->getWeather();
+    $form['system_messages'] = [
+      '#markup' => '<div id="weather-system-messages"></div>',
+      '#weight' => -10,
+    ];
     $form['api_key'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Please add the key for Weather API:'),
@@ -95,27 +98,10 @@ class SettingsForm extends ConfigFormBase {
     $form['city_weather'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Add a location city'),
-      '#default_value' => $default_cities[0],
+      '#default_value' => $this->config('weather.settings')->get('city_weather'),
       '#require' => TRUE,
-      '#ajax' => [
-        'callback' => '::cityWeatherAjaxCallback',
-        'disable-refocus' => FALSE,
-        'event' => 'change',
-        'wrapper' => 'edit-output',
-        'progress' => [
-          'type' => 'throbber',
-          'message' => $this->t('Verifying city'),
-        ],
-      ],
     ];
     return parent::buildForm($form, $form_state);
-  }
-
-  /**
-   * An Ajax callback.
-   */
-  public function cityWeatherAjaxCallback(array &$form, FormStateInterface $form_state) {
-
   }
 
   /**
@@ -124,6 +110,16 @@ class SettingsForm extends ConfigFormBase {
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $api_key_length = strlen($form_state->getValue('api_key'));
     $city_name_for_weather = $form_state->getValue('city_weather');
+    $api_key = $this->config('weather.settings')->get('key_weather_api');
+    $url = "https://api.openweathermap.org/data/2.5/weather?q=$city_name_for_weather&appid=$api_key";
+    try {
+      $response = $this->client->request('GET', $url);
+      $response_city_name = json_decode($response->getBody()->getContents());
+    }
+    catch (GuzzleException $e) {
+      $form_state->setErrorByName('city_weather',
+        $this->t('Error! City name is not correct!!!'));
+    }
     $reg_ex = "#^[A-Za-z-]+$#";
     if ($api_key_length != 32) {
       $form_state->setErrorByName('api_key', $this->t('The value is not correct.'));
@@ -142,7 +138,9 @@ class SettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->config('weather.settings')
       ->set('key_weather_api', $form_state->getValue('api_key'))
+      ->set('city_weather', $form_state->getValue('city_weather'))
       ->save();
+
     parent::submitForm($form, $form_state);
   }
 
