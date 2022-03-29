@@ -1,15 +1,37 @@
+{% if lutsk_weather %}
+<div class="weather-wrapper">
+   <h5 class="weather_city-name">{{ lutsk_weather.name }} city</h5>
+   <div class="lutsk-weather">
+      {% for data in lutsk_weather %}
+      {% if data.0.main %} {{ data.0.main }} {% endif %}
+      {% if data.temp %}{{ data.temp }}°С, {% endif %}
+         {% if data.speed %} wind - {{ data.speed }} m/s {% endif %}
+
+         {% if data.sunrise %}
+            <div class="weather-sun"> Sunrise: {{ data.sunrise | date('H:i:s')  }}
+         {% endif %}
+         {% if data.sunset  %} Sunset: {{ data.sunset | date('H:i:s') }} </div> {% endif %}
+      {% endfor %}
+   </div>
+</div>
+
+{% endif %}
+
+{% if data_weather %}
+   <div class="weather-wrapper">
+      <h2 class="weather_city-name"> {{ data_weather.name }}</h2>
+      {% for key, data in data_weather  %}
+         {% if data.temp %}<div class="weather-item">Temperature: {{ data.temp }}°С</div> {% endif %}
+         {% if data.feels_like %}<div class="weather-item">Feels like: {{ data.feels_like }}°С</div> {% endif %}
+         {% if key == 'wind' %}<div class="weather-item">Wind: speed {{ data.speed }} m/s, gust {{ data.gust }} m/s</div> {% endif %}
+      {% endfor %}
+   </div>
+{% endif %}
+
 {% if main_data_weather %}
    <div>{{ main_data_weather.main }}</div>
    <div>{{ main_data_weather.description }}</div>
    <img class="weather_img" src="http://openweathermap.org/img/wn/{{ main_data_weather.icon }}.png"/>
 {% endif %}
 
-{% if data_weather %}
-   <div class="weather-wrapper">
-   {% for key, data in data_weather  %}
-      {% if data.temp %}<div class="weather-item">Temperature: {{ data.temp }}°С</div> {% endif %}
-      {% if data.feels_like %}<div class="weather-item">Feels like: {{ data.feels_like }}°С</div> {% endif %}
-      {% if key == 'wind' %}<div class="weather-item">Wind: speed {{ data.speed }}, gust {{ data.gust }}</div> {% endif %}
-   {% endfor %}
-   </div>
-{% endif %}
+
