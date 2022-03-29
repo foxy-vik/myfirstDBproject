@@ -5,3 +5,11 @@ weather.settings_form:
     _form: 'Drupal\weather\Form\SettingsForm'
   requirements:
     _permission: 'administer weather configuration'
+
+weather.mainpage:
+  path: '/weather'
+  defaults:
+    _title: 'All weather data in one page.'
+    _controller: '\Drupal\weather\Controller\WeatherController::build'
+  requirements:
+    _permission: 'access content'
