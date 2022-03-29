@@ -57,8 +57,25 @@ class SettingsForm extends ConfigFormBase {
       '#title' => $this->t('Add a location city'),
       '#default_value' => $default_cities[0],
       '#require' => TRUE,
+      '#ajax' => [
+        'callback' => '::cityWeatherAjaxCallback',
+        'disable-refocus' => FALSE,
+        'event' => 'change',
+        'wrapper' => 'edit-output',
+        'progress' => [
+          'type' => 'throbber',
+          'message' => $this->t('Verifying city'),
+        ],
+      ],
     ];
     return parent::buildForm($form, $form_state);
+  }
+
+  /**
+   * An Ajax callback.
+   */
+  public function cityWeatherAjaxCallback(array &$form, FormStateInterface $form_state) {
+
   }
 
   /**
@@ -66,10 +83,20 @@ class SettingsForm extends ConfigFormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $api_key_length = strlen($form_state->getValue('api_key'));
-    if ($api_key_length != 32 || empty($form_state->getValue('city_weather'))) {
+    $city_name_for_weather = $form_state->getValue('city_weather');
+    $reg_ex = "#^[A-Za-z-]+$#";
+    $test_regex = !preg_match($reg_ex, $city_name_for_weather);
+    $test_empty = empty($city_name_for_weather);
+
+    if ($api_key_length != 32) {
       $form_state->setErrorByName('api_key', $this->t('The value is not correct.'));
     }
-    parent::validateForm($form, $form_state);
+    elseif (!preg_match($reg_ex, $city_name_for_weather) && !empty($city_name_for_weather)) {
+      $form_state->setErrorByName('city_weather', $this->t('The name of city is not correct.'));
+    }
+    else {
+      parent::validateForm($form, $form_state);
+    }
   }
 
   /**
