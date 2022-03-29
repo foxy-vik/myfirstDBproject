@@ -44,7 +44,7 @@ class SettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container): ConfigFormBase|SettingsForm|static {
+  public static function create(ContainerInterface $container): ConfigFormBase | SettingsForm | static {
     return new static(
       $container->get('http_client'),
       $container->get('config.factory'),
