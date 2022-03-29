@@ -6,11 +6,6 @@ weather.settings:
     key_weather_api:
       type: string
       label: 'Key for Weather API'
-
-block.settings.weather_block:
-  type: block_settings
-  label: 'Weather block'
-  mapping:
     city_weather:
-      type: sequence
-      label: 'Select your weather units'
+      type: string
+      label: 'City name for weather'
