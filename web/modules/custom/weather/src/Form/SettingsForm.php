@@ -40,7 +40,6 @@ class SettingsForm extends ConfigFormBase {
     return $weather_data;
   }
 
-
   /**
    * {@inheritdoc}
    */
@@ -54,10 +53,9 @@ class SettingsForm extends ConfigFormBase {
       '#require' => TRUE,
     ];
     $form['city_weather'] = [
-      '#type' => 'select',
-      '#title' => t('Select a location'),
+      '#type' => 'textfield',
+      '#title' => $this->t('Add a location city'),
       '#default_value' => $default_cities[0],
-      '#options' => $default_cities,
       '#require' => TRUE,
     ];
     return parent::buildForm($form, $form_state);
@@ -68,7 +66,7 @@ class SettingsForm extends ConfigFormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $api_key_length = strlen($form_state->getValue('api_key'));
-    if ($api_key_length != 32) {
+    if ($api_key_length != 32 || empty($form_state->getValue('city_weather'))) {
       $form_state->setErrorByName('api_key', $this->t('The value is not correct.'));
     }
     parent::validateForm($form, $form_state);
@@ -78,7 +76,6 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $test_city = $form_state->getValue('city_weather');
     $this->config('weather.settings')
       ->set('key_weather_api', $form_state->getValue('api_key'))
       ->save();
