@@ -7,8 +7,8 @@
 
 /**
  * Implements hook_install().
+ * @todo create hook_install and uninstall.
  */
-// @todo create hook_install and uninstall.
 function weather_install() {
   \Drupal::messenger()->addStatus(__FUNCTION__);
 }
@@ -22,8 +22,8 @@ function weather_uninstall() {
 
 /**
  * Implements hook_schema().
+ * @todo gonna add info into BD.
  */
-// @todo gonna add info into BD.
 function weather_schema() {
   $schema['weather_table'] = [
     'description' => 'Table that consists of info about weather.',
