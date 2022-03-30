@@ -4,7 +4,6 @@ namespace Drupal\weather\Controller;
 
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\CronInterface;
 use Drupal\weather\WeatherDb;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -45,7 +44,7 @@ class WeatherController extends ControllerBase {
    * @param \Drupal\weather\WeatherDb $weather_db
    *   Service for using weather_table.
    */
-  public function __construct( ClientInterface $client, TimeInterface $time, WeatherDb $weather_db) {
+  public function __construct(ClientInterface $client, TimeInterface $time, WeatherDb $weather_db) {
     $this->client = $client;
     $this->time = $time;
     $this->weatherDb = $weather_db;
