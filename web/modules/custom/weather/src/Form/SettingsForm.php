@@ -186,9 +186,13 @@ class SettingsForm extends ConfigFormBase {
     try {
       $response = $this->client->request('GET', $url_weather);
       $weather_data = $response->getBody()->getContents();
-      $timestamp = \Drupal::time()->getRequestTime();
+      $timestamp = $this->time->getRequestTime();
     }
     catch (GuzzleException $e) {
+      $this->messenger()->addMessage($this->t('Update failed. Message = %message', [
+        '%message' => $e->getMessage(),
+      ]
+      ), 'error');
     }
     $values = [
       'data_weather' => $city_name,

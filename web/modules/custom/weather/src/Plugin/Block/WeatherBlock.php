@@ -2,11 +2,8 @@
 
 namespace Drupal\weather\Plugin\Block;
 
-use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\Core\CronInterface;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use GuzzleHttp\ClientInterface;
@@ -64,7 +61,9 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    *   The messenger.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition,
+  public function __construct(array $configuration,
+  $plugin_id,
+  $plugin_definition,
                               ClientInterface $client,
                               ConfigFactoryInterface $config_factory,
                               MessengerInterface $messenger) {
