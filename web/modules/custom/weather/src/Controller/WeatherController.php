@@ -6,6 +6,7 @@ use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\CronInterface;
 use Drupal\Core\Database\Connection;
+use Drupal\weather\WeatherDb;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -43,6 +44,13 @@ class WeatherController extends ControllerBase {
   protected $time;
 
   /**
+   * Our database repository service.
+   *
+   * @var \Drupal\weather\WeatherDb
+   */
+  protected WeatherDb $weatherDb;
+
+  /**
    * The controller constructor.
    *
    * @param \Drupal\Core\Database\Connection $connection
@@ -54,11 +62,12 @@ class WeatherController extends ControllerBase {
    * @param \Drupal\Component\Datetime\TimeInterface $time
    *   The time service.
    */
-  public function __construct(Connection $connection, CronInterface $cron, ClientInterface $client, TimeInterface $time) {
+  public function __construct(Connection $connection, CronInterface $cron, ClientInterface $client, TimeInterface $time, WeatherDb $weather_db) {
     $this->connection = $connection;
     $this->cron = $cron;
     $this->client = $client;
     $this->time = $time;
+    $this->weatherDb = $weather_db;
   }
 
   /**
@@ -69,7 +78,8 @@ class WeatherController extends ControllerBase {
       $container->get('database'),
       $container->get('cron'),
       $container->get('http_client'),
-      $container->get('datetime.time')
+      $container->get('datetime.time'),
+      $container->get('weather.db'),
     );
   }
 
@@ -80,14 +90,22 @@ class WeatherController extends ControllerBase {
     // @todo Gonna add cron operations with DB.
     //   $test1 = $this->cron->run();
     //   $test2 = $this->messenger()->addMessage($this->t('Cron run successfully.'));
-    $responce_db = $this->connection->select('weather_table', 'db')
-      ->fields('db', ['data_weather', 'main_data_weather', 'time'])
-      ->execute()->fetchAll();
-    $response_weather = json_decode($responce_db[0]->main_data_weather);
-    ksm($response_weather);
+    $fields = ['data_weather', 'main_data_weather', 'time'];
+    $response_db = $this->weatherDb->getWeatherData($fields);
+    $response_weather = json_decode($response_db->main_data_weather, TRUE);
     $build['content'] = [
       '#type' => 'item',
-      '#markup' => $this->t('Something'),
+      '#markup' => $this->t('Weather of the city:'),
+    ];
+    $build['content'][] = [
+      '#theme' => 'weather_block_template',
+      '#data_weather' => $response_weather,
+      '#main_data_weather' => $response_weather['weather'][0],
+      '#attached' => [
+        'library' => [
+          'weather/weather',
+        ],
+      ],
     ];
 
     return $build;

@@ -3,7 +3,6 @@
 namespace Drupal\weather\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\Core\Database\Connection;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use GuzzleHttp\ClientInterface;
@@ -21,14 +20,7 @@ class SettingsForm extends ConfigFormBase {
    *
    * @var \Drupal\weather\WeatherDb
    */
-  protected $database_service;
-
-  /**
-   * The database connection.
-   *
-   * @var \Drupal\Core\Database\Connection
-   */
-  protected $connection;
+  protected WeatherDb $weatherDb;
 
   /**
    * The HTTP client.
@@ -47,8 +39,6 @@ class SettingsForm extends ConfigFormBase {
   /**
    * Constructs a new WeatherSettings instance.
    *
-   * @param \Drupal\Core\Database\Connection $connection
-   *   The database connection.
    * @param \GuzzleHttp\ClientInterface $client
    *   The HTTP client.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
@@ -56,11 +46,10 @@ class SettingsForm extends ConfigFormBase {
    * @param \Drupal\weather\WeatherDb $weather_db
    *   Service for Weather db.
    */
-  public function __construct(Connection $connection, ClientInterface $client, ConfigFactoryInterface $config_factory, WeatherDb $weather_db) {
-    $this->connection = $connection;
+  public function __construct(ClientInterface $client, ConfigFactoryInterface $config_factory, WeatherDb $weather_db) {
     $this->client = $client;
     $this->configFactory = $config_factory;
-    $this->database_service = $weather_db;
+    $this->weatherDb = $weather_db;
   }
 
   /**
@@ -68,7 +57,6 @@ class SettingsForm extends ConfigFormBase {
    */
   public static function create(ContainerInterface $container): ConfigFormBase | SettingsForm | static {
     return new static(
-      $container->get('database'),
       $container->get('http_client'),
       $container->get('config.factory'),
       $container->get('weather.db'),
@@ -145,29 +133,22 @@ class SettingsForm extends ConfigFormBase {
    * @throws \Exception
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    $api_key_length = strlen($form_state->getValue('api_key'));
+    $api_key = $form_state->getValue('api_key');
+    $api_key_length = strlen($api_key);
     $city_name_for_weather = $form_state->getValue('city_weather');
-    $api_key = $this->config('weather.settings')->get('key_weather_api');
-    $url = "https://api.openweathermap.org/data/2.5/weather?q=$city_name_for_weather&appid=$api_key";
-    try {
-      $response = $this->client->request('GET', $url);
-      if ($response->getStatusCode() != 200) {
-        throw new \Exception('Failed to retrieve data.');
-      }
-    }
-    catch (GuzzleException $e) {
-      $form_state->setErrorByName('city_weather',
-        $this->t('Error! City name is not correct!!!'));
-    }
-    $reg_ex = "#^[A-Za-z-]+$#";
     if ($api_key_length != 32) {
       $form_state->setErrorByName('api_key', $this->t('The value is not correct.'));
+      return FALSE;
     }
-    elseif (!preg_match($reg_ex, $city_name_for_weather) && !empty($city_name_for_weather)) {
-      $form_state->setErrorByName('city_weather', $this->t('The name of city is not correct.'));
-    }
-    else {
-      parent::validateForm($form, $form_state);
+    if (!empty($city_name_for_weather)) {
+      $validation = $this->weatherDb->validateWeatherData($city_name_for_weather, $api_key);
+      if (!$validation) {
+        $form_state->setErrorByName('city_weather', $this->t('Error! City name is not correct!!!.'));
+        return FALSE;
+      }
+      else {
+        parent::validateForm($form, $form_state);
+      }
     }
   }
 
@@ -199,7 +180,7 @@ class SettingsForm extends ConfigFormBase {
       'main_data_weather' => $weather_data,
       'time' => $timestamp,
     ];
-    $this->database_service->updateWeatherData($values);
+    $this->weatherDb->updateWeatherData($values);
 
     parent::submitForm($form, $form_state);
   }

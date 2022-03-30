@@ -2,4 +2,4 @@
 services:
   weather.db:
     class: Drupal\weather\WeatherDb
-    arguments: ['@database', '@string_translation', '@messenger']
+    arguments: ['@database', '@string_translation', '@messenger', '@http_client']

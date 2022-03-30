@@ -7,6 +7,8 @@ use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Messenger\MessengerTrait;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\StringTranslation\TranslationInterface;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * Service get, delete and validate Weather data.
@@ -24,26 +26,52 @@ class WeatherDb {
   protected $connection;
 
   /**
+   * The HTTP client.
+   *
+   * @var \GuzzleHttp\ClientInterface
+   */
+  protected $client;
+
+  /**
    * Constructs a WeatherDb object.
    *
    * @param \Drupal\Core\Database\Connection $connection
    *   The database connection.
-   *   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
+   * @param \Drupal\Core\StringTranslation\TranslationInterface $translation
+   *   Translation service.
+   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    *   The messenger service.
+   * @param \GuzzleHttp\ClientInterface $client
+   *   The HTTP client.
    */
-  public function __construct(Connection $connection, TranslationInterface $translation, MessengerInterface $messenger) {
+  public function __construct(Connection $connection,
+                              TranslationInterface $translation,
+                              MessengerInterface $messenger,
+                              ClientInterface $client) {
     $this->connection = $connection;
     $this->setStringTranslation($translation);
     $this->setMessenger($messenger);
+    $this->client = $client;
   }
 
   /**
-   * Method description.
+   * Get entries in the Weather database.
+   *
+   * @param array $values
+   *   An array containing all the fields of the item to be received.
+   *
+   * @return array
+   *   The weather data.
    */
-  public function getWeatherData() {
-    $this->connection->select('weather_table', 'db')
-      ->fields('db', ['data_weather', 'main_data_weather', 'time'])
+  public function getWeatherData(array $values) {
+    if (!$values) {
+      return [];
+    }
+    $response = $this->connection
+      ->select('weather_table', 'db')
+      ->fields('db', $values)
       ->execute()->fetchAll();
+    return $response[0];
   }
 
   /**
@@ -73,9 +101,24 @@ class WeatherDb {
 
   /**
    * Method description.
+   *
+   * @throws \Exception
    */
-  public function validateWeatherData() {
-    // @DCG place your code here.
+  public function validateWeatherData(string $city_name, $api_key): bool {
+    try {
+      $url = "https://api.openweathermap.org/data/2.5/weather?q=$city_name&appid=$api_key";
+      $response = $this->client->request('GET', $url);
+      if ($response->getStatusCode() != 200) {
+        throw new \Exception('Failed to retrieve data.');
+      }
+      $reg_ex = "#^[A-Za-z-]+$#";
+      if (preg_match($reg_ex, $city_name)) {
+        return TRUE;
+      }
+    }
+    catch (GuzzleException $e) {
+      return FALSE;
+    }
   }
 
 }
