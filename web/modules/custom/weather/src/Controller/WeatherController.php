@@ -14,6 +14,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class WeatherController extends ControllerBase {
 
+  const TIME_DATABASE_UPDATE = 3 * 60 * 60;
+
   /**
    * The cron service.
    *
@@ -79,11 +81,14 @@ class WeatherController extends ControllerBase {
    */
   public function build() {
     // @todo Gonna add cron operations with DB.
-    //   $test1 = $this->cron->run();
-    //   $test2 = $this->messenger()
-    //->addMessage($this->t('Cron run successfully.'));
     $fields = ['data_weather', 'main_data_weather', 'time'];
     $response_db = $this->weatherDb->getWeatherData($fields);
+    $time_for_update = $response_db->time + self::TIME_DATABASE_UPDATE;
+    $time = $this->time->getCurrentTime();
+    if ($time > $time_for_update) {
+      $this->cron->run();
+      $this->messenger()->addMessage($this->t('Cron run successfully.'));
+    }
     $response_weather = json_decode($response_db->main_data_weather, TRUE);
     $build['content'] = [
       '#type' => 'item',
