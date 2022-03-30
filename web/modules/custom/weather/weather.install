@@ -5,6 +5,8 @@
  * Install, update and uninstall functions for the Weather module.
  */
 
+use GuzzleHttp\Exception\GuzzleException;
+
 /**
  * Implements hook_install().
  */
@@ -17,7 +19,7 @@ function weather_install() {
     $weather_data = $response->getBody()->getContents();
     $timestamp = \Drupal::time()->getRequestTime();
   }
-  catch (\GuzzleHttp\Exception\GuzzleException $e) {
+  catch (GuzzleException $e) {
   }
   $values = [
     [
@@ -28,7 +30,8 @@ function weather_install() {
     ],
   ];
   $database = \Drupal::database();
-  $query = $database->insert('weather_table')->fields(['id', 'data_weather', 'main_data_weather', 'time']);
+  $query = $database->insert('weather_table')
+    ->fields(['id', 'data_weather', 'main_data_weather', 'time']);
   foreach ($values as $item) {
     $query->values($item);
   }
@@ -63,7 +66,7 @@ function weather_schema() {
         'type' => 'int',
         'unsigned' => TRUE,
         'not null' => TRUE,
-        'description' => t('Time for update operations.'),
+        'description' => 'Time for update operations.',
       ],
     ],
 

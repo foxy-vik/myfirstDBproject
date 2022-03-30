@@ -4,6 +4,7 @@ namespace Drupal\weather\Form;
 
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\CronInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use GuzzleHttp\ClientInterface;
@@ -187,6 +188,11 @@ class SettingsForm extends ConfigFormBase {
       $response = $this->client->request('GET', $url_weather);
       $weather_data = $response->getBody()->getContents();
       $timestamp = $this->time->getRequestTime();
+      $values = [
+        'data_weather' => $city_name,
+        'main_data_weather' => $weather_data,
+        'time' => $timestamp,
+      ];
     }
     catch (GuzzleException $e) {
       $this->messenger()->addMessage($this->t('Update failed. Message = %message', [
@@ -194,11 +200,6 @@ class SettingsForm extends ConfigFormBase {
       ]
       ), 'error');
     }
-    $values = [
-      'data_weather' => $city_name,
-      'main_data_weather' => $weather_data,
-      'time' => $timestamp,
-    ];
     $this->weatherDb->updateWeatherData($values);
 
     parent::submitForm($form, $form_state);

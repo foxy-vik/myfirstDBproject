@@ -14,15 +14,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class WeatherController extends ControllerBase {
 
-  const TIME_DATABASE_UPDATE = 3 * 60 * 60;
-
-  /**
-   * The cron service.
-   *
-   * @var \Drupal\Core\CronInterface
-   */
-  protected $cron;
-
   /**
    * The HTTP client.
    *
@@ -47,8 +38,6 @@ class WeatherController extends ControllerBase {
   /**
    * The controller constructor.
    *
-   * @param \Drupal\Core\CronInterface $cron
-   *   The cron service.
    * @param \GuzzleHttp\ClientInterface $client
    *   The HTTP client.
    * @param \Drupal\Component\Datetime\TimeInterface $time
@@ -56,9 +45,7 @@ class WeatherController extends ControllerBase {
    * @param \Drupal\weather\WeatherDb $weather_db
    *   Service for using weather_table.
    */
-  public function __construct(CronInterface $cron, ClientInterface $client, TimeInterface $time, WeatherDb $weather_db) {
-
-    $this->cron = $cron;
+  public function __construct( ClientInterface $client, TimeInterface $time, WeatherDb $weather_db) {
     $this->client = $client;
     $this->time = $time;
     $this->weatherDb = $weather_db;
@@ -69,7 +56,6 @@ class WeatherController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('cron'),
       $container->get('http_client'),
       $container->get('datetime.time'),
       $container->get('weather.db'),
@@ -80,15 +66,8 @@ class WeatherController extends ControllerBase {
    * Builds the response.
    */
   public function build() {
-    // @todo Gonna add cron operations with DB.
     $fields = ['data_weather', 'main_data_weather', 'time'];
     $response_db = $this->weatherDb->getWeatherData($fields);
-    $time_for_update = $response_db->time + self::TIME_DATABASE_UPDATE;
-    $time = $this->time->getCurrentTime();
-    if ($time > $time_for_update) {
-      $this->cron->run();
-      $this->messenger()->addMessage($this->t('Cron run successfully.'));
-    }
     $response_weather = json_decode($response_db->main_data_weather, TRUE);
     $build['content'] = [
       '#type' => 'item',
