@@ -3,6 +3,7 @@
 namespace Drupal\weather\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Database\Connection;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use GuzzleHttp\ClientInterface;
@@ -13,6 +14,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Configure Weather settings for this site.
  */
 class SettingsForm extends ConfigFormBase {
+
+  /**
+   * The database connection.
+   *
+   * @var \Drupal\Core\Database\Connection
+   */
+  protected $connection;
 
   /**
    * The HTTP client.
@@ -31,12 +39,15 @@ class SettingsForm extends ConfigFormBase {
   /**
    * Constructs a new WeatherSettings instance.
    *
+   * @param \Drupal\Core\Database\Connection $connection
+   *   The database connection.
    * @param \GuzzleHttp\ClientInterface $client
    *   The HTTP client.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory.
    */
-  public function __construct(ClientInterface $client, ConfigFactoryInterface $config_factory) {
+  public function __construct(Connection $connection, ClientInterface $client, ConfigFactoryInterface $config_factory) {
+    $this->connection = $connection;
     $this->client = $client;
     $this->configFactory = $config_factory;
   }
@@ -46,6 +57,7 @@ class SettingsForm extends ConfigFormBase {
    */
   public static function create(ContainerInterface $container): ConfigFormBase | SettingsForm | static {
     return new static(
+      $container->get('database'),
       $container->get('http_client'),
       $container->get('config.factory'),
     );
@@ -85,6 +97,11 @@ class SettingsForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $this->getWeather();
+    $default_value_city = $this->config('weather.settings')->get('city_weather');
+    if (!$default_value_city) {
+      $default_value_city = 'Kyiv';
+    }
+
     $form['api_key'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Please add the key for Weather API:'),
@@ -94,8 +111,18 @@ class SettingsForm extends ConfigFormBase {
     $form['city_weather'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Add a location city'),
-      '#default_value' => $this->config('weather.settings')->get('city_weather'),
+      '#default_value' => $default_value_city,
       '#require' => TRUE,
+    ];
+    $form['metric'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Select here your metric system'),
+      '#options' => [
+        'standard' => $this->t('standard'),
+        'metric' => $this->t('metric'),
+        'imperial' => $this->t('imperial'),
+      ],
+      '#default_value' => $this->config('weather.settings')->get('units'),
     ];
     return parent::buildForm($form, $form_state);
   }
@@ -134,12 +161,41 @@ class SettingsForm extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
+   *
+   * @throws \Exception
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $key_api_weather = $form_state->getValue('api_key');
+    $city_name = $form_state->getValue('city_weather');
+    $metric = $form_state->getValue('metric');
     $this->config('weather.settings')
-      ->set('key_weather_api', $form_state->getValue('api_key'))
-      ->set('city_weather', $form_state->getValue('city_weather'))
+      ->set('key_weather_api', $key_api_weather)
+      ->set('city_weather', $city_name)
+      ->set('units', $metric)
       ->save();
+
+    $url_weather = "https://api.openweathermap.org/data/2.5/weather?q=$city_name&appid=$key_api_weather&units=$metric";
+    try {
+      $response = \Drupal::httpClient()->request('GET', $url_weather);
+      $weather_data = $response->getBody()->getContents();
+      $timestamp = \Drupal::time()->getRequestTime();
+    }
+    catch (GuzzleException $e) {
+    }
+    $values = [
+      'data_weather' => $city_name,
+      'main_data_weather' => $weather_data,
+      'time' => $timestamp,
+    ];
+    $query = $this->connection->update('weather_table')
+      ->fields($values);
+
+    try {
+      $query->condition('id', 1);
+      $query->execute();
+    }
+    catch (\Exception $e) {
+    }
 
     parent::submitForm($form, $form_state);
   }

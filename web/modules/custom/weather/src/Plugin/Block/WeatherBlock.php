@@ -5,6 +5,7 @@ namespace Drupal\weather\Plugin\Block;
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\CronInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -45,13 +46,6 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
   protected $messenger;
 
   /**
-   * The time service.
-   *
-   * @var \Drupal\Component\Datetime\TimeInterface
-   */
-  protected $time;
-
-  /**
    * Constructs a new WeatherBlock instance.
    *
    * @param array $configuration
@@ -69,15 +63,15 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
    *   The config factory.
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    *   The messenger.
-   * @param \Drupal\Component\Datetime\TimeInterface $time
-   *   The time service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, ClientInterface $client, ConfigFactoryInterface $config_factory, MessengerInterface $messenger, TimeInterface $time) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition,
+                              ClientInterface $client,
+                              ConfigFactoryInterface $config_factory,
+                              MessengerInterface $messenger) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->client = $client;
     $this->configFactory = $config_factory;
     $this->messenger = $messenger;
-    $this->time = $time;
   }
 
   /**
@@ -91,7 +85,6 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
       $container->get('http_client'),
       $container->get('config.factory'),
       $container->get('messenger'),
-      $container->get('datetime.time')
     );
   }
 
@@ -99,30 +92,7 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
    * {@inheritdoc}
    */
   public function defaultConfiguration() {
-    return [
-      'city_weather' => ['standard', 'metric', 'imperial'],
-    ];
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function blockForm($form, FormStateInterface $form_state) {
-    $form['city'] = [
-      '#type' => 'select',
-      '#title' => $this->t('Select here your city'),
-      '#options' => $this->configuration['city_weather'],
-      // @todo default_value.
-    //   '#default_value' => ,
-    ];
-    return $form;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->configuration['city_weather'] = $form_state->getValue('city');
+    return ['city_weather'];
   }
 
   /**
@@ -130,7 +100,7 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
    *
    * @throws \GuzzleHttp\Exception\GuzzleException
    */
-  public function build() {
+  public function build(): array {
     // @todo Detect user location by IP -> \Drupal::request()->getClientIp();.
     $client_ip = '51.15.45.2';
     $response_ip = $this->client->request('GET', "http://ip-api.com/json/$client_ip");
@@ -149,10 +119,11 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
       $main_data_weather = $weather_data['weather'][0];
     }
     catch (GuzzleException $e) {
+      $build['content'] = [
+        '#markup' => $this->t('You have problems with connection'),
+      ];
     }
-    $build['content'] = [
-      '#markup' => $this->t('some text'),
-    ];
+
     $build['content'][] = [
       '#theme' => 'weather_block_template',
       '#data_weather' => $weather_data,

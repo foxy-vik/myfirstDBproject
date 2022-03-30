@@ -78,12 +78,16 @@ class WeatherController extends ControllerBase {
    */
   public function build() {
     // @todo Gonna add cron operations with DB.
-    $test1 = $this->cron->run();
-    $test2 = $this->messenger()->addMessage($this->t('Cron run successfully.'));
-
+    //   $test1 = $this->cron->run();
+    //   $test2 = $this->messenger()->addMessage($this->t('Cron run successfully.'));
+    $responce_db = $this->connection->select('weather_table', 'db')
+      ->fields('db', ['data_weather', 'main_data_weather', 'time'])
+      ->execute()->fetchAll();
+    $response_weather = json_decode($responce_db[0]->main_data_weather);
+    ksm($response_weather);
     $build['content'] = [
       '#type' => 'item',
-      '#markup' => $this->t('It works!'),
+      '#markup' => $this->t('Something'),
     ];
 
     return $build;

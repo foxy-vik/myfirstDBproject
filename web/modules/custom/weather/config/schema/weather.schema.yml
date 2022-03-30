@@ -9,3 +9,6 @@ weather.settings:
     city_weather:
       type: string
       label: 'City name for weather'
+    units:
+        type: string
+        label: 'Unit name'

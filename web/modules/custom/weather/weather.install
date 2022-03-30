@@ -9,14 +9,30 @@
  * Implements hook_install().
  */
 function weather_install() {
-  \Drupal::messenger()->addStatus(__FUNCTION__);
-}
-
-/**
- * Implements hook_uninstall().
- */
-function weather_uninstall() {
-  \Drupal::messenger()->addStatus(__FUNCTION__);
+  $key_api_weather = '0a66bec47e39d392b4606128466e0360';
+  $default_city_name = 'Kyiv';
+  $url_weather = "https://api.openweathermap.org/data/2.5/weather?q=$default_city_name&appid=$key_api_weather&units=metric";
+  try {
+    $response = \Drupal::httpClient()->request('GET', $url_weather);
+    $weather_data = $response->getBody()->getContents();
+    $timestamp = \Drupal::time()->getRequestTime();
+  }
+  catch (\GuzzleHttp\Exception\GuzzleException $e) {
+  }
+  $values = [
+    [
+      'id' => 1,
+      'data_weather' => $default_city_name,
+      'main_data_weather' => $weather_data,
+      'time' => $timestamp,
+    ],
+  ];
+  $database = \Drupal::database();
+  $query = $database->insert('weather_table')->fields(['id', 'data_weather', 'main_data_weather', 'time']);
+  foreach ($values as $item) {
+    $query->values($item);
+  }
+  $query->execute();
 }
 
 /**
@@ -31,19 +47,27 @@ function weather_schema() {
         'not null' => TRUE,
         'description' => 'Primary Key: Unique record ID.',
       ],
-      'data' => [
-        'type' => 'blob',
+      'data_weather' => [
+        'type' => 'varchar',
         'not null' => TRUE,
-        'size' => 'big',
-        'description' => 'The arbitrary data for the item.',
+        'length' => 255,
+        'description' => 'City name.',
+      ],
+      'main_data_weather' => [
+        'type' => 'text',
+        'not null' => TRUE,
+        'size' => 'normal',
+        'description' => 'JSON. Main info about weather.',
+      ],
+      'time' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => t('Time for update operations.'),
       ],
     ],
+
     'primary key' => ['id'],
-    'indexes' => [
-      'type' => ['type'],
-      'uid' => ['uid'],
-      'status' => ['status'],
-    ],
   ];
 
   return $schema;

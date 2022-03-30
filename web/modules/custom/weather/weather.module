@@ -34,3 +34,10 @@ function weather_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
+
+/**
+ * Implements hook_cron().
+ */
+function weather_cron() {
+
+}
