@@ -1,0 +1,5 @@
+# This is a database service.
+services:
+  weather.db:
+    class: Drupal\weather\WeatherDb
+    arguments: ['@database', '@string_translation', '@messenger']

@@ -9,11 +9,19 @@ use Drupal\Core\Form\FormStateInterface;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\weather\WeatherDb;
 
 /**
  * Configure Weather settings for this site.
  */
 class SettingsForm extends ConfigFormBase {
+
+  /**
+   * Our database repository service.
+   *
+   * @var \Drupal\weather\WeatherDb
+   */
+  protected $database_service;
 
   /**
    * The database connection.
@@ -45,11 +53,14 @@ class SettingsForm extends ConfigFormBase {
    *   The HTTP client.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory.
+   * @param \Drupal\weather\WeatherDb $weather_db
+   *   Service for Weather db.
    */
-  public function __construct(Connection $connection, ClientInterface $client, ConfigFactoryInterface $config_factory) {
+  public function __construct(Connection $connection, ClientInterface $client, ConfigFactoryInterface $config_factory, WeatherDb $weather_db) {
     $this->connection = $connection;
     $this->client = $client;
     $this->configFactory = $config_factory;
+    $this->database_service = $weather_db;
   }
 
   /**
@@ -60,6 +71,7 @@ class SettingsForm extends ConfigFormBase {
       $container->get('database'),
       $container->get('http_client'),
       $container->get('config.factory'),
+      $container->get('weather.db'),
     );
   }
 
@@ -187,15 +199,7 @@ class SettingsForm extends ConfigFormBase {
       'main_data_weather' => $weather_data,
       'time' => $timestamp,
     ];
-    $query = $this->connection->update('weather_table')
-      ->fields($values);
-
-    try {
-      $query->condition('id', 1);
-      $query->execute();
-    }
-    catch (\Exception $e) {
-    }
+    $this->database_service->updateWeatherData($values);
 
     parent::submitForm($form, $form_state);
   }
