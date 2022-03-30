@@ -2,6 +2,7 @@
 
 namespace Drupal\weather\Form;
 
+use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -37,6 +38,13 @@ class SettingsForm extends ConfigFormBase {
   protected $configFactory;
 
   /**
+   * The time service.
+   *
+   * @var \Drupal\Component\Datetime\TimeInterface
+   */
+  protected $time;
+
+  /**
    * Constructs a new WeatherSettings instance.
    *
    * @param \GuzzleHttp\ClientInterface $client
@@ -45,11 +53,17 @@ class SettingsForm extends ConfigFormBase {
    *   The config factory.
    * @param \Drupal\weather\WeatherDb $weather_db
    *   Service for Weather db.
+   * @param \Drupal\Component\Datetime\TimeInterface $time
+   *   The time service.
    */
-  public function __construct(ClientInterface $client, ConfigFactoryInterface $config_factory, WeatherDb $weather_db) {
+  public function __construct(ClientInterface $client,
+                              ConfigFactoryInterface $config_factory,
+                              WeatherDb $weather_db,
+                              TimeInterface $time) {
     $this->client = $client;
     $this->configFactory = $config_factory;
     $this->weatherDb = $weather_db;
+    $this->time = $time;
   }
 
   /**
@@ -60,6 +74,7 @@ class SettingsForm extends ConfigFormBase {
       $container->get('http_client'),
       $container->get('config.factory'),
       $container->get('weather.db'),
+      $container->get('datetime.time'),
     );
   }
 
@@ -169,7 +184,7 @@ class SettingsForm extends ConfigFormBase {
 
     $url_weather = "https://api.openweathermap.org/data/2.5/weather?q=$city_name&appid=$key_api_weather&units=$metric";
     try {
-      $response = \Drupal::httpClient()->request('GET', $url_weather);
+      $response = $this->client->request('GET', $url_weather);
       $weather_data = $response->getBody()->getContents();
       $timestamp = \Drupal::time()->getRequestTime();
     }

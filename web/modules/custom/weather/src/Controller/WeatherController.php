@@ -5,7 +5,6 @@ namespace Drupal\weather\Controller;
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\CronInterface;
-use Drupal\Core\Database\Connection;
 use Drupal\weather\WeatherDb;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -14,13 +13,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Returns responses for Weather routes.
  */
 class WeatherController extends ControllerBase {
-
-  /**
-   * The database connection.
-   *
-   * @var \Drupal\Core\Database\Connection
-   */
-  protected $connection;
 
   /**
    * The cron service.
@@ -53,17 +45,17 @@ class WeatherController extends ControllerBase {
   /**
    * The controller constructor.
    *
-   * @param \Drupal\Core\Database\Connection $connection
-   *   The database connection.
    * @param \Drupal\Core\CronInterface $cron
    *   The cron service.
    * @param \GuzzleHttp\ClientInterface $client
    *   The HTTP client.
    * @param \Drupal\Component\Datetime\TimeInterface $time
    *   The time service.
+   * @param \Drupal\weather\WeatherDb $weather_db
+   *   Service for using weather_table.
    */
-  public function __construct(Connection $connection, CronInterface $cron, ClientInterface $client, TimeInterface $time, WeatherDb $weather_db) {
-    $this->connection = $connection;
+  public function __construct(CronInterface $cron, ClientInterface $client, TimeInterface $time, WeatherDb $weather_db) {
+
     $this->cron = $cron;
     $this->client = $client;
     $this->time = $time;
@@ -75,7 +67,6 @@ class WeatherController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('database'),
       $container->get('cron'),
       $container->get('http_client'),
       $container->get('datetime.time'),
@@ -89,7 +80,8 @@ class WeatherController extends ControllerBase {
   public function build() {
     // @todo Gonna add cron operations with DB.
     //   $test1 = $this->cron->run();
-    //   $test2 = $this->messenger()->addMessage($this->t('Cron run successfully.'));
+    //   $test2 = $this->messenger()
+    //->addMessage($this->t('Cron run successfully.'));
     $fields = ['data_weather', 'main_data_weather', 'time'];
     $response_db = $this->weatherDb->getWeatherData($fields);
     $response_weather = json_decode($response_db->main_data_weather, TRUE);
