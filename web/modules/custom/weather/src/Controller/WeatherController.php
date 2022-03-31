@@ -5,20 +5,12 @@ namespace Drupal\weather\Controller;
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\weather\WeatherDb;
-use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Returns responses for Weather routes.
  */
 class WeatherController extends ControllerBase {
-
-  /**
-   * The HTTP client.
-   *
-   * @var \GuzzleHttp\ClientInterface
-   */
-  protected $client;
 
   /**
    * The time service.
@@ -37,15 +29,12 @@ class WeatherController extends ControllerBase {
   /**
    * The controller constructor.
    *
-   * @param \GuzzleHttp\ClientInterface $client
-   *   The HTTP client.
    * @param \Drupal\Component\Datetime\TimeInterface $time
    *   The time service.
    * @param \Drupal\weather\WeatherDb $weather_db
    *   Service for using weather_table.
    */
-  public function __construct(ClientInterface $client, TimeInterface $time, WeatherDb $weather_db) {
-    $this->client = $client;
+  public function __construct(TimeInterface $time, WeatherDb $weather_db) {
     $this->time = $time;
     $this->weatherDb = $weather_db;
   }
@@ -55,7 +44,6 @@ class WeatherController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('http_client'),
       $container->get('datetime.time'),
       $container->get('weather.db'),
     );

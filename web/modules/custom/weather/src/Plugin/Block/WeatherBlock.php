@@ -4,7 +4,6 @@ namespace Drupal\weather\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
@@ -36,20 +35,11 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
   protected $configFactory;
 
   /**
-   * The messenger.
-   *
-   * @var \Drupal\Core\Messenger\MessengerInterface
-   */
-  protected $messenger;
-
-  /**
    * Constructs a new WeatherBlock instance.
    *
    * @param array $configuration
    *   The plugin configuration, i.e. an array with configuration values keyed
-   *   by configuration option name. The special key 'context' may be used to
-   *   initialize the defined contexts by setting it to an array of context
-   *   values keyed by context names.
+   *   by configuration option name.
    * @param string $plugin_id
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
@@ -58,19 +48,15 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
    *   The HTTP client.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory.
-   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
-   *   The messenger.
    */
   public function __construct(array $configuration,
   $plugin_id,
   $plugin_definition,
                               ClientInterface $client,
-                              ConfigFactoryInterface $config_factory,
-                              MessengerInterface $messenger) {
+                              ConfigFactoryInterface $config_factory) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->client = $client;
     $this->configFactory = $config_factory;
-    $this->messenger = $messenger;
   }
 
   /**
@@ -83,7 +69,6 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
       $plugin_definition,
       $container->get('http_client'),
       $container->get('config.factory'),
-      $container->get('messenger'),
     );
   }
 
