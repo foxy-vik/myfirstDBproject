@@ -121,7 +121,7 @@ class SettingsForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#title' => $this->t('Please add the key for Weather API:'),
       '#default_value' => $this->config('weather.settings')->get('key_weather_api'),
-      '#require' => TRUE,
+      '#required' => TRUE,
     ];
     $form['city_weather'] = [
       '#type' => 'textfield',
