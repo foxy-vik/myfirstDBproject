@@ -137,7 +137,6 @@ class SettingsForm extends ConfigFormBase {
     $city_name_for_weather = $form_state->getValue('city_weather');
     if ($api_key_length != 32) {
       $form_state->setErrorByName('api_key', $this->t('The value is not correct.'));
-      return FALSE;
     }
     if (!empty($city_name_for_weather)) {
       $validation = $this->weatherDb->validateWeatherData($city_name_for_weather, $api_key);
