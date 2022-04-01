@@ -93,21 +93,6 @@ class SettingsForm extends ConfigFormBase {
   }
 
   /**
-   * Get weather info.
-   */
-  public function getWeather() {
-    $key_api_weather = $this->config('weather.settings')->get('key_weather_api');
-    $url_weather = "https://api.openweathermap.org/data/2.5/weather?id=524901&lang=fr&appid=$key_api_weather";
-    try {
-      $response = $this->client->request('GET', $url_weather);
-      $weather_data = json_decode($response->getBody()->getContents(), TRUE);
-    }
-    catch (GuzzleException $e) {
-    }
-    return $weather_data;
-  }
-
-  /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
