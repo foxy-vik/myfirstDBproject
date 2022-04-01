@@ -96,7 +96,6 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $this->getWeather();
     $default_value_city = $this->config('weather.settings')->get('city_weather');
     if (!$default_value_city) {
       $default_value_city = 'Kyiv';
