@@ -111,7 +111,7 @@ class SettingsForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#title' => $this->t('Add a location city'),
       '#default_value' => $default_value_city,
-      '#require' => TRUE,
+      '#required' => TRUE,
     ];
     $form['metric'] = [
       '#type' => 'select',
