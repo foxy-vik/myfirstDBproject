@@ -35,24 +35,3 @@ function weather_theme($existing, $type, $theme, $path) {
   ];
 }
 
-/**
- * Implements hook_cron().
- */
-function weather_cron() {
-  $city_name = \Drupal::config('weather.settings')->get('city_weather');
-  $key_api_weather = \Drupal::config('weather.settings')->get('key_weather_api');
-  $metric = \Drupal::config('weather.settings')->get('metric');
-  $url_weather = "https://api.openweathermap.org/data/2.5/weather?q=$city_name&appid=$key_api_weather&units=$metric";
-  $response = \Drupal::httpClient()->request('GET', $url_weather);
-  $weather_data = $response->getBody()->getContents();
-  $timestamp = \Drupal::time()->getRequestTime();
-  $values = [
-    'data_weather' => $city_name,
-    'main_data_weather' => $weather_data,
-    'time' => $timestamp,
-  ];
-  \Drupal::database()->update('weather_table')
-    ->fields($values)
-    ->condition('id', 1)
-    ->execute();
-}
