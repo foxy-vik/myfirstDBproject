@@ -34,4 +34,3 @@ function weather_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
-
