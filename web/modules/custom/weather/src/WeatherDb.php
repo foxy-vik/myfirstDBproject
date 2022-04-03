@@ -90,7 +90,7 @@ class WeatherDb {
     $data = $this->connection
       ->select('weather_table', 'db')
       ->fields('db', ['main_data_weather'])
-      ->condition('data_weather', $city)
+      ->condition('city_name_weather', $city)
       ->condition('time', \Drupal::time()->getRequestTime() - 21600, '>')
       ->execute()->fetchField();
 
@@ -130,14 +130,14 @@ class WeatherDb {
     $weather_data = $response->getBody()->getContents();
 
     $values = [
-      'data_weather' => $city,
+      'city_name_weather' => $city,
       'main_data_weather' => $weather_data,
-      'time' => $this->time->getRequestTime(),
+      'time' => \Drupal::time()->getRequestTime(),
     ];
 
     $this->connection->Upsert('weather_table')
-      ->fields(['data_weather', 'main_data_weather', 'time'])
-      ->key('data_weather')
+      ->fields(['city_name_weather', 'main_data_weather', 'time'])
+      ->key('city_name_weather')
       ->values($values)
       ->execute();
     return $weather_data;

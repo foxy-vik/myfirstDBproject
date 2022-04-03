@@ -12,7 +12,7 @@ function weather_schema(): array {
   $schema['weather_table'] = [
     'description' => 'Table that consists of info about weather.',
     'fields' => [
-      'data_weather' => [
+      'city_name_weather' => [
         'type' => 'varchar',
         'not null' => TRUE,
         'length' => 255,
@@ -32,7 +32,7 @@ function weather_schema(): array {
       ],
     ],
 
-    'primary key' => ['data_weather'],
+    'primary key' => ['city_name_weather'],
   ];
 
   return $schema;

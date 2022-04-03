@@ -130,11 +130,7 @@ class SettingsForm extends ConfigFormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $api_key = $form_state->getValue('api_key');
-    $api_key_length = strlen($api_key);
     $city_name_for_weather = $form_state->getValue('city_weather');
-    if ($api_key_length != 32) {
-      $form_state->setErrorByName('api_key', $this->t('The value is not correct.'));
-    }
     if (!empty($city_name_for_weather)
       && !$this->weatherDb->validateWeatherData($city_name_for_weather, $api_key)) {
       $form_state->setErrorByName('api_key', $this->t('Error! API key or city name is incorrect.'));
@@ -164,7 +160,7 @@ class SettingsForm extends ConfigFormBase {
       $weather_data = $response->getBody()->getContents();
       $timestamp = $this->time->getRequestTime();
       $values = [
-        'data_weather' => $city_name,
+        'city_name_weather' => $city_name,
         'main_data_weather' => $weather_data,
         'time' => $timestamp,
       ];
