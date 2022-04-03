@@ -12,11 +12,6 @@ function weather_schema(): array {
   $schema['weather_table'] = [
     'description' => 'Table that consists of info about weather.',
     'fields' => [
-      'id' => [
-        'type' => 'serial',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique record ID.',
-      ],
       'data_weather' => [
         'type' => 'varchar',
         'not null' => TRUE,
