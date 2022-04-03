@@ -1,5 +1,5 @@
 weather.settings_form:
-  title: 'Weather settings'
+  title: 'Weather default settings'
   description: 'Configure Weather.'
   parent: system.admin_config_system
   route_name: weather.settings_form
