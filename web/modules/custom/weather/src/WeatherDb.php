@@ -112,9 +112,7 @@ class WeatherDb {
         throw new \Exception('Failed to retrieve data.');
       }
       $reg_ex = "#^[A-Za-z-]+$#";
-      if (preg_match($reg_ex, $city_name)) {
-        return TRUE;
-      }
+      return preg_match($reg_ex, $city_name);
     }
     catch (GuzzleException $e) {
       return FALSE;
