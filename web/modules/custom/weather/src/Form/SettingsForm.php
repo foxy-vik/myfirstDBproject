@@ -96,21 +96,18 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $default_value_city = $this->config('weather.settings')->get('city_weather');
-    if (!$default_value_city) {
-      $default_value_city = 'Kyiv';
-    }
-
     $form['api_key'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Please add the key for Weather API:'),
-      '#default_value' => $this->config('weather.settings')->get('key_weather_api'),
+      '#default_value' => $this->config('weather.settings')
+        ->get('key_weather_api'),
       '#required' => TRUE,
     ];
     $form['city_weather'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Add a default location city'),
-      '#default_value' => $default_value_city,
+      '#default_value' => $this->config('weather.settings')
+        ->get('city_weather'),
       '#required' => TRUE,
     ];
     $form['metric'] = [
