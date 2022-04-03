@@ -7,10 +7,8 @@
 
 /**
  * Implements hook_schema().
- *
- * @return array
  */
-function weather_schema() {
+function weather_schema(): array {
   $schema['weather_table'] = [
     'description' => 'Table that consists of info about weather.',
     'fields' => [
