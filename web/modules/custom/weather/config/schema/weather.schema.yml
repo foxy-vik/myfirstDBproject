@@ -1,14 +1,14 @@
 # Schema for the configuration files of the Weather module.
 weather.settings:
   type: config_object
-  label: 'Weather settings'
+  label: 'Weather default settings'
   mapping:
     key_weather_api:
       type: string
       label: 'Key for Weather API'
     city_weather:
       type: string
-      label: 'City name for weather'
+      label: 'Default city name for weather'
     units:
         type: string
         label: 'Unit name'

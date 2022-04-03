@@ -5,41 +5,10 @@
  * Install, update and uninstall functions for the Weather module.
  */
 
-use GuzzleHttp\Exception\GuzzleException;
-
-/**
- * Implements hook_install().
- */
-function weather_install() {
-  $key_api_weather = '0a66bec47e39d392b4606128466e0360';
-  $default_city_name = 'Kyiv';
-  $url_weather = "https://api.openweathermap.org/data/2.5/weather?q=$default_city_name&appid=$key_api_weather&units=metric";
-  try {
-    $response = \Drupal::httpClient()->request('GET', $url_weather);
-    $weather_data = $response->getBody()->getContents();
-    $timestamp = \Drupal::time()->getRequestTime();
-  }
-  catch (GuzzleException $e) {
-  }
-  $values = [
-    [
-      'id' => 1,
-      'data_weather' => $default_city_name,
-      'main_data_weather' => $weather_data,
-      'time' => $timestamp,
-    ],
-  ];
-  $database = \Drupal::database();
-  $query = $database->insert('weather_table')
-    ->fields(['id', 'data_weather', 'main_data_weather', 'time']);
-  foreach ($values as $item) {
-    $query->values($item);
-  }
-  $query->execute();
-}
-
 /**
  * Implements hook_schema().
+ *
+ * @return array
  */
 function weather_schema() {
   $schema['weather_table'] = [
