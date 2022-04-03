@@ -135,16 +135,12 @@ class SettingsForm extends ConfigFormBase {
     if ($api_key_length != 32) {
       $form_state->setErrorByName('api_key', $this->t('The value is not correct.'));
     }
-    if (!empty($city_name_for_weather)) {
-      $validation = $this->weatherDb->validateWeatherData($city_name_for_weather, $api_key);
-      if (!$validation) {
-        $form_state->setErrorByName('city_weather', $this->t('Error! City name is not correct!!!.'));
-        return FALSE;
-      }
-      else {
-        parent::validateForm($form, $form_state);
-      }
+    if (!empty($city_name_for_weather)
+      && !$this->weatherDb->validateWeatherData($city_name_for_weather, $api_key)) {
+      $form_state->setErrorByName('api_key', $this->t('Error! API key or city name is incorrect.'));
+      $form_state->setErrorByName('city_weather');
     }
+    parent::validateForm($form, $form_state);
   }
 
   /**
