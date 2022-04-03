@@ -32,7 +32,7 @@ function weather_schema(): array {
       ],
     ],
 
-    'primary key' => ['id'],
+    'primary key' => ['data_weather'],
   ];
 
   return $schema;
