@@ -113,26 +113,34 @@ class WeatherDb {
   /**
    * Update an entry in the Weather database.
    *
-   * @param array $values
-   *   An array containing all the fields of the item to be updated.
+   * @param string|null $city
+   *   The city for which we have to get the weather.
    *
-   * @return \Drupal\Core\Database\StatementInterface
-   *   The number of updated rows.
+   * @return string
+   *   Weather data.
+   *
+   * @throws \Exception|GuzzleException
+   *   Possible exceptions.
    */
-  public function updateWeatherData(array $values) {
-    try {
-      $query_update = $this->connection->update('weather_table')
-        ->fields($values)
-        ->condition('id', 1)
-        ->execute();
-    }
-    catch (\Exception $e) {
-      $this->messenger()->addMessage($this->t('Update failed. Message = %message', [
-        '%message' => $e->getMessage(),
-      ]
-      ), 'error');
-    }
-    return $query_update ?? 0;
+  public function updateWeatherData(?string $city = NULL) {
+    $config = $this->configFactory->get('weather.settings');
+    $city ??= $config->get('city_weather');
+    $url_weather = "https://api.openweathermap.org/data/2.5/weather?q={$city}&appid={$config->get('key_weather_api')}&units={$config->get('units')}";
+    $response = $this->client->request('GET', $url_weather);
+    $weather_data = $response->getBody()->getContents();
+
+    $values = [
+      'data_weather' => $city,
+      'main_data_weather' => $weather_data,
+      'time' => $this->time->getRequestTime(),
+    ];
+
+    $this->connection->Upsert('weather_table')
+      ->fields(['data_weather', 'main_data_weather', 'time'])
+      ->key('data_weather')
+      ->values($values)
+      ->execute();
+    return $weather_data;
   }
 
   /**
