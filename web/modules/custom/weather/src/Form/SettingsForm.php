@@ -109,7 +109,7 @@ class SettingsForm extends ConfigFormBase {
     ];
     $form['city_weather'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Add a location city'),
+      '#title' => $this->t('Add a default location city'),
       '#default_value' => $default_value_city,
       '#required' => TRUE,
     ];
