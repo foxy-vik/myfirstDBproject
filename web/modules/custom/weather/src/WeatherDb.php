@@ -57,21 +57,42 @@ class WeatherDb {
   /**
    * Get entries in the Weather database.
    *
-   * @param array $values
-   *   An array containing all the fields of the item to be received.
-   *
-   * @return array
+   * @return string|false
    *   The weather data.
    */
-  public function getWeatherData(array $values) {
-    if (!$values) {
-      return [];
-    }
-    $response = $this->connection
+  public function getWeatherData() {
+    // @todo Detect user location by IP -> \Drupal::request()->getClientIp();.
+    $client_ip = \Drupal::request()->getClientIp();//'51.15.45.2';
+    $response_ip = $this->client->request('GET', "http://ip-api.com/json/$client_ip");
+    $response_ip_content = json_decode($response_ip->getBody()->getContents(), TRUE);
+
+    // Get city by IP or a default one.
+    $city = $response_ip_content['status'] === 'fail'
+      ? $this->configFactory->get('weather.settings')->get('city_weather')
+      : $response_ip_content['city'];
+
+    // Get whether data from DB.
+    $data = $this->connection
       ->select('weather_table', 'db')
-      ->fields('db', $values)
-      ->execute()->fetchAll();
-    return $response[0];
+      ->fields('db', ['main_data_weather'])
+      ->condition('data_weather', $city)
+      ->condition('time', \Drupal::time()->getRequestTime() - 21600, '>')
+      ->execute()->fetchField();
+
+    // If data doesn't exist or outdated then we need to update it.
+    if (!$data) {
+      try {
+        $data = $this->updateWeatherData($city);
+      }
+      catch (\Exception $e) {
+        $this->messenger()->addMessage($this->t('Update failed. Message = %message', [
+          '%message' => $e->getMessage(),
+        ]), 'error');
+        return FALSE;
+      }
+    }
+
+    return $data;
   }
 
   /**
