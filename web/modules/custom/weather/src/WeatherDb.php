@@ -2,6 +2,7 @@
 
 namespace Drupal\weather;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Messenger\MessengerTrait;
@@ -33,6 +34,13 @@ class WeatherDb {
   protected $client;
 
   /**
+   * The config factory.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
    * Constructs a WeatherDb object.
    *
    * @param \Drupal\Core\Database\Connection $connection
@@ -43,15 +51,19 @@ class WeatherDb {
    *   The messenger service.
    * @param \GuzzleHttp\ClientInterface $client
    *   The HTTP client.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The config factory.
    */
   public function __construct(Connection $connection,
                               TranslationInterface $translation,
                               MessengerInterface $messenger,
-                              ClientInterface $client) {
+                              ClientInterface $client,
+                              ConfigFactoryInterface $config_factory) {
     $this->connection = $connection;
     $this->setStringTranslation($translation);
     $this->setMessenger($messenger);
     $this->client = $client;
+    $this->configFactory = $config_factory;
   }
 
   /**
@@ -59,10 +71,13 @@ class WeatherDb {
    *
    * @return string|false
    *   The weather data.
+   *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    */
   public function getWeatherData() {
     // @todo Detect user location by IP -> \Drupal::request()->getClientIp();.
-    $client_ip = \Drupal::request()->getClientIp();//'51.15.45.2';
+    // '51.15.45.2';
+    $client_ip = \Drupal::request()->getClientIp();
     $response_ip = $this->client->request('GET', "http://ip-api.com/json/$client_ip");
     $response_ip_content = json_decode($response_ip->getBody()->getContents(), TRUE);
 

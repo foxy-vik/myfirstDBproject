@@ -53,8 +53,7 @@ class WeatherController extends ControllerBase {
    * Builds the response.
    */
   public function build() {
-    $fields = ['data_weather', 'main_data_weather', 'time'];
-    $response_db = $this->weatherDb->getWeatherData($fields);
+    $response_db = $this->weatherDb->getWeatherData();
     $response_weather = json_decode($response_db->main_data_weather, TRUE);
     $build['content'] = [
       '#type' => 'item',
