@@ -5,6 +5,7 @@ namespace Drupal\weather\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\weather\WeatherDb;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -35,6 +36,13 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
   protected $configFactory;
 
   /**
+   * Our database repository service.
+   *
+   * @var \Drupal\weather\WeatherDb
+   */
+  protected WeatherDb $weatherDb;
+
+  /**
    * Constructs a new WeatherBlock instance.
    *
    * @param array $configuration
@@ -48,15 +56,19 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
    *   The HTTP client.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory.
+   * @param \Drupal\weather\WeatherDb $weather_db
+   *   Service for using weather_table.
    */
   public function __construct(array $configuration,
   $plugin_id,
   $plugin_definition,
                               ClientInterface $client,
-                              ConfigFactoryInterface $config_factory) {
+                              ConfigFactoryInterface $config_factory,
+                              WeatherDb $weather_db) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->client = $client;
     $this->configFactory = $config_factory;
+    $this->weatherDb = $weather_db;
   }
 
   /**
@@ -69,6 +81,7 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
       $plugin_definition,
       $container->get('http_client'),
       $container->get('config.factory'),
+      $container->get('weather.db'),
     );
   }
 
@@ -85,22 +98,17 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
    * @throws \GuzzleHttp\Exception\GuzzleException
    */
   public function build(): array {
-    // @todo Detect user location by IP -> \Drupal::request()->getClientIp();.
-    $client_ip = '51.15.45.2';
-    $response_ip = $this->client->request('GET', "http://ip-api.com/json/$client_ip");
-    $response_ip_content = json_decode($response_ip->getBody()->getContents(), TRUE);
+    $weather_data_json = $this->weatherDb->getWeatherData();
+    $response_weather = json_decode($weather_data_json, TRUE);
+    $main_data_weather = $response_weather['weather'][0];
+
+    // Hardcore added Lutsk.
     $key_api_weather = $this->configFactory->get('weather.settings')->get('key_weather_api');
-    $city_name_weather = $response_ip_content['city'];
-    $country_code_weather = $response_ip_content['countryCode'];
     $lutsk_url_weather = "https://api.openweathermap.org/data/2.5/weather?q=Lutsk&appid=$key_api_weather&units=metric";
-    $url_weather = "https://api.openweathermap.org/data/2.5/weather?q=$city_name_weather,$country_code_weather&appid=$key_api_weather&units=metric";
     try {
-      $response = $this->client->request('GET', $url_weather);
       $lutsk_response = $this->client->request('GET', $lutsk_url_weather)
         ->getBody()->getContents();
       $lutsk_data_weather = json_decode($lutsk_response, TRUE);
-      $weather_data = json_decode($response->getBody()->getContents(), TRUE);
-      $main_data_weather = $weather_data['weather'][0];
     }
     catch (GuzzleException $e) {
       $build['content'] = [
@@ -110,7 +118,7 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
 
     $build['content'][] = [
       '#theme' => 'weather_block_template',
-      '#data_weather' => $weather_data,
+      '#data_weather' => $response_weather,
       '#main_data_weather' => $main_data_weather,
       '#lutsk_weather' => $lutsk_data_weather,
       '#attached' => [
