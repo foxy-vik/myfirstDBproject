@@ -102,25 +102,10 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
     $response_weather = json_decode($weather_data_json, TRUE);
     $main_data_weather = $response_weather['weather'][0];
 
-    // Hardcore added Lutsk.
-    $key_api_weather = $this->configFactory->get('weather.settings')->get('key_weather_api');
-    $lutsk_url_weather = "https://api.openweathermap.org/data/2.5/weather?q=Lutsk&appid=$key_api_weather&units=metric";
-    try {
-      $lutsk_response = $this->client->request('GET', $lutsk_url_weather)
-        ->getBody()->getContents();
-      $lutsk_data_weather = json_decode($lutsk_response, TRUE);
-    }
-    catch (GuzzleException $e) {
-      $build['content'] = [
-        '#markup' => $this->t('You have problems with connection'),
-      ];
-    }
-
     $build['content'][] = [
       '#theme' => 'weather_block_template',
       '#data_weather' => $response_weather,
       '#main_data_weather' => $main_data_weather,
-      '#lutsk_weather' => $lutsk_data_weather,
       '#attached' => [
         'library' => [
           'weather/weather',

@@ -1,5 +1,5 @@
 {% if data_weather %}
-   <div class="weather-wrapper">
+   <div class="weather-wrapper"> Main weather page -
       <h2 class="weather_city-name"> {{ data_weather.name }}</h2>
       {% for key, data in data_weather  %}
          {% if data.temp %}<div class="weather-item">Temperature: {{ data.temp }}°С</div> {% endif %}

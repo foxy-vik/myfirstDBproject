@@ -1,22 +1,3 @@
-{% if lutsk_weather %}
-<div class="weather-wrapper">
-   <h5 class="weather_city-name">{{ lutsk_weather.name }} city</h5>
-   <div class="lutsk-weather">
-      {% for data in lutsk_weather %}
-      {% if data.0.main %} {{ data.0.main }} {% endif %}
-      {% if data.temp %}{{ data.temp }}°С, {% endif %}
-         {% if data.speed %} wind - {{ data.speed }} m/s {% endif %}
-
-         {% if data.sunrise %}
-            <div class="weather-sun"> Sunrise: {{ data.sunrise | date('H:i:s')  }}
-         {% endif %}
-         {% if data.sunset  %} Sunset: {{ data.sunset | date('H:i:s') }} </div> {% endif %}
-      {% endfor %}
-   </div>
-</div>
-
-{% endif %}
-
 {% if data_weather %}
    <div class="weather-wrapper">
       <h2 class="weather_city-name"> {{ data_weather.name }}</h2>
