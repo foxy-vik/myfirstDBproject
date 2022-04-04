@@ -143,6 +143,7 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    *
    * @throws \Exception
+   * @throws \GuzzleHttp\Exception\GuzzleException
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $key_api_weather = $form_state->getValue('api_key');
@@ -154,24 +155,7 @@ class SettingsForm extends ConfigFormBase {
       ->set('units', $metric)
       ->save();
 
-    $url_weather = "https://api.openweathermap.org/data/2.5/weather?q=$city_name&appid=$key_api_weather&units=$metric";
-    try {
-      $response = $this->client->request('GET', $url_weather);
-      $weather_data = $response->getBody()->getContents();
-      $timestamp = $this->time->getRequestTime();
-      $values = [
-        'city_name_weather' => $city_name,
-        'main_data_weather' => $weather_data,
-        'time' => $timestamp,
-      ];
-    }
-    catch (GuzzleException $e) {
-      $this->messenger()->addMessage($this->t('Update failed. Message = %message', [
-        '%message' => $e->getMessage(),
-      ]
-      ), 'error');
-    }
-    $this->weatherDb->updateWeatherData($values);
+    $this->weatherDb->updateWeatherData();
 
     parent::submitForm($form, $form_state);
   }
