@@ -6,4 +6,5 @@ services:
                 '@string_translation',
                 '@messenger',
                 '@http_client',
-                '@config.factory']
+                '@config.factory',
+                '@datetime.time']
