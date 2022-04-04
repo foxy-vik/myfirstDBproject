@@ -7,7 +7,6 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\GuzzleException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\weather\WeatherDb;
 
@@ -28,21 +27,14 @@ class SettingsForm extends ConfigFormBase {
    *
    * @var \GuzzleHttp\ClientInterface
    */
-  protected $client;
+  protected ClientInterface $client;
 
   /**
    * The config factory.
    *
    * @var \Drupal\Core\Config\ConfigFactoryInterface
    */
-  protected $configFactory;
-
-  /**
-   * The time service.
-   *
-   * @var \Drupal\Component\Datetime\TimeInterface
-   */
-  protected $time;
+  protected ConfigFactoryInterface $configFactory;
 
   /**
    * Constructs a new WeatherSettings instance.
@@ -53,17 +45,13 @@ class SettingsForm extends ConfigFormBase {
    *   The config factory.
    * @param \Drupal\weather\WeatherDb $weather_db
    *   Service for Weather db.
-   * @param \Drupal\Component\Datetime\TimeInterface $time
-   *   The time service.
    */
   public function __construct(ClientInterface $client,
                               ConfigFactoryInterface $config_factory,
-                              WeatherDb $weather_db,
-                              TimeInterface $time) {
+                              WeatherDb $weather_db) {
     $this->client = $client;
     $this->configFactory = $config_factory;
     $this->weatherDb = $weather_db;
-    $this->time = $time;
   }
 
   /**
@@ -74,7 +62,6 @@ class SettingsForm extends ConfigFormBase {
       $container->get('http_client'),
       $container->get('config.factory'),
       $container->get('weather.db'),
-      $container->get('datetime.time'),
     );
   }
 
@@ -131,6 +118,7 @@ class SettingsForm extends ConfigFormBase {
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $api_key = $form_state->getValue('api_key');
     $city_name_for_weather = $form_state->getValue('city_weather');
+    // @todo Changed error by key;
     if (!empty($city_name_for_weather)
       && !$this->weatherDb->validateWeatherData($city_name_for_weather, $api_key)) {
       $form_state->setErrorByName('api_key', $this->t('Error! API key or city name is incorrect.'));

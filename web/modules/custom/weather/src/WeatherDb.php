@@ -2,6 +2,7 @@
 
 namespace Drupal\weather;
 
+use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Messenger\MessengerInterface;
@@ -41,6 +42,13 @@ class WeatherDb {
   protected $configFactory;
 
   /**
+   * The time service.
+   *
+   * @var \Drupal\Component\Datetime\TimeInterface
+   */
+  protected $time;
+
+  /**
    * Constructs a WeatherDb object.
    *
    * @param \Drupal\Core\Database\Connection $connection
@@ -53,17 +61,21 @@ class WeatherDb {
    *   The HTTP client.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory.
+   * @param \Drupal\Component\Datetime\TimeInterface $time
+   *   The time service.
    */
   public function __construct(Connection $connection,
                               TranslationInterface $translation,
                               MessengerInterface $messenger,
                               ClientInterface $client,
-                              ConfigFactoryInterface $config_factory) {
+                              ConfigFactoryInterface $config_factory,
+                              TimeInterface $time) {
     $this->connection = $connection;
     $this->setStringTranslation($translation);
     $this->setMessenger($messenger);
     $this->client = $client;
     $this->configFactory = $config_factory;
+    $this->time = $time;
   }
 
   /**
@@ -91,7 +103,7 @@ class WeatherDb {
       ->select('weather_table', 'db')
       ->fields('db', ['main_data_weather'])
       ->condition('city_name_weather', $city)
-      ->condition('time', \Drupal::time()->getRequestTime() - 21600, '>')
+      ->condition('time', $this->time->getRequestTime() - 21600, '>')
       ->execute()->fetchField();
 
     // If data doesn't exist or outdated then we need to update it.
@@ -133,7 +145,7 @@ class WeatherDb {
       $values = [
         'city_name_weather' => $city,
         'main_data_weather' => $weather_data,
-        'time' => \Drupal::time()->getRequestTime(),
+        'time' => $this->time->getRequestTime(),
       ];
       $this->connection->Upsert('weather_table')
         ->fields(['city_name_weather', 'main_data_weather', 'time'])
