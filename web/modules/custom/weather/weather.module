@@ -32,5 +32,11 @@ function weather_theme($existing, $type, $theme, $path) {
         'lutsk_weather' => [],
       ],
     ],
+    'weather_controller_template' => [
+      'variables' => [
+        'data_weather' => [],
+        'main_data_weather' => [],
+      ],
+    ],
   ];
 }

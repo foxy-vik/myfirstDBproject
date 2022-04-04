@@ -60,7 +60,7 @@ class WeatherController extends ControllerBase {
       '#markup' => $this->t('Weather of the city:'),
     ];
     $build['content'][] = [
-      '#theme' => 'weather_block_template',
+      '#theme' => 'weather_controller_template',
       '#data_weather' => $response_weather,
       '#main_data_weather' => $response_weather['weather'][0],
       '#attached' => [
