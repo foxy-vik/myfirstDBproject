@@ -88,8 +88,8 @@ class WeatherDb {
    */
   public function getWeatherData() {
     // @todo Detect user location by IP -> \Drupal::request()->getClientIp();.
-     $client_ip = '51.15.45.2';
-//    $client_ip = \Drupal::request()->getClientIp();
+    $client_ip = '51.15.45.2';
+    // $client_ip = \Drupal::request()->getClientIp();
     $response_ip = $this->client->request('GET', "http://ip-api.com/json/$client_ip");
     $response_ip_content = json_decode($response_ip->getBody()->getContents(), TRUE);
 
