@@ -1,0 +1,18 @@
+{% if data_weather %}
+   <div class="weather-wrapper"> Main weather page -
+      <h2 class="weather_city-name"> {{ data_weather.name }}</h2>
+      {% for key, data in data_weather  %}
+         {% if data.temp %}<div class="weather-item">Temperature: {{ data.temp }}°С</div> {% endif %}
+         {% if data.feels_like %}<div class="weather-item">Feels like: {{ data.feels_like }}°С</div> {% endif %}
+         {% if key == 'wind' %}<div class="weather-item">Wind: speed {{ data.speed }} m/s, gust {{ data.gust }} m/s</div> {% endif %}
+      {% endfor %}
+   </div>
+{% endif %}
+
+{% if main_data_weather %}
+   <div>{{ main_data_weather.main }}</div>
+   <div>{{ main_data_weather.description }}</div>
+   <img class="weather_img" src="http://openweathermap.org/img/wn/{{ main_data_weather.icon }}.png"/>
+{% endif %}
+
+

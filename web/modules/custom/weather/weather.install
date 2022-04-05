@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Weather module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function weather_schema(): array {
+  $schema['weather_table'] = [
+    'description' => 'Table that consists of info about weather.',
+    'fields' => [
+      'city_name_weather' => [
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 255,
+        'description' => 'City name.',
+      ],
+      'main_data_weather' => [
+        'type' => 'text',
+        'not null' => TRUE,
+        'size' => 'normal',
+        'description' => 'JSON. Main info about weather.',
+      ],
+      'time' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Time for update operations.',
+      ],
+    ],
+
+    'primary key' => ['city_name_weather'],
+  ];
+
+  return $schema;
+}

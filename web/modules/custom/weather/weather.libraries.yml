@@ -1,0 +1,6 @@
+# Custom module library for general purposes.
+weather:
+  css:
+    component:
+      css/weather.css: {}
+
