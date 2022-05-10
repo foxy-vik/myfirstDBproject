@@ -1,0 +1,13 @@
+weather.settings_form:
+  title: 'Weather default settings'
+  description: 'Configure Weather settings.'
+  parent: system.admin_config_system
+  route_name: weather.settings_form
+  weight: 10
+
+weather.mainpage:
+    title: 'Weather'
+    description: 'Main weather page.'
+    menu_name: main
+    route_name: weather.mainpage
+    weight: 10

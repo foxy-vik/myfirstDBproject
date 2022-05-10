@@ -1,0 +1,10 @@
+.weather-wrapper{
+    display: flex;
+    gap: 1rem;
+}
+
+.lutsk-weather {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
