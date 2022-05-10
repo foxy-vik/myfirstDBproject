@@ -7,7 +7,7 @@ For using: git clone git@github.com:foxy-vik/myfirstDBproject.git
 
 # This project was created on Docker4Drupal  - Drupal 9 Without Composer Installation
 
-This is a sample Drupal 9 with Composer installation pre-configured for use with Docksal.
+This is a sample Drupal 9 with Composer installation pre-configured for use with Docker4Drupal.
 
 ## Setup instructions
 
@@ -27,46 +27,45 @@ Follow [Docker4Drupal environment setup instructions](https://wodby.com/docs/1.0
     cd drupal9
 
     ```
-    $settings["config_sync_directory"] = 'config/sync';
+   $settings["config_sync_directory"] = 'config/sync';
 
-    drush config-set "system.site" uuid "fe7ea394-0677-4156-969d-5b33afb70dee"
-    
-    
-    
-    
-    
-    
-    
-    
+   drush config-set "system.site" uuid "fe7ea394-0677-4156-969d-5b33afb70dee"
+
+
 
 2. Initialize the site
 
-    This will initialize local settings and install the site via drush
+   This will initialize local settings
 
     ```
-    fin init
+    docker-compose up -d
+
+    composer install
     ```
    A `composer.lock` file will be generated. This file should be committed to your repository.
 
-3. Point your browser to
+3. import database
+
 
     ```
-    http://drupal9.docksal
+    docker exec -it developSite_php bash
+
+    drush sqlc < database.sql
+    ```
+
+4. Point your browser to
+
+    ```
+    http://drupal9.localhost
     ```
 
 When the automated install is complete the command line output will display the admin username and password.
 
 
-## More automation with 'fin init'
-
-Site provisioning can be automated using `fin init`, which calls the shell script in [.docksal/commands/init](.docksal/commands/init).
-This script is meant to be modified per project. The one in this repo will give you a good starting example.
-
-Some common tasks that can be handled by the init script (an other [custom commands](https://docs.docksal.io/fin/custom-commands/)):
+## More automation with 'https://wodby.com/docs/'
 
 - initialize local settings files for Docker Compose, Drupal, Behat, etc.
 - import DB or perform a site install
 - compile Sass
 - run DB updates, revert features, clear caches, etc.
 - enable/disable modules, update variables values
-
